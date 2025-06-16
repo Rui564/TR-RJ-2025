@@ -4,6 +4,6 @@ print("Hola Bon dia !")
 a = int(input('Escribe un numero: '))
 b = int(input('Escribe un numero: '))
 
-print(a * b)
+print(a + b)
 
 
