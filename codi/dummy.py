@@ -1,6 +1,6 @@
 import binaryOperations as bo
 
-bo.suma(3,5)
+bo.suma()
 
 print (bo.producte(-2,5))
 

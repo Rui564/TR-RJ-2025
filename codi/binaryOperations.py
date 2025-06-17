@@ -1,6 +1,8 @@
-a=input("Introdueix el primer nombre: ")
-b=input("Introdueix el segon nombre: ")
-def suma(a, b):
+
+
+def suma():
+	a=int(input("Introdueix el primer nombre: "))
+	b=int(input("Introdueix el segon nombre: "))
 	print(a, end="")
 	print(" + ", end="")
 	print(b, end="")
