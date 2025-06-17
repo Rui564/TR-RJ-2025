@@ -1,3 +1,5 @@
+a=input("Introdueix el primer nombre: ")
+b=input("Introdueix el segon nombre: ")
 def suma(a, b):
 	print(a, end="")
 	print(" + ", end="")
