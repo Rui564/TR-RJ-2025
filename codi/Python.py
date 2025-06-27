@@ -255,7 +255,8 @@ print(pi)
 print(sqrt(16))
 
 import binaryOperations as bo  
-print(bo.equacio())    
+print(bo.suma())    
 '''
-
+import binaryOperations as bo  
+print(bo.suma())   
 
