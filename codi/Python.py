@@ -195,7 +195,7 @@ def create_name(name, surname):
 print(create_name(name, surname))
 '''
 # Classes #
-'''
+'''''
 class Coche:
   def __init__(self, marca, modelo, color):
       self.marca = marca
@@ -221,8 +221,8 @@ print(f"Velocidad después de acelerar: {Lamborghini.velocidad} km/h")
 Lamborghini.frenar(30)
 print(f"Velocidad después de frenar: {Lamborghini.velocidad} km/h")
 print(type(Lamborghini))
-'''
-      
+
+'''   
 
 # Exception #
 '''
@@ -255,8 +255,15 @@ print(pi)
 print(sqrt(16))
 
 import binaryOperations as bo  
-print(bo.suma())    
+print(bo.suma())     b
 '''
-import binaryOperations as bo  
-print(bo.suma())   
+'''
+import binaryOperations as bo
+
+if (bo.suma()>20):
+    print('it is bigger than other')
+else:
+    print("it doesn't work")
+'''
+
 
