@@ -95,11 +95,18 @@ font(WYSIWYM): (\href{https://en.wikipedia.org/wiki/WYSIWYM}{Wikipedia} \href{ht
 
 
 \section{\LaTeX}
-\begin{figure}[h]
+
+% l'entorn figure et numera la figura i et permet posar una nota al peu de la figura, però costa controlar la posició
+\begin{figure}[h!]
     \centering
-    \includegraphics[width=0.5\textwidth]{Latex.png}
+    \includegraphics[width=0.5\textwidth]{./figures/latex.png}
+    \caption{Logo del Latex}
 \end{figure}
 
+% si ho fas d'aqesta manera
+\begin{center}
+    \includegraphics[width=0.75\textwidth]{./figures/latex.pdf}
+\end{center}
 
 
 
