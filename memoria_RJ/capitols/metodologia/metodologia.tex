@@ -59,7 +59,7 @@ Desavantatges:
  \item \textbf{Control de versions complicat:} Difícil treballar en equip sense conflictes de format.
 \end{itemize}
 
-\subsection{What You See Is What You Mean(WYSIWYM)}
+\subsection{What You See Is What You Mean(WYSIWYM)}\label{subsec:4.2.2}
 WSYSIWYM, es refereix a un tipus de processador que es centra en l'estructura del contigut, no en la seva aparença visual immediata, l'usuari marca el text segons la seva funció (títol, secció, cita i d'altres més) i el format final s'aplica mitjançant un full d'estil com css o Latex.
 Avantatges:
 \begin{itemize}
@@ -95,19 +95,20 @@ font(WYSIWYM): (\href{https://en.wikipedia.org/wiki/WYSIWYM}{Wikipedia} \href{ht
 
 
 \section{\LaTeX}
-
+\begin{comment}
 % l'entorn figure et numera la figura i et permet posar una nota al peu de la figura, però costa controlar la posició
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.5\textwidth]{./figures/latex.png}
     \caption{Logo del Latex}
-\end{figure}
+\end{figure}%
 
 % si ho fas d'aqesta manera
 \begin{center}
     \includegraphics[width=0.75\textwidth]{./figures/latex.pdf}
 \end{center}
-
+\end{comment}
+\LaTeX, és un tipus de WYSIWYG, on s'enfoca en l'estructura logica, no la visual tal com vam mencionar en l'apartat \ref{subsec:4.2.2}. LaTeX és un sistema de composició tipogràfica d'alta qualitat, especialment dissenyat per a la creació de documents acadèmics, tècnics i científics. A diferència dels processadors de text tradicionals com Microsoft Word, ell es basa en codi per estructurar el document, separant el contingut de la seva presentació visual. I va ser desenvolupat per Leslie Lamport el 1984 com un conjunt de macros per al sistema TeX de Donald Knuth. La raó principal de la seva creació va ser la impotència dels processadors de text de l'època per compilar fórmules matemàtiques avançades i gestionar documents complexos amb precisió tipogràfica. I per la principal raó de la seva creació, el vam escollir com a nostre processador per satisfer els requeriments que demanem. Per més informació o dubte podeu consultar el manual de latex:  \href{https://manualdelatex.com/}{Manual de LaTeX}
 
 
 
