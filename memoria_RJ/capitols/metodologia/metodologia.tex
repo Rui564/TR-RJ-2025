@@ -72,7 +72,7 @@ Desavantatges:
 \begin{itemize}
 \item \textbf{Corba d'aprenentatge:} Cal aprendre una sintaxi específica.
  \item \textbf{Previsualització no immediata:} En LaTeX, cal compilar; en Markdown, cal un renderitzador.
- \item \textbf{Limitacions en disseny gràfic}: Personalització avançada (ex: posicionament exacte d'imatges) requereix codi addicional.
+ \item \textbf{Limitacions en disseny gràfic:} Personalització avançada (ex: posicionament exacte d'imatges) requereix codi addicional.
 \end{itemize}
 
 \begin{table}[h!]
@@ -94,7 +94,7 @@ font(WYSIWYM): (\href{https://en.wikipedia.org/wiki/WYSIWYM}{Wikipedia} \href{ht
 
 
 
-\section{\LaTeX}
+\subsection{\LaTeX}
 \begin{comment}
 % l'entorn figure et numera la figura i et permet posar una nota al peu de la figura, però costa controlar la posició
 \begin{figure}[h!]
@@ -109,6 +109,64 @@ font(WYSIWYM): (\href{https://en.wikipedia.org/wiki/WYSIWYM}{Wikipedia} \href{ht
 \end{center}
 \end{comment}
 \LaTeX, és un tipus de WYSIWYG, on s'enfoca en l'estructura lògica, no la visual, tal com vam mencionar en l'apartat \ref{subsec:4.2.2}. LaTeX és un sistema de composició tipogràfica d'alta qualitat, especialment dissenyat per a la creació de documents acadèmics, tècnics i científics. A diferència dels processadors de text tradicionals com Microsoft Word, LaTeX es basa en codi per estructurar el document, separant el contingut de la seva presentació visual. Va ser desenvolupat per Leslie Lamport en 1984 com un conjunt de macros per al sistema TeX de Donald Knuth. La raó principal de la seva creació va ser la impotència dels processadors de text de l'època per compilar fórmules matemàtiques avançades i gestionar documents complexos amb precisió tipogràfica. És per aquesta raó la qual el vam escollir com a processador per satisfer els requeriments que demanem. Per més informació o dubte podeu consultar el manual de latex:  \href{https://manualdelatex.com/}{Manual de LaTeX}
+\subsection{Kile}
+Kile es un editor especific del \LaTeX que funciona en els sistemes operatius tant Linux, Windows com Apple Macintosh. L'editor va ser desenvolupat per la comunitat  \ref{subsec:KDE} en que ofereix diversos eines avannçades per a l'edicio de LaTeX. Tot i que no es l'unic editor que existeix pero es el que més ens convé per el fet de que sigui creada per documents academics i cientifics.\\
+
+Avantatges:
+\begin{itemize}
+\item \textbf{Entorn integrat complet:} Kile ofereix tot el necessari per treballar amb LaTeX en una sola interfície, incloent editor, compilador, visualitzador i gestor de referències
+\item \textbf{Altament configurable: } Permet afegir botons a la barra d'eines per executar scripts personalitzats i automatitzar tasques complexes
+\item \textbf{Feedback WYSWYG:} Et dona una sensació quasi WYSWYG, gracies als visualitzadors que els té integrades en que pots veure els canvis en temps reals.
+\item \textbf{Eines avançades d'edició:} Té autocompletador de comandes, accés rapid a simbols matematics, navegacions rapides per seccions.
+\end{itemize}
+Desavantatges:
+\begin{itemize}
+\item \textbf{Nivell d'apranentatge:} Costa molt d'aprendre l'interficie si no estas familialitzat amb KDE
+\item \textbf{Configuració Inicial:} Requereix molts tipus de configuracions externs per tal d'arrenca.
+\end{itemize}
+
+Ara mostrarem una taula de comparació respecte els altres editors:
+LyX és més adequat per a principiants gràcies a la seva interfície WYSIWYG. No obstant, Kile es més flexible per als usuaris avançats i te més control en els codis i funcions. \\
+%Taula 1
+\begin{table}[h!]
+ \begin{tabular}{|l|l|l|}
+\hline
+ \LaTeX & \textbf{Kile} & \textbf{LyX} \\ \hline
+ \textbf{Facilitat d'ús} &  & X \\ \hline
+ \textbf{Control i Flexibilitat} & X & \\ \hline
+ \textbf{Visualització en temps real} & & X \\ \hline
+\end{tabular}
+\end{table}
+
+TeXmaker i TeXstudio comparteixen moltes similituds amb Kile en termes de funcionalitat i d'interfície. \\
+
+%Taula 2
+\begin{table}[h!]
+ \begin{tabular}{|l|l|l|}
+\hline
+ \LaTeX & \textbf{Kile} & \textbf{TeXmaker i TeXstudio} \\ \hline
+ \textbf{similitud de funcionalitat} & - & - \\ \hline
+ \textbf{Integració KDE} & X & \\ \hline
+ \textbf{Disponibilitat dels sistemes operatius} & X &  \\ \hline
+ \end{tabular}
+\end{table}
+
+Gummi és un editor molt més simple que Kile, amb previsualització en temps real però amb moltes menys funcionalitats. És bo per a documents simples però per a projectes complexos no. \\
+%Taula 3
+\begin{table}[h!]
+ \begin{tabular}{|l|l|l|}
+\hline
+ \LaTeX & \textbf{Kile} & \textbf{Gummi} \\ \hline
+ \textbf{complexibilitat:}  & X &  \\ \hline
+ \textbf{Previsualització} &  & X \\ \hline
+ \textbf{funcionalitat} & X &  \\ \hline
+ \end{tabular}
+\end{table}
+
+Per més informació en qüestió de comparació podeu fer una consulta a les següents pagines: \href{https://osluca.uca.es/noticia/cinco-editores-de-latex-libres/}{5 editors de LaTeX} \href{https://latex.org/forum/viewtopic.php?t=208}{Analisí detallada de Kile i d'altres editors}
+Fonts: \href{https://iloo.wordpress.com/2010/10/20/kile-otro-editor-latex/}{Experiencia Personal de l'us Kile} \href{https://www.kdeblog.com/editor-de-latex-para-kde-kile.html}{Descripcio de Característiques Kile}
+
+\subsection{KDE}\label{subsec:KDE}
 
 
 
@@ -136,14 +194,15 @@ font(WYSIWYM): (\href{https://en.wikipedia.org/wiki/WYSIWYM}{Wikipedia} \href{ht
 
 \section{Entorn col·laboratiu}\label{sec:4.3}
 \section{Llenguatge de programació}\label{sec:4.4}
+
 El llenguatge de programació que vam decidir per fer la part pràctia del treball va ser Python. Python és un llenguatge de programació que va ser creat en 1989 per Guido van Rossum , un informàtic neerlandès. Aquest llenguatge és conegut per la seva simple sintaxi, comparada amb altres llenguatges com JavaScript o C++, python facilita l'aprenentatge pels usuaris que començen a apendre a programar. Aquesta va ser la principal raó per la que vam escllir python com a llenguatge de programació en la part pràctica del nostre treball, pero encara hi ha més.
 
 \subsection{Perquè vam escollir Python?}
 Voliem reduïr al màxim el nostre temps de trevall per estar més còmodes i no estar molt apresurats amb el temps. Les avantatges d'utilitzar python són:
 \begin{itemize}
  \item Facilitat d'apendre un llenguatge desde 0
- \item Té múltiples llibreries gratuites com ``TensorFlow'' o numpy, aquestes llibreries estalvien moltes línies de codi a l'hora de programar una xarxa neuronal.
- \item És multiplataforma, el podem descarregar pràcticament en qualsevol sistema operatiu (Windows, Linux, Unix y més)
+ \item Té múltiples llibreries gratuites com ``TensorFlow'' o numpy, aquestes llibreries estalen molts línies de codi a l'hora de programar una xarxa neuronal, per tant també ens estalvia temps.
+ \item És multiplataforma, el podem descarregar pràcticament en qualsevol sistema operatiu (Windows, Linux, Unix)
  \item Et pot identificar els errors i sugerir-te millores.
 \end{itemize}
 
