@@ -230,35 +230,32 @@ Fonts:\href{https://dev.to/xploitcore/kde-vs-gnome-vs-others-choosing-the-best-l
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 \section{Entorn col·laboratiu}\label{sec:4.3}
-A l'hora de crear un projecte en equip, pot arribar a ser complicat treballar amb 2 o més membres del grup a la vegada en els seus respectius dispositius si no s'escull una eina col·laborativa adequada, sobretot si s'està treballant amb molts fitxers. En el nostre cas, vam escollir el software de git.
-\subsection{Git}
-Git és un software que es va desenvolupar a l'any 2005 per Linus Torvalds. Es va crear amb el proposit de mantenir un seguiment de les modificacions realitzades en arxius digitals i facilitar la colaboració entre les persones que treballen conjuntament en els mateixos arxius dins d'un repositori compartit.
+A l'hora de crear un projecte en equip, pot arribar a ser complicat treballar amb 2 o més membres del grup a la vegada en els seus respectius dispositius si no s'escull una eina col·laborativa adequada, sobretot si s'està treballant amb molts fitxers.Pot haver problemes alhora de intercanviar o que sol pugui estar un membre traballant en un fitxer fa que sigui un absolutament caos.
+\subsection{Google Drive}
+Google Drive és una plataforma de Google que ofereix eines gratuïtes com un processador de text (Docs) i un entorn col·laboratiu. Tot i ser senzill i eficient, té algunes limitacions importants:
+\begin{itemize}
+ \item \textbf{Poc control en el procés col·laboratiu:} És difícil gestionar canvis simultanis o conflicts entre versions.
+ \item \textbf{Limitacions en el control de versions:} No permet controlar detalladament els canvis que es fan i registrar.
+ \item \textbf{Falta de privadesa:} Google té accés als teus arxius, cosa que pot ser un problema per a dades sensibles.
+\end{itemize}
+Aquestes limitacions fan que Google Drive no sigui l'opció ideal per el nostre TR la qual cosa ens fara escollir l'altre alternativa que teniem el \nameref{subsec:Git+GitHub+Vim}.
+\subsection{Git+GitHub+Vim}\label{subsec:Git+GitHub+Vim}
+Git és un sistema de control de versions que ofereix:
+\begin{itemize}
+ \item Historial dels canvis.
+ \item Branques per desenvolupar diferents funcionalitat sense afectar la versió principal.
+ \item Control total dels canvis
+ \item Control i revisió de codi
+\end{itemize}
+El principal desavantatge que té el Git és que, per si sol, no està optimitzat per a la col·laboració en equips grans. Pero aquí entra en accio el GitHub, que complementa Git amb:
+\begin{itemize}
+\item \textbf{Repositoris}
+ \item \textbf{Git pull,commit,push:} Dona la possibilitat de poder discutir les versions abans de pujarlo a la original.
+ \item Solucions als conflictes de versions amb l'ajuda del \nameref{subsubsec:Vim}.
+ \end{itemize}
+
+
 \textbf{Avantatges:}
 \begin{itemize}
  \item \textbf{Copia de seguretat:} Cada usuari té una copia de seguretat del servidor principal, en el cas d'errors o corrupció, sempre el pots reemplaçar-lo per el servidor principal.
@@ -267,6 +264,8 @@ Git és un software que es va desenvolupar a l'any 2005 per Linus Torvalds. Es v
  \item \textbf{Eficiència de Git:} Git no depèn d'internet per la majoria de les operacions, totes les accions principals(veure l'historial, fer commits) es fan en localment. Git està programat en llenguatge C, això permet a Git realitzar les tasques amb molta rapidesa encara que es treballi amb molts fichers.
 \end{itemize}
 Més informació en \href{https://git-scm.com/about/branching-and-merging}{Avantatges de Git}
+
+\subsubsection{Vim}\label{subsubsec:Vim}
 
 \section{Llenguatge de programació}\label{sec:4.4}
 
