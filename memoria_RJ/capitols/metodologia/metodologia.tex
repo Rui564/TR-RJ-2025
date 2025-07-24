@@ -259,27 +259,74 @@ Fonts:\href{https://dev.to/xploitcore/kde-vs-gnome-vs-others-choosing-the-best-l
 A l'hora de crear un projecte en equip, pot arribar a ser complicat treballar amb 2 o més membres del grup a la vegada en els seus respectius dispositius si no s'escull una eina col·laborativa adequada, sobretot si s'està treballant amb molts fitxers. En el nostre cas, vam escollir el software de git.
 \subsection{Git}
 Git és un software que es va desenvolupar a l'any 2005 per Linus Torvalds. Es va crear amb el proposit de mantenir un seguiment de les modificacions realitzades en arxius digitals i facilitar la colaboració entre les persones que treballen conjuntament en els mateixos arxius dins d'un repositori compartit.
+
 \textbf{Avantatges:}
+
 \begin{itemize}
  \item \textbf{Copia de seguretat:} Cada usuari té una copia de seguretat del servidor principal, en el cas d'errors o corrupció, sempre el pots reemplaçar-lo per el servidor principal.
  \item \textbf{Garantia de dades:} El model ded ades que utilitza Git garantitza la integritat ciptográfica de cada bit del teu projecte. Cada arxiu es recupera mitjançant la seva suma de comprobació quan es torna a desgarregar-se. Es imposible obtenir res de Git que no sigui els bits exactes que s'ha integrat.
  \item \textbf{Àrea de preparació:} Una cosa que diferència a Git d'altres eines es que es posible preparar alguns dels teus arxius i confirmar-los sense confirmar tots els altres canvis que s'han fet en els altres arxius, això et permet preparar nomès algunes parts d'un arxiu modificat i es realitza amb el commandament git commit ``nom de l'arxiu''. Git també et dona la opció d'ignorar aquesta característica i confirmar tots els canvis que s'han fet, afegint un ``-a'' al final del commandament.
  \item \textbf{Eficiència de Git:} Git no depèn d'internet per la majoria de les operacions, totes les accions principals(veure l'historial, fer commits) es fan en localment. Git està programat en llenguatge C, això permet a Git realitzar les tasques amb molta rapidesa encara que es treballi amb molts fichers.
 \end{itemize}
-Més informació en \href{https://git-scm.com/about/branching-and-merging}{Avantatges de Git}
+Més informació en: \href{https://git-scm.com/about/branching-and-merging}
+
 
 \section{Llenguatge de programació}\label{sec:4.4}
 
-El llenguatge de programació que vam decidir per fer la part pràctia del treball va ser Python. Python és un llenguatge de programació que va ser creat en 1989 per Guido van Rossum , un informàtic neerlandès. Aquest llenguatge és conegut per la seva simple sintaxi, comparada amb altres llenguatges com JavaScript o C++, python facilita l'aprenentatge pels usuaris que començen a apendre a programar. Aquesta va ser la principal raó per la que vam escllir python com a llenguatge de programació en la part pràctica del nostre treball, pero encara hi ha més.
+El llenguatge de programació que vam decidir per fer la part pràctia del treball va ser Python. Python és un llenguatge de programació que va ser creat en 1989 per Guido van Rossum , un informàtic neerlandès. Aquest llenguatge és conegut per la seva simple sintaxi, comparada amb altres llenguatges com JavaScript o C++, python facilita l'aprenentatge pels usuaris que començen a apendre a programar desde 0. Aquesta va ser la principal raó per la que vam escllir python com a llenguatge de programació en la part pràctica del nostre treball, pero encara hi ha més.
 
 \subsection{Perquè vam escollir Python?}
-Voliem reduïr al màxim el nostre temps de trevall per estar més còmodes i no estar molt apresurats amb el temps. Les avantatges d'utilitzar python són:
+Voliem reduïr al màxim el nostre temps de trevall per estar més còmodes i no estar molt apresurats amb el temps. Les avantatges que té python que afavoreixen les nostres necesitats són:
 \begin{itemize}
- \item Facilitat d'apendre un llenguatge desde 0
- \item Té múltiples llibreries gratuites com ``TensorFlow'' o numpy, aquestes llibreries estalen molts línies de codi a l'hora de programar una xarxa neuronal, per tant també ens estalvia temps.
- \item És multiplataforma, el podem descarregar pràcticament en qualsevol sistema operatiu (Windows, Linux, Unix)
- \item Et pot identificar els errors i sugerir-te millores.
+ \item \textbf{No cal compilar:} No és necesari comilar en Python, un cop que es té el codi, s'executa directament.
+ \item \textbf{Llibreries} Python té una gran quantitat de llibreries molt útils com ``TensorFlow'' o numpy, aquestes llibreries estalvien moltes línies de codi a l'hora de programar una xarxa neuronal.
+ \item \textbf{Identificació d'errors} Encara que altres llenguatges també poden identificar-te els erros, Python t'ho explica de manera més clara i precisa, estalviant-te el temps d'anar línea per línea buscant l'error.
 \end{itemize}
+\subsection{Sintaxi}
+Acabem d'explicar que la sintaxi de Python és simple, pero què diferència aquesta sintaxi amb altres llenguatges? La principal raò és que el seu format de codi és visualment ordenat, utiliza paraules claus de l'anglès. A diferència d'altres llenguatges, no utilitza claudàtors per determinar blocs, com per exemple les sentències ``if, else'', per exemple:
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|p{7cm}|p{7cm}|}
+\hline
+\textbf{Condiciones en C} & \textbf{Condiciones en Python} \\ \hline
+
+\begin{minipage}[t]{\linewidth}
+\begin{lstlisting}[language=C]
+#include <stdio.h>
+
+int main() {
+    int numero = 5;
+
+    if (numero > 0) {
+        printf("Es >0.\n");
+    } else {
+        printf("Ès <0.\n");
+    }
+    return 0;
+}
+\end{lstlisting}
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}
+\begin{lstlisting}[language=Python]
+numero = 5
+
+if numero > 0:
+    print("És positiu.")
+else:
+    print("És negatiu.")
+\end{lstlisting}
+\end{minipage}
+\\ \hline
+\end{tabular}
+\caption{Comparació de condicions en C y Python}
+\end{table}
+
+
+
+
+
 
 
 
