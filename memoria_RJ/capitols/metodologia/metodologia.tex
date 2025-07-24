@@ -271,17 +271,28 @@ i
 
 \section{Llenguatge de programació}\label{sec:4.4}
 
-El llenguatge de programació que vam decidir per fer la part pràctia del treball va ser Python. Python és un llenguatge de programació que va ser creat en 1989 per Guido van Rossum , un informàtic neerlandès. Aquest llenguatge és conegut per la seva simple sintaxi, comparada amb altres llenguatges com JavaScript o C++, python facilita l'aprenentatge pels usuaris que començen a apendre a programar desde 0. Aquesta va ser la principal raó per la que vam escllir python com a llenguatge de programació en la part pràctica del nostre treball, pero encara hi ha més.
+El llenguatge de programació que vam decidir per fer la part pràctia del treball va ser Python. Python és un llenguatge de programació que va ser creat en 1989 per Guido van Rossum , un informàtic neerlandès. Aquest llenguatge és conegut per la seva simple sintaxi, comparada amb altres llenguatges com JavaScript o C++ que són més complicats, python facilita l'aprenentatge pels usuaris que començen a apendre a programar desde 0.
 
-\subsection{Perquè vam escollir Python?}
-Voliem reduïr al màxim el nostre temps de trevall per estar més còmodes i no estar molt apresurats amb el temps. Les avantatges que té python que afavoreixen les nostres necesitats són:
+\subsection{Python}
+La raó principal per la que vam escollir aquest llenguatgeera per les avantatges seguents:
+
+\textbf{Avantatges}
 \begin{itemize}
  \item \textbf{No cal compilar:} No és necesari comilar en Python, un cop que es té el codi, s'executa directament.
  \item \textbf{Llibreries} Python té una gran quantitat de llibreries molt útils com ``TensorFlow'' o numpy, aquestes llibreries estalvien moltes línies de codi a l'hora de programar una xarxa neuronal.
  \item \textbf{Identificació d'errors} Encara que altres llenguatges també poden identificar-te els erros, Python t'ho explica de manera més clara i precisa, estalviant-te el temps d'anar línea per línea buscant l'error.
+ \item \textbf{Sintaxi:}La seva sintaxi clara i llegible que està explicada a l'apartat \ref{4.4.2} és ho que fa que aquest llenguatge sigui fàcil d'apendre quan un comença a programar desde 0.
 \end{itemize}
+Malgrat totes aquestes avantatges, Python tambè té unes porques desaventatges que hem de tenir present.
+
+\textbf{Desavantatges:}
+\begin{itemize}
+ \item \textbf{Limitacions de rendiment:} La naturalesa interpretada de Python significa que és més lent que altres llenguatges. La causa d'això és que Python es tradueix a codi màquina línea per línea durant l'execució del codi, cosa que afegeix un temps de processament.
+ \item \textbf{Consum de memoria:} Gràcies a la bona fexibilitat d'aquest llenguate fa que l'ordinador requereixi un major consum de memòria, un consum excesiu de la memoria pot causar relentizació en el programa i bloquejar-lo. Per tant es recomendable tenir un ordinador o portatil decent que pugui executar correctament Python.
+\end{itemize}
+
 \subsection{Sintaxi}
-Acabem d'explicar que la sintaxi de Python és simple, pero què diferència aquesta sintaxi amb altres llenguatges? La principal raò és que el seu format de codi és visualment ordenat, utiliza paraules claus de l'anglès. A diferència d'altres llenguatges, no utilitza claudàtors per determinar blocs, com per exemple les sentències ``if, else'', per exemple:
+Acabem d'explicar que la sintaxi de Python és simple, pero què diferència aquesta sintaxi amb altres llenguatges? La principal raò és que el seu format de codi és visualment ordenat, utiliza paraules claus de l'anglès. A diferència d'altres llenguatges, no utilitza claudàtors per determinar blocs, com per exemple les sentències ``if, else''.
 
 \begin{table}[h!]
 \centering
@@ -320,6 +331,32 @@ else:
 \end{tabular}
 \caption{Comparació de condicions en C y Python}
 \end{table}
+
+En aquesta taula podem veurem la diferència de sintaxi que té cada llenguatge, en aquest cas podem apreciar que C és mès llarg que python i que requereis més commandaments i línies de codi. A continuació mostrarem una taula resumida d'aquestes diferències.
+
+\textbf{Resum de diferències:}
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Concepte} & \textbf{C} & \textbf{Python} \\
+\hline
+Terminador de línia & \verb|;| obligatori & No és obligatori \verb|;| \\
+\hline
+Agrupació de blocs & \{ \} & Espai en blanc \\
+\hline
+Condició & \verb|if (condició)| & \verb|if condició:| \\
+\hline
+Estructura & Requereix el script \verb|main()| & Script directe \\
+\hline
+Librerías & \verb|#include <stdio.h>| & No requereix per \verb|print()| \\
+\hline
+\end{tabular}
+\caption{Resum de les diferències}
+\end{table}
+
+
+
 
 
 
