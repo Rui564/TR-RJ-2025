@@ -260,15 +260,66 @@ El principal desavantatge que té el Git és que, per si sol, no està optimitza
 
 \begin{itemize}
  \item \textbf{Copia de seguretat:} Cada usuari té una copia de seguretat del servidor principal, en el cas d'errors o corrupció, sempre el pots reemplaçar-lo per el servidor principal.
- \item \textbf{Garantia de dades:} El model ded ades que utilitza Git garantitza la integritat ciptográfica de cada bit del teu projecte. Cada arxiu es recupera mitjançant la seva suma de comprobació quan es torna a desgarregar-se. Es imposible obtenir res de Git que no sigui els bits exactes que s'ha integrat.
+ \item \textbf{Garantia de dades:} El model de dades que utilitza Git garantitza la integritat ciptográfica de cada bit del teu projecte. Cada arxiu es recupera mitjançant la seva suma de comprobació quan es torna a desgarregar-se. Es imposible obtenir res de Git que no sigui els bits exactes que s'ha integrat.
  \item \textbf{Àrea de preparació:} Una cosa que diferència a Git d'altres eines es que es posible preparar alguns dels teus arxius i confirmar-los sense confirmar tots els altres canvis que s'han fet en els altres arxius, això et permet preparar nomès algunes parts d'un arxiu modificat i es realitza amb el commandament git commit ``nom de l'arxiu''. Git també et dona la opció d'ignorar aquesta característica i confirmar tots els canvis que s'han fet, afegint un ``-a'' al final del commandament.
  \item \textbf{Eficiència de Git:} Git no depèn d'internet per la majoria de les operacions, totes les accions principals(veure l'historial, fer commits) es fan en localment. Git està programat en llenguatge C, això permet a Git realitzar les tasques amb molta rapidesa encara que es treballi amb molts fichers.
 \end{itemize}
-Més informació en: \href{https://git-scm.com/about/branching-and-merging}
-i
+Més informació en: \href{https://git-scm.com/about/branching-and-merging}{Pagina oficial del Git}
 
+\textbf{Desavantatges:}
+\begin{itemize}
+
+
+
+\item \textbf{Corba d'aprenentatge pronunciada}: Git té un model conceptual complex (working directory, staging area, repositori local/remot) que requereix temps per assimilar. Operacions bàsiques com merge/resolucions de conflictes poden resultar difícils per a principiants.
+
+      \begin{enumerate}
+        \item \textbf{Working directory:}
+         \begin{itemize}
+            \item La carpeta local del projecte on treballes i fas canvis als fitxers.
+            \item Modifiques,elimines o crees nous arxius
+            \item Git analiza aquest aquest directori per fer la comparació dels canvis respecte l'ultima versió
+          \end{itemize}
+
+        \item \textbf{Staging Area:}
+         \begin{itemize}
+            \item És el cache del Git
+            \item Una zona intermedia on inclous els canvis propers que vols fer
+          \end{itemize}
+
+        \item \textbf{Repositori Local:}
+        \begin{itemize}
+            \item És la base de dades completa de Git que es troba a la teva màquina (dins de la carpeta .git)
+            \item Conté tot l'historial de commits, branques, tags del Git
+            \item Els canvis del Staging Area, es guarden permanent aqui
+          \end{itemize}
+        \item \textbf{Repositori Remot:}
+        \begin{itemize}
+            \item És una copia del repositori en un servidor (GitHub, GitLab, Bitbucket)
+            \item Serveix per compartir codis i funciona com a entorn col·laboratiu
+            \item És utilizen comandes git push(Pujar canvis) i git pull(Baixar canvis)
+          \end{itemize}
+       \end{enumerate}
+
+
+\item \textbf{Problemes amb fitxers molt grans}: Git no està optimitzat per a fitxers binaries de gran mida (vídeos, imatges, bases de dades). El rendiment es degrada significativament i el repositori pot inflar-se massa.
+
+\item \textbf{Gestió complicada de credencials}: Git no gestiona de forma òptima les credencials.
+
+\item \textbf{Problemes de rendiment en repositoris molt grans}: En repositoris amb milers de commits o arxius, certes operacions (com git status o git checkout) poden tornar-se lentes.
+
+\item \textbf{Comandes}: Els comandes reben nom contraintuïtiu io la sintaxi varia segons l'operació.
+\end{itemize}
+Fonts:\href{https://ieeexplore.ieee.org/document/8259410}{Comparacions entre control de versions} \href{https://stevebennett.me/2012/02/24/10-things-i-hate-about-git/}{bloc de critica d'un desenvolupador}
 \subsubsection{Vim}\label{subsubsec:Vim}
-
+Vim (Vi IMproved) és un editor de text avançat, lliure i de codi obert, basat en l'editor clàssic vi. És conegut per ser multiplataforma i també la seva eficiència, personalització i ús sense ratoli, sent popular entre programadors i usuaris tècnics. Aquest editor de text consta de 4 modes amb diferents funcionalitats:
+\begin{itemize}
+ \item \textbf{Mode Estandard:} Per navegar i executar ordres
+ \item \textbf{Mode Insert:} Per escriure text
+ \item \textbf{Mode Visual:} Per seleccionar bloc de text
+ \item \textbf{Mode Command} Per executar comandes complexes
+\end{itemize}
+Fonts:\href{https://www.vim.org/}{Pagina oficial del Vim} \href{https://vimhelp.org/}{Documentacio del Vim}
 \section{Llenguatge de programació}\label{sec:4.4}
 
 El llenguatge de programació que vam decidir per fer la part pràctia del treball va ser Python. Python és un llenguatge de programació que va ser creat en 1989 per Guido van Rossum , un informàtic neerlandès. Aquest llenguatge és conegut per la seva simple sintaxi, comparada amb altres llenguatges com JavaScript o C++ que són més complicats, python facilita l'aprenentatge pels usuaris que començen a apendre a programar desde 0.
@@ -283,7 +334,7 @@ La raó principal per la que vam escollir aquest llenguatgeera per les avantatge
  \item \textbf{Identificació d'errors} Encara que altres llenguatges també poden identificar-te els erros, Python t'ho explica de manera més clara i precisa, estalviant-te el temps d'anar línea per línea buscant l'error.
  \item \textbf{Sintaxi:}La seva sintaxi clara i llegible que està explicada a l'apartat \ref{4.4.2} és ho que fa que aquest llenguatge sigui fàcil d'apendre quan un comença a programar desde 0.
 \end{itemize}
-<<<<<<< Updated upstream
+
 Malgrat totes aquestes avantatges, Python tambè té unes porques desaventatges que hem de tenir present.
 
 \textbf{Desavantatges:}
