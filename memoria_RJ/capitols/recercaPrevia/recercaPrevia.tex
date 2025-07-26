@@ -70,7 +70,7 @@ Per entendre-ho millor, donarem un exemple: Imagina que vols utilitzar una XNA p
 Les xarxes neuronals operen a travès d'un procès de dos pasos: La propagació directa i la retropropagació.
 
 \subsection{Propagació directa}
-Durant la propagació directa, les dades ingresen en la xarxa a travès de la capa d'entrada i flueixen secuencialment a travès de les capes ocultes fins a la capa de sortida. En cada neurona, els valors d'entrada del model es multiplican per els seus pesos corresponents i es sumen. Aquesta suma ponderada es pasa a travès d'una funció d'activació, explicada prèviament a l'apartat \ref{3.4.1}. Aquest procès continua capa per capa, això acaba conduïnt cap a la predicció final en la capa de sortida.
+Durant la propagació directa, les dades ingresen en la xarxa a travès de la capa d'entrada i flueixen secuencialment a travès de les capes ocultes fins a la capa de sortida. En cada neurona, els valors d'entrada del model es multiplican per els seus pesos corresponents i es sumen. Aquesta suma ponderada es pasa a travès d'una funció d'activació, explicada prèviament a l'apartat \ref{sec:3.4.1}. Aquest procès continua capa per capa, això acaba conduïnt cap a la predicció final en la capa de sortida.
 \subsection{Retroprogramació}
 Mentre que la programació directa fa prediccions, la retroporgramació és la forma en que la xarxa apren d'errors. Implica comparar la predicció de la xarxa amb el valor objectiu real i calcular unterme d'eror mitjançant una funció de pèrdua.
 Aquest error es propaga enrere a travès de la xarxa, començant des de la capa de sortida. Durant aquest procès, la xarxa ajusta els pesos i els baixos de cada connexió en funció de la seva contribució a l'error, amb l'objectiu de minimitzar-lo.
