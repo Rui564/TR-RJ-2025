@@ -50,14 +50,31 @@ Aquí hi és una taula de comparació entre una biologica i artificial:
 \end{table}
 
 \section{Estructura d'una xarxa neuronal}
-Una xarxa neurnal combina diverses capes de procesament i utilitza elements simples que operen en paral·lel, simuplen i estan inspirades en els sistemes nerviosos biològics com hem explican en \ref{sec:3.3}. Consta d'a capa d'entrada, seguit d'una o varies capes ocultes i finalment una capa de sortida. Les capes estan interconectades mitjançant nodes o neurones; cada capa utilitza la sortuca de la capa anterior com a entrada.
-\subsection{Capa d'entrada}
-La capa d'entrada és la primera capa que reb directament la informació d'entrada que es prcessarà. Aquesta capa no realitzarà càlculs complexos, simplement transmet les dades a les capes seguents per fer el processament.
-\subsection{Capes ocultes}
-Les capes ocultes són les capes que estan entre la capa d'entrada i la de sortida, aquestes capes contenen unitats no observables. La seva funció principal és processar les dades de la capa d'entrada per extraure característiques i patrons complexos. Aquestes capes són els que realitzan els càlculs i permet que la xarxa aprengui relacions no lineals i representacions abstracts de les dades, això és molt important per fer tasques complexes com el reconeixement de patrons.
-\subsection{Capa de sortida}
-La capa de sortida és l'última capa que forma una xarxa neuronal i és l'encarregada de produïr la predicció final del model. Aquesta capa utilitza la informació que ha processat la o les capes ocultes i la transforma per generar una sortida, que pot ser una predicció numèrica, una clasificació o qualsevol altre resultat.
+Una xarxa neurnal combina diverses capes de procesament i utilitza elements simples que operen en paral·lel, simulen i estan inspirades en els sistemes nerviosos biològics com hem explican en l'apartat \ref{sec:3.3}. Consta d'una capa d'entrada, seguit d'una o varies capes ocultes i finalment una capa de sortida. Les capes estan interconectades mitjançant nodes o neurones; cada capa utilitza la sortida de la capa anterior com a entrada.
+\begin{itemize}
+ \item \textbf{Capa d'entrada:}La capa d'entrada és la primera capa que reb directament la informació d'entrada que es prcessarà. Aquesta capa no realitzarà càlculs complexos, simplement transmet les dades a les capes seguents per fer el processament.
+ \item \textbf{Capes ocultes:}Les capes ocultes són les capes que estan entre la capa d'entrada i la de sortida, aquestes capes contenen unitats no observables. La seva funció principal és processar les dades de la capa d'entrada per extraure característiques i patrons complexos. Aquestes capes són els que realitzan els càlculs i permet que la xarxa aprengui relacions no lineals i representacions abstracts de les dades, això és molt important per fer tasques complexes com el reconeixement de patrons.
+ \item \textbf{Capa de sortida:}La capa de sortida és l'última capa que forma una xarxa neuronal i és l'encarregada de produïr la predicció final del model. Aquesta capa utilitza la informació que ha processat la o les capes ocultes i la transforma per generar una sortida, que pot ser una predicció numèrica, una clasificació o qualsevol altre resultat.
+\end{itemize}
+\subsection{Funció d'activació}\label{sec:3.4.1}
+%Explicació breu, no esta acabat aquest apartat
+Introdueix la no linealitat i produeix la sortida de la neurona.
+
 \section{Com funciona una xarxa neuronal?}
+Ara que sabem quina estructura forma una xarxa neuronal artificial, toca entendre com funciona. Les neurones o nodes son els pilars més importants d'una xarxa neuronal. Cada neurona utilitza la entrada, la processa utilitzant una suma ponderada i una funció d'activació, i desprès pasa la sortida a altres neurones.
+
+Les conexions(pesos i biaix) son la força de conexió entre dos neurones representades per un pes. Els pesos determinen cuánta influència té la producció d'una neurona sobre un altre. Els biaixos són paràmetres adicionals que ajude a ajustar la sortida de les neurones.
+
+Per entendre-ho millor, donarem un exemple: Imagina que vols utilitzar una XNA profund que aprengui a reconeixer dígits escrits a mà des de l'ú fins al nou. Per la capa d'entrada, cada neurona d'aquesta capa representaria un píxel de la imatge. Seguit d'això, les capes ocultes serien les encarregades de processar aquesta informació de píxels, identificant característiques com curves, línies, o bucles que conforman els diferents dígits. Finalment, cada neurona de la capa de sortida representaria un dels deu dígits. La neurona amb la activació més alta indicarà la predicció de la xarxa.
+
+Les xarxes neuronals operen a travès d'un procès de dos pasos: La propagació directa i la retropropagació.
+
+\subsection{Propagació directa}
+Durant la propagació directa, les dades ingresen en la xarxa a travès de la capa d'entrada i flueixen secuencialment a travès de les capes ocultes fins a la capa de sortida. En cada neurona, els valors d'entrada del model es multiplican per els seus pesos corresponents i es sumen. Aquesta suma ponderada es pasa a travès d'una funció d'activació, explicada prèviament a l'apartat \ref{3.4.1}. Aquest procès continua capa per capa, això acaba conduïnt cap a la predicció final en la capa de sortida.
+\subsection{Retroprogramació}
+Mentre que la programació directa fa prediccions, la retroporgramació és la forma en que la xarxa apren d'errors. Implica comparar la predicció de la xarxa amb el valor objectiu real i calcular unterme d'eror mitjançant una funció de pèrdua.
+Aquest error es propaga enrere a travès de la xarxa, començant des de la capa de sortida. Durant aquest procès, la xarxa ajusta els pesos i els baixos de cada connexió en funció de la seva contribució a l'error, amb l'objectiu de minimitzar-lo.
+Aquest procès iteratiu de càlcul d'erros i ajustament de pes permet a la xarxa d'aprenentatge profund millorar gradualment les seves prediccions.
 
 
 
