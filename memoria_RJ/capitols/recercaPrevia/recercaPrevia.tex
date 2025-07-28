@@ -62,13 +62,13 @@ Una xarxa neurnal combina diverses capes de procesament i utilitza elements simp
     \caption{Estructura d'una xarxa neuronal}
 \end{figure}%
 
-\subsection{Funció d'activació}\label{sec:3.5.3}
+\section{Funció d'activació}\label{sec:3.5.3}
 Les funcions d'activaciósón són un component integral de les xarxes neuronals que els permeten apendre patrons complexos en les dades. Transforma la señal d'entrada de una neurona en una señal de sortida que pasa a la capa seguent. Sense funcions d'activacions, les xarxes neuronals es limitarien a modelar únicament relacions lieals entre entrades i sortides, es a dir, introdueix la no linealitat i produeix la sortida de la neurona.
-
+\subsection{Funció sigmoide}
 Una funció d'activació molt coneguda és la funció sigmoide.
 La seva fòrmula és: \(\sigma(x) = \frac{1}{1 + e^{-x}}\)
 
-Aquesta funció matemàtica transforma qualsevol valor d'entrada real en un valor que està 0 i 1. La seva forma característica és una curva en forma de ``S''. Si el valor de $x$ que introduïm a la funció és molt gran o fins infinit (\infty), llavors  $\sigma$ serà 1; en canvi si és molt petit o menys infinit (-\infty),  $\sigma$ serà 0, i si x = 0,  $\sigma$  serà 0,5.
+Aquesta funció matemàtica transforma qualsevol valor d'entrada real en un valor que està 0 i 1. La seva forma característica és una curva en forma de ``S''. Si el valor de $x$ que introduïm a la funció és molt gran o fins infinit (\infty), llavors\ $\sigma$ serà 1; en canvi si és molt petit o menys infinit (-\infty),\ $\sigma$ serà 0, i si x = 0,  $\sigma$  serà 0,5.
 
 \begin{figure}[h!]
     \centering
@@ -81,6 +81,8 @@ La avantatge principal de la funció sigmoide és la seva suavitat i la facilita
 
 \textbf{Desavantatges:}
 Tanmateix, la funció sigmoide també té algunes desavantatges. Un dels seus problemes és que la funció es satura quan els valors d'entrades són grans, ho que significa que la derivada de la funció s'apropa a 0 i l'aprenentatge es relentitza. Un altre problema és que aquesta funció no és simètrica, causant a les entrades negatives i positives es processin de mandera diferent, això pot afectaral rendiment de la xarxa.
+\subsection{Funció ReLU(Funció Uniat Rectificada Uniforme)}
+\subsection{Funció Softmax}
 
 
 \section{Com funciona una xarxa neuronal?}
