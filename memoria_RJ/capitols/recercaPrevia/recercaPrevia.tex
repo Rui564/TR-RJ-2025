@@ -74,7 +74,13 @@ Les funcions d'activació són un component integral de les xarxes neuronals que
 Una funció d'activació molt coneguda és la funció sigmoide. La seva fórmula és:
 \[ \sigma(x) = \frac{1}{1 + e^{-x}} \]
 
-Aquesta funció matemàtica transforma qualsevol valor d'entrada real en un valor que està entre 0 i 1. La seva forma característica és una corba en forma de ``S''. Si el valor de $x$ que introduïm a la funció és molt gran o fins a infinit ($\infty$), llavors $\sigma(x)$ serà 1; en canvi si és molt petit o menys infinit ($-\infty$), $\sigma(x)$ serà 0, i si $x = 0$, $\sigma(x)$ serà $0.5$.
+Aquesta funció matemàtica transforma qualsevol valor d'entrada real en un valor que està 0 i 1. La seva forma característica és una curva en forma de ``S''. Si el valor de $x$ que introduïm a la funció és molt gran o fins infinit $(\infty)$, llavors\ $\sigma$ serà 1; en canvi si és molt petit o menys infinit $(-\infty)$,\ $\sigma$ serà 0, i si x = 0,  $\sigma$  serà 0,5.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/grafica_sigmoide.png}
+    \caption{Gràfica de la funció sigmoide}
+\end{figure}
 
 \textbf{Avantatges:}
 La avantatge principal de la funció sigmoide és la seva suavitat i la facilitat de derivació. La funció és diferenciable en tots els punts, això vol dir que permet als algoritmes d'optimització treballar amb la funció de manera eficient. A més, la funció és monòtona creixent, ho que significa que una entrada major sempre produirà una sortida major, fent que sigui útil per modelar relacions de causa i efecte.
