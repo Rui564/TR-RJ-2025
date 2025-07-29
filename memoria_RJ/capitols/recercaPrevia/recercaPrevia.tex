@@ -88,6 +88,10 @@ La avantatge principal de la funció sigmoide és la seva suavitat i la facilita
 \textbf{Desavantatges:}
 Tanmateix, la funció sigmoide també té algunes desavantatges. Un dels seus problemes és que la funció es satura quan els valors d'entrades són grans, ho que significa que la derivada de la funció s'apropa a 0 i l'aprenentatge es relentitza. Un altre problema és que aquesta funció no és simètrica, causant a les entrades negatives i positives es processin de mandera diferent, això pot afectaral rendiment de la xarxa.
 \subsection{Funció ReLU(Funció Uniat Rectificada Uniforme)}
+La funció Unitat Rectificada Uniforme té la fòrmula seguent:
+\[ f(x) = \max(0, x) \]
+
+Aquesta funció té l'algoritme seguent: Si el valor d'entrada es menor que 0, mostra 0, si el valor d'entrada es major o igual que 0, mostrarà el valor d'entrada. Això vol dir que la funció és lineal si la entrada és més gran que 0 perquè la pendent és 1. Encara que la funció ReLU és lineal per a la mitat del seu espai d'entrada, tècnicament és una funció no lineal perquè té un punt no diferenciable en x = 0, on canvia bruscament respecte a x. Aquesta no linealitat permet a les xarxes neuronals apendre patrons complexos.
 \subsection{Funció Softmax}
 
 
