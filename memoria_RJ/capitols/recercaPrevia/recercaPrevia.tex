@@ -51,30 +51,30 @@ Aquí hi és una taula de comparació entre una biologica i artificial:
 
 \section{Estructura d'una xarxa neuronal}
 Una xarxa neurnal combina diverses capes de procesament i utilitza elements simples que operen en paral·lel, simulen i estan inspirades en els sistemes nerviosos biològics com hem explican en l'apartat \ref{sec:3.3}. Consta d'una capa d'entrada, seguit d'una o varies capes ocultes i finalment una capa de sortida. Les capes estan interconectades mitjançant nodes o neurones; cada capa utilitza la sortida de la capa anterior com a entrada.
+
 \begin{itemize}
  \item \textbf{Capa d'entrada:}La capa d'entrada és la primera capa que reb directament la informació d'entrada que es prcessarà. Aquesta capa no realitzarà càlculs complexos, simplement transmet les dades a les capes seguents per fer el processament.
  \item \textbf{Capes ocultes:}Les capes ocultes són les capes que estan entre la capa d'entrada i la de sortida, aquestes capes contenen unitats no observables. La seva funció principal és processar les dades de la capa d'entrada per extraure característiques i patrons complexos. Aquestes capes són els que realitzan els càlculs i permet que la xarxa aprengui relacions no lineals i representacions abstracts de les dades, això és molt important per fer tasques complexes com el reconeixement de patrons.
  \item \textbf{Capa de sortida:}La capa de sortida és l'última capa que forma una xarxa neuronal i és l'encarregada de produïr la predicció final del model. Aquesta capa utilitza la informació que ha processat la o les capes ocultes i la transforma a travès d'una funció activa per generar una sortida, que pot ser una predicció numèrica, una clasificació o qualsevol altre resultat.
+ \end{itemize}
+
+ \begin{comment}
 \end{itemize}
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.5\textwidth]{./figures/xarxa.png}
     \caption{Estructura d'una xarxa neuronal}
 \end{figure}%
+\end{comment}
 
 \section{Funció d'activació}\label{sec:3.5.3}
-Les funcions d'activaciósón són un component integral de les xarxes neuronals que els permeten apendre patrons complexos en les dades. Transforma la señal d'entrada de una neurona en una señal de sortida que pasa a la capa seguent. Sense funcions d'activacions, les xarxes neuronals es limitarien a modelar únicament relacions lieals entre entrades i sortides, es a dir, introdueix la no linealitat i produeix la sortida de la neurona.
+Les funcions d'activació són un component integral de les xarxes neuronals que els permeten aprendre patrons complexos en les dades. Transformen el senyal d'entrada d'una neurona en un senyal de sortida que passa a la capa següent. Sense funcions d'activació, les xarxes neuronals es limitarien a modelar únicament relacions lineals entre entrades i sortides, és a dir, introdueixen la no linealitat i produeixen la sortida de la neurona.
+
 \subsection{Funció sigmoide}
-Una funció d'activació molt coneguda és la funció sigmoide.
-La seva fòrmula és: \(\sigma(x) = \frac{1}{1 + e^{-x}}\)
+Una funció d'activació molt coneguda és la funció sigmoide. La seva fórmula és:
+\[ \sigma(x) = \frac{1}{1 + e^{-x}} \]
 
-Aquesta funció matemàtica transforma qualsevol valor d'entrada real en un valor que està 0 i 1. La seva forma característica és una curva en forma de ``S''. Si el valor de $x$ que introduïm a la funció és molt gran o fins infinit (\infty), llavors\ $\sigma$ serà 1; en canvi si és molt petit o menys infinit (-\infty),\ $\sigma$ serà 0, i si x = 0,  $\sigma$  serà 0,5.
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.5\textwidth]{./figures/grafica_sigmoide.png}
-    \caption{Gràfica de la funció sigmoide}
-\end{figure}
+Aquesta funció matemàtica transforma qualsevol valor d'entrada real en un valor que està entre 0 i 1. La seva forma característica és una corba en forma de ``S''. Si el valor de $x$ que introduïm a la funció és molt gran o fins a infinit ($\infty$), llavors $\sigma(x)$ serà 1; en canvi si és molt petit o menys infinit ($-\infty$), $\sigma(x)$ serà 0, i si $x = 0$, $\sigma(x)$ serà $0.5$.
 
 \textbf{Avantatges:}
 La avantatge principal de la funció sigmoide és la seva suavitat i la facilitat de derivació. La funció és diferenciable en tots els punts, això vol dir que permet als algoritmes d'optimització treballar amb la funció de manera eficient. A més, la funció és monòtona creixent, ho que significa que una entrada major sempre produirà una sortida major, fent que sigui útil per modelar relacions de causa i efecte.
