@@ -444,16 +444,77 @@ Un sistema operatiu és:\\ \\
 {\color{gray}``Para entender qué es un sistema operativo, podemos pensar en él como en un administrador central que gestiona todos los recursos del sistema. Actúa como intermediario entre el hardware de un dispositivo informático (como una computadora, un teléfono inteligente o una tableta) y las aplicaciones de software que se ejecutan en él. Controla las operaciones del hardware y facilita la ejecución de múltiples tareas y procesos a través de una interfaz sencilla. ``}\\ \\
  Tal com està escrita en \href{https://universidadeuropea.com/blog/que-es-sistema-operativo/}{la Universitat Europea}, llavors es classifiquen en diverses sistemes operatius elaborada per diferents companya i les més destacades són les següents: \nameref{subsec:Microsoft Windows} \nameref{subsec:Linux} \nameref{subsec:Mac OS}
 
-\subsection{Windows}\label{subsec:Microsoft Windows}
-Windows és un sistema operatiu creat per la companyia Microsoft aproximadament en els anys 80. El sistema operatiu va ser tan popular que el seu màrqueting va arribar a un 90\% de la quota de mercat.
+\subsection{Windows}
 
-Caracteristiques:
+\label{subsec:Microsoft Windows}
+Windows és un sistema operatiu desenvolupat per Microsoft a principis dels anys 80. La seva popularitat va ser tan gran que va arribar a aconseguir fins a un 90\% de la quota de mercat en el seu moment més glorios.
+
+Característiques principals:
+\begin{itemize}
+ \item Interfície gràfica basada en finestres, que simplifica l'ús i redueix la necessitat de comandes de text.
+ \item Aplicacions integrades amb funcionalitats com la barra de tasques i el menú d'inici.
+ \item Amplia disponibilitat amb programari i facilitat per instal·lar aplicacions.
+\end{itemize}
+
+\subsection{Linux}
+
+\label{subsec:Linux}
+Linux és un sistema operatiu de codi obert creat per Linus Torvalds el 1991. És conegut per la seva versabilitat.
+
+Característiques principals:
+\begin{itemize}
+ \item Llibertat i personalització, gràcies al seu model de codi obert.
+ \item Gran seguretat i estabilitat.
+ \item Gran varietat de  recursos, ideal per a ordinadors antics o tasques especialitzades.
+\end{itemize}
 
 
-\subsection{Linux}\label{subsec:Linux}
+\subsection{macOS}
+
+\label{subsec:Mac OS}
+macOS és el sistema operatiu exclusiu dels ordinadors Apple, desenvolupat des dels anys 70. Destaca pel seu disseny pulit i la integració amb l'ecosistema de dispositius de la marca.
+Característiques principals:
+\begin{itemize}
+ \item Interfície elegant i intuïtiva
+ \item Optimització per al maquinari d'Apple
+\end{itemize}
+
+\textbf{Decisió Final: Windows i Linux}
+
+Hem optat per utilitzar Windows i Linux pels següents motius:
+\begin{itemize}
+\item Linux és ideal per a tasques avançades, terminals i automatitzacions, a més de ser compatible amb el processador Kile.
+
+\item Windows ofereix una major facilitat d'ús i compatibilitat amb programari general, sent perfecte per a tasques diàries.
+\end{itemize}
+
+No obstant, en un ordinador rarament hi han dos sistemes operatius convivint, això en porta ha fer un altre recerca, i n'hem trobat dues:
+\begin{enumerate}
+ \item Dual boot: Instal·lar ambdues sistemes en particions separades i triar-ne una en l’arrencada.
+ \item Màquina virtual: Executar un sistema dins de l’altre.
+\end{enumerate}
+
+Finalment, hem escollit la màquina virtual per la seva facilitat d’ús i baixos requisits, encara que el rendiment no sigui tan fluid com en dual boot. Aquesta opció ens permet provar Linux sense afectar la instal·lació principal de Windows.
+
+\subsection{Dos maquines virtual en un sol equip}
+
+\begin{enumerate}
+ \item Dual Boot:
+      \begin{itemize}
+       \item Requereix particionar el disc dur.
+       \item Permet un rendiment complet de cada sistema.
+       \item Menys flexible per canviar entre sistemes sense reiniciar.
+      \end{itemize}
+
+  \item Maquina virtual:
+        \begin{itemize}
+         \item Menys eficient en recursos (comparteix CPU, RAM i emmagatzematge).
+         \item Més fàcil de configurar i gestionar.
+         \item Ideal per proves o ús casual sense modificar l’entorn principal.
+        \end{itemize}
 
 
-\subsection{Mac OS}\label{subsec:Mac OS}
+\end{enumerate}
 
 
 
