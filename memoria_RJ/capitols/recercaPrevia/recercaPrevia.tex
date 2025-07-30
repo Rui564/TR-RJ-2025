@@ -58,14 +58,13 @@ Una xarxa neurnal combina diverses capes de procesament i utilitza elements simp
  \item \textbf{Capa de sortida:}La capa de sortida és l'última capa que forma una xarxa neuronal i és l'encarregada de produïr la predicció final del model. Aquesta capa utilitza la informació que ha processat la o les capes ocultes i la transforma a travès d'una funció activa per generar una sortida, que pot ser una predicció numèrica, una clasificació o qualsevol altre resultat.
  \end{itemize}
 
- \begin{comment}
-\end{itemize}
+
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.5\textwidth]{./figures/xarxa.png}
     \caption{Estructura d'una xarxa neuronal}
-\end{figure}%
-\end{comment}
+\end{figure}
+
 
 \section{Funció d'activació}\label{sec:3.5.3}
 Les funcions d'activació són un component integral de les xarxes neuronals que els permeten aprendre patrons complexos en les dades. Transformen el senyal d'entrada d'una neurona en un senyal de sortida que passa a la capa següent. Sense funcions d'activació, les xarxes neuronals es limitarien a modelar únicament relacions lineals entre entrades i sortides, és a dir, introdueixen la no linealitat i produeixen la sortida de la neurona.
@@ -75,13 +74,13 @@ Una funció d'activació molt coneguda és la funció sigmoide. La seva fórmula
 \[ \sigma(x) = \frac{1}{1 + e^{-x}} \]
 
 Aquesta funció matemàtica transforma qualsevol valor d'entrada real en un valor que està 0 i 1. La seva forma característica és una curva en forma de ``S''. Si el valor de $x$ que introduïm a la funció és molt gran o fins infinit $(\infty)$, llavors\ $\sigma$ serà 1; en canvi si és molt petit o menys infinit $(-\infty)$,\ $\sigma$ serà 0, i si x = 0,  $\sigma$  serà 0,5.
-\begin{comment}
+
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.5\textwidth]{./figures/grafica_sigmoide.png}
     \caption{Gràfica de la funció sigmoide}
 \end{figure}
-\end{comment}
+
 \textbf{Avantatges:}
 La avantatge principal de la funció sigmoide és la seva suavitat i la facilitat de derivació. La funció és diferenciable en tots els punts, això vol dir que permet als algoritmes d'optimització treballar amb la funció de manera eficient. A més, la funció és monòtona creixent, ho que significa que una entrada major sempre produirà una sortida major, fent que sigui útil per modelar relacions de causa i efecte.
 
@@ -92,8 +91,40 @@ La funció Unitat Rectificada Uniforme té la fòrmula seguent:
 \[ f(x) = \max(0, x) \]
 
 Aquesta funció té l'algoritme seguent: Si el valor d'entrada es menor que 0, mostra 0, si el valor d'entrada es major o igual que 0, mostrarà el valor d'entrada. Això vol dir que la funció és lineal si la entrada és més gran que 0 perquè la pendent és 1. Encara que la funció ReLU és lineal per a la mitat del seu espai d'entrada, tècnicament és una funció no lineal perquè té un punt no diferenciable en x = 0, on canvia bruscament respecte a x. Aquesta no linealitat permet a les xarxes neuronals apendre patrons complexos.
-\subsection{Funció Softmax}
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/ReLU.png}
+    \caption{Gràfica de la funció ReLU}
+\end{figure}
+
+Tot i això, aquesta funció té una desavanantatge; si utilitzen la funció ReLU com a funció d'activació pasarà una cosa, i es que tots els valors negatius són 0, per tant en el procès de retroprogramació, explicat a l'apartat \ref{sec:3.6.1}, no es produeix els valors d'ajust en les neurones negatives. Per solucionar aquest problema s'ha inventat una nova funció que es diu Leaky ReLU. Funciona igual com l funció ReLU, però té un valor determinat per les neurones negatives.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/leaky_ReLU.png}
+    \caption{Gràfica de la funció Leaky ReLU}
+\end{figure}
+
+\subsection{Funció Softmax}
+La funció Softmax, és una de les funcions que més s'utilitzen en xarxes neuronals i és especialment útil en el context dels problemes de clasificació multiclase. Aquesta funció opera sobre un vector que representa les previsions de cada clase, calculades per les capes anterior.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/Softmax.png}
+    \caption{Gràfica de la funció Softmax}
+\end{figure}
+
+Per a un vector d'entrada x amb elements x1, x2,..., xC, la funció Softmax es defineix com:
+\[f(x_i) = \frac{e^{x_i}}{\sum_{j=1}^{n} e^{x_j}}\]
+
+El resultat de la funció Softmax és una distribució de probabilitat de la quàl la suma és 1. Cada element del resultat representa la probailitat de que l'entrada pertanyi a una clase determinada. L'ús d'aquesta funció garantitza de que tots els valors de la sortida siguin positius. Això és molt important perquè les porbabilitats no poden ser negatives.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/representacio_Softmax.png}
+    \caption{Gràfica de la funció Leaky ReLU}
+\end{figure}
 
 \section{Com funciona una xarxa neuronal?}
 Ara que sabem quina estructura forma una xarxa neuronal artificial, toca entendre com funciona. Les neurones o nodes son els pilars més importants d'una xarxa neuronal. Cada neurona utilitza la entrada, la processa fent una suma ponderada entre els pesos i les entrades, després una funció d'activació, i pasa la sortida a altres neurones.
@@ -106,7 +137,7 @@ Les xarxes neuronals operen a travès d'un procès de dos pasos: La propagació 
 
 \subsection{Propagació directa}
 Durant la propagació directa, les dades ingresen en la xarxa a travès de la capa d'entrada i flueixen secuencialment a travès de les capes ocultes fins a la capa de sortida. En cada neurona, els valors d'entrada del model es multiplican per els seus pesos corresponents i es sumen. Aquesta suma ponderada es pasa a travès d'una funció d'activació, explicada prèviament a l'apartat \ref{sec:3.5.3}. Aquest procès continua capa per capa, això acaba conduïnt cap a la predicció final en la capa de sortida.
-\subsection{Retroprogramació}
+\subsection{Retroprogramació}\label{sec:3.6.1}
 Mentre que la programació directa fa prediccions, la retroporgramació és la forma en que la xarxa apren d'errors. Implica comparar la predicció de la xarxa amb el valor objectiu real i calcular unterme d'eror mitjançant una funció de pèrdua.
 Aquest error es propaga enrere a travès de la xarxa, començant des de la capa de sortida. Durant aquest procès, la xarxa ajusta els pesos i els baixos de cada connexió en funció de la seva contribució a l'error, amb l'objectiu de minimitzar-lo.
 Aquest procès iteratiu de càlcul d'erros i ajustament de pes permet a la xarxa d'aprenentatge profund millorar gradualment les seves prediccions.
