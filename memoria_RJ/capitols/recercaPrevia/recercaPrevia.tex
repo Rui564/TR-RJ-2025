@@ -248,9 +248,43 @@ Fons: \href{https://msmk.university/hidden-layer/}{https://msmk.university/hidde
 \section{Com funciona una xarxa neuronal?}
 Ara que sabem quina estructura forma una xarxa neuronal artificial, toca entendre com funciona. Les neurones o nodes son els pilars més importants d'una xarxa neuronal. Cada neurona utilitza la entrada, la processa fent una suma ponderada entre els pesos i les entrades, després una funció d'activació, i pasa la sortida a altres neurones.
 
-Les conexions(pesos i biaix) son la força de conexió entre dos neurones representades per un pes. Els pesos son valors que determinen cuánta influència té la producció d'una neurona sobre un altre. Els biaixos són paràmetres adicionals que ajude a ajustar la sortida de les neurones.
+Les conexions(pesos i biaix) son la força de conexió entre dos neurones representades per un pes.
+Els pesos: Son valors que determinen cuánta influència té la producció d'una neurona sobre un altre, marca la importància que té cada neurona.
+Els biaixos: Són paràmetres adicionals que ajuda a ajustar els valors de les neurones. És un valor capaç d'apendre com el pes, això vol dir que el model pot utilitzar l'algoritme de retroprogramació per a millorar els valors com per exemple els pesos i baixos.
+El umbral: Si la sortida de qualsevol node individual és més gran que el valor del umbral, aquell node s'acivarà i envia dades a la seguent capa de la xarxa. En cas contrari, no es pasa ninguna dada a la seguent capa de la xarxa.
 
-Per entendre-ho millor, donarem un exemple: Imagina que vols utilitzar una XNA profund que aprengui a reconeixer dígits escrits a mà des de l'ú fins al nou. Per la capa d'entrada, cada neurona d'aquesta capa representaria un píxel de la imatge. Seguit d'això, les capes ocultes serien les encarregades de processar aquesta informació de píxels, identificant característiques com curves, línies, o bucles que conforman els diferents dígits. Finalment, cada neurona de la capa de sortida representaria un dels deu dígits. La neurona amb la activació més alta indicarà la predicció de la xarxa.
+Hem de pensar en que cada node individual com el seu propi model de regressió lineal, compost per dades d'entrada, ponderacions, un umbral o un biaix, i una sortida. La fórmula per calcular els valors d'una xarxa neuronal és la seguent:
+
+\[
+\sum w_i x_i + \text{biaix} = w_1 x_1 + w_2 x_2 + w_3 x_3 + \text{biaix}
+\]
+
+$w_i$: Pesos
+$x_i$: Entrades
+
+
+Per entendre-ho millor, donarem un exemple: Imagina que vols anar a la platja a fer surf i la teva decisió dependrà d'aquestes 3 preguntes:
+
+Hi ha oles?
+Hi ha poca gent?
+Hi ha tauros?
+
+Analitzarem en detall com funciona un sol node de la xarxa neronal, utilitzant únicament valors binaris (0 y 1) com entrades, 0 voldrà dir ``No'' y 1 ``sí''.
+LLavors suposent el següent cas:
+
+$x_1$ = 1, les oles són bones
+$x_2$ = 0, hi ha molta gent a la platja
+$x_3$ = 1, Sí que tinc tempx
+
+Ara, hem d'asignar algunes ponderacions per determinar la importància. Unes ponderacions majors significan que determinades variabbles son més importants per la decisió.
+
+$w_1$ = 5, hi ha d'haveri moltes oles per poder surfejar
+$w_2$ = 2, no t'importa que hi hagi molta gent
+$w_3$ = 4, tens pors als taurons
+
+Per últim, ambé suposem un valor umbral de 3, ho que es traduiria en un valor de biaix de -3. Amb totes aquestes entrades, ja podem substituir els valors en la nostre fòrmula per obtenir la sortida.
+
+
 
 Les xarxes neuronals operen a travès d'un procès de dos pasos: La propagació directa i la retropropagació.
 
