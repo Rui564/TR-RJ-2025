@@ -52,7 +52,7 @@ Les dades son fonamentals per la IA ja que es la base de l'aprennetatge del mode
 
 \subsubsection{L'aprenentage automàtic(Machine learning)}
 \begin{itemize}
- \item L'aprenentatge automàtic és una branca crucial nde la intel·ligencia artificial, consisteix en cobrar vida a la maquina, donar-li el poder d'aprenentatge dels humans, realitzar tasques de manera autonoma i finalment les infinites possibilitats de evolucionar a traves de l'experiencia i molt més dades. Segons la \href{https://ischoolonline.berkeley.edu/blog/what-is-machine-learning/}{UC Berkeley} el procéss automatic es pot dividir-se en tres parts:
+ \item L'aprenentatge automàtic és una branca crucial de la intel·ligencia artificial, consisteix en cobrar vida a la maquina, donar-li el poder d'aprenentatge dels humans, realitzar tasques de manera autonoma i finalment les infinites possibilitats de evolucionar a traves de l'experiencia i molt més dades. Segons la \href{https://ischoolonline.berkeley.edu/blog/what-is-machine-learning/}{UC Berkeley} el procéss automatic es pot dividir-se en tres parts:
   \begin{enumerate}
   {\color{gray}
    \item \textbf{Mecanisme de predicció}
@@ -70,10 +70,44 @@ Les dades son fonamentals per la IA ja que es la base de l'aprennetatge del mode
    \item \nameref{subsubsec:Aprenentatge reforç}
   \end{description}
 \subsubsection{Aprenentatge supervisat}\label{subsubsec:Aprenentatge supervisat}
+L'aprenentatge supervisat és un tipus d'aprenentatge automàtic que treballa amb dades etiquetades, és a dir, dades que ja inclouen la solució o resultat desitjat. En aquest mètode, la intel·ligència artificial aprén a associar les dades d'entrada amb les seves etiquetes corresponents, mitjançant l'anàlisi d'exemples prèviament resolts. Això li permet desenvolupar la capacitat de resoldre problemes nous aplicant la lògica i els patrons identificats a partir de dades reals.\\
+Avantatges i desavanantatge:
+Aquest mètode destaca per la seva alta precisió en problemes ben definits, ja que al treballar amb dades prèviament etiquetades pot assolir bons resultats en tasques de classificació i regressió. Una altra avantatge important és la facilitat per avaluar el rendiment dels models. A més, es tracta d'una àmplia àrea d'estudi amb una gran varietat d'algoritmes ben desenvolupats i optimitzats, com ara els arbres de decisió, els random forests, les màquines de vectors de suport (SVM) o les xarxes neuronals. Finalment, un cop entrenat adequadament, el model pot generalitzar el seu aprenentatge i fer prediccions útils sobre dades noves.
+
+No obstant això, aquest enfocament també presenta alguns inconvenients significatius. El principal desavantatge és la seva forta dependència de conjunts de dades etiquetades, que sovint són costosos d'obtenir i preparar com las de medicines. Un altre problema freqüent és el sobreajustament (overfitting), que ocorre quan el model memoritza les dades d'entrenament en lloc d'aprendre patrons generals, la qual cosa provoca una perdua de raonament logica. Finalment, aquest mètode pot tenir dificultats per manejar certs tipus de dades no estructurades o problemes complexos, que podrien requerir quantitats molt grans de dades etiquetades per assolir un bon rendiment.
+
+
 \subsubsection{Aprenentatge semi-supervisat}\label{subsubsec:Aprenentatge semi-supervisat}
+
+L'aprenentatge semi-supervisat representa un punt intermig entre l'aprenentatge supervisat i el no supervisat, aprofitant tant dades etiquetades com no etiquetades per millorar l'eficiència dels models d'aprenentatge automàtic. Això funciona quan l'obtencio de les dades etiquetades son molt costoses i l'extraccio de les característiques son molt complexes.
 \subsubsection{Aprenentatge no supervisat}\label{subsubsec:Aprenentatge no supervisat}
-\subsubsection{Aprenentatge reforç}\label{subsubsec:Aprenentatge reforç}
+
+L'aprenentatge no supervisat és una branca de l'aprenentatge automàtic que s'utilitza quan no es disposa de dades etiquetades. A diferència de l'aprenentatge supervisat, on el model rep exemples amb les seves solucions correctes, en aquest cas l'algorisme ha de descobrir per si mateix l'estructura i els patrons, fent una diagnosticació agrupant les característiques similars que poden haber entre les dades.
+
+Depenen dels tipus de  problemes, les dades s'organitzen de diferents maneres.
+\begin{itemize}
+ \item \textbf{Clustering:} Tècnica que agrupa les dades en funció de les seves similituds.
+ \item \textbf{Anomaly detection:} Cerca patrons que no encaixen amb el comportament normal.
+ \item \textbf{Association:} Cerca relacions i correlacions entre variables en grans conjunts de dades.
+ \item \textbf{Autoencoders:} Els autoencoders són un tipus de xarxa neuronal artificial que aprèn a comprimir i reconstruir dades.
 \end{itemize}
+
+
+\subsubsection{Aprenentatge reforç}\label{subsubsec:Aprenentatge reforç}
+L'aprenentatge per reforç és una branca de l'aprenentatge automàtic inspirada en la manera com els éssers vius aprenen mitjançant la interacció amb el seu entorn. Com per exemple quan començem a jugar un videojoc, en els jocs rebem senyals de reforços, de si completem un nivell ens ortoga un trofeu, de si matem certs enemics guanyem bonificacions. Amb aquest sistema de penalitzacio i recompenses guia al jugador a millorar les seves tecniques de videojocs , i això  el podem aplicar perfectament en la IA.
+Totes les aprenantatges de reforç segueixen pragmaticament aquest esquema per l'aprenentage:
+\begin{enumerate}
+ \item Acció
+ \item Observació
+ \item Recompensa
+ \item Ajust d'estrategia
+\end{enumerate}
+
+
+
+
+\end{itemize}
+
 \subsubsection{L'aprenentatge profund}
 \begin{itemize}
  \item L'aprenentatge profund és una branca de l'aprenentatge automàtc, utilitza xarxes neuronals explicat en l'apartat \ref{sec:3.3} amb múltiples capes per procesar dades complexes i extraure característiques rellevants, això permet a la IA realitzar tasques com el reconeixement d'imatges.
