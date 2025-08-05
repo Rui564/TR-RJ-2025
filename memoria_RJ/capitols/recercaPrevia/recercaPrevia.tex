@@ -53,6 +53,7 @@ Les dades son fonamentals per la IA ja que es la base de l'aprennetatge del mode
 \subsubsection{L'aprenentage automàtic(Machine learning)}
 \begin{itemize}
  \item L'aprenentatge automàtic és una branca crucial de la intel·ligencia artificial, consisteix en cobrar vida a la maquina, donar-li el poder d'aprenentatge dels humans, realitzar tasques de manera autonoma i finalment les infinites possibilitats de evolucionar a traves de l'experiencia i molt més dades. Segons la \href{https://ischoolonline.berkeley.edu/blog/what-is-machine-learning/}{UC Berkeley} el procéss automatic es pot dividir-se en tres parts:
+
   \begin{enumerate}
   {\color{gray}
    \item \textbf{Mecanisme de predicció}
@@ -62,6 +63,7 @@ Les dades son fonamentals per la IA ja que es la base de l'aprennetatge del mode
    \item \textbf{Algorisme d'optimització}
    \subitem\hspace*{-1\leftmargin} El procés que ajusta automàticament el model per minimitzar l'error, modificant els paràmetres interns per millorar les prediccions futures.} \ \footnote{Llengua original: Anglessa; Traduit per el chat bot Deepseek}
   \end{enumerate}
+   \end{itemize}
   Segons \href{https://blogs.nvidia.com/blog/supervised-unsupervised-learning/}{Nvidia} hi han molts tipus d'apranentage automatics:
   \begin{description}
    \item \nameref{subsubsec:Aprenentatge supervisat}
@@ -70,9 +72,10 @@ Les dades son fonamentals per la IA ja que es la base de l'aprennetatge del mode
    \item \nameref{subsubsec:Aprenentatge reforç}
   \end{description}
 \subsubsection{Aprenentatge supervisat}\label{subsubsec:Aprenentatge supervisat}
-L'aprenentatge supervisat és un tipus d'aprenentatge automàtic que treballa amb dades etiquetades, és a dir, dades que ja inclouen la solució o resultat desitjat. En aquest mètode, la intel·ligència artificial aprén a associar les dades d'entrada amb les seves etiquetes corresponents, mitjançant l'anàlisi d'exemples prèviament resolts. Això li permet desenvolupar la capacitat de resoldre problemes nous aplicant la lògica i els patrons identificats a partir de dades reals.\\
-Avantatges i desavanantatge:
-Aquest mètode destaca per la seva alta precisió en problemes ben definits, ja que al treballar amb dades prèviament etiquetades pot assolir bons resultats en tasques de classificació i regressió. Una altra avantatge important és la facilitat per avaluar el rendiment dels models. A més, es tracta d'una àmplia àrea d'estudi amb una gran varietat d'algoritmes ben desenvolupats i optimitzats, com ara els arbres de decisió, els random forests, les màquines de vectors de suport (SVM) o les xarxes neuronals. Finalment, un cop entrenat adequadament, el model pot generalitzar el seu aprenentatge i fer prediccions útils sobre dades noves.
+L'aprenentatge supervisat és un tipus d'aprenentatge automàtic que treballa amb dades etiquetades, és a dir, dades que ja inclouen la solució o resultat desitjat. En aquest mètode, la intel·ligència artificial aprén a associar les dades d'entrada amb les seves etiquetes corresponents, mitjançant l'anàlisi d'exemples prèviament resolts. Això li permet desenvolupar la capacitat de resoldre problemes nous aplicant la lògica i els patrons identificats a partir de dades reals. \\
+
+\textbf{Avantatges i desavanantatge:}
+Aquest mètode destaca per la seva alta precisió en problemes ben definits, ja que al treballar amb dades prèviament etiquetades pot assolir bons resultats en tasques de classificació i regressió. Una altra avantatge important és la facilitat per avaluar el rendiment dels models. A més, es tracta d'una àmplia àrea d'estudi amb una gran varietat d'algoritmes ben desenvolupats i optimitzats, com ara els arbres de decisió, els random forests, les màquines de vectors de suport (SVM) o les xarxes neuronals. Finalment, un cop entrenat adequadament, el model pot generalitzar el seu aprenentatge i fer prediccions útils sobre dades noves.\\
 
 No obstant això, aquest enfocament també presenta alguns inconvenients significatius. El principal desavantatge és la seva forta dependència de conjunts de dades etiquetades, que sovint són costosos d'obtenir i preparar com las de medicines. Un altre problema freqüent és el sobreajustament (overfitting), que ocorre quan el model memoritza les dades d'entrenament en lloc d'aprendre patrons generals, la qual cosa provoca una perdua de raonament logica. Finalment, aquest mètode pot tenir dificultats per manejar certs tipus de dades no estructurades o problemes complexos, que podrien requerir quantitats molt grans de dades etiquetades per assolir un bon rendiment.
 
@@ -97,21 +100,27 @@ Depenen dels tipus de  problemes, les dades s'organitzen de diferents maneres.
 L'aprenentatge per reforç és una branca de l'aprenentatge automàtic inspirada en la manera com els éssers vius aprenen mitjançant la interacció amb el seu entorn. Com per exemple quan començem a jugar un videojoc, en els jocs rebem senyals de reforços, de si completem un nivell ens ortoga un trofeu, de si matem certs enemics guanyem bonificacions. Amb aquest sistema de penalitzacio i recompenses guia al jugador a millorar les seves tecniques de videojocs , i això  el podem aplicar perfectament en la IA.
 Totes les aprenantatges de reforç segueixen pragmaticament aquest esquema per l'aprenentage:
 \begin{enumerate}
- \item Acció
- \item Observació
- \item Recompensa
- \item Ajust d'estrategia
+ \item \textbf{Acció}
+ \item \textbf{Observació}
+ \item \textbf{Recompensa}
+ \item \textbf{Ajust d'estrategia}
 \end{enumerate}
 
 
-
-
-\end{itemize}
-
-\subsubsection{L'aprenentatge profund}
+\subsubsection{Aprenentatge profund}
 \begin{itemize}
- \item L'aprenentatge profund és una branca de l'aprenentatge automàtc, utilitza xarxes neuronals explicat en l'apartat \ref{sec:3.3} amb múltiples capes per procesar dades complexes i extraure característiques rellevants, això permet a la IA realitzar tasques com el reconeixement d'imatges.
+    \item L'aprenentatge profund és una branca de l'aprenentatge automàtic que utilitza \nameref{sec:xarxa neuronal} amb múltiples capes per processar dades complexes i extreure'n característiques rellevants. Inspirat en el funcionament del cervell humà, aquest enfocament permet identificar patrons i analitzar dades de alta complexitat. Durant la fase d'identificació, empra un aprenentatge jeràrquic, és a dir, progressa gradualment des de característiques simples fins a patrons complexes.
 \end{itemize}
+
+
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/Aprenentatge.png}
+    \caption{Les capes que te la IA per funcionar}
+\end{figure}
+
+
 \subsection{Potència de còmput}\label{subsec:Potència de còmput}
 \begin{itemize}
  \item Hardware potent: GPUs (unitats de processament gràfic) o TPUs (Tensor Processing Units) per accelerar els càlculs.
@@ -143,7 +152,7 @@ Totes les aprenantatges de reforç segueixen pragmaticament aquest esquema per l
 Fonts:\href{https://blogs.uoc.edu/digitapia/the-european-unions-artificial-intelligence-act-explained/}{Bloc IA} \href{https://formaciooberta.eapc.gencat.cat/contingutsdelscursos/tdp/080_int_artificial/inici.html}{EAPC Wiki}
 \href{https://www.ibm.com/think/topics/machine-learning}{IBM ML}
 
-\section{Que és una xarxa neuronal artificial/biologica?}\label{sec:3.3}
+\section{Que és una xarxa neuronal artificial/biologica?}\label{sec:xarxa neuronal}
 Una xarxa neuronal artificial és un model computacional inspirat en el funcionament del cervell humà, utilitzat en el camp de la intel·ligència artificial (IA) i l'aprenentatge automàtic (machine learning). Està dissenyada per reconèixer patrons, prendre decisions i aprendre a partir de dades, sense ser programada explícitament per a cada tasca específica.
 Si tenim una artificial també tindrem una biològica. Una xarxa neuronal biològica es refereix al sistema interconnectat de neurones (cèl·lules nervioses) en el cervell i el sistema nerviós dels éssers vius. Aquestes xarxes són la base de la cognició, l'aprenentatge i les funcions biològiques en humans i animals.
 Aquí hi és una taula de comparació entre una biologica i artificial:
