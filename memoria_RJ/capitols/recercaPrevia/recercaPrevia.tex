@@ -20,6 +20,21 @@ Milions d’usuaris van descobrir models com ChatGPT que podien escriure, tradui
 \href{https://openai.com/index/chatgpt/}{ChatGPT (2022)},
 \cite{10.1093/mind/LIX.236.433}
 )
+\section{Historia de les xarxes neuronals artificials}
+La història de les xarxes neuronals és molt extensa, per tant, resumirem molt aquest apartat, parlant molt breument de les creacions de xarxes més importants.
+\subsection{Perceptron (1958)}
+En la dècada de 1950 a 1960 el psicòleg i informàtic Frank Rosenblatt va crear el Percecptrò, la primera xarxa neuronal creada, a partir d'aquest moment, es potenciarien les xarxes neuronals.
+
+Aquest model pren varies entrades binaries $x_1$, $x_2$, fins les que calguin, i produeix una sola sortida binaria. Per calcular la sortida, Rosenblatt va introduir els ``pesos'', que está explict a l'apartat \ref{sec:3.8}, els seus principals usos són decsions binàries senziles, o per crear funcions lògiques com OR o AND.
+
+\subsection{Multiplayer Perceptron}
+El multiplayer perceptron és una ampliació de la percepció d'una única neurona a més d'una. A més, apareix el concepte de capes d'entrades, capes ocultes i capes de sortida, (tot això explicat a l'apartat \ref{sec:3.6}) però amb valors d'entrada i rtida binàries. No hem d'ignorar que els científics asignaban el valor del pes i del umbral manualment en cada neurona, quan més perceptrons havien en les capes, era molt més difícil establir els pesos desitjats.
+
+\subsection{Neurones sigmoide}
+Per aconseguir que les xarxes neuronals aprenguin per elles mateixes, es a dir, aprenentatge automàtic \ref{3.4.2}, va ser necessari introduir un nou tipus de neurones, que són les Neurones Sigmoides, que són similar al perceptró, aquestes neurones en comptes de que les entrades siguin 1 o 0, puguin tenir valors com 0.5, o 0.374 o qualsevol altre valor real. Ara les sorides en lloc de ser 0 o 1, serà d(w . x + b), on d serà la funció sigmoide, explicat en l'apartat \ref{3.7.1}. Aquesta va ser la primera funció d'activació \ref{3.5.3}.
+
+\subsection{Xarxa neuronal prealmentada (Feedforward)}
+Les xarxes neuronals prealimentades són les que les sortides d'una sola capa són utilitzades com entrades en la pròxima, com explicarem més endevant en l'apartat \ref{sec:3.6} capa, on les conexions entre les unitats no dornen un cicle.
 
 \section{Que és la Ia?}
 Hem estat parlant molt durant aquest treball sobre la IA, i ara que em après quina és la seva història, hem de saber que és. Doncs bé, podem definir la IA com sistemes de software i de hardware disenyats per humans que actúen en un la dimensió física o digital, es a dir, raonar sobre el coneixemen, processant la informació derivada de dades i prendre les millors decisions per assolir l'objectiu donat. O dit d'un altre manera, és un camp de la informàtica que consisteix en un conjunt de capacitats interectuals i cognitives expresades per un sistema informàtic creat pels humans que té com a proposit imitar la intel·ligència humana, com escriure poemes, reconeixer imatges, fer prediccions basades en dades i més funcions. Un exemple de IA i que tot el món coneix i utilitza és el ChatGPT, un chatbot impulsada per un model d'intel·ligència artificial generativa de la empresa OpenAI. Utilitza técniques de processament de llenguatge natural per comprendre preguntes fetes per l'usuari i generar respostes coherents en converses, simulant una interacció similar a la d'un humà. Aquesta IA ha avançat molt desde el seu llençament, ara pot generar o editar imatges, procesar audios, llegir arxius, comrendre imatges i molt més.
