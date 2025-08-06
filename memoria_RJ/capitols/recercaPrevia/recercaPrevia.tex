@@ -184,7 +184,7 @@ Aquí hi és una taula de comparació entre una biologica i artificial:
 \caption{Comparativa entre xarxes neuronals biològiques i artificials}
 \end{table}
 Fons: \href{https://www.ibm.com/docs/es/spss-modeler/saas?topic=networks-basics-neural}{https://www.ibm.com/docs/es/spss-modeler/saas?topic=networks-basics-neural}
-\section{Estructura d'una xarxa neuronal}
+\section{Estructura d'una xarxa neuronal}\label{sec:3.6}
 Una xarxa neurnal combina diverses capes de procesament i utilitza elements simples que operen en paral·lel, simulen i estan inspirades en els sistemes nerviosos biològics com hem explican en l'apartat \ref{sec:3.3}. Consta d'una capa d'entrada, seguit d'una o varies capes ocultes i finalment una capa de sortida. Les capes estan interconectades mitjançant nodes o neurones; cada capa utilitza la sortida de la capa anterior com a entrada.
 
 \begin{itemize}
@@ -207,7 +207,7 @@ Fons: \href{https://msmk.university/hidden-layer/}{https://msmk.university/hidde
 \section{Funció d'activació}\label{sec:3.5.3}
 Les funcions d'activació són un component integral de les xarxes neuronals que els permeten aprendre patrons complexos en les dades. Transformen el senyal d'entrada d'una neurona en un senyal de sortida que passa a la capa següent. Sense funcions d'activació, les xarxes neuronals es limitarien a modelar únicament relacions lineals entre entrades i sortides, és a dir, introdueixen la no linealitat i produeixen la sortida de la neurona.
 
-\subsection{Funció sigmoide}
+\subsection{Funció sigmoide}\label{3.7.1}
 Una funció d'activació molt coneguda és la funció sigmoide. La seva fórmula és:
 \[ \sigma(x) = \frac{1}{1 + e^{-x}} \]
 
@@ -269,7 +269,7 @@ Fons: \href{https://msmk.university/hidden-layer/}{https://msmk.university/hidde
 
 \href{https://jacar.es/la-funcion-sigmoide-una-herramienta-clave-en-redes-neuronales/}{https://jacar.es/la-funcion-sigmoide-una-herramienta-clave-en-redes-neuronales/}
 
-\section{Com funciona una xarxa neuronal?}
+\section{Com funciona una xarxa neuronal?}\label{sec:3.8}
 Ara que sabem quina estructura forma una xarxa neuronal artificial, toca entendre com funciona. Les neurones o nodes son els pilars més importants d'una xarxa neuronal. Cada neurona utilitza la entrada, la processa fent una suma ponderada entre els pesos i les entrades, després una funció d'activació, i pasa la sortida a altres neurones.
 
 Les conexions(pesos i biaix) son la força de conexió entre dos neurones representades per un pes.
