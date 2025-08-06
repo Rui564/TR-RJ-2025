@@ -64,7 +64,7 @@ Les dades son fonamentals per la IA ja que es la base de l'aprennetatge del mode
 
 
 \subsection{Algorismes}\label{subsec:Algorismes}
-
+\subsection{Algoritme Gredient descendent:}
 \subsubsection{L'aprenentage automàtic(Machine learning)}
 \begin{itemize}
  \item L'aprenentatge automàtic és una branca crucial de la intel·ligencia artificial, consisteix en cobrar vida a la maquina, donar-li el poder d'aprenentatge dels humans, realitzar tasques de manera autonoma i finalment les infinites possibilitats de evolucionar a traves de l'experiencia i molt més dades. Segons la \href{https://ischoolonline.berkeley.edu/blog/what-is-machine-learning/}{UC Berkeley} el procéss automatic es pot dividir-se en tres parts:
@@ -273,10 +273,10 @@ Aquesta funció matemàtica transforma qualsevol valor d'entrada real en un valo
 \end{figure}
 
 \textbf{Avantatges:}
-La avantatge principal de la funció sigmoide és la seva suavitat i la facilitat de derivació. La funció és diferenciable en tots els punts, això vol dir que permet als algoritmes d'optimització treballar amb la funció de manera eficient. A més, la funció és monòtona creixent, ho que significa que una entrada major sempre produirà una sortida major, fent que sigui útil per modelar relacions de causa i efecte.
+La avantatge principal de la funció sigmoide és la seva suavitat i la facilitat de derivació. La funció és diferenciable en tots els punts, cosa que facilita el càlcul de gradients, això vol dir que permet als algoritmes d'optimització treballar amb la funció de manera eficient. A més, la funció és monòtona creixent, ho que significa que una entrada major sempre produirà una sortida major, fent que sigui útil per modelar relacions de causa i efecte.
 
 \textbf{Desavantatges:}
-Tanmateix, la funció sigmoide també té algunes desavantatges. Un dels seus problemes és que la funció es satura quan els valors d'entrades són grans, ho que significa que la derivada de la funció s'apropa a 0 i l'aprenentatge es relentitza. Un altre problema és que aquesta funció no és simètrica, causant a les entrades negatives i positives es processin de mandera diferent, això pot afectaral rendiment de la xarxa.
+Tanmateix, la funció sigmoide també té algunes desavantatges. Un dels seus problemes és que la funció es satura els gradients. Quan els valors d'entrades són grans, ho que significa que la derivada de la funció s'apropa a 0 i l'aprenentatge es relentitza. Un altre problema és que aquesta funció no és simètrica, causant a les entrades negatives i positives es processin de mandera diferent, això pot afectaral rendiment de la xarxa. Tot això dificulta el procès d'entrenament de la xarxa en la ràpida minimització de la funció d'error utilitzant l'algoritme de Gradient Descendent.
 \subsection{Funció ReLU(Funció Uniat Rectificada Uniforme)}
 La funció Unitat Rectificada Uniforme té la fòrmula seguent:
 \[ f(x) = \max(0, x) \]
@@ -289,7 +289,7 @@ Aquesta funció té l'algoritme seguent: Si el valor d'entrada es menor que 0, m
     \caption{Gràfica de la funció ReLU}
 \end{figure}
 
-Tot i això, aquesta funció té una desavanantatge; si utilitzen la funció ReLU com a funció d'activació pasarà una cosa, i es que tots els valors negatius són 0, per tant en el procès de retroprogramació, explicat a l'apartat \ref{sec:3.6.1}, no es produeix els valors d'ajust en les neurones negatives. Per solucionar aquest problema s'ha inventat una nova funció que es diu Leaky ReLU. Funciona igual com l funció ReLU, però té un valor determinat per les neurones negatives.
+Tot i això, aquesta funció té una desavanantatge; si utilitzen la funció ReLU com a funció d'activació pasarà una cosa, i es que tots els valors negatius són 0, per tant en el procès de retropropagació, explicat a l'apartat \ref{sec:3.6.1}, no es produeix els valors d'ajust en les neurones negatives. Per solucionar aquest problema s'ha inventat una nova funció que es diu Leaky ReLU. Funciona igual com l funció ReLU, però té un valor determinat per les neurones negatives.
 
 \begin{figure}[h!]
     \centering
@@ -327,7 +327,7 @@ Ara que sabem quina estructura forma una xarxa neuronal artificial, toca entendr
 
 Les conexions(pesos i biaix) son la força de conexió entre dos neurones representades per un pes.
 Els pesos: Son valors que determinen cuánta influència té la producció d'una neurona sobre un altre, marca la importància que té cada neurona.
-Els biaixos: Són paràmetres adicionals que ajuda a ajustar els valors de les neurones. És un valor capaç d'apendre com el pes, això vol dir que el model pot utilitzar l'algoritme de retroprogramació per a millorar els valors com per exemple els pesos i baixos.
+Els biaixos: Són paràmetres adicionals que ajuda a ajustar els valors de les neurones. És un valor capaç d'apendre com el pes, això vol dir que el model pot utilitzar l'algoritme de retropropagació per a millorar els valors com per exemple els pesos i baixos.
 El umbral: Si la sortida de qualsevol node individual és més gran que el valor del umbral, aquell node s'acivarà i envia dades a la seguent capa de la xarxa. En cas contrari, no es pasa ninguna dada a la seguent capa de la xarxa.
 
 Hem de pensar en que cada node individual com el seu propi model de regressió lineal, compost per dades d'entrada, ponderacions, un umbral o un biaix, i una sortida. La fórmula per calcular els valors d'una xarxa neuronal és la seguent:
@@ -365,18 +365,21 @@ Per últim, ambé suposem un valor umbral de 3, ho que es traduiria en un valor 
 
 Les xarxes neuronals operen a travès d'un procès de dos pasos: La propagació directa i la retropropagació.
 
-\subsection{Propagació directa}
-Durant la propagació directa, les dades ingresen en la xarxa a travès de la capa d'entrada i flueixen secuencialment a travès de les capes ocultes fins a la capa de sortida. En cada neurona, els valors d'entrada del model es multiplican per els seus pesos corresponents i es sumen. Aquesta suma ponderada es pasa a travès d'una funció d'activació, explicada prèviament a l'apartat \ref{sec:3.5.3}. Aquest procès continua capa per capa, això acaba conduïnt cap a la predicció final en la capa de sortida.
-\subsection{Retroprogramació}\label{sec:3.6.1}
-Mentre que la programació directa fa prediccions, la retroporgramació és la forma en que la xarxa apren d'errors. Implica comparar la predicció de la xarxa amb el valor objectiu real i calcular unterme d'eror mitjançant una funció de pèrdua.
+\subsection{Propagació cap a davant}
+Durant la propagació cap a davan, les dades ingresen en la xarxa a travès de la capa d'entrada i flueixen secuencialment a travès de les capes ocultes fins a la capa de sortida. En cada neurona, els valors d'entrada del model es multiplican per els seus pesos corresponents i es sumen. Aquesta suma ponderada es pasa a travès d'una funció d'activació, explicada prèviament a l'apartat \ref{sec:3.5.3}. Aquest procès continua capa per capa, això acaba conduïnt cap a la predicció final en la capa de sortida.
+
+Aquest procès és important per les seguents raons:
+\begin{itemize}
+ \item \textbf{Base per l'aprenentatge:} No es pot comprendre com aprenen les xarxes neuronals sense primer entendre com fan prediccions. La programació cap a davan és el requisit prèvi que s'ha de coneixer per comprendre la \ref{sec:3.6.1}{retroporgramació}, l'algoritme que permet l'aprenentatge.
+ \item \textbf{Optimització:} En el cas de que una xarxa neuronal no funcioni bé, saber com flueixen les dades per la xarxa t'ajudarà a identificar i solucionar problemes.
+ \item \textbf{Diseny del model:} Un diseny eficaç de la xarxa requereix comprendre com es distribueix la informació a travès de les configuracions de capes.
+\end{itemize}
+
+\subsection{Retropropagació}\label{sec:3.6.1}
+Mentre que la programació directa fa prediccions, la retroporgramació és la forma en que la xarxa apren d'errors. Implica comparar la predicció de la xarxa amb el valor objectiu real i calcular un terme d'eror mitjançant una funció de pèrdua.
 Aquest error es propaga enrere a travès de la xarxa, començant des de la capa de sortida. Durant aquest procès, la xarxa ajusta els pesos i els baixos de cada connexió en funció de la seva contribució a l'error, amb l'objectiu de minimitzar-lo.
 Aquest procès iteratiu de càlcul d'erros i ajustament de pes permet a la xarxa d'aprenentatge profund millorar gradualment les seves prediccions.
-
-\section{Tipus de xarxes neuronals}
-Les xarxes neuronals es poden clasificar en diferents tipus, amb finalitats diferents. És una llista molt extensa, però parlarem dels més comuns.
-\subsection{El perceptró}
-El perceptró és la xarxa neuronal més antiga, creada per Frank Rosenblatt en 1958. Es tracta d'un algoritme per l'aprenentatge supervisat de clasificadors binaris. Aquest model és el que hem utilitzar en l'exemple de l'apartat \label{sec:3.7}, on l'algoritme enseña automaticament els coeficients de pesos. Per determinar si una neurona s'activa o no, com vam veure en el exemple, les dades d'entrada es multiplican per el seu pes.
-\subsection{Xarxes neuronals convolucionals}
-
+\subsection{La regla de la cadena}
+La regla de c
 
 
