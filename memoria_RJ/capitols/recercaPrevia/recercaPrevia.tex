@@ -65,8 +65,13 @@ Les dades son fonamentals per la IA ja que es la base de l'aprennetatge del mode
 
 \subsection{Algorismes}\label{subsec:Algorismes}
 \subsection{Algoritme Gredient descendent:}
-L'algoritme de Gradient descendent és un algoritme imprescindible en l'entrenament de les xarxes neuronals, i de la intel·ligència artificial. Primer de tot hem d'entendre la seguent pregunta: Què és un gradient? En les xarxes neuronals, un gradient és un vector que indica la direcció en la que es mou i amb quina intensitat per que la funció d'error cambii més ràpid respecte als pesos de la xarxa neuronal. Per calcular el gradient, s'utilitza la derivada parcial de la funció de pèrdua respecte als pesos.
-El objectiu de l'algoritme gradiant descendent és minimitzar la funció d'error, o també l'error entre la predicció, es a dir, trobar la funció de pèrdua mínima, per aconseguir-ho s'ha de trobar el valor mínim de la funció. La funció de pèrdua mínima significa que els errors dels paràmetres (pesos i baixos) de la xarxa han de ser aproximades al valor real, on s'ajusten aquest paràmetres ja que no són exactes.
+L'algoritme de Gradient descendent és un algoritme imprescindible en l'entrenament de les xarxes neuronals, i de la intel·ligència artificial. Primer de tot hem d'entendre que és un gradient i una funció d'error.
+
+\textbf{Gradient:}En les xarxes neuronals, un gradient és un vector que indica la direcció en la que es mou i amb quina intensitat per que la funció d'error cambii més ràpid respecte als pesos de la xarxa neuronal. Per calcular el gradient, s'utilitza la derivada parcial de la funció de pèrdua respecte als pesos.
+
+\textbf{Funció d'error:} La funció d'error tracta de determinar el error entre el valor estimat i el valor real, amb la finalitat d'optimitzar els paràmetres de la xarxa neuronal.
+
+L' objectiu de l'algoritme gradiant descendent és minimitzar la funció d'error, o també l'error entre la predicció, es a dir, trobar la funció de pèrdua mínima, per aconseguir-ho s'ha de trobar el valor mínim de la funció. La funció de pèrdua mínima significa que els errors dels paràmetres (pesos i baixos) de la xarxa han de ser molt aproximades al valor real, on s'ajusten aquest paràmetres ja que no són exactes.
 
 \begin{figure}[H]
     \centering
@@ -74,14 +79,41 @@ El objectiu de l'algoritme gradiant descendent és minimitzar la funció d'error
     \caption{Gràfica de gradient descendent}
 \end{figure}
 
-En la figura d'adalt el valor inicial és un punt qualsevol de la funció. Al inici de la funció, en el punt 0, els paràmetres de la funció s'asignen aleatoriament, i la pèrdua és alta, es a dir, que els errors són grans. Desde aquell punt, trobarem la derivada, i el gradiet serà l'encarregat de guiar els canvis als paràmetres.
-al principi de tot, el gradient serà molt pronunciat, però a mesura que es van generant nous paràmetres durant l'entrenament, s'anirà reduint fins al put més baix d'aquesta corba, on els errors són molt petits, aquest punt se li diu punt de convergència. Aquí és on la xarxa ha après i ha ajustat millor les dades.
+En la figura d'adalt, on podem aprciar quatre iteracions, el valor inicial és un punt qualsevol de la funció. Al inici de la funció, en el punt 0, els paràmetres de la funció s'asignen aleatoriament, i la pèrdua és alta, es a dir, que els errors són grans. Desde aquell punt, trobarem la derivada parcial en cada una de les iteracions, i el gradiet serà l'encarregat de guiar els canvis als paràmetres.
+Al principi de tot, el gradient serà molt pronunciat, però a mesura que es van generant nous paràmetres durant l'entrenament, s'anirà reduint fins al put més baix d'aquesta corba, on els errors són molt petits, aquest punt se li diu punt de convergència. Aquí és on la xarxa ha après i ha ajustat millor les dades.
 
 La fòrmula del gradient ascendent és la seguent: \\
 
-$\theta^{(t+1)} = \theta^{(t)} + \alpha \nabla_\theta f(\theta^{(t)})$\\
+$\Delta w_{ij} = a \left( \frac{\partial E}{\partial w_{ij}} \right)$ \\
 
 La fòrmula del gradient ascendent és la formula més ràpida per arribar al punt màxim dels gradients. Per tant la fòrmula del gradient descendent seria aquesta mateixa en negatiu, perquè és la forma més ràpida de trobar el punt mínim.
+
+$\Delta w_{ij} = -a \left( \frac{\partial E}{\partial w_{ij}} \right)$
+
+\textbf{Explicació de la fòrmula:}
+$\Delta w_{ij}$: Representa quant s'ajusta el pes en una iteració de l'entrenamen.
+
+$a$: És la constant d'aprenentatge, aquesta constant defineix quant afecta el gradiant en l'actualització dels nostres paràmetres en cada iteració. Si aquest valor és gran, cada iteració és molt gran, i el punt serà incapaç d'introduir-se al punt de convergència, causant que el procès d'optimització acabi en un bucle infinit. Tanmateix, si és petit, el punt s'aproxima poc a poc al punt de converència, però calcularà moltes iterai això pot ser ineficient. Per tant aquest valor ha de estar en un punt mig, en que no sigui molt gran ni molt petit.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/constant_gradient.png}
+    \caption{Gràfiques de valors gran i petit de la constant d'aprenentatge}
+\end{figure}
+
+
+$\left( \frac{\partial E}{\partial w_{ij}} \right)$: És la derivada parcial de $E$ respecte a $\Delta w_{ij}$.
+
+A la figura 3.2, és una representació en 2 d, però en situacions reals el gradient descendent es representa en la dimensió 3 d.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/gradient_descendent3d.png}
+    \caption{Repressentació del gradient descendent en 3d}
+\end{figure}
+
+Fonts: \href{https://www.ibm.com/es-es/think/topics/gradient-descent}{ibm.com} i \href{https://www.youtube.com/watch?v=A6FiCDoz8_4&ab_channel=DotCSV}{YouTube}.
 
 \subsubsection{L'aprenentage automàtic(Machine learning)}
 \begin{itemize}
@@ -443,30 +475,30 @@ Hem de pensar en que cada node individual com el seu propi model de regressió l
 
 \[
 \sum w_i x_i + \text{biaix} = w_1 x_1 + w_2 x_2 + w_3 x_3 + \text{biaix}
-\]
+\] \\
 
-$w_i$: Pesos
-$x_i$: Entrades
+$w_i$: Pesos\\
+$x_i$: Entrades\\
 
 
-Per entendre-ho millor, donarem un exemple: Imagina que vols anar a la platja a fer surf i la teva decisió dependrà d'aquestes 3 preguntes:
+Per entendre-ho millor, donarem un exemple: Imagina que vols anar a la platja a fer surf i la teva decisió dependrà d'aquestes 3 preguntes:\\
 
-Hi ha oles?
-Hi ha poca gent?
-Hi ha tauros?
+Hi ha oles?\\
+Hi ha poca gent?\\
+Hi ha tauros?\\
 
 Analitzarem en detall com funciona un sol node de la xarxa neronal, utilitzant únicament valors binaris (0 y 1) com entrades, 0 voldrà dir ``No'' y 1 ``sí''.
 LLavors suposent el següent cas:
 
-$x_1$ = 1, les oles són bones
-$x_2$ = 0, hi ha molta gent a la platja
-$x_3$ = 1, Sí que tinc tempx
+$x_1$ = 1, les oles són bones\\
+$x_2$ = 0, hi ha molta gent a la platja\\
+$x_3$ = 1, Sí que tinc temps\\
 
 Ara, hem d'asignar algunes ponderacions per determinar la importància. Unes ponderacions majors significan que determinades variabbles son més importants per la decisió.
 
-$w_1$ = 5, hi ha d'haveri moltes oles per poder surfejar
-$w_2$ = 2, no t'importa que hi hagi molta gent
-$w_3$ = 4, tens pors als taurons
+$w_1$ = 5, hi ha d'haveri moltes oles per poder surfejar\\
+$w_2$ = 2, no t'importa que hi hagi molta gent\\
+$w_3$ = 4, tens pors als taurons \\
 
 Per últim, ambé suposem un valor umbral de 3, ho que es traduiria en un valor de biaix de -3. Amb totes aquestes entrades, ja podem substituir els valors en la nostre fòrmula per obtenir la sortida.
 
