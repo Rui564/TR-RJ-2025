@@ -65,6 +65,24 @@ Les dades son fonamentals per la IA ja que es la base de l'aprennetatge del mode
 
 \subsection{Algorismes}\label{subsec:Algorismes}
 \subsection{Algoritme Gredient descendent:}
+L'algoritme de Gradient descendent és un algoritme imprescindible en l'entrenament de les xarxes neuronals, i de la intel·ligència artificial. Primer de tot hem d'entendre la seguent pregunta: Què és un gradient? En les xarxes neuronals, un gradient és un vector que indica la direcció en la que es mou i amb quina intensitat per que la funció d'error cambii més ràpid respecte als pesos de la xarxa neuronal. Per calcular el gradient, s'utilitza la derivada parcial de la funció de pèrdua respecte als pesos.
+El objectiu de l'algoritme gradiant descendent és minimitzar la funció d'error, o també l'error entre la predicció, es a dir, trobar la funció de pèrdua mínima, per aconseguir-ho s'ha de trobar el valor mínim de la funció. La funció de pèrdua mínima significa que els errors dels paràmetres (pesos i baixos) de la xarxa han de ser aproximades al valor real, on s'ajusten aquest paràmetres ja que no són exactes.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/gradient_descendent.png}
+    \caption{Gràfica de gradient descendent}
+\end{figure}
+
+En la figura d'adalt el valor inicial és un punt qualsevol de la funció. Al inici de la funció, en el punt 0, els paràmetres de la funció s'asignen aleatoriament, i la pèrdua és alta, es a dir, que els errors són grans. Desde aquell punt, trobarem la derivada, i el gradiet serà l'encarregat de guiar els canvis als paràmetres.
+al principi de tot, el gradient serà molt pronunciat, però a mesura que es van generant nous paràmetres durant l'entrenament, s'anirà reduint fins al put més baix d'aquesta corba, on els errors són molt petits, aquest punt se li diu punt de convergència. Aquí és on la xarxa ha après i ha ajustat millor les dades.
+
+La fòrmula del gradient ascendent és la seguent: \\
+
+\theta^{(t+1)} = \theta^{(t)} + \alpha \nabla_\theta f(\theta^{(t)})\\
+
+La fòrmula del gradient ascendent és la formula més ràpida per arribar al punt màxim dels gradients. Per tant la fòrmula del gradient descendent seria aquesta mateixa en negatiu, perquè és la forma més ràpida de trobar el punt mínim.
+
 \subsubsection{L'aprenentage automàtic(Machine learning)}
 \begin{itemize}
  \item L'aprenentatge automàtic és una branca crucial de la intel·ligencia artificial, consisteix en cobrar vida a la maquina, donar-li el poder d'aprenentatge dels humans, realitzar tasques de manera autonoma i finalment les infinites possibilitats de evolucionar a traves de l'experiencia i molt més dades. Segons la \href{https://ischoolonline.berkeley.edu/blog/what-is-machine-learning/}{UC Berkeley} el procéss automatic es pot dividir-se en tres parts:
