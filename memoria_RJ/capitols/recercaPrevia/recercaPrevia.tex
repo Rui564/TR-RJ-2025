@@ -64,14 +64,16 @@ Les dades son fonamentals per la IA ja que es la base de l'aprennetatge del mode
 
 
 \subsection{Algorismes}\label{subsec:Algorismes}
-\subsection{Algoritme Gredient descendent:}
+\subsection{Algoritme de la cadena}\label{subsec:cadena}
+
+\subsection{Algoritme Gredient descendent:}\label{subsec:gradient}
 L'algoritme de Gradient descendent és un algoritme imprescindible en l'entrenament de les xarxes neuronals, i de la intel·ligència artificial. Primer de tot hem d'entendre que és un gradient i una funció d'error.
 
 \textbf{Gradient:}En les xarxes neuronals, un gradient és un vector que indica la direcció en la que es mou i amb quina intensitat per que la funció d'error cambii més ràpid respecte als pesos de la xarxa neuronal. Per calcular el gradient, s'utilitza la derivada parcial de la funció de pèrdua respecte als pesos.
 
-\textbf{Funció d'error:} La funció d'error tracta de determinar el error entre el valor estimat i el valor real, amb la finalitat d'optimitzar els paràmetres de la xarxa neuronal.
+\textbf{Funció d'error:} La funció d'error tracta de determinar el error entre el valor estimat i el valor real, amb la finalitat d'optimitzar els paràmetres de la xarxa neuronal, aixó està explicat en l'apartat \ref{subsec:pèrdua}.
 
-L' objectiu de l'algoritme gradiant descendent és minimitzar la funció d'error, o també l'error entre la predicció, es a dir, trobar la funció de pèrdua mínima, per aconseguir-ho s'ha de trobar el valor mínim de la funció. La funció de pèrdua mínima significa que els errors dels paràmetres (pesos i baixos) de la xarxa han de ser molt aproximades al valor real, on s'ajusten aquest paràmetres ja que no són exactes.
+L' objectiu de l'algoritme gradiant descendent és minimitzar la funció d'error, o també l'error entre la predicció, es a dir, trobar la funció de pèrdua mínima, per aconseguir-ho s'ha de trobar el valor mínim de la funció. La funció de pèrdua mínima significa que els errors dels paràmetres (pesos i biaixos) de la xarxa han de ser molt aproximades al valor real, on s'ajusten aquest paràmetres ja que no són exactes.
 
 \begin{figure}[H]
     \centering
@@ -79,14 +81,14 @@ L' objectiu de l'algoritme gradiant descendent és minimitzar la funció d'error
     \caption{Gràfica de gradient descendent}
 \end{figure}
 
-En la figura d'adalt, on podem aprciar quatre iteracions, el valor inicial és un punt qualsevol de la funció. Al inici de la funció, en el punt 0, els paràmetres de la funció s'asignen aleatoriament, i la pèrdua és alta, es a dir, que els errors són grans. Desde aquell punt, trobarem la derivada parcial en cada una de les iteracions, i el gradiet serà l'encarregat de guiar els canvis als paràmetres.
+En la figura d'adalt, on podem apreciar quatre iteracions, el valor inicial és un punt qualsevol de la funció. Al inici de la funció, en el punt 0, els paràmetres de la funció s'asignen aleatoriament, i la pèrdua és alta, es a dir, que els errors són grans. Desde aquell punt, trobarem la derivada parcial en cada una de les iteracions, i el gradiet serà l'encarregat de guiar els canvis als paràmetres.
 Al principi de tot, el gradient serà molt pronunciat, però a mesura que es van generant nous paràmetres durant l'entrenament, s'anirà reduint fins al put més baix d'aquesta corba, on els errors són molt petits, aquest punt se li diu punt de convergència. Aquí és on la xarxa ha après i ha ajustat millor les dades.
 
 La fòrmula del gradient ascendent és la seguent: \\
 
 $\Delta w_{ij} = a \left( \frac{\partial E}{\partial w_{ij}} \right)$ \\
 
-La fòrmula del gradient ascendent és la formula més ràpida per arribar al punt màxim dels gradients. Per tant la fòrmula del gradient descendent seria aquesta mateixa en negatiu, perquè és la forma més ràpida de trobar el punt mínim.
+Aquesta és la formula més ràpida per arribar al punt màxim dels gradients. Per tant la fòrmula del gradient descendent seria aquesta mateixa en negatiu, perquè és la forma més ràpida de trobar el punt mínim.
 
 $\Delta w_{ij} = -a \left( \frac{\partial E}{\partial w_{ij}} \right)$
 
@@ -123,7 +125,7 @@ Fonts: \href{https://www.ibm.com/es-es/think/topics/gradient-descent}{ibm.com} i
   {\color{gray}
    \item \textbf{Mecanisme de predicció}
     \subitem\hspace*{-1\leftmargin} Un conjunt de regles o operacions matemàtiques que analitza les dades d'entrada i intenta identificar els patrons que busca el model.
-   \item \textbf{Funció de pèrdua (o error)}
+   \item \textbf{Funció de pèrdua (o error)}\label{subsec:pèrdua}
    \subitem\hspace*{-1\leftmargin} Un sistema per avaluar l'encert de les prediccions, comparant-les amb resultats reals (quan es disposa d'ells). Si la predicció és incorrecta, aquesta funció quantifica la magnitud de l'error.
    \item \textbf{Algorisme d'optimització}
    \subitem\hspace*{-1\leftmargin} El procés que ajusta automàticament el model per minimitzar l'error, modificant els paràmetres interns per millorar les prediccions futures.} \ \footnote{Llengua original: Anglessa; Traduit per el chat bot Deepseek}
@@ -430,7 +432,7 @@ Aquesta funció té l'algoritme seguent: Si el valor d'entrada es menor que 0, m
     \caption{Gràfica de la funció ReLU}
 \end{figure}
 
-Tot i això, aquesta funció té una desavanantatge; si utilitzen la funció ReLU com a funció d'activació pasarà una cosa, i es que tots els valors negatius són 0, per tant en el procès de retropropagació, explicat a l'apartat \ref{sec:3.6.1}, no es produeix els valors d'ajust en les neurones negatives. Per solucionar aquest problema s'ha inventat una nova funció que es diu Leaky ReLU. Funciona igual com l funció ReLU, però té un valor determinat per les neurones negatives.
+Tot i això, aquesta funció té una desavanantatge; si utilitzen la funció ReLU com a funció d'activació pasarà una cosa, i es que tots els valors negatius són 0, per tant en el procès de retropropagació, explicat a l'apartat \ref{subsec:retropropagació}, no es produeix els valors d'ajust en les neurones negatives. Per solucionar aquest problema s'ha inventat una nova funció que es diu Leaky ReLU. Funciona igual com l funció ReLU, però té un valor determinat per les neurones negatives.
 
 \begin{figure}[h!]
     \centering
@@ -468,7 +470,7 @@ Ara que sabem quina estructura forma una xarxa neuronal artificial, toca entendr
 
 Les conexions(pesos i biaix) son la força de conexió entre dos neurones representades per un pes.
 Els pesos: Son valors que determinen cuánta influència té la producció d'una neurona sobre un altre, marca la importància que té cada neurona.
-Els biaixos: Són paràmetres adicionals que ajuda a ajustar els valors de les neurones. És un valor capaç d'apendre com el pes, això vol dir que el model pot utilitzar l'algoritme de retropropagació per a millorar els valors com per exemple els pesos i baixos.
+Els biaixos: Són paràmetres adicionals que ajuda a ajustar els valors de les neurones. És un valor capaç d'apendre com el pes, això vol dir que el model pot utilitzar l'algoritme de retropropagació per a millorar els valors com per exemple els pesos i biaixos.
 El umbral: Si la sortida de qualsevol node individual és més gran que el valor del umbral, aquell node s'acivarà i envia dades a la seguent capa de la xarxa. En cas contrari, no es pasa ninguna dada a la seguent capa de la xarxa.
 
 Hem de pensar en que cada node individual com el seu propi model de regressió lineal, compost per dades d'entrada, ponderacions, un umbral o un biaix, i una sortida. La fórmula per calcular els valors d'una xarxa neuronal és la seguent:
@@ -516,11 +518,34 @@ Aquest procès és important per les seguents raons:
  \item \textbf{Diseny del model:} Un diseny eficaç de la xarxa requereix comprendre com es distribueix la informació a travès de les configuracions de capes.
 \end{itemize}
 
-\subsection{Retropropagació}\label{subsec:retropropagació}
-Mentre que la programació directa fa prediccions, la retroporgramació és la forma en que la xarxa apren d'errors. Implica comparar la predicció de la xarxa amb el valor objectiu real i calcular un terme d'eror mitjançant una funció de pèrdua.
-Aquest error es propaga enrere a travès de la xarxa, començant des de la capa de sortida. Durant aquest procès, la xarxa ajusta els pesos i els baixos de cada connexió en funció de la seva contribució a l'error, amb l'objectiu de minimitzar-lo.
+\section{Retropropagació}\label{subsec:retropropagació}
+Mentre que la programació directa fa prediccions, la retroporgramació és la forma en que la xarxa apren d'errors. Implica comparar la predicció de la xarxa amb el valor objectiu real i calcular un terme d'eror mitjançant una funció d'error.
+Aquest error es propaga enrere a travès de la xarxa, començant des de la capa de sortida. Durant aquest procès, la xarxa ajusta els pesos i els biaixos de cada connexió en funció de la seva contribució a l'error, amb l'objectiu de minimitzar-lo.
 Aquest procès iteratiu de càlcul d'erros i ajustament de pes permet a la xarxa d'aprenentatge profund millorar gradualment les seves prediccions.
-\subsection{La regla de la cadena}
+El procès de retropropagació es basa en el principi d'optimització del gradient descendent, explicat anteriorment en l'apartat \ref{subsec:gradient}, es calculen els gradients d'error respecte als paràmetres de la xarxa en sentit contrari i en cada capa. Per aquesta tasca, s'utilitza l'algoritme de la cadena (\ref{subsec:cadena}) per propagar l'error cap enderrere desde la sortida fins l'entrada.
+
+\subsection{Com funcona la retropropagació?}
+El funcinament de la retropropagació el podem dividir en 5 fases. Cada un d'es possibilita a la xarxa neuronal apendre de manera eficient a partir de dades proporcionats. Les fases són les seguents:
+\begin{itemize}
+ \item \textbf{Propagació cap endevant:} Aquesta fase inicial és on s'introdueixen les dades de prova en la xarxa neuronal desde la capa d'entrada fins a la sortida.
+ \item \textbf{Càlcul d'error:} Una vegada s'obté la sortida de la xarxa, es compara amb el valor desitjat mitjantçant una funció d'error. Aquesta funció quantifica la discrepança que s'ha produït entre la predicció i el valor real.
+ \item \textbf{Retropropagació de l'error:} En aquesta fase els gradients de l'error es calculan respecte a cada paràmetre en la xarxa. Com em dit abans, aquest procès comença de manera inversa a la propagació, desde la sortida fins l'entrada.
+ \item \textbf{Actualització dels paràmetres:} Una vegada que s'ha calculat els gradients de l'error en tots els paràmetres, aquestos s'actualitzan. D'aquesta manera, els errors en la predicció es minimitzan de manera gradual en cada iteració de l'entrenament.
+ \item \textbf{Configuració de la predicció:} Després de totes les optimitzacions, el mètode de càlcul torna a revisar les entrades de proba. Després de tot això, es busca garantizar els resultats esperats.
+\end{itemize}
+\subsection{Avantatges de la retropropagació}
+La retropropagació ofereix unes avantatges que l'han convertit en una eina fonamental en l'entrenament de les xarxes neuronals. Les seves avantatges són les seguents:
+
+\begin{itemize}
+ \item \textbf{Eficiència en l'optimització de parámetres:} Gracies al càlcul de gradient mitjantçant la regla de la cadena, explicada a l'apartat \ref{subsec:cadena}, la retropropagació facilita l'ajust dels paràmetres d'una xarxa neuronal de manera eficient. Això s'aconsegueix determinant la contribució de cada variable al error total de la xarxa, ho que augmenta notablement a l'hora de fer prediccions precises.
+ \item \textbf{Flexibilitat en l'arquitectura:} La retropropagació és compatible en moltes varietats d'arquitectura en les xarxes neuronals, com l'aprenentatge profund amb múltiples capes ocultes. Aquesta característica permet disenys que s'adapten millor a la complexitat de dades i les necesitats de cada tasca.
+ \item \textbf{Escalabilitat:} Es posible augmentar la retropropagació perquè traballi amb moltes dades i xarxes neuronas molt grans, ja que hi haurà vegades en que una xarxa pot tindre fins a milions de paràmetres, això exigeix una gestió eficient.
+ \item \textbf{Optimització continua:} La retropropagació ofereix la actualització contínua de les variables durant l'entrenament. És un ajust dinàmic important per millorar poc a poc el rendiment de la xarxa amb cada iteració i nous cicles d'aprenentatges.
+\end{itemize}
+
+
+
+\subsection{La regla de la cadena}\label{subsec:cadena}
 La regla de c
 
 
