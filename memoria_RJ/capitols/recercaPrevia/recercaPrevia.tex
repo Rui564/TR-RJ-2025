@@ -262,12 +262,14 @@ La Intel·ligència Artificial (IA) integra múltiples estratègies d'optimitzac
 La retropropagació (\textit{backpropagation}) és com el punt i coma en el text per les xarxes neuronals artificials. Aquest algorisme es basa en un procés iteratiu en dues fases:
 
 \begin{itemize}
-\item \textbf{Fase de propagació endavant}: Les dades d'entrada es transmeten a través de les capes de la xarxa, generant una predicció. Durant aquest procés, cada neurona aplica una transformació lineal seguida d'una funció d'activació no lineal, com la ReLU (\textit{Rectified Linear Unit}) o la sigmoide.
+\item \textbf{Fase de propagació endavant}: Les dades d'entrada es transmeten a través de les capes de la xarxa, generant una predicció. Durant aquest procés, cada neurona aplica una transformació lineal seguida d'una funció d'activació no lineal, com \textit{\nameref{subsec:1}} o \textit{\nameref{3.7.1}}.
 
-\item \textbf{Fase de propagació enrere}: Es calcula l'error entre la predicció i el valor real utilitzant una funció de pèrdua (\textit{loss function}), com l'error quadràtic mitjà (\textit{Mean Squared Error}) per a problemes de regressió o l'entropia creuada (\textit{Cross-Entropy Loss}) per a classificació. Mitjançant la regla de la cadena (\textit{chain rule}), es determina la contribució de cada paràmetre a l'error global, obtenint els gradients $\partial L/\partial W$, on $L$ representa la pèrdua i $W$ els pesos de la xarxa.
+\item \textbf{Fase de propagació enrere}: Es calcula l'error entre la predicció i el valor real utilitzant una funció de pèrdua (\textit{loss function}), com l'error quadràtic mitjà (\textit{Mean Squared Error}) per a problemes de regressió o l'entropia creuada (\textit{Cross-Entropy Loss}) per a classificació. Mitjançant \nameref{subsec:cadena} (\textit{chain rule}), es determina la contribució de cada paràmetre a l'error global, obtenint els gradients $\partial L/\partial W$, on $L$ representa la pèrdua i $W$ els pesos de la xarxa.
 
-\item \textbf{Actualització de paràmetres}: Els pesos s'ajusten en la direcció oposada al gradient, utilitzant variants del descens de gradient, com SGD (\textit{Stochastic Gradient Descent}), que aplica updates amb un subconjunt aleatori de dades, o optimitzadors més sofisticats com Adam (\textit{Adaptive Moment Estimation}), que adapta la taxa d'aprenentatge per a cada paràmetre.
+\item \textbf{Actualització de paràmetres}: Els pesos s'ajusten en la direcció oposada al gradient, utilitzant variants del descens de gradient, com SGD \textit{\nameref{subsec:gradient}}, que aplica updates amb un subconjunt aleatori de dades, o optimitzadors més sofisticats com Adam (\textit{Adaptive Moment Estimation}), que adapta la taxa d'aprenentatge per a cada paràmetre.
 \end{itemize}
+
+Per més informació també podeu accedir aquest  aparatat \ref{subsec:propagació} on també explica la retropropagació de la xarxa neuronal.
 
 \textbf{Suport teòric}:
 \begin{quote}
@@ -283,7 +285,7 @@ Els models generatius, com les xarxes generatives adversàries (GANs) i els auto
 El marc adversarial de les GANs implica la competició entre dos models:
 
 \begin{itemize}
-\item \textbf{Generador (\textit{Generator})}: Transforma un vector de soroll (\textit{noise vector}) en dades sintètiques, intentant enganyar el discriminador.
+\item \textbf{Generador (\textit{Generator})}: Transforma un vector de soroll/aleatori(\textit{noise vector}) en dades sintètiques, intentant enganyar el discriminador.
 
 \item \textbf{Discriminador (\textit{Discriminator})}: Distingeix entre dades reals i generades, actuant com un classificador binari.
 \end{itemize}
@@ -291,7 +293,7 @@ El marc adversarial de les GANs implica la competició entre dos models:
 L'entrenament es formula com un joc minimax, on la funció objectiu és:
 $ \min_G \max_D V(D, G) = \mathbb{E}_{x \sim p_{\text{data}}}[\log D(x)] + \mathbb{E}_{z \sim p_z}[\log(1 - D(G(z)))] $
 
-La retropropagació s'aplica alternativament a ambdues xarxes, ajustant els seus paràmetres per millorar les seves funcions respectives.
+La retropropagació s'aplica alternativament amb dues xarxes, ajustant els seus paràmetres per millorar les seves funcions respectives.
 
 \textbf{Suport teòric}:
 \begin{quote}
@@ -350,7 +352,7 @@ Holland formalitza els algorismes genètics, inspirant-se en els mecanismes de s
 
 \subsection{Ètica i Regulació}\label{subsec:Ètica i Regulació}
 
-Un cop enteses totes les funcionalitats i capacitats de la intel·ligència artificial (IA), és fonamental aplicar-hi principis d’ètica i moral. Encara que la IA no sigui un ésser viu, és una eina creada per humans, i per tant cal establir-hi limitacions per evitar-ne els mals usos i garantir el respecte als drets humans i a la privacitat. Aquesta part és crucial en el desenvolupament d’una IA responsable. En aquest sentit, molts estats i organismes ja han publicat diverses lleis legítimes i regulacions. Algunes de les més rellevants són:
+Un cop enteses totes les funcionalitats i capacitats de la intel·ligència artificial (IA), és fonamental aplicar-hi principis d’ètica i moral. Encara que la IA no sigui un ésser viu, és una eina creada per els  humans, i per tant cal establir-hi limitacions per evitar-ne els mals usos i garantir el respecte als drets humans i a la privacitat. Aquesta part és crucial en el desenvolupament d’una IA responsable. En aquest sentit, molts estats i organismes ja han publicat diverses lleis legítimes i regulacions. Algunes de les més rellevants són:
  \begin{itemize}
   \item \textbf{Llei d’IA de la Unió Europea (AI Act):} És la primera regulació integral sobre la IA. Classifica els sistemes d’IA segons el seu nivell de risc (inacceptable, alt, limitat i mínim) i estableix requisits estrictes per als usos d’alt risc, com la transparència, supervisió humana i seguretat.
   \item \textbf{Reglament General de Protecció de Dades (GDPR):} Tot i no ser exclusiu per a la IA, aquest reglament europeu protegeix la privacitat i les dades personals dels ciutadans. És clau en el desenvolupament d’IA que utilitza dades personals.
@@ -400,7 +402,8 @@ Fons: \href{https://msmk.university/hidden-layer/}{https://msmk.university/hidde
 
 \href{https://www.linkedin.com/advice/0/what-some-examples-linear-nonlinear-models-real-world?lang=es&lang=es&originalSubdomain=es}{Article Linkedin}
 
-\section{Funció d'activació}\label{sec:3.5.3}
+\section{
+Funció d'activació}\label{sec:3.5.3}
 Les funcions d'activació són un component integral de les xarxes neuronals que els permeten aprendre patrons complexos en les dades. Transformen el senyal d'entrada d'una neurona en un senyal de sortida que passa a la capa següent. Sense funcions d'activació, les xarxes neuronals es limitarien a modelar únicament relacions lineals entre entrades i sortides, és a dir, introdueixen la no linealitat i produeixen la sortida de la neurona.
 
 \subsection{Funció sigmoide}\label{3.7.1}
@@ -420,7 +423,7 @@ La avantatge principal de la funció sigmoide és la seva suavitat i la facilita
 
 \textbf{Desavantatges:}
 Tanmateix, la funció sigmoide també té algunes desavantatges. Un dels seus problemes és que la funció es satura els gradients. Quan els valors d'entrades són grans, ho que significa que la derivada de la funció s'apropa a 0 i l'aprenentatge es relentitza. Un altre problema és que aquesta funció no és simètrica, causant a les entrades negatives i positives es processin de mandera diferent, això pot afectaral rendiment de la xarxa. Tot això dificulta el procès d'entrenament de la xarxa en la ràpida minimització de la funció d'error utilitzant l'algoritme de Gradient Descendent.
-\subsection{Funció ReLU(Funció Uniat Rectificada Uniforme)}
+\subsection{Funció ReLU(Funció Uniat Rectificada Uniforme)}\label{subsec:1}
 La funció Unitat Rectificada Uniforme té la fòrmula seguent:
 \[ f(x) = \max(0, x) \]
 
