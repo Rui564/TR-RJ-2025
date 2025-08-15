@@ -264,7 +264,7 @@ La retropropagació (\textit{backpropagation}) és com el punt i coma en el text
 \begin{itemize}
 \item \textbf{Fase de propagació endavant}: Les dades d'entrada es transmeten a través de les capes de la xarxa, generant una predicció. Durant aquest procés, cada neurona aplica una transformació lineal seguida d'una funció d'activació no lineal, com \textit{\nameref{subsec:1}} o \textit{\nameref{3.7.1}}.
 
-\item \textbf{Fase de propagació enrere}: Es calcula l'error entre la predicció i el valor real utilitzant una funció de pèrdua (\textit{loss function}), com l'error quadràtic mitjà (\textit{Mean Squared Error}) per a problemes de regressió o l'entropia creuada (\textit{Cross-Entropy Loss}) per a classificació. Mitjançant \nameref{subsec:cadenagit } (\textit{chain rule}), es determina la contribució de cada paràmetre a l'error global, obtenint els gradients $\partial L/\partial W$, on $L$ representa la pèrdua i $W$ els pesos de la xarxa.
+\item \textbf{Fase de propagació enrere}: Es calcula l'error entre la predicció i el valor real utilitzant una funció de pèrdua (\textit{loss function}), com l'error quadràtic mitjà (\textit{Mean Squared Error}) per a problemes de regressió o l'entropia creuada (\textit{Cross-Entropy Loss}) per a classificació. Mitjançant \nameref{subsec:cadena} (\textit{chain rule}), es determina la contribució de cada paràmetre a l'error global, obtenint els gradients $\partial L/\partial W$, on $L$ representa la pèrdua i $W$ els pesos de la xarxa.
 
 \item \textbf{Actualització de paràmetres}: Els pesos s'ajusten en la direcció oposada al gradient, utilitzant variants del descens de gradient, com SGD \textit{\nameref{subsec:gradient}}, que aplica updates amb un subconjunt aleatori de dades, o optimitzadors més sofisticats com Adam (\textit{Adaptive Moment Estimation}), que adapta la taxa d'aprenentatge per a cada paràmetre.
 \end{itemize}
@@ -549,13 +549,26 @@ Fonts: \href{https://www.universidadviu.com/es/actualidad/nuestros-expertos/como
 
 
 \subsection{La regla de la cadena}\label{subsec:cadena}
-La regla de la cadena és un concepte en cálcu que s'utilitza per trobar la derivada d'una funció composta per dos funcions dervables.
 
-Fòrmula:$\frac{d}{dx} f(g(x)) = f'(g(x)) \cdot g'(x)$
+En l'aprenentatge automàtic, sovint es treballa amb funcions compostes complexes que depenen de diversos paràmetres i capes. Per tal de facilitar el càlcul dels gradients i optimitzar el rendiment computacional, s'utilitza la \textbf{regla de la cadena}.
 
-Aquesta fòrmula s'utilitza en l'aprenentatge profund en la part de retropropaació per facilitar els càlculs dels gradients de les variables en la xarxa neuronal.
+La regla de la cadena és una tècnica de derivació matemàtica que permet descompondre la derivada d'una funció composta en el producte de derivades de les seves funcions internes. D’aquesta manera, es poden calcular les derivades de manera escalonada i eficient, especialment en el context de l’algorisme de propagació enrere (backpropagation).
 
-Font: \href{https://es.wikipedia.org/wiki/Regla_de_la_cadena}{Wikipedia}
+Per exemple, si tenim una funció composta de la forma:
+
+\[
+L = f(g(h(x)))
+\]
+
+La derivada de \( L \) respecte a \( x \) s'obté aplicant la regla de la cadena:
+
+\[
+\frac{dL}{dx} = \frac{df}{dg} \cdot \frac{dg}{dh} \cdot \frac{dh}{dx}
+\]
+
+Aquest procediment és fonamental per entrenar xarxes neuronals, ja que permet calcular com cada pes de la xarxa contribueix a l'error global, i així ajustar-los mitjançant tècniques com el descens de gradient.
+
+fonts:\href{https://medium.com/%40ppuneeth73/the-chain-rule-of-calculus-the-backbone-of-deep-learning-backpropagation-9d35affc05e7}{Medium deep machine-learning} \href{https://www.geeksforgeeks.org/machine-learning/chain-rule-derivative-in-machine-learning/}{Greek machine-learning}
 
 
 
