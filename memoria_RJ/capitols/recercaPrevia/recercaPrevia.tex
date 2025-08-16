@@ -64,9 +64,7 @@ Les dades son fonamentals per la IA ja que es la base de l'aprennetatge del mode
 
 
 \subsection{Algorismes}\label{subsec:Algorismes}
-\subsection{Algoritme de la cadena}\label{subsec:cadena}
-
-\subsection{Algoritme Gredient descendent:}\label{subsec:gradient}
+\subsubsection{Algoritme Gredient descendent:}\label{subsec:gradient}
 L'algoritme de Gradient descendent és un algoritme imprescindible en l'entrenament de les xarxes neuronals, i de la intel·ligència artificial. Primer de tot hem d'entendre que és un gradient i una funció d'error.
 
 \textbf{Gradient:}En les xarxes neuronals, un gradient és un vector que indica la direcció en la que es mou i amb quina intensitat per que la funció d'error cambii més ràpid respecte als pesos de la xarxa neuronal. Per calcular el gradient, s'utilitza la derivada parcial de la funció de pèrdua respecte als pesos.
@@ -92,7 +90,7 @@ Aquesta és la formula més ràpida per arribar al punt màxim dels gradients. P
 
 $\Delta w_{ij} = -a \left( \frac{\partial E}{\partial w_{ij}} \right)$
 
-\textbf{Explicació de la fòrmula:}
+\textbf{Explicació de la fòrmula:}\\
 $\Delta w_{ij}$: Representa quant s'ajusta el pes en una iteració de l'entrenamen.
 
 $a$: És la constant d'aprenentatge, aquesta constant defineix quant afecta el gradiant en l'actualització dels nostres paràmetres en cada iteració. Si aquest valor és gran, cada iteració és molt gran, i el punt serà incapaç d'introduir-se al punt de convergència, causant que el procès d'optimització acabi en un bucle infinit. Tanmateix, si és petit, el punt s'aproxima poc a poc al punt de converència, però calcularà moltes iterai això pot ser ineficient. Per tant aquest valor ha de estar en un punt mig, en que no sigui molt gran ni molt petit.
@@ -104,7 +102,7 @@ $a$: És la constant d'aprenentatge, aquesta constant defineix quant afecta el g
 \end{figure}
 
 
-$\left( \frac{\partial E}{\partial w_{ij}} \right)$: És la derivada parcial de $E$ respecte a $\Delta w_{ij}$.
+$\left( \frac{\partial E}{\partial w_{ij}} \right)$: És la derivada parcial de $E$ respecte a $\Delta w_{ij}$. \\
 
 A la figura 3.2, és una representació en 2 d, però en situacions reals el gradient descendent es representa en la dimensió 3 d.
 
