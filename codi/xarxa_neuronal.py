@@ -1,40 +1,59 @@
-from sklearn.datasets import fetch_openml
-# He canviat fetch_mldata per fetch_openml
-mnist = fetch_openml('mnist_784', version=1, as_frame=False)
-# He afegit as_frame=False per obtenir les dades en format NumPy
-# He canviat la versió a 1 per evitar problemes de compatibilitat
-# He canviat el nom MNIST original per mnist_784
-
-X,y = mnist.data, mnist.target
-X = X / 255.0  
-# Normalitzar les dades
-
 import numpy as np
-y_new = np.zeros(y.shape)
-y = y.astype(np.int64)  # convertir de string a enter
-y_new = np.zeros(y.shape)
-indices = np.where(y == 0)[0]  # troba els índexs on y és 0
-if len(indices) > 0:
-    y_new[indices[0]] = 1
-
-y = y_new
-
-m = 60000
-m_test = X.shape[0] - m
-
-X_train, X_test = X[:m].T, X[m:].T
-y_train, y_test = y[:m].reshape(1,m), y[m:].reshape(1,m_test)
-
-np.random.seed(138)
-shuffle_index = np.random.permutation(m)
-X_train, y_train = X_train[:, shuffle_index], y_train[:, shuffle_index]
-
+import tensorflow as tf
 import matplotlib.pyplot as plt
+from sklearn.preprocessing import MinMaxScaler
+import random
+import os
 
-i = 3
-plt.imshow(X_train[:,i].reshape(28,28), cmap = 'binary')
-plt.axis("off")
+seed = 42
+np.random.seed(seed)
+tf.random.set_seed(seed)
+random.seed(seed)
+os.environ["PYTHONHASHSEED"] = str(seed)
+
+X = np.array([
+    [1, 0,   8,  8,  7,  9],
+    [1, 3,   8,  8, 10,  8],
+    [1, 5,   5,  8,  7,  0],
+    [1, 1,   6, 10,  8, 10],
+    [0, 2.5, 7,  9,  9,  7],
+    [0, 0,   8,  8,  6,  5],
+    [1, 4,   6,  5,  8,  8],
+    [1, 10,  4,  6,  5,  4],
+    [0, 1,   6,  7,  8,  7],
+    [1, 5,   6,  1,  6,  6],
+    [1, 3,   6, 10,  6,  6],
+    [0, 1,   8,  3,  1,  1],
+    [1, 2,   6,  6,  9,  3],
+    [1, 1,   3, 10,  9,  9],
+    [1, 1,   7, 10,  9,  9]
+], dtype=float)
+
+y = np.array([8,8,6,9,8,6,7,4,8,6,6,1,9,9,8], dtype=float)
+
+scaler = MinMaxScaler()
+X_scaled = scaler.fit_transform(X)
+
+model = tf.keras.Sequential([
+    tf.keras.layers.Dense(32, activation="relu", input_shape=[6]),
+    tf.keras.layers.Dense(16, activation="relu"),
+    tf.keras.layers.Dense(1)
+])
+
+model.compile(
+optimizer=tf.keras.optimizers.Adam(0.01),
+loss="mean_squared_error",
+metrics = ["mae"]
+)
+
+historial = model.fit(X_scaled, y, epochs=300, verbose=1)
+plt.plot(historial.history["loss"])
+plt.xlabel("Època")
+plt.ylabel("Pèrdua (loss)")
 plt.show()
-# print(y_train[:,i])
 
-print(type(plt.imshow(X_train[:,i].reshape(28,28), cmap = 'binary')))
+nou_entrada = np.array([[1, 0,   8,  8,  7,  9]])
+nou_entrada_scaled = scaler.transform(nou_entrada)
+
+prediccio = model.predict(nou_entrada_scaled)
+print("Nota prevista:", round(prediccio[0][0],2))
