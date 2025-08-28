@@ -6,7 +6,7 @@ En aquest capítol explicarem com vam elaborar cadascuna d’aquestes xarxes neu
 
 Per facilitar l’organització del treball, ens hem repartit les tasques: un membre de l’equip s’ha encarregat de la xarxa neuronal implementada amb llenguatge de programació Python, mentre que l’altre ha treballat una xarxa neuronal feta amb fulls de càlcul. Finalment, hem elaborat conjuntament la taula de comparació, intercanviant perspectives, i també hem treballat plegats la xarxa neuronal del cas real.
 
-Les nostres pràctiques consisteixen en recopilar una sèrie de dades d'alumnes mitjançant una enquesta feta per nosalres amb la finalitat de crear una Xarxa neuronal que pugui predir la nota final de cada alumne. Les preguntes que hem fet en el formulari són sobre la matèria de matemàtiques i són les següents:
+Les nostres pràctiques consisteixen en recopilar una sèrie de dades d'alumnes mitjançant una enquesta feta per nosaltres amb la finalitat de crear una Xarxa neuronal que pugues predir la nota final de cada alumne. Les preguntes fetes en el formulari són sobre la matèria de matemàtiques i són les següents:
 \begin{itemize}
  \item Realització de deures
  \item Hores d'estudis (semanal)
@@ -16,7 +16,7 @@ Les nostres pràctiques consisteixen en recopilar una sèrie de dades d'alumnes 
  \item Nota del tercer trimestre
  \item Nota final
 \end{itemize}
-Com es pot veure, les preguntes d'aquest formulari estan relacionades amb el rendiment d'estudis dels alumnes, aquest formulari els hem enviat a alumnes de primer de bachillerat científic.
+Com es pot veure, les preguntes d'aquest formulari estan relacionades amb el rendiment d'estudis dels alumnes, i s'envia als estudiants que tingues l'assignatura matematiques.
 
 
 Després de les prediccions, compararem la xarxa neuronal feta amb python y la del full de càlcul i veurem quina de les dos té més precisió.
@@ -65,53 +65,53 @@ A continuació es mostra un esquema representatiu d’una xarxa neuronal de regr
 \end{figure}
 
 \section{Xarxa Neuronal amb llenguatge de programació}\label{sec:10}
-En aquest apartat explicarem pas a pas de com vam crear el nostre xarxa neuronal de regressió.
+En aquest apartat explicarem pas a pas de com vaig crear el nostre xarxa neuronal de regressió amb un llenguatge de programació.
 
 \subsection{De celcius a fahrenheit}
 
-Abans de començar a treballar amb la xarxa neuronal definitiu, vaig voler fer una més simple per tal de coneixer amb més profunditat de com funciona una xarxa neuronal de regressió; en aquest cas he escollit un transformador d'unitats de temperatura, de celcius (Unitat de temperatura basada en el punt de fusió de l'aigua) a fahrenheit (sistema d'unitat basada en el punt d'ebullició i solidificació de l'aigua). Per crear aquesta xarxa vaig escollir el Python com a llenguatge de programació, i el motiu esta explicat en l'apartat \ref{sec:4.4}.
+Abans de començar a treballar amb la xarxa neuronal definitiu, vaig voler fer una de més simple per tal de coneixer amb més profunditat de com funciona una xarxa neuronal de regressió; en aquest cas he escollit un transformador d'unitats de temperatura, de celcius (\textbf{Unitat de temperatura basada en el punt de fusió de l'aigua}) a fahrenheit (\textbf{Sistema d'unitat basada en el punt d'ebullició i solidificació de l'aigua}). Per crear aquesta xarxa vaig escollir el Python com a llenguatge de programació, i el motiu esta explicat en l'apartat \ref{sec:4.4}.\\
 
-\begin{comment}
+
+Per començar, importo el framework i la biblioteca de Python que són les bases de dades necessàries per a la creació de la xarxa neuronal: \boxed{\text{TensorFlow}} (\textbf{framework}) i \boxed{\text{numpy}} (\textbf{biblioteca}). Com podeu veure, he creat uns \textit{abrevacions} per a poder-los cridar més fàcilment quan els necessiti.
+
+\begin{itemize}
+ \item \textbf{TensorFlow: } TensorFlow és un tipus de framework en que ofereix eines per crear i entrenar models de Ml (Machine learning) i Dl (Deep learning), biblioteques per programar xarxes neuronals i altres algoritmes, Compatibilitat amb GPU i TPU per accelerar càlculs, TensorBoard per visualitzar i monitorar entrenaments, Models preentrenats i repositoris, APIs (Application Programming Interface) en diversos llenguatges.
+ \item \textbf{numpy: } numpy és una biblioteca científica per treballar amb vectors i matrius.
+\end{itemize}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{./figures/1.png}
-    \caption{biblioteques del Python}
+    \caption{Framework i biblioteca del Python}
 \end{figure}
-\end{comment}
-
-Per començar a crear una xarxa neuronal lo primer que s'ha de fer es importar totes les biblioteques necessaries per el treball. En aquest cas he importat els biblioteques tensorflow i numpy, com podeu veure també he posat un as per transformar les nominacions de les biblioteques en abrevació.
-\begin{itemize}
- \item \textbf{tensorflow: }
- \item \textbf{numpy: }
-\end{itemize}
 
 
+    Agafo les paraules \textbf{celsius} i \textbf{fahrenheit} i les defineixo com a variables amb un signe \boxed{=}. Després poso \boxed{np} per indicar la biblioteca, seguit de \boxed{.array()} per especificar que és una llista. Dins dels parèntesis hi poso \boxed{[ ]} i a dins, els diferents valors de temperatura. Finalment, afegeixo el paràmetre \boxed{dtype=float} per indicar que es tracta de dades numèriques decimals.
+
+    Repeteixo el mateix procés amb \textbf{fahrenheit}, però en aquest cas les dades no poden ser arbitràries, sinó que han de ser les temperatures corresponents a les de \textbf{celsius} convertides a Fahrenheit. D’aquesta manera, la xarxa neuronal pot entendre la relació entre les dues sèries de dades.
 
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/2.png}
+    \caption{Agrupació de dades amb numpy}
+\end{figure}
+
+Per començar, defineixo les capes de la xarxa neuronal. Utilitzant \boxed{tf.keras.layers.Dense} (\textbf{funció per a capes denses} (Keras és un tipus de API)), creo la primera capa oculta amb el paràmetre \boxed{units=3} per especificar que tingui \textbf{3 neurones}, i \boxed{input_shape=[1]} per indicar que l'entrada és un sol valor. Li assigno el nom \boxed{oculte_1}.\\ \\
+Repeteixo el procés per a la segona capa oculta, \boxed{oculte_2}, amb \boxed{units=3} neurones també, però sense especificar \boxed{input_shape} ja que la xarxa ho dedueix automàticament de la capa anterior.\\ \\
+Finalment, defineixo la capa de \boxed{sortida} amb \boxed{units=1} perquè retorni un sol valor (la predicció en Fahrenheit).\\ \\
+Amb totes les capes creades, les integro en un model seqüencial amb \boxed{tf.keras.Sequential}, passant-les dins d'una llista \boxed{[ ]} en l'ordre correcte: \boxed{[oculte_1, oculte_2, sortida]}. Això crea l'estructura bàsica de la nostra xarxa neuronal.
 
 
-
-
-
-
-
-
-
-
-font(\href{https://www.youtube.com/watch?v=iX_on3VxZzkhttps://www.youtube.com/watch?v=iX_on3VxZzk}{Xarxa neuronal amb Python})
-
-
-
-
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/3.png}
+    \caption{Capes ocultes i la sortida d'una xarxa neuronal}
+\end{figure}
 
 
 
 
-
-
-
-
-
+Font: (\href{https://www.youtube.com/watch?v=iX_on3VxZzkhttps://www.youtube.com/watch?v=iX_on3VxZzk}{Xarxa neuronal amb Python})
 
 
 
@@ -124,7 +124,7 @@ L'estructura que utilitzarem per aquesta pràctica serà la del perceptró.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{./figures/perceptro.png}
-    \caption{Estructura del perceptró}
+    \caption{Estructura del perceptró}aaa
 \end{figure}
 
 Un cop sabem quina estructura utilitzarem, començarem la pràctica ordenant les dades de cada alumne del formulari en el full de càlculs
