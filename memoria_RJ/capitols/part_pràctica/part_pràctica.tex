@@ -249,6 +249,52 @@ Aquests càlculs són fàcils d'obtenir amb les funcions que ens proporciona el 
     \caption{Taula resumida}
 \end{figure}
 
+\subsection{Els pesos}
+En una xarxa neuronal, cada valor d'entrada té el seu respectiu pes que determina la importància que té en la predicció final. AL començament de l'entrenament, assignarem a tots els pesos el mateix valor, ja que aquests es corregiran lentament durant el procès de l'entrenament.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/Pesos.png}
+    \caption{Taula dels pesos}
+\end{figure}
+
+Com es pot veure a la figura 6.9, he afegit 6 columnes pels pesos, respecte als 6 valors d'entrada, tambè he afegit una columna pel biaix, que serà la constant per millorar l'aust de les prediccions.
+
+\subsection{Funció de pèrdua}
+Ara que ja tenim les dades normalitzades i hem assignat els sues respectius pesos inicials, podrem aplicar la fòrmula de les xarxes neurnals artificials per calcular la predicció de les notes dels alumnes.
+Recordem que la fòrmula de les xarxes neuronals artificials és:\\
+\[
+\sum w_i x_i + \text{biaix}
+\]\\
+Després d'aplicar aquesta fòrmula, obtindrem les prediccions de la nota final, tal com es mostra en la figura seguent.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/Predicció.png}
+    \caption{Prediccions del model}
+\end{figure}
+
+Cal recordar que aquest valors de la predicció són provisionals, ja que el valor dels pesos encara són imprecises.
+
+El següent pas és entrenar el model per ajustar els pesos i fer més precís els valors de la predicció de la xarxa neuronal, per aconseguir-ho, utilitzarem un mètode d'optimització per ajustar els valors dels pesos, en aquest cas utilitzarem l'algoritme gradient descendent per minimitzar la funció d'error.
+
+Per poder apicar aquest algoritme haurem d'afegir més columnes al nostre full de càlcul. Si restem els valors de la predicció ($Y$), amb els valors reals ($y$) obtindrem la diferència de la nota, es a dir, l'error del model.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/Errors.png}
+    \caption{Taula d'errors}
+\end{figure}
+
+Com podem veure en la figura 6.11, hem afegit 2 taules més, la taula d'error, on s'emmagatzema els errors del model, i la taula d'errors en positiu, aquesta última taula recull les dades de la taula d'error i agafa el valor absolut de les dades, fent que tots els valors es tornin positius, d'aquesta manera facilita els càlculs a l'hora de cambiar els paràmetres i s'aprecia la diferència de la predicció i el valor original.
+
+Després d'aquest pas calcularem la mitjana de la taula dels errors en positius. El valor que dongui la mitjana ens ajudarà a saber si la xarxa està millorant la seva precisió, si aquest valor és petit, vol dir que l'error també és petit, fent el model més precís, en cada iteració hem d'aconseguir minimitzar aquest valor perquè el model sigui ho més precís possible.
+
+\subsection{Canvis dels paràmetres}
+Ara que ja sabem les funcions d'error de la primera predicció, ens toca entrenar el model per ajustar els pesos per disminuir els errors. Per dur aixó hem de tindre en compte ho següent: Com hem vist abans, l'error del model és la diferència que hi ha entre la predicció ($Y$) i el valor real ($y$), aixó vol dir que quan més gran sigui aquesta diferència, els pesos estaran més lluny del seu valor adequat, hem de trobar una forma per reduïr la diferència d'aquests valors.
+Per altra banda, els valors d'entrada ($X$) es multipliquen pels seus respectius pesos ($W$), això vol dir que si el valor d'entrada ($X$) és petit, el seu pes ($W$) també serà petit, ja que aquests es multipliquen, com ho diu la fòrmula.
+Per tant hem de tindre en compte dues coses: La diferència entre la predicció ($Y$) y el valor real ($y$) i el valor d'entrada ($X$) respecte a cada pes ($W$). Així que la fòrmula que utilitzarem per calcular els canvis de cada paràmetre serà:
+
 \section{Comparació entre una xarxa neurnal creada per un llenguatge de programació netre una de fulls de calculs}
 
 \section{Xarxa Neuronal amb un cas real}\label{sec:12}
