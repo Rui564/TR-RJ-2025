@@ -210,13 +210,13 @@ Un cop sabem quina estructura utilitzarem, començarem la pràctica ordenant les
 
 Una vegada he ordenat tota la informació, he decidit representar els valors d'entrada d'una forma més senzilla d'entendre i curta, anomenantlos $xi$
 \begin{itemize}
- \item \textbf Realització de deures: $x1$
- \item \textbf Hores d'estudis: $x2$
- \item \textbf Hores de son: $x3$
- \item \textbf Interès en la matèria: $x4$
- \item \textbf Notes del segon trimestre: $x5$
- \item \textbf Notes del tercer trimestre: $x6$
- \item \textbf Nota final: $y$
+ \item \textbf {Realització de deures:} $x1$
+ \item \textbf {Hores d'estudis:} $x2$
+ \item \textbf {Hores de son:} $x3$
+ \item \textbf {Interès en la matèria:} $x4$
+ \item \textbf {Notes del segon trimestre:} $x5$
+ \item \textbf {Notes del tercer trimestre:} $x6$
+ \item \textbf {Nota final:}´ $y$
 \end{itemize}
 
 Aquestra representació queda així:
@@ -249,8 +249,9 @@ Aquests càlculs són fàcils d'obtenir amb les funcions que ens proporciona el 
     \caption{Taula resumida}
 \end{figure}
 
-\subsection{Els pesos}
-En una xarxa neuronal, cada valor d'entrada té el seu respectiu pes que determina la importància que té en la predicció final. AL començament de l'entrenament, assignarem a tots els pesos el mateix valor, ja que aquests es corregiran lentament durant el procès de l'entrenament.
+\subsection{Els paràmetres del model}
+Ara que ja tenim totes les dades preparades, hem d'assignar a cada variable X el seu pes per determinar la seva importància en la predicció final. Al començament de l'entrenament, assignarem a tots els valors d'enrada el mateix pes, ja que es corregiran lentament durant l'entrenament.
+També hem d'afegir el biaix,que és la constant que ajuda a millorar l'ajust de les prediccions.
 
 \begin{figure}[H]
     \centering
@@ -258,42 +259,41 @@ En una xarxa neuronal, cada valor d'entrada té el seu respectiu pes que determi
     \caption{Taula dels pesos}
 \end{figure}
 
-Com es pot veure a la figura 6.9, he afegit 6 columnes pels pesos, respecte als 6 valors d'entrada, tambè he afegit una columna pel biaix, que serà la constant per millorar l'aust de les prediccions.
+En la figura 6.9 podem observar com ha quedat la taula després d'afegir els pesos als valors d'entrada, he afegit 6 columnes de pesos respecte a les 6 entrades i una columna més pel biaix.
 
-\subsection{Funció de pèrdua}
-Ara que ja tenim les dades normalitzades i hem assignat els sues respectius pesos inicials, podrem aplicar la fòrmula de les xarxes neurnals artificials per calcular la predicció de les notes dels alumnes.
-Recordem que la fòrmula de les xarxes neuronals artificials és:\\
+\subsection{Funció d'error del model}
+Fins ara, ja tenim les dades d'entrada normalitzades i els seus respectius pesos inicials assignats, per tant ja podem aplicar la fòrmula que s'utilitza en les xarxes neuronals per calcular la predicció temporal de la nota final. Hem de recordar que la fòrmula és:\\
 \[
 \sum w_i x_i + \text{biaix}
-\]\\
-Després d'aplicar aquesta fòrmula, obtindrem les prediccions de la nota final, tal com es mostra en la figura seguent.
+\] \\
+Desprès d'aplicar la fòrmula, obtindrem la predicció de la nota final, tal com es veu en la figura 6.10.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{./figures/Predicció.png}
     \caption{Prediccions del model}
-\end{figure}
+ \end{figure}
 
-Cal recordar que aquest valors de la predicció són provisionals, ja que el valor dels pesos encara són imprecises.
+Hem de recordar que els valors de la predicció són erronis, a que els pesos que hem assignat són aleatoris.
 
-El següent pas és entrenar el model per ajustar els pesos i fer més precís els valors de la predicció de la xarxa neuronal, per aconseguir-ho, utilitzarem un mètode d'optimització per ajustar els valors dels pesos, en aquest cas utilitzarem l'algoritme gradient descendent per minimitzar la funció d'error.
+Per questa raò, el següent pas de la pràtcia és entrenar el nostre model per millorar els paràmetres. Per dur això, haurem d'aplicar un procès d'optimització per ajustar aquest paràmetres. En aquest cas utilitzarem l'algoritme gradient descendent, explicat anteriorment en l'apartat \ref{subsec:gradient}.
 
-Per poder apicar aquest algoritme haurem d'afegir més columnes al nostre full de càlcul. Si restem els valors de la predicció ($Y$), amb els valors reals ($y$) obtindrem la diferència de la nota, es a dir, l'error del model.
+Començarem afegint més columnes en el nostre full en la nostra taula. Si restem els valors de la predicció ($Y$) amb els valors reals ($y$) obtindrem la diferència entre la nota dels alumnes i les notes predictives.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{./figures/Errors.png}
-    \caption{Taula d'errors}
+    \caption{Erros de la predicció}
 \end{figure}
 
-Com podem veure en la figura 6.11, hem afegit 2 taules més, la taula d'error, on s'emmagatzema els errors del model, i la taula d'errors en positiu, aquesta última taula recull les dades de la taula d'error i agafa el valor absolut de les dades, fent que tots els valors es tornin positius, d'aquesta manera facilita els càlculs a l'hora de cambiar els paràmetres i s'aprecia la diferència de la predicció i el valor original.
+Es pot veure en la imatge 6.11 dues columnes adicionals, la columna ``error'' emmagatzema els errors del model i l'altre conté els mateixos errors pero en valor absolut, es a dir, que tots els valors estan en positiu, d'aquesta manera serà més fàcil apreciar la diferència dels errors en les prediccions i els càlculs dels paràmetres.
 
-Després d'aquest pas calcularem la mitjana de la taula dels errors en positius. El valor que dongui la mitjana ens ajudarà a saber si la xarxa està millorant la seva precisió, si aquest valor és petit, vol dir que l'error també és petit, fent el model més precís, en cada iteració hem d'aconseguir minimitzar aquest valor perquè el model sigui ho més precís possible.
-
+Després de crear aqeustes taules, calcularem la mitjana dels valors que estan en la taula dels errors en positiu, el resultat d'aquesta mitjana ens ajudarà a orientar-nos i determinar si en cada iteració l'error està augmentant o disminuint, quan més baix sigui aquest valor, la predicció serà més precisa.
 \subsection{Canvis dels paràmetres}
-Ara que ja sabem les funcions d'error de la primera predicció, ens toca entrenar el model per ajustar els pesos per disminuir els errors. Per dur aixó hem de tindre en compte ho següent: Com hem vist abans, l'error del model és la diferència que hi ha entre la predicció ($Y$) i el valor real ($y$), aixó vol dir que quan més gran sigui aquesta diferència, els pesos estaran més lluny del seu valor adequat, hem de trobar una forma per reduïr la diferència d'aquests valors.
-Per altra banda, els valors d'entrada ($X$) es multipliquen pels seus respectius pesos ($W$), això vol dir que si el valor d'entrada ($X$) és petit, el seu pes ($W$) també serà petit, ja que aquests es multipliquen, com ho diu la fòrmula.
-Per tant hem de tindre en compte dues coses: La diferència entre la predicció ($Y$) y el valor real ($y$) i el valor d'entrada ($X$) respecte a cada pes ($W$). Així que la fòrmula que utilitzarem per calcular els canvis de cada paràmetre serà:
+Un cop tenim la funció d'error de la primera predicció, el pas següent és entrenar el model per ajustar els valors dels pesos i del biaix adequadament perquè les següents prediccions siguin més precises.
+Per aconseguir aixó, hem de tindre en compte les dades seguents: Quan la diferència de $Y$ respecte a $y$ és més gran, més luny estaran els pesos dels seus valors ideals. Per tant hem de trobar la forma de calcular de forma correcta els pesos respecte de la diferència dels valors de l predicció.
+
+Gràcies a la fòrmula de la xarxa neuronal sabem que si el valor d'entrada ($X$) és petit, el seu pes ($W$) també ho serà, ja que aquests es multipliquen. Per tant hem de tindre en compte dues coses: La diferènccia de la predicció final ($Y$) i del valor real ($y$) i el valor d'entrada ($X$) respecte al seu pes ($W$). Per tant fòrmula que utilitzarem per calcular els canvis dels paràmetres serà:
 
 \section{Comparació entre una xarxa neurnal creada per un llenguatge de programació netre una de fulls de calculs}
 
