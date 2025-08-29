@@ -1,0 +1,33 @@
+\begin{thebibliography}{1}
+
+\bibitem{bengio2012}
+Yoshua Bengio.
+\newblock Practical recommendations for gradient-based training of deep
+  architectures.
+\newblock Dins Gr{\'e}goire Montavon, Genevi{\`e}ve~B. Orr i Klaus-Robert
+  M{\"u}ller, editors, {\em Neural Networks: Tricks of the Trade\/}, p\`agines
+  437--478. Springer, segona edici\'o, 2012.
+\newblock Online; consultat el 09/08/2025
+  \url{https://doi.org/10.1007/978-3-642-35289-8_26}.
+
+\bibitem{deep-blue}
+IBM.
+\newblock Pàgina web d'{IBM}.
+\newblock \url{https://www.ibm.com/history/deep-blue}.
+\newblock [Online; consultada el 15/07/2025].
+
+\bibitem{McCarthy_Minsky_Rochester_Shannon_2006}
+John McCarthy, Marvin~L. Minsky, Nathaniel Rochester i Claude~E. Shannon.
+\newblock A proposal for the dartmouth summer research project on artificial
+  intelligence, august 31, 1955.
+\newblock {\em AI Magazine\/}, 27(4):12, Dec. 2006.
+\newblock
+  \url{https://ojs.aaai.org/aimagazine/index.php/aimagazine/article/view/1904}.
+
+\bibitem{10.1093/mind/LIX.236.433}
+A.~M. TURING.
+\newblock I.-computing machinery and intelligence.
+\newblock {\em Mind\/}, LIX(236):433--460, 10 1950.
+\newblock \url{https://doi.org/10.1093/mind/LIX.236.433}.
+
+\end{thebibliography}
