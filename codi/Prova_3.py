@@ -15,11 +15,11 @@ model = tf.keras.Sequential([oculte_1, oculte_2, sortida])
 
 model.compile(
     optimizer = tf.keras.optimizers.Adam(0.1),
-    loss='mean_squared_error'S
+    loss='mean_squared_error'
 )
 
 print('Començem a entrenar...')
-historial = model.fit(celsius, fahrenheit, epochs=100, verbose=1)
+historial = model.fit(celcius, fahrenheit, epochs=100, verbose=1)
 print('Model entrenat!')
 
 import matplotlib.pyplot as plt

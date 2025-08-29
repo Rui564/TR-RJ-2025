@@ -1,5 +1,5 @@
 \chapter{Xarxa Neuronal}
-\section{Introducció}
+\section{Introducció}\label{sec:intr}
 En iniciar la part pràctica del treball vam decidir crear tres tipus de xarxes neuronals: una \nameref{sec:10}, una altra \nameref{sec:11} i, finalment, una \nameref{sec:12}.
 
 En aquest capítol explicarem com vam elaborar cadascuna d’aquestes xarxes neuronals i, a més, compararem les dues formes de desenvolupament en una \nameref{sec:op}.
@@ -72,7 +72,7 @@ En aquest apartat explicarem pas a pas de com vaig crear el nostre xarxa neurona
 Abans de començar a treballar amb la xarxa neuronal definitiu, vaig voler fer una de més simple per tal de coneixer amb més profunditat de com funciona una xarxa neuronal de regressió; en aquest cas he escollit un transformador d'unitats de temperatura, de celcius (\textbf{Unitat de temperatura basada en el punt de fusió de l'aigua}) a fahrenheit (\textbf{Sistema d'unitat basada en el punt d'ebullició i solidificació de l'aigua}). Per crear aquesta xarxa vaig escollir el Python com a llenguatge de programació, i el motiu esta explicat en l'apartat \ref{sec:4.4}.\\
 
 
-Per començar, importo el framework i la biblioteca de Python que són les bases de dades necessàries per a la creació de la xarxa neuronal: \boxed{\text{TensorFlow}} (\textbf{framework}) i \boxed{\text{numpy}} (\textbf{biblioteca}). Com podeu veure, he creat uns \textit{abrevacions} per a poder-los cridar més fàcilment quan els necessiti.
+Per començar, importo el framework i la biblioteca de Python que són les bases de dades necessàries per a la creació de la xarxa neuronal: \texttt{TensorFlow} (\textbf{framework}) i \texttt{{numpy}} (\textbf{biblioteca}). Com podeu veure, he creat uns \textit{abrevacions} per a poder-los cridar més fàcilment quan els necessiti.
 
 \begin{itemize}
  \item \textbf{TensorFlow: } TensorFlow és un tipus de framework en que ofereix eines per crear i entrenar models de Ml (Machine learning) i Dl (Deep learning), biblioteques per programar xarxes neuronals i altres algoritmes, Compatibilitat amb GPU i TPU per accelerar càlculs, TensorBoard per visualitzar i monitorar entrenaments, Models preentrenats i repositoris, APIs (Application Programming Interface) en diversos llenguatges.
@@ -85,9 +85,9 @@ Per començar, importo el framework i la biblioteca de Python que són les bases
 \end{figure}
 
 
-    Agafo les paraules \textbf{celsius} i \textbf{fahrenheit} i les defineixo com a variables amb un signe \boxed{=}. Després poso \boxed{np} per indicar la biblioteca, seguit de \boxed{.array()} per especificar que és una llista. Dins dels parèntesis hi poso \boxed{[ ]} i a dins, els diferents valors de temperatura. Finalment, afegeixo el paràmetre \boxed{dtype=float} per indicar que es tracta de dades numèriques decimals.
+Agafo les paraules \textbf{celsius} i \textbf{fahrenheit} i les defineixo com a variables amb un signe \texttt{=}. Després poso \texttt{np} per indicar la biblioteca, seguit de \texttt{.array()} per especificar que és una llista. Dins dels parèntesis hi poso \texttt{[ ]} i a dins, els diferents valors de temperatura. Finalment, afegeixo el paràmetre \texttt{dtype=float} per indicar que es tracta de dades numèriques decimals.
 
-    Repeteixo el mateix procés amb \textbf{fahrenheit}, però en aquest cas les dades no poden ser arbitràries, sinó que han de ser les temperatures corresponents a les de \textbf{celsius} convertides a Fahrenheit. D’aquesta manera, la xarxa neuronal pot entendre la relació entre les dues sèries de dades.
+Repeteixo el mateix procés amb \textbf{fahrenheit}, però en aquest cas les dades no poden ser arbitràries, sinó que han de ser les temperatures corresponents a les de \textbf{celsius} convertides a Fahrenheit. D’aquesta manera, la xarxa neuronal pot entendre la relació entre les dues sèries de dades.
 
 
 \begin{figure}[H]
@@ -96,10 +96,10 @@ Per començar, importo el framework i la biblioteca de Python que són les bases
     \caption{Agrupació de dades amb numpy}
 \end{figure}
 
-Per començar, defineixo les capes de la xarxa neuronal. Utilitzant \boxed{tf.keras.layers.Dense} (\textbf{funció per a capes denses} (Keras és un tipus de API)), creo la primera capa oculta amb el paràmetre \boxed{units=3} per especificar que tingui \textbf{3 neurones}, i \boxed{input_shape=[1]} per indicar que l'entrada és un sol valor. Li assigno el nom \boxed{oculte_1}.\\ \\
-Repeteixo el procés per a la segona capa oculta, \boxed{oculte_2}, amb \boxed{units=3} neurones també, però sense especificar \boxed{input_shape} ja que la xarxa ho dedueix automàticament de la capa anterior.\\ \\
-Finalment, defineixo la capa de \boxed{sortida} amb \boxed{units=1} perquè retorni un sol valor (la predicció en Fahrenheit).\\ \\
-Amb totes les capes creades, les integro en un model seqüencial amb \boxed{tf.keras.Sequential}, passant-les dins d'una llista \boxed{[ ]} en l'ordre correcte: \boxed{[oculte_1, oculte_2, sortida]}. Això crea l'estructura bàsica de la nostra xarxa neuronal.
+Per començar, defineixo les capes de la xarxa neuronal. Utilitzant \texttt{tf.keras.layers.Dense} (\textbf{funció per a capes denses} (Keras és un tipus de API)), creo la primera capa oculta amb el paràmetre \texttt{units=3} per especificar que tingui \textbf{3 neurones}, i \texttt{input\_shape=[1]} per indicar que l'entrada és un sol valor. Li assigno el nom \texttt{oculte\_1}.\\ \\
+Repeteixo el procés per a la segona capa oculta, \texttt{oculte\_2}, amb \texttt{units=3} neurones també, però sense especificar \texttt{input\_shape} ja que la xarxa ho dedueix automàticament de la capa anterior.\\ \\
+Finalment, defineixo la capa de \texttt{sortida} amb \texttt{units=1} perquè retorni un sol valor (la predicció en Fahrenheit).\\ \\
+Amb totes les capes creades, les integro en un model seqüencial amb \texttt{tf.keras.Sequential}, passant-les dins d'una llista \texttt{[ ]} en l'ordre correcte: \texttt{[oculte\_1, oculte\_2, sortida]}. Això crea l'estructura bàsica de la nostra xarxa neuronal.
 
 
 \begin{figure}[H]
@@ -109,10 +109,83 @@ Amb totes les capes creades, les integro en un model seqüencial amb \boxed{tf.k
 \end{figure}
 
 
+Després de dissenyar l’estructura de la xarxa neuronal, cal ensenyar al model com aprendre i entrenar-se.
+Per fer-ho utilitzem la variable \textbf{model}, a la qual ja havíem assignat les capes ocultes i la capa de sortida.
+Tot seguit afegim la instrucció \textbf{.compile()}, que serveix per configurar el model abans de començar l’entrenament.
 
+Dins de \texttt{.compile()} especifiquem el paràmetre \textbf{optimizer}, que indica la manera com el model ajustarà els pesos.
+En aquest cas utilitzem \texttt{"adam"}, un optimitzador adaptatiu que redueix la velocitat d’aprenentatge quan detecta canvis bruscos en un pes,
+l’augmenta quan el pes és estable i, alhora, recorda la direcció correcta per evitar oscil·lacions innecessàries.
+
+A continuació, definim la funció de pèrdua amb el paràmetre \textbf{loss=\texttt{"mean\_squared\_error"}}.
+La funció de pèrdua (\textit{loss}) mesura l’error del model i guia el procés d’aprenentatge.
+En aquest cas, l’opció \texttt{mean squared error} (MSE, error quadràtic mitjà) és especialment útil en problemes de regressió,
+ja que penalitza més fortament els errors grans i permet aconseguir prediccions més precises.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/5.png}
+    \caption{Funció de pèrdua}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/4.png}
+    \caption{Optimizació de la xarxa neuronal}
+\end{figure}
+
+Ara cal incloure la part crucial d'una xarxa neuronal: l'entrenament. Per fer-ho, utilitzem la variable \texttt{historial} per guardar l'evolució de l'entrenament i el model definit, \texttt{model}, aplicant-li el mètode \texttt{.fit()} que es el atribut que indica entrenament. Dins \texttt{.fit()} especifiquem, en ordre, les dades d'entrada (\texttt{celcius}), les dades de sortida (\texttt{fahrenheit}), el nombre de vegades que s'entrenarà la xarxa (\texttt{epochs=100}) i si volem mostrar el procés per pantalla (\texttt{verbose=1}, on 1 significa que sí i 0 que no).
+
+A més, podem utilitzar \texttt{print()} per escriure comentaris o textos al terminal; en aquest cas hem posat \texttt{"Començem a entrenar..."} abans de començar i \texttt{"Model entrenat!"} un cop finalitzat l'entrenament.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/6.png}
+    \caption{L'entrenament de la xarxa neuronal}
+\end{figure}
+
+Després d’haver entrenat la xarxa neuronal i emmagatzemat l’evolució de la pèrdua a la variable \texttt{historial}, podem visualitzar com ha canviat la pèrdua a cada època utilitzant \texttt{matplotlib.pyplot}, una biblioteca de Python per crear gràfiques.
+
+Primer, importem la biblioteca amb \texttt{import matplotlib.pyplot as plt}. A continuació, etiquetem els eixos de la gràfica amb \texttt{plt.xlabel("\# Època")} i \texttt{plt.ylabel("Magnitud de pèrdua")} per indicar què representa cada eix.
+
+Per dibuixar la corba de la pèrdua utilitzem \texttt{plt.plot(historial.history[``loss''])}, que accedeix a la llista de valors de pèrdua que Keras ha guardat per cada època durant l’entrenament. Finalment, amb \texttt{plt.show()} mostrem la gràfica en una finestra del terminal o del notebook.
+
+D’aquesta manera podem observar visualment si el model aprèn correctament, com disminueix la pèrdua al llarg de les èpoques i si hi ha comportaments irregulars que requeririen ajustar els paràmetres d’entrenament.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/7.png}
+    \caption{La corba de pèrdua}
+\end{figure}
+
+Després d’haver entrenat la xarxa neuronal, podem fer prediccions amb nous valors d’entrada. Primer, utilitzem \texttt{print("Fem una predicció!")} per mostrar un missatge al terminal indicant que comença la predicció.
+
+A continuació, fem servir \texttt{model.predict()} per calcular la predicció de la xarxa neuronal. En aquest cas, introduïm un valor de 100 graus Celsius amb \texttt{np.array([[100.0]], dtype=float)}, assegurant-nos que sigui un valor numèric decimal. El resultat s’emmagatzema a la variable \texttt{resultat}.
+
+Finalment, utilitzem \texttt{print("El resultat es " + str(resultat) + " fahrenheit")} per mostrar la predicció obtinguda en Fahrenheit(el str es perque el variable resultat no sigui numeric sino un text). D’aquesta manera podem veure com el model converteix qualsevol temperatura de Celsius a Fahrenheit després de l’entrenament.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/8.png}
+    \caption{Resultat de la predicció}
+\end{figure}
+
+Per a inspeccionar els pesos interns de la xarxa neuronal, podem utilitzar el mètode \texttt{.get\_weights()} en cada capa. Si el posem en els variables que haviem assignat les capes, per exemple, \texttt{oculte\_1.get\_weights()}, \texttt{oculte\_2.get\_weights()} i \texttt{sortida.get\_weights()} permeten veure els valors dels pesos i els biaixos que el model ha après durant l’entrenament, mostrant-los amb \texttt{print()}.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/9.png}
+    \caption{Resultat de la predicció}
+\end{figure}
 
 Font: (\href{https://www.youtube.com/watch?v=iX_on3VxZzkhttps://www.youtube.com/watch?v=iX_on3VxZzk}{Xarxa neuronal amb Python})
 
+\subsection{Predicció de les notes finals de matematiques }
+Una vegada treballat amb la xarxa neuronal de celcius a fahrenheit, ja em trobo capacitat per fer la xarxa neuronal que ens haviem proposat, explicat en l'apartat \ref{sec:intr}
 
 
 
