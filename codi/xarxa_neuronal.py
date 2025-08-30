@@ -60,3 +60,4 @@ nou_entrada_scaled = scaler.transform(nou_entrada)
 
 prediccio = model.predict(nou_entrada_scaled)
 print("Nota prevista:", round(prediccio[0][0],2))
+
