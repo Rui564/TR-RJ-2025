@@ -18,6 +18,50 @@ Les nostres pràctiques consisteixen en recopilar una sèrie de dades d'alumnes 
 \end{itemize}
 Com es pot veure, les preguntes d'aquest formulari estan relacionades amb el rendiment d'estudis dels alumnes, i s'envia als estudiants que tingues l'assignatura matematiques.
 
+Mostra del formulari:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/14.png}
+    \caption{Nota del segon trimestre}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/15.png}
+    \caption{Nota del tercer trimestre}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/16.png}
+    \caption{Nota final del curs}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/17.png}
+    \caption{Hores de son per la nit durant l'horari escolar}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/18.png}
+    \caption{Cuantes hores estudies a la semana}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/19.png}
+    \caption{Pràctiques a casa}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/20.png}
+    \caption{Interès cap a l'assignatura}
+\end{figure}
+
+
 
 Després de les prediccions, compararem la xarxa neuronal feta amb python y la del full de càlcul i veurem quina de les dos té més precisió.
 
@@ -75,8 +119,8 @@ Abans de començar a treballar amb la xarxa neuronal definitiu, vaig voler fer u
 Per començar, importo el framework i la biblioteca de Python que són les bases de dades necessàries per a la creació de la xarxa neuronal: \texttt{TensorFlow} (\textbf{framework}) i \texttt{{numpy}} (\textbf{biblioteca}). Com podeu veure, he creat uns \textit{abrevacions} per a poder-los cridar més fàcilment quan els necessiti.
 
 \begin{itemize}
- \item \textbf{TensorFlow: } TensorFlow és un tipus de framework en que ofereix eines per crear i entrenar models de Ml (Machine learning) i Dl (Deep learning), biblioteques per programar xarxes neuronals i altres algoritmes, Compatibilitat amb GPU i TPU per accelerar càlculs, TensorBoard per visualitzar i monitorar entrenaments, Models preentrenats i repositoris, APIs (Application Programming Interface) en diversos llenguatges.
- \item \textbf{numpy: } numpy és una biblioteca científica per treballar amb vectors i matrius.
+ \item \textbf{TensorFlow: }\label{TensorFlow} TensorFlow és un tipus de framework en que ofereix eines per crear i entrenar models de Ml (Machine learning) i Dl (Deep learning), biblioteques per programar xarxes neuronals i altres algoritmes, Compatibilitat amb GPU i TPU per accelerar càlculs, TensorBoard per visualitzar i monitorar entrenaments, Models preentrenats i repositoris, APIs (Application Programming Interface) en diversos llenguatges.
+ \item \textbf{numpy: }\label{numpy} numpy és una biblioteca científica per treballar amb vectors i matrius.
 \end{itemize}
 \begin{figure}[H]
     \centering
@@ -145,7 +189,7 @@ A més, podem utilitzar \texttt{print()} per escriure comentaris o textos al ter
     \includegraphics[width=0.5\textwidth]{./figures/6.png}
     \caption{L'entrenament de la xarxa neuronal}
 \end{figure}
-
+\label{matplotlib}
 Després d’haver entrenat la xarxa neuronal i emmagatzemat l’evolució de la pèrdua a la variable \texttt{historial}, podem visualitzar com ha canviat la pèrdua a cada època utilitzant \texttt{matplotlib.pyplot}, una biblioteca de Python per crear gràfiques.
 
 Primer, importem la biblioteca amb \texttt{import matplotlib.pyplot as plt}. A continuació, etiquetem els eixos de la gràfica amb \texttt{plt.xlabel("\# Època")} i \texttt{plt.ylabel("Magnitud de pèrdua")} per indicar què representa cada eix.
@@ -182,13 +226,62 @@ Per a inspeccionar els pesos interns de la xarxa neuronal, podem utilitzar el m�
     \caption{Resultat de la predicció}
 \end{figure}
 
+Aquí hi és una mostra del resultat que dona:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/10.png}
+    \caption{El inicí de l'entrenament de la xarxa neuronal}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/11.png}
+    \caption{Model entrenat}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/12.png}
+    \caption{Gràfica de la corba de pèrdua}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/13.png}
+    \caption{El resultat de la predicció suposant que són 100 celcius el que ha de transformar i els baixos i pesos que ha utilizat la xarxa neuronal}
+\end{figure}
+
+
 Font: (\href{https://www.youtube.com/watch?v=iX_on3VxZzkhttps://www.youtube.com/watch?v=iX_on3VxZzk}{Xarxa neuronal amb Python})
 
 \subsection{Predicció de les notes finals de matematiques }
 Una vegada treballat amb la xarxa neuronal de celcius a fahrenheit, ja em trobo capacitat per fer la xarxa neuronal que ens haviem proposat, explicat en l'apartat \ref{sec:intr}
 
+Igual que la xarxa neuronal de celcius a fahrenheit, començare amb la importació dels framework i biblioteques necessaries pel treball: \texttt{numpy}, \texttt{TensorFlow}, \texttt{matplotlib}, \texttt{MinMaxScaler}, \texttt{random} i \texttt{os}
+
+\begin{itemize}
+ \item \textbf{MinMaxScaler: } MinMaxScaler és una eina de la llibreria sklearn, la seva funció es normalitzar les dades i convertir els valors numerics dins del rang $[0,1]$.
+ \item \textbf{random: } random és una llibreria bàsica del Python, aquest modul genera i selecciona nombres aleatoris.
+ \item \textbf{os: } os també és una llibreria estandard del Python. el que ofereix aquest modul és per treballar amb el sistema operatiu.
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/21.png}
+    \caption{Els biblioteques, llibreries i framework}
+\end{figure}
+
+Aquesta vegada a diferencia de l'anterior xarxa he de fixar els resultats de la predicció perquè siguin més precisa les notes finals, amb l'ajuda de random podrem seleccionar un nombre aleatori que vulguessí,
 
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/22.png}
+    \caption{Fixar els resultats de les prediccions}
+\end{figure}
 
 \section{Xarxa Neuronal amb fulls de calculs}\label{sec:11}
 En aquest apartat continuarem amb la xarxa neuranal de regressió però aquesta vegada utilizarem un full de calculs per fer-ho.
