@@ -26,10 +26,13 @@ X = np.array([
     [0, 1,   8,  3,  1,  1],
     [1, 2,   6,  6,  9,  3],
     [1, 1,   3, 10,  9,  9],
-    [1, 1,   7, 10,  9,  9]
+    [1, 1,   7, 10,  9,  9],
+    [1, 1,   7,  8,  10, 9],
+    [0, 0,   7,  10, 10, 10],
+    [1, 0,   7,  10,  9,  10]
 ], dtype=float)
 
-y = np.array([8,8,6,9,8,6,7,4,8,6,6,1,9,9,8], dtype=float)
+y = np.array([8,8,6,9,8,6,7,4,8,6,6,1,9,9,8,9,10,10], dtype=float)
 
 scaler = MinMaxScaler()
 X_scaled = scaler.fit_transform(X)
@@ -46,13 +49,13 @@ loss="mean_squared_error",
 metrics = ["mae"]
 )
 
-historial = model.fit(X_scaled, y, epochs=300, verbose=1)
+historial = model.fit(X_scaled, y, epochs=400, verbose=1)
 plt.plot(historial.history["loss"])
 plt.xlabel("Època")
 plt.ylabel("Pèrdua (loss)")
 plt.show()
 
-nou_entrada = np.array([[1, 0,   8,  8,  7,  9]])
+nou_entrada = np.array([[1, 0,   7,  10,  9,  10]])
 nou_entrada_scaled = scaler.transform(nou_entrada)
 
 prediccio = model.predict(nou_entrada_scaled)
