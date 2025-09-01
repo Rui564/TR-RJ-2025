@@ -387,14 +387,14 @@ També hem d'afegir el biaix,que és la constant que ajuda a millorar l'ajust de
     \caption{Taula dels pesos}
 \end{figure}
 
-En la figura 6.9 podem observar com ha quedat la taula després d'afegir els pesos als valors d'entrada, he afegit 6 columnes de pesos respecte a les 6 entrades i una columna més pel biaix.
+En la figura 6.8 podem observar com ha quedat la taula després d'afegir els pesos als valors d'entrada, he afegit 6 columnes de pesos respecte a les 6 entrades i una columna més pel biaix.
 
 \subsection{Funció d'error del model}
 Fins ara, ja tenim les dades d'entrada normalitzades i els seus respectius pesos inicials assignats, per tant ja podem aplicar la fòrmula que s'utilitza en les xarxes neuronals per calcular la predicció temporal de la nota final. Hem de recordar que la fòrmula és:\\
 \[
 \sum w_i x_i + \text{biaix}
 \] \\
-Desprès d'aplicar la fòrmula, obtindrem la predicció de la nota final, tal com es veu en la figura 6.10.
+Desprès d'aplicar la fòrmula, obtindrem la predicció de la nota final, tal com es veu en la figura 6.29.
 
 \begin{figure}[H]
     \centering
@@ -414,14 +414,55 @@ Començarem afegint més columnes en el nostre full en la nostra taula. Si reste
     \caption{Erros de la predicció}
 \end{figure}
 
-Es pot veure en la imatge 6.11 dues columnes adicionals, la columna ``error'' emmagatzema els errors del model i l'altre conté els mateixos errors pero en valor absolut, es a dir, que tots els valors estan en positiu, d'aquesta manera serà més fàcil apreciar la diferència dels errors en les prediccions i els càlculs dels paràmetres.
+Es pot veure en la imatge 6.30 dues columnes adicionals, la columna ``error'' emmagatzema els errors del model i l'altre conté els mateixos errors pero en valor absolut, es a dir, que tots els valors estan en positiu, d'aquesta manera serà més fàcil apreciar la diferència dels errors en les prediccions i els càlculs dels paràmetres.
 
 Després de crear aqeustes taules, calcularem la mitjana dels valors que estan en la taula dels errors en positiu, el resultat d'aquesta mitjana ens ajudarà a orientar-nos i determinar si en cada iteració l'error està augmentant o disminuint, quan més baix sigui aquest valor, la predicció serà més precisa.
 \subsection{Canvis dels paràmetres}
 Un cop tenim la funció d'error de la primera predicció, el pas següent és entrenar el model per ajustar els valors dels pesos i del biaix adequadament perquè les següents prediccions siguin més precises.
 Per aconseguir aixó, hem de tindre en compte les dades seguents: Quan la diferència de $Y$ respecte a $y$ és més gran, més luny estaran els pesos dels seus valors ideals. Per tant hem de trobar la forma de calcular de forma correcta els pesos respecte de la diferència dels valors de l predicció.
 
-Gràcies a la fòrmula de la xarxa neuronal sabem que si el valor d'entrada ($X$) és petit, el seu pes ($W$) també ho serà, ja que aquests es multipliquen. Per tant hem de tindre en compte dues coses: La diferènccia de la predicció final ($Y$) i del valor real ($y$) i el valor d'entrada ($X$) respecte al seu pes ($W$). Per tant fòrmula que utilitzarem per calcular els canvis dels paràmetres serà:
+Gràcies a la fòrmula de la xarxa neuronal sabem que si el valor d'entrada ($X$) és petit, el seu pes ($W$) també ho serà, ja que aquests es multipliquen. Per tant hem de tindre en compte dues coses: La diferènccia de la predicció final ($Y$) i del valor real ($y$) i el valor d'entrada ($X$) respecte al seu pes ($W$). Per tant fòrmula que utilitzarem per calcular els canvis dels paràmetres serà:\\
+$\Delta W = (Y_{\text{original}} - Y_{\text{predicción}}) \times X$\\
+Aquesta fòrmula serà la que ens ajudarà a ajustar els paràmetres per tal de que la predicció sigui cada cop més precisa. Aplicant aquesta fòrmula a cada una de les dades, obtindrem 7 columnes més.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/Canvis.png}
+    \caption{Canvis en els paràmetres}
+\end{figure}
+
+En la figura 6.31 es por veure com han quedat aquestes taules, els cnvis del biaix es calculen amb la mateixa fòrmula que els pesos, pero sense restar-li cap entrada, ja que actúa com una entrada constant.
+
+Ara és necesari calcular la mitjana dels cavis dels pesos, les mitjanes obtingudes a partir dels canvis seran uns dels valors que utilitzarem per ajustar els paràmetres.
+
+\subsection{La taxa d'aprenentatge}
+Avans de començar a entrenar el model, hem de parlar d'una variable molt important, que és la taxa d'aprenentatge. Auesta taxa és un paràmetre ue ajsta l'ample dels pasos que fem per actualitzar els pesos i el biaix del model, com vam explicar a l'apartat \ref{subsec:gradient}, el valor d'auesta taxa no pot ser molt gran perquè si no no es podria trobar el punt de convergència, ni molt petit perquè relentitzaria la xarxa.
+
+Normalment la el valor de la taxa d'aprenentatge és 1, però de vegades auest valor és molt gran i augmentaria l'error del model, si això pasa hauriem de reduir el seu valor progressivament fins un punt on l'error de la xarxa disminueixi significativament.
+
+Finalment, per trobar el valor final dels canvis ajustats dels paràmetres haurem de multiplicar a mitjana dels canvis dels pesos per la taxa d'aprenentatge.
+\subsection{Èpoques d'entrenament}
+Ja podem començar a entrenar el model, ho farem copiant la mateixa taula que tenim a sota, com es veu en la figura 6.13.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/Etapa_1.png}
+    \caption{Èpoques d'entrenament}
+\end{figure}
+
+Cada època d'entrenament seria com si fos una iteració, podem veure que els paràmetres de la primera època han canviat respecte de la primera taula, que li anomenarem època 0, on aquests pràmetres eren inicialment aleatoris, el valor del primer pes de l'època 1 ($W1$) es calcula sumant el pes de la època 0 pel valor del canvi ajustat.
+Per saber si el model ha millorat, la millor forma de comprobar-ho és fixant-se en la taula dels errors en positiu. Podem veure que aquest valor ha disminuit respecte a l'epoca anterior, això significa que esttà millorant.
+A partir d'ara hem de fer ho mateix repetidament fins que el canvi de l'error entre les èpoques siguin molt petits, quan pasi això significarà que estem pràcticament en el punt de convergència, i és important anant ajustant la taxa d'aprenentatge.
+\subsection{Resultats}
+En aquest cas, ha calgut de 8 etàpes per arribar al punt de convergència. He organitzat els valors de l'error de cada època en una gràfica per que sigui més fàcil visualitzar els canvis
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/Gràfica_error.png}
+    \caption{Gràfica dels valors d'error en cada època}
+\end{figure}
+
+En la figura d'adalt podem apreciar que l'error ha disminuit dràsticament entre l'època 0 fins l'època 3, pero després de la tercera època l'error pràcticament no s'ha mogut, vaig ajustar la taxa d'aprenentatge moltes vegades pero l'error encara baixava molt lentament, fins que vaig arribar a l'etapa 8 on l'error casi no baixava. Això vol dir que el model no ppodia ajustar més els pesos i que ja havia après.
 
 \section{Comparació entre una xarxa neurnal creada per un llenguatge de programació netre una de fulls de calculs}
 
