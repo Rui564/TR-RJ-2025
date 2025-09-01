@@ -223,7 +223,7 @@ Per a inspeccionar els pesos interns de la xarxa neuronal, podem utilitzar el m�
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{./figures/9.png}
-    \caption{Resultat de la predicció}
+    \caption{Els pesos i biaixos assignats}
 \end{figure}
 
 Aquí hi és una mostra del resultat que dona:
@@ -263,7 +263,7 @@ Una vegada treballat amb la xarxa neuronal de celcius a fahrenheit, ja em trobo 
 Igual que la xarxa neuronal de celcius a fahrenheit, començare amb la importació dels framework i biblioteques necessaries pel treball: \texttt{numpy}, \texttt{TensorFlow}, \texttt{matplotlib}, \texttt{MinMaxScaler}, \texttt{random} i \texttt{os}
 
 \begin{itemize}
- \item \textbf{MinMaxScaler: } MinMaxScaler és una eina de la llibreria sklearn, la seva funció es normalitzar les dades i convertir els valors numerics dins del rang $[0,1]$.
+ \item \textbf{MinMaxScaler: } MinMaxScaler és una eina de la llibreria sklearn, la seva funció es normalitzar les dades i convertir els valors numerics dins del rang $[0,1]$, en que facilitarà molt la feina de la xarxa neuronal en entendre les relacions numerics.
  \item \textbf{random: } random és una llibreria bàsica del Python, aquest modul genera i selecciona nombres aleatoris.
  \item \textbf{os: } os també és una llibreria estandard del Python. el que ofereix aquest modul és per treballar amb el sistema operatiu.
 \end{itemize}
@@ -274,8 +274,18 @@ Igual que la xarxa neuronal de celcius a fahrenheit, començare amb la importaci
     \caption{Els biblioteques, llibreries i framework}
 \end{figure}
 
-Aquesta vegada a diferencia de l'anterior xarxa he de fixar els resultats de la predicció perquè siguin més precisa les notes finals, amb l'ajuda de random podrem seleccionar un nombre aleatori que vulguessí,
+A diferència de l’anterior xarxa, aquesta vegada he de fixar els resultats de la predicció per tal que les notes finals siguin més precises. Amb l’ajuda de la llibreria random pugues seleccionar qualsevol nombre aleatori que vulguessí, però per garantir la reproduïbilitat assignem la llavor (seed) amb el valor 42. Així, la xarxa neuronal sempre s’inicialitzarà amb els mateixos pesos i biaixos.
 
+A continuació, controlo l’aleatorietat de les diferents llibreries que intervenen en el procés: \texttt{NumPy}, \texttt{TensorFlow}, \texttt{random} i, finalment, estableixo el valor del hash de Python amb la importació del mòdul \texttt{os}.
+
+Control de l’aleatorietat:
+\begin{itemize}
+\item \textbf{Llavor:} \texttt{seed = 42}
+\item \textbf{NumPy:} \texttt{np.random.seed(seed)}
+\item \textbf{TensorFlow:} \texttt{tf.random.set\_seed(seed)}
+\item \textbf{random:} \texttt{random.seed(seed)}
+\item \textbf{Python:} \texttt{os.environ["PYTHONHASHSEED"] = str(seed)}
+\end{itemize}
 
 \begin{figure}[H]
     \centering
@@ -283,9 +293,34 @@ Aquesta vegada a diferencia de l'anterior xarxa he de fixar els resultats de la 
     \caption{Fixar els resultats de les prediccions}
 \end{figure}
 
+
+Una vegada d'haver fixat els pessos i biaixos, ja començo a emmagatzemar dades per l'entrenament de la xarxa neuronal. Llavors començo amb la de la entrada seguint d'aquest ordre tots sent la variable X:
+ \begin{enumerate}
+ \item Realització de deures
+ \item Hores d'estudis (semanal)
+ \item Hores de section
+ \item Interès en la matèria
+ \item Nota del segon trimestre
+ \item Nota del tercer trimestre
+ \item Nota final
+ \end{enumerate}
+ Posem \texttt{X = np.array([])} en que crea un llistat de dades, d'aquesta manera tan sol he de estar omplint les dades que he obtés del formulari que haviem creat, seguint una estructura de \texttt{[x1, x2, x3, x4, x5, x6]} i per ultim sempre acabo amb un \texttt{dtype=float} per indicar que el numero es un decimal.
+ Després d'asssignar les dades d'entrades, arà toca constuir la de la sortida o també anomenat resultat/valor, que els considerare com a \texttt{y}, a diferencià del \texttt{X}, la sortida \texttt{y} només té una filera que representarà el valor que donarà cada filera dels \texttt{X} separades per una coma.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/23.png}
+    \caption{magatzem de dades}
+\end{figure}
+
+
+
+
+
+
+
 \section{Xarxa Neuronal amb fulls de calculs}\label{sec:11}
 En aquest apartat continuarem amb la xarxa neuranal de regressió però aquesta vegada utilizarem un full de calculs per fer-ho.
-L'estructura que utilitzarem per aquesta pràctica serà la del perceptró.
+ L'estructura que utilitzarem per aquesta pràctica serà la del perceptró.
 
 \begin{figure}[H]
     \centering
