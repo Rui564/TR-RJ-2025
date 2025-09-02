@@ -37,6 +37,9 @@ y = np.array([8,8,6,9,8,6,7,4,8,6,6,1,9,9,8,9,10,10], dtype=float)
 scaler = MinMaxScaler()
 X_scaled = scaler.fit_transform(X)
 
+scaler_y = MinMaxScaler()
+y_scaled = scaler_y.fit_transform(y.reshape(-1, 1)) 
+
 model = tf.keras.Sequential([
     tf.keras.layers.Dense(32, activation="relu", input_shape=[6]),
     tf.keras.layers.Dense(16, activation="relu"),
@@ -49,7 +52,7 @@ loss="mean_squared_error",
 metrics = ["mae"]
 )
 
-historial = model.fit(X_scaled, y, epochs=400, verbose=1)
+historial = model.fit(X_scaled, y_scaled, epochs=400, verbose=1)
 plt.plot(historial.history["loss"])
 plt.xlabel("Època")
 plt.ylabel("Pèrdua (loss)")
@@ -59,5 +62,6 @@ nou_entrada = np.array([[1, 0,   7,  10,  9,  10]])
 nou_entrada_scaled = scaler.transform(nou_entrada)
 
 prediccio = model.predict(nou_entrada_scaled)
-print("Nota prevista:", round(prediccio[0][0],2))
+prediccio_real = scaler_y.inverse_transform(prediccio)
+print("Nota prevista:", round(prediccio_real[0][0],2))
 

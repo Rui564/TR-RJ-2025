@@ -294,26 +294,108 @@ Control de l’aleatorietat:
 \end{figure}
 
 
-Una vegada d'haver fixat els pessos i biaixos, ja començo a emmagatzemar dades per l'entrenament de la xarxa neuronal. Llavors començo amb la de la entrada seguint d'aquest ordre tots sent la variable X:
- \begin{enumerate}
- \item Realització de deures
- \item Hores d'estudis (semanal)
- \item Hores de section
- \item Interès en la matèria
- \item Nota del segon trimestre
- \item Nota del tercer trimestre
- \item Nota final
- \end{enumerate}
- Posem \texttt{X = np.array([])} en que crea un llistat de dades, d'aquesta manera tan sol he de estar omplint les dades que he obtés del formulari que haviem creat, seguint una estructura de \texttt{[x1, x2, x3, x4, x5, x6]} i per ultim sempre acabo amb un \texttt{dtype=float} per indicar que el numero es un decimal.
- Després d'asssignar les dades d'entrades, arà toca constuir la de la sortida o també anomenat resultat/valor, que els considerare com a \texttt{y}, a diferencià del \texttt{X}, la sortida \texttt{y} només té una filera que representarà el valor que donarà cada filera dels \texttt{X} separades per una coma.
+Una vegada fixats els pesos i els biaixos, començo a emmagatzemar les dades per a l’entrenament de la xarxa neuronal.
+Primer preparo les dades d’entrada, que anomenaré \texttt{X}, seguint aquest ordre de variables:
+
+\begin{enumerate}
+    \item Realització de deures
+    \item Hores d’estudi setmanals
+    \item Hores de secció
+    \item Interès en la matèria
+    \item Nota del segon trimestre
+    \item Nota del tercer trimestre
+\end{enumerate}
+
+Definim \texttt{X = np.array([])}, que crea una llista de dades.
+D’aquesta manera, només caldrà anar omplint-la amb les dades obtingudes del formulari, mantenint sempre l’estructura
+\texttt{[x1, x2, x3, x4, x5, x6]}.
+Finalment, afegeixo \texttt{dtype=float} per indicar que els valors són decimals.
+
+Un cop assignades les dades d’entrada, toca construir les dades de sortida, també anomenades resultat o valor, que representaré amb \texttt{y}.
+A diferència de \texttt{X}, la sortida \texttt{y} només tindrà una columna, que correspondrà al valor que genera cada fila i columna de \texttt{X}, separada per comes.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{./figures/23.png}
     \caption{magatzem de dades}
 \end{figure}
 
+A més d’emmagatzemar les dades, m’he adonat que la normalització també és crucial perquè la xarxa neuronal pugui entendre millor les relacions entre les dades. Això és degut al fet que cada dada pot tenir un valor numèric molt diferent, com les hores d’estudi o si s’ha estudiat o no. Per normalitzar les dades utilitzarem el \texttt{MinMaxScaler} de \texttt{sklearn}, tant per a la \texttt{X} com per a la \texttt{y}.
+
+Primer, creem un escalador per a la \texttt{X} amb \texttt{scaler = MinMaxScaler()}. A continuació, apliquem la normalització amb \texttt{X\_scaled = scaler.fit\_transform(X)}, amb la qual cosa totes les dades de la \texttt{X} quedaran dins l’interval $[0,1]$.
+
+De manera similar, normalitzarem la \texttt{y} amb un altre escalador, \texttt{scaler\_y}. Aquí cal convertir \texttt{y} en una matriu amb \texttt{y.reshape(-1, 1)} ja que el \texttt{MinMaxScaler} només funciona amb matrius de dues dimensions. Després, apliquem la normalització amb \texttt{y\_scaled = scaler\_y.fit\_transform(y.reshape(-1, 1))}.
 
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/24.png}
+    \caption{Normalització de les dades}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/25.png}
+    \caption{Normalització Min-Max}
+\end{figure}
+
+
+Un cop normalitzades les dades, el següent pas és definir l’estructura de la xarxa neuronal que utilitzare per predir les notes finals de matemàtiques. Per a això, he creat un model seqüencial amb capes ocultes.
+
+\begin{itemize}
+    \item \textbf{Primera capa oculta:} \texttt{tf.keras.layers.Dense(32, activation="relu", input\_shape=[6])} \\
+    Aquesta capa té \textbf{32 neurones} i utilitza la funció d’activació \texttt{ReLU} (\textit{Rectified Linear Unit}) per introduir no-linealitat. El paràmetre \texttt{input\_shape=[6]} indica que cada mostra d’entrada té 6 característiques, corresponents a les variables definides a \texttt{X}.
+
+    \item \textbf{Segona capa oculta:} \texttt{tf.keras.layers.Dense(16, activation="relu")} \\
+    Aquesta capa té \textbf{16 neurones} i també utilitza \texttt{ReLU}. No cal especificar \texttt{input\_shape} ja que el model dedueix automàticament l’entrada de la capa anterior.
+
+    \item \textbf{Capa de sortida:} \texttt{tf.keras.layers.Dense(1)} \\
+    La capa final té \textbf{una sola neurona}, ja que vull obtenir un sol valor com a predicció: la nota final. No he posat una funció d'activació perquè la funcio que doni sigui lineal.
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/26.png}
+    \caption{Estructura de la xarxa neuronal}
+\end{figure}
+
+Després de definir l’estructura de la xarxa neuronal, cal configurar com el model aprendrà. Per fer-ho, utilitzem el mètode \texttt{.compile()} del model, que permet establir l’optimitzador, la funció de pèrdua i les mètriques d’avaluació.
+
+\begin{itemize}
+    \item \textbf{Optimitzador:} \texttt{tf.keras.optimizers.Adam(0.01)} \\
+    L’optimitzador \texttt{Adam} és un algoritme adaptatiu que ajusta automàticament la velocitat d’aprenentatge dels pesos. El paràmetre \texttt{0.01} indica la taxa d’aprenentatge inicial. Aquest optimitzador és especialment eficient per a problemes de regressió i xarxes amb múltiples capes.
+
+    \item \textbf{Funció de pèrdua:} \texttt{"mean\_squared\_error"} \\
+    La funció de pèrdua (\textit{loss}) mesura l’error del model durant l’entrenament. En aquest cas, \texttt{mean squared error (MSE)} penalitza més fortament els errors grans, ajudant la xarxa a generar prediccions més precises.
+
+    \item \textbf{Mètrica:} \texttt{["mae"]} \\
+    La mètrica \texttt{Mean Absolute Error (MAE)} permet monitorar l’error absolut mitjà entre les prediccions i els valors reals, facilitant la interpretació del rendiment del model durant l’entrenament.
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/27.png}
+    \caption{Configuració de la xarxa}
+\end{figure}
+
+Un cop compilat el model, el següent pas és ensenyar-lo a aprendre de les dades. Per això utilitzem el mètode \texttt{.fit()}, que ajusta els pesos de la xarxa neuronal per minimitzar l’error de predicció. En aquest cas, utilitzare les dades normalitzades \texttt{X\_scaled} i \texttt{y\_scaled}, de manera que l’aprenentatge sigui estable i eficient. El model s’entrena durant 400 èpoques, és a dir, passarà 400 vegades per totes les mostres d’entrenament ajustant els pesos en cada iteració. A més, s’ha activat l’opció \texttt{verbose=1} per mostrar per pantalla el progrés de l’entrenament i l’error de cada època.
+
+Per visualitzar l’evolució de la pèrdua al llarg de l’entrenament, utilitzare \texttt{matplotlib.pyplot}. La funció \texttt{plt.plot(historial.history["loss"])} dibuixa la corba de la pèrdua (\textit{loss}) per cada època. Els eixos de la gràfica s’etiqueten amb \texttt{plt.xlabel("Època")} i \texttt{plt.ylabel("Pèrdua (loss)")}, i finalment \texttt{plt.show()} mostra la gràfica amb la corba de pèrdua.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/28.png}
+    \caption{Entrenament de la xarxa i la corba de pèrdua}
+\end{figure}
+
+Ara que la xarxa neuronal ja està entrenada, vull mostrar els resultats. Primer, configuro una nova entrada amb les dades de la mostra que vull predir \texttt{nou\_entrada = np.array([[1, 0,   7,  10,  9,  10]])} i la normalitzo amb el mateix escalador que vaig utilitzar durant l’entrenament \texttt{nou\_entrada\_scaled = scaler.transform(nou\_entrada)}, per assegurar-me que els valors es troben dins del mateix rang. Un cop normalitzada, demano a la xarxa neuronal que realitzi la predicció \texttt{prediccio = model.predict(nou\_entrada\_scaled)}. Com que la sortida original estava escalada i convertida en una matriu, inverteixo aquesta transformació per obtenir la predicció en l’escala real \texttt{prediccio\_real = scaler\_y.inverse\_transform(prediccio)}. Finalment, mostro el resultat amb \texttt{print("Nota prevista:", round(prediccio\_real[0][0],2))}, arrodonint-lo a les xifres que vull per facilitar-ne la lectura, el \texttt{[0][0]} és per seleccionar la primera fila del matriu i el primer element d'aquesta fila, i el \texttt{round(,2)} es per arrodonint-lo en dos xifres. D’aquesta manera, finalitzo tot el procés de predicció amb la xarxa neuronal.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/29.png}
+    \caption{Resultat final i els seus ajustaments}
+\end{figure}
 
 
 
