@@ -263,7 +263,7 @@ Una vegada treballat amb la xarxa neuronal de celcius a fahrenheit, ja em trobo 
 Igual que la xarxa neuronal de celcius a fahrenheit, començare amb la importació dels framework i biblioteques necessaries pel treball: \texttt{numpy}, \texttt{TensorFlow}, \texttt{matplotlib}, \texttt{MinMaxScaler}, \texttt{random} i \texttt{os}
 
 \begin{itemize}
- \item \textbf{MinMaxScaler: } MinMaxScaler és una eina de la llibreria sklearn, la seva funció es normalitzar les dades i convertir els valors numerics dins del rang $[0,1]$, en que facilitarà molt la feina de la xarxa neuronal en entendre les relacions numerics.
+ \item \textbf{MinMaxScaler: } MinMaxScaler és una eina de la llibreria sklearn, la seva funció es normalitzar les dades i convertir els valors numerics dins del rang $[0,1]$, en que facilitarà molt la feina de la xarxa neuronal en entendre les relacions numerics. \nameref{subsec:24}
  \item \textbf{random: } random és una llibreria bàsica del Python, aquest modul genera i selecciona nombres aleatoris.
  \item \textbf{os: } os també és una llibreria estandard del Python. el que ofereix aquest modul és per treballar amb el sistema operatiu.
 \end{itemize}
@@ -438,7 +438,7 @@ Aquestra representació queda així:
 \end{figure}
 
 L'entrada de ``Realització de deures'' és una data binaria que nomès pot prendre valors 0 o 1.
-\subsection{Normalització de dades}
+\subsection{Normalització de dades}\label{subsec:24}
 Abans de continuar, és necessari explicar que és la normalització de dades.
 La normalització de dades és una tècnica de procesament que consisteix en transformar dades de diferents escales a una escala comú, com per exemple del 0 al 1, aixó facilita la comparació i l'anàlisi de la xarxa neuronal i millora el seu rendiment. En el nostre cas, tenim dades binaries i dades ordinaries qe poden prendre qualsevol valor, aquest desequilibri afecta els càlculs posteriors si no es solucionen d'alguna manera.
 
