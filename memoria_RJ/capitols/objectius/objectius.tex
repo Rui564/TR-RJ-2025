@@ -1,7 +1,7 @@
 \chapter{Objectius}
 \label{c:objectius}
 
-Tal com s’ha introduït a la \nameref{c:intro}, l’objectiu principal del nostre \textit{Treball de Recerca} és construir i analitzar el funcionament d’una xarxa neuronal. Ara bé, no ens conformem amb qualsevol implementació, ja que existeixen infinitat de models i variants. Per donar més coherència i solidesa a l’estudi, hem decidit treballar-ne amb tres diferents:
+Tal com s’ha explicat a la intoducció, l’objectiu principal del nostre \textit{Treball de Recerca} és construir i analitzar el funcionament d’una xarxa neuronal. Ara bé, no ens conformem amb qualsevol implementació, ja que existeixen infinitat de models i variants. Per donar més coherència i solidesa a l’estudi, hem decidit treballar-ne amb tres diferents:
 
 \begin{itemize}
     \item una xarxa neuronal implementada amb llenguatge de programació (Python),
@@ -9,35 +9,40 @@ Tal com s’ha introduït a la \nameref{c:intro}, l’objectiu principal del nos
     \item i un cas pràctic aplicat al joc \textit{Mobile Legends: Bang Bang}.
 \end{itemize}
 
-A partir d’aquest marc general, detallem els requisits específics en dos apartats: \nameref{sec:Requisits proposats pel Tutor} i \nameref{sec:Requisits proposats per nosaltres}.
 
-\section{Requisits proposats pel Tutor}
-\label{sec:Requisits proposats pel Tutor}
-Els requisits que ens va donar son els següents:
+A continuació detallem els requisits específics de la nostra recerca que dividim en dues parts en funció de qui els proposa:
+
 \begin{enumerate}
- \item \textbf{Xarxa neuronal}
+ \item Requisits proposats pel Tutor.
+    \begin{enumerate}
+        \item \textbf{Entorn de treball professional}
 
- Ens va demanar un tipus de xarxa neuronal específica, concretament una xarxa de regressió. Els valors que podíem introduir dins de la xarxa neuronal de regressió havien de ser fruit de la nostra pròpia recerca, per exemple mitjançant un formulari. El valor a predir havia de ser la nostra nota final de matemàtiques, i ens demanava que la xarxa assolís almenys un 65\% de precisió.
+        El Tutor ens ha demanat reproduir la manera de treballar dels centres d'investigació en aquest camp. En coordinació amb dos professors universitaris ha determinar quines eines eren les més adients per a portar endavant aquest projecte: sistema operatiu Linux, entorn col$\cdot$laboratiu git, editor LaTeX, ... Tots els aspectes que es refereixen a la metodologia es troben detallats al capítol \ref{c:Metodologia}: \nameref{c:Metodologia}.
 
- \item \textbf{Escalable}
+        \item \textbf{Escalable}
 
- La xarxa neuronal ha de poder ampliar-se fàcilment, ja sigui afegint més dades, modificant els paràmetres o incrementant la seva complexitat, sense necessitat de redissenyar-la completament.
+        La xarxa neuronal ha de poder ampliar-se fàcilment, ja sigui afegint més dades, modificant els paràmetres o incrementant la seva complexitat, sense necessitat de redissenyar-la completament.
 
-\item \textbf{Simplicitat i Eficiència}
+        \item \textbf{Simplicitat i Eficiència}
 
-La xarxa neuronal ha de ser tan simple com sigui possible, però alhora amb la màxima eficàcia.
+        La xarxa neuronal ha de ser tan simple com sigui possible, però alhora amb la màxima eficàcia.
+
+    \end{enumerate}
+\clearpage
+ \item Requisit proposat per nosaltres:
+    \begin{enumerate}
+        \item \textbf{Xarxa neuronal}
+
+        Ens va demanar un tipus de xarxa neuronal específica, concretament una xarxa de regressió. Els valors que podíem introduir dins de la xarxa neuronal de regressió havien de ser fruit de la nostra pròpia recerca, per exemple mitjançant un formulari. El valor a predir havia de ser la nostra nota final de matemàtiques, i ens demanava que la xarxa assolís almenys un 65\% de precisió.
+
+        \item \textbf{Fulls de càlcul}
+
+        A més de la implementació en llenguatge de programació, hem decidit desenvolupar una variant de la xarxa de regressió utilitzant fulls de càlcul, amb l’objectiu de mostrar de manera visual i fàcil d'entendre el seu funcionament.
+    \end{enumerate}
 
 \end{enumerate}
 
 
-\section{Requisits proposats per nosaltres}
-\label{sec:Requisits proposats per nosaltres}
-
-Els requisits que ens va donar son els següents:
-\begin{enumerate}
- \item \textbf{Fulls de càlcul}
- A més de la implementació en llenguatge de programació, hem decidit desenvolupar una variant de la xarxa de regressió utilitzant fulls de càlcul, amb l’objectiu de mostrar de manera visual i fàcil d'entendre el seu funcionament.
-\end{enumerate}
 
 
 
