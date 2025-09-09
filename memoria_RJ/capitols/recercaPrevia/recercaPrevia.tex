@@ -185,7 +185,7 @@ Totes les aprenantatges de reforç segueixen pragmaticament aquest esquema per l
     \caption{Les capes que te la IA per funcionar}
 \end{figure}
 
-
+\begin{comment}
 \subsection{Potència computacional}\label{subsec:Potència computacional}
 La intel·ligència artificial (IA) i la potència de càlcul estan profundament connectades. Sense maquinari potent, les aplicacions d’IA no podrien processar algoritmes complexos ni gestionar les enormes quantitats de dades que requereixen els models actuals. \\
 
@@ -243,103 +243,98 @@ Un Frameworks, en diferencia, de la biblioteca per el control total que pot teni
 El software és el conjunt de programes, instruccions i regles informàtiques que permeten executar tasques específiques en un ordinador o sistema.
 
 La relació entre el software i la IA funciona de la següent manera: d'una banda, el software dóna utilitat pràctica a la IA en àmbits reals, permetent codificar les seves tècniques i processar les grans quantitats de dades que necessita. D'altra banda, la IA aporta automatització a les tasques repetitives del software, estalviant temps i recursos. Aquesta interacció crea un benefici mutu que forma un cicle perfecte, on cadascú millora i potencia l'altre.
+\end{comment}
 
-\subsection{Mètodes d'Optimització en Intel·ligència Artificial:Fonaments i Aplicacions}\label{subsec:Optimització i Ajustos}
+\section{Mètodes d'Optimització en Intel·ligència Artificial:Fonaments i Aplicacions}\label{subsec:Optimització i Ajustos}
 
-\subsubsection{Introducció}
+\textbf{Introducció}\\
 La Intel·ligència Artificial (IA) integra múltiples estratègies d'optimització, cadascuna adaptada als diferents models d'IA. A continuació, s'exploren els mètodes més destacades, amb una mini anàlisi dels mecanismes i les referències acadèmiques que hem utilitzat.
 
-\subsubsection{Retropropagació en Aprenentatge Profund}
-La retropropagació (\textit{backpropagation}) és com el punt i coma en el text per les xarxes neuronals artificials. Aquest algorisme es basa en un procés iteratiu en dues fases:
+\begin{enumerate}
+ \item \textbf{Retropropagació en Aprenentatge Profund:} La retropropagació (\textit{backpropagation}) és com el punt i coma en el text per les xarxes neuronals artificials. Aquest algorisme es basa en un procés iteratiu en dues fases:
+    \begin{enumerate}
+     \item \textbf{Fase de propagació endavant}: Les dades d'entrada es transmeten a través de les capes de la xarxa, generant una predicció. Durant aquest procés, cada neurona aplica una transformació lineal seguida d'una funció d'activació no lineal, com \textit{\nameref{subsec:1}} o \textit{\nameref{3.7.1}}.
 
-\begin{itemize}
-\item \textbf{Fase de propagació endavant}: Les dades d'entrada es transmeten a través de les capes de la xarxa, generant una predicció. Durant aquest procés, cada neurona aplica una transformació lineal seguida d'una funció d'activació no lineal, com \textit{\nameref{subsec:1}} o \textit{\nameref{3.7.1}}.
+     \item \textbf{Fase de propagació enrere}: Es calcula l'error entre la predicció i el valor real utilitzant una funció de pèrdua (\textit{loss function}), com l'error quadràtic mitjà (\textit{Mean Squared Error}) per a problemes de regressió o l'entropia creuada (\textit{Cross-Entropy Loss}) per a classificació. Mitjançant \nameref{subsec:cadena} (\textit{chain rule}), es determina la contribució de cada paràmetre a l'error global, obtenint els gradients $\partial L/\partial W$, on $L$ representa la pèrdua i $W$ els pesos de la xarxa.
 
-\item \textbf{Fase de propagació enrere}: Es calcula l'error entre la predicció i el valor real utilitzant una funció de pèrdua (\textit{loss function}), com l'error quadràtic mitjà (\textit{Mean Squared Error}) per a problemes de regressió o l'entropia creuada (\textit{Cross-Entropy Loss}) per a classificació. Mitjançant \nameref{subsec:cadena} (\textit{chain rule}), es determina la contribució de cada paràmetre a l'error global, obtenint els gradients $\partial L/\partial W$, on $L$ representa la pèrdua i $W$ els pesos de la xarxa.
+     \item \textbf{Actualització de paràmetres}: Els pesos s'ajusten en la direcció oposada al gradient, utilitzant variants del descens de gradient, com SGD \textit{\nameref{subsec:gradient}}, que aplica updates amb un subconjunt aleatori de dades, o optimitzadors més sofisticats com Adam (\textit{Adaptive Moment Estimation}), que adapta la taxa d'aprenentatge per a cada paràmetre.
+    \end{enumerate}
+ Per més informació també podeu accedir aquest  aparatat \ref{subsec:propagació} on també explica la retropropagació de la xarxa neuronal.
 
-\item \textbf{Actualització de paràmetres}: Els pesos s'ajusten en la direcció oposada al gradient, utilitzant variants del descens de gradient, com SGD \textit{\nameref{subsec:gradient}}, que aplica updates amb un subconjunt aleatori de dades, o optimitzadors més sofisticats com Adam (\textit{Adaptive Moment Estimation}), que adapta la taxa d'aprenentatge per a cada paràmetre.
-\end{itemize}
+ \textbf{Suport teòric}:
+ \begin{quote}
+ \textit{Rumelhart, D. E., Hinton, G. E., \& Williams, R. J. (1986). ``Learning representations by back-propagating errors.'' Nature, 323(6088), 533-536.}
 
-Per més informació també podeu accedir aquest  aparatat \ref{subsec:propagació} on també explica la retropropagació de la xarxa neuronal.
+ Aquest article seminal estableix els fonaments matemàtics de la retropropagació, demostrant la seva eficàcia per a l'entrenament de xarxes multicapa.
+ \end{quote}
 
-\textbf{Suport teòric}:
-\begin{quote}
-\textit{Rumelhart, D. E., Hinton, G. E., \& Williams, R. J. (1986). ``Learning representations by back-propagating errors.'' Nature, 323(6088), 533-536.}
+ \item \textbf{Optimització en Models Generatius:} Els models generatius, com les xarxes generatives adversàries (GANs) i els autoencoders variacionals (VAEs), empren tècniques d'optimització especialitzades.\\
+ \textbf{Exemples:}\\
+     \begin{enumerate}
+      \item \textbf{Xarxes Generatives Adversàries (GANs):} El marc adversarial de les GANs implica la competició entre dos models:
+          \begin{enumerate}
+           \item \textbf{Generador (\textit{Generator})}: Transforma un vector de soroll/aleatori(\textit{noise vector}) en dades sintètiques, intentant enganyar el discriminador.
 
-Aquest article seminal estableix els fonaments matemàtics de la retropropagació, demostrant la seva eficàcia per a l'entrenament de xarxes multicapa.
-\end{quote}
+           \item \textbf{Discriminador (\textit{Discriminator})}: Distingeix entre dades reals i generades, actuant com un classificador binari.
+          \end{enumerate}
+           L'entrenament es formula com un joc minimax, on la funció objectiu és:
+           $ \min_G \max_D V(D, G) = \mathbb{E}_{x \sim p_{\text{data}}}[\log D(x)] + \mathbb{E}_{z \sim p_z}[\log(1 - D(G(z)))] $
 
-\subsubsection{Optimització en Models Generatius}
-Els models generatius, com les xarxes generatives adversàries (GANs) i els autoencoders variacionals (VAEs), empren tècniques d'optimització especialitzades:
+           La retropropagació s'aplica alternativament amb dues xarxes, ajustant els seus paràmetres per millorar les seves funcions respectives.
 
-\paragraph{Xarxes Generatives Adversàries (GANs)}
-El marc adversarial de les GANs implica la competició entre dos models:
+           \textbf{Suport teòric}:
+           \begin{quote}
+           \textit{Goodfellow, I., et al. (2014). ``Generative Adversarial Networks.'' Advances in Neural Information Processing Systems 27 (NeurIPS).}
 
-\begin{itemize}
-\item \textbf{Generador (\textit{Generator})}: Transforma un vector de soroll/aleatori(\textit{noise vector}) en dades sintètiques, intentant enganyar el discriminador.
+           Aquesta publicació introdueix el concepte de GANs, destacant el seu potencial per a la generació de dades realistes mitjançant aprenentatge adversarial.
+           \end{quote}
 
-\item \textbf{Discriminador (\textit{Discriminator})}: Distingeix entre dades reals i generades, actuant com un classificador binari.
-\end{itemize}
+           \item \textbf{Autoencoders Variacionals (VAEs):} Els VAEs optimitzen l'\textit{Evidence Lower Bound} (ELBO), que combina dos termes:
+               \begin{enumerate}
+                \item \textbf{Terme de reconstrucció}: Minimitza l'error entre les dades originals i les reconstruïdes.
 
-L'entrenament es formula com un joc minimax, on la funció objectiu és:
-$ \min_G \max_D V(D, G) = \mathbb{E}_{x \sim p_{\text{data}}}[\log D(x)] + \mathbb{E}_{z \sim p_z}[\log(1 - D(G(z)))] $
+                \item \textbf{Terme de regularització}: Minimitza la divergència de Kullback-Leibler (\textit{KL divergence}) entre la distribució latent i una distribució prior (normalment una normal estàndard).
 
-La retropropagació s'aplica alternativament amb dues xarxes, ajustant els seus paràmetres per millorar les seves funcions respectives.
+                L'optimització es realitza mitjançant gradient descent sobre l'ELBO, amb l'ajut del \textit{reparameterization trick} per a un càlcul eficient dels gradients.
 
-\textbf{Suport teòric}:
-\begin{quote}
-\textit{Goodfellow, I., et al. (2014). ``Generative Adversarial Networks.'' Advances in Neural Information Processing Systems 27 (NeurIPS).}
+                \textbf{Suport teòric}:
+                \begin{quote}
+                \textit{Kingma, D. P., \& Welling, M. (2013). ``Auto-Encoding Variational Bayes.'' arXiv preprint arXiv:1312.6114.}
 
-Aquesta publicació introdueix el concepte de GANs, destacant el seu potencial per a la generació de dades realistes mitjançant aprenentatge adversarial.
-\end{quote}
+                Els autors presenten el marc teòric dels VAEs, introduint tècniques clau com el \textit{reparameterization trick} per a l'entrenament eficient de models generatius probabilístics.
+                \end{quote}
+               \end{enumerate}
+           \item \textbf{Aprenentatge per Reforç i Optimització basada en Polítiques:} En l'aprenentatge per reforç (\textit{Reinforcement Learning, RL}), l'optimització es centra en maximizar la recompensa acumulada. Un enfocament prominent és el \textit{Policy Gradient}, que ajusta directament la política (\textit{policy}) mitjançant:
+           \[ \nabla_\theta J(\theta) = \mathbb{E}_{\tau \sim \pi_\theta} \left[ \sum_{t=0}^T \nabla_\theta \log \pi_\theta(a_t|s_t) \cdot R(\tau) \right] \]
+           on $\tau$ representa una trajectòria i $R(\tau)$ la recompensa acumulada.
+           \textbf{Suport teòric}:
+           \begin{quote}
+           \textit{Sutton, R. S., et al. (2000). ``Policy Gradient Methods for Reinforcement Learning with Function Approximation.'' Advances in Neural Information Processing Systems 12 (NeurIPS).}
 
-\paragraph{Autoencoders Variacionals (VAEs)}
-Els VAEs optimitzen l'\textit{Evidence Lower Bound} (ELBO), que combina dos termes:
+           Aquest treball estableix les bases teòriques dels mètodes de gradient de polítiques, demostrant la seva aplicabilitat en entorns complexos.
+           \end{quote}
+           \textbf{Alternatives a la Retropropagació: Algorismes Evolutius:} Per a problemes on el càlcul de gradients no és factible, els algorismes genètics (\textit{Genetic Algorithms, GA}) ofereixen una solució viable. Aquests algorismes emulen l'evolució natural mitjançant:
+               \begin{enumerate}
+                \item \textbf{Selecció}: Els individus més aptes (\textit{fitness}) tenen major probabilitat de reproduir-se.
 
-\begin{itemize}
-\item \textbf{Terme de reconstrucció}: Minimitza l'error entre les dades originals i les reconstruïdes.
+                \item \textbf{Creuament (\textit{Crossover})}: Combina característiques de dos individus per generar descendència.
 
-\item \textbf{Terme de regularització}: Minimitza la divergència de Kullback-Leibler (\textit{KL divergence}) entre la distribució latent i una distribució prior (normalment una normal estàndard).
-\end{itemize}
+                \item \textbf{Mutació}: Introdueix variabilitat genètica aleatòria.
+               \end{enumerate}
+           \textbf{Suport teòric}:
+           \begin{quote}
+           \textit{Holland, J. H. (1975). ``Adaptation in Natural and Artificial Systems.'' University of Michigan Press.}
 
-L'optimització es realitza mitjançant gradient descent sobre l'ELBO, amb l'ajut del \textit{reparameterization trick} per a un càlcul eficient dels gradients.
+           Holland formalitza els algorismes genètics, inspirant-se en els mecanismes de selecció natural per a resoldre problemes d'optimització complexos.
+           \end{quote}
 
-\textbf{Suport teòric}:
-\begin{quote}
-\textit{Kingma, D. P., \& Welling, M. (2013). ``Auto-Encoding Variational Bayes.'' arXiv preprint arXiv:1312.6114.}
+     \end{enumerate}
 
-Els autors presenten el marc teòric dels VAEs, introduint tècniques clau com el \textit{reparameterization trick} per a l'entrenament eficient de models generatius probabilístics.
-\end{quote}
+\end{enumerate}
 
-\subsubsection{Aprenentatge per Reforç i Optimització basada en Polítiques}
-En l'aprenentatge per reforç (\textit{Reinforcement Learning, RL}), l'optimització es centra en maximizar la recompensa acumulada. Un enfocament prominent és el \textit{Policy Gradient}, que ajusta directament la política (\textit{policy}) mitjançant:
-\[ \nabla_\theta J(\theta) = \mathbb{E}_{\tau \sim \pi_\theta} \left[ \sum_{t=0}^T \nabla_\theta \log \pi_\theta(a_t|s_t) \cdot R(\tau) \right] \]
-on $\tau$ representa una trajectòria i $R(\tau)$ la recompensa acumulada.
 
-\textbf{Suport teòric}:
-\begin{quote}
-\textit{Sutton, R. S., et al. (2000). ``Policy Gradient Methods for Reinforcement Learning with Function Approximation.'' Advances in Neural Information Processing Systems 12 (NeurIPS).}
 
-Aquest treball estableix les bases teòriques dels mètodes de gradient de polítiques, demostrant la seva aplicabilitat en entorns complexos.
-\end{quote}
 
-\subsubsection{Alternatives a la Retropropagació: Algorismes Evolutius}
-Per a problemes on el càlcul de gradients no és factible, els algorismes genètics (\textit{Genetic Algorithms, GA}) ofereixen una solució viable. Aquests algorismes emulen l'evolució natural mitjançant:
-
-\begin{itemize}
-\item \textbf{Selecció}: Els individus més aptes (\textit{fitness}) tenen major probabilitat de reproduir-se.
-
-\item \textbf{Creuament (\textit{Crossover})}: Combina característiques de dos individus per generar descendència.
-
-\item \textbf{Mutació}: Introdueix variabilitat genètica aleatòria.
-\end{itemize}
-
-\textbf{Suport teòric}:
-\begin{quote}
-\textit{Holland, J. H. (1975). ``Adaptation in Natural and Artificial Systems.'' University of Michigan Press.}
-
-Holland formalitza els algorismes genètics, inspirant-se en els mecanismes de selecció natural per a resoldre problemes d'optimització complexos.
-\end{quote}
 
 \subsection{Ètica i Regulació}\label{subsec:Ètica i Regulació}
 
