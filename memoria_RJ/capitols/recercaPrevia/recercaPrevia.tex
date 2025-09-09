@@ -1,20 +1,25 @@
  \chapter{Recerca prèvia}
 \label{c:recerca prèvia}
 \section{La Història de la Intel·ligència Artificial: Des dels Orígens fins Avui}
-\subsection{El Naixement d'una Idea Revo lucionaria (1956)}
-Tot va començar amb una pregunta provocadora d’Alan Turing, el geni matemàtic que va desxifrar Enigma, una màquina emprada pels nazis per codificar els seus missatges durant la Segona Guerra Mundial (1939-1945): "Podran les màquines pensar alguna vegada?". Aquesta qüestió va obrir les portes a un nou camp d’estudi. En 1956 John McCarthy, Marvin Minsky i d'altres especialistes van nominar oficialment el terme ``intel·ligència artificial'' durant la famosa conferència de Dartmouth, marcant l'inici d'una nova era tecnològica.
-\subsection{El Joc que ho va canviar tot: The Imitation Game/El test de Turing}
-El nucli de la IA es basa en un experiment molt senzill, però profund: El joc d'imitació (The imitation game), proposat per Alan Turing. Davant de la pregunta "Podran les màquines pensar alguna vegada?", Turing va dissenyar un joc que funcionava com a test per les màquines anomenat ``The Imitation Game''. Aquest test consistia en el fet que un avaluador havia de començar una conversa en forma de textos escrits amb una persona i una màquina durant 5 minuts, aquest avaluador no sabia qui era qui i el seu objectiu era esbrinar qui era l'humà. Si la màquina aconseguia enganyar a l'avaluador passava el test i es reconeixia que la màquina havia aconseguit un nivell de comportament lingüístic equivalent a la d'un humà, i donava resposta a la pregunta d'Alan Turing. Al cap dels anys, el joc ha estat evolucionant i moderat pels prodigis de la humanitat fins que avui en dia és conegut com el test de Turing. Tot això va ser clau en donar lloc al naixement de la IA i per l'avanç de la tecnologia.
-\subsection{ELs grans fites de la IA}
-\subsubsection{1997: La maquina que va vencer un campio}
- La supercomputadora Deep Blue desnvolupada per IBM va derrotar el campió mundial d’escacs, Garry Kasparov, demostrant que la IA podia superar els humans en jocs d’estratègia complexos.
-\subsubsection{2022: L'explosió de la IA}
-Milions d’usuaris van descobrir models com ChatGPT que podien escriure, traduir i programar amb un llenguatge gairebé humà, obrint nous horitzons en la interacció home-màquina.
-\subsubsection{2025: La IA en tots els ambits}
-    2025: La IA en Tots els Àmbits
-    Avui, la IA està present en dibuix, contingut audiovisual, cotxes autònoms, medicina i molt més, amb models cada vegada més especialitzats i avançats.
+\begin{enumerate}
+     \item \textbf{El Naixement d'una Idea Revo lucionaria (1956)}
 
+             Tot va començar amb una pregunta provocadora d’Alan Turing, el geni matemàtic que va desxifrar Enigma, una màquina emprada pels nazis per codificar els seus missatges durant la Segona Guerra Mundial (1939-1945): "Podran les màquines pensar alguna vegada?". Aquesta qüestió va obrir les portes a un nou camp d’estudi. En 1956 John McCarthy, Marvin Minsky i d'altres especialistes van nominar oficialment el terme ``intel·ligència artificial'' durant la famosa conferència de Dartmouth, marcant l'inici d'una nova era tecnològica.
 
+      \item \textbf{El Joc que ho va canviar tot: The Imitation Game/El test de Turing}
+
+            El nucli de la IA es basa en un experiment molt senzill, però profund: El joc d'imitació (The imitation game), proposat per Alan Turing. Davant de la pregunta "Podran les màquines pensar alguna vegada?", Turing va dissenyar un joc que funcionava com a test per les màquines anomenat ``The Imitation Game''. Aquest test consistia en el fet que un avaluador havia de començar una conversa en forma de textos escrits amb una persona i una màquina durant 5 minuts, aquest avaluador no sabia qui era qui i el seu objectiu era esbrinar qui era l'humà. Si la màquina aconseguia enganyar a l'avaluador passava el test i es reconeixia que la màquina havia aconseguit un nivell de comportament lingüístic equivalent a la d'un humà, i donava resposta a la pregunta d'Alan Turing. Al cap dels anys, el joc ha estat evolucionant i moderat pels prodigis de la humanitat fins que avui en dia és conegut com el test de Turing. Tot això va ser clau en donar lloc al naixement de la IA i per l'avanç de la tecnologia. \\
+
+     \item ELs grans fites de la IA
+        \subsubsection{1997: La maquina que va vencer un campio}
+         La supercomputadora Deep Blue desnvolupada per IBM va derrotar el campió mundial d’escacs, Garry Kasparov, demostrant que la IA podia superar els humans en jocs d’estratègia complexos.
+        \subsubsection{2022: L'explosió de la IA}
+         Milions d’usuaris van descobrir models com ChatGPT que podien escriure, traduir i programar amb un llenguatge gairebé humà, obrint nous horitzons en la interacció home-màquina.
+        \subsubsection{2025: La IA en tots els ambits}
+        2025: La IA en Tots els Àmbits
+        Avui, la IA està present en dibuix, contingut audiovisual, cotxes autònoms, medicina i molt més, amb models cada vegada més especialitzats i avançats.
+
+\end{enumerate}
 
 (Fonts: \cite{McCarthy_Minsky_Rochester_Shannon_2006}, \cite{deep-blue},
 \href{https://openai.com/index/chatgpt/}{ChatGPT (2022)},
@@ -22,232 +27,191 @@ Milions d’usuaris van descobrir models com ChatGPT que podien escriure, tradui
 )
 \section{Historia de les xarxes neuronals artificials}
 La història de les xarxes neuronals és molt extensa, per tant, resumirem molt aquest apartat, parlant molt breument de les creacions de xarxes més importants.
-\subsection{Perceptron (1958)}
-En la dècada de 1950 a 1960 el psicòleg i informàtic Frank Rosenblatt va crear el Percecptrò, la primera xarxa neuronal creada, a partir d'aquest moment, es potenciarien les xarxes neuronals.
-
-Aquest model pren varies entrades binaries $x_1$, $x_2$, fins les que calguin, i produeix una sola sortida binaria. Per calcular la sortida, Rosenblatt va introduir els ``pesos'', que está explict a l'apartat \ref{sec:3.8}, els seus principals usos són decsions binàries senziles, o per crear funcions lògiques com OR o AND.
-
-\subsection{Multiplayer Perceptron}
-El multiplayer perceptron és una ampliació de la percepció d'una única neurona a més d'una. A més, apareix el concepte de capes d'entrades, capes ocultes i capes de sortida, (tot això explicat a l'apartat \ref{sec:3.6}) però amb valors d'entrada i rtida binàries. No hem d'ignorar que els científics asignaban el valor del pes i del umbral manualment en cada neurona, quan més perceptrons havien en les capes, era molt més difícil establir els pesos desitjats.
-
-\subsection{Neurones sigmoide}
-Per aconseguir que les xarxes neuronals aprenguin per elles mateixes, es a dir, aprenentatge automàtic \ref{3.4.2}, va ser necessari introduir un nou tipus de neurones, que són les Neurones Sigmoides, que són similar al perceptró, aquestes neurones en comptes de que les entrades siguin 1 o 0, puguin tenir valors com 0.5, o 0.374 o qualsevol altre valor real. Ara les sorides en lloc de ser 0 o 1, serà d(w . x + b), on d serà la funció sigmoide, explicat en l'apartat \ref{3.7.1}. Aquesta va ser la primera funció d'activació \ref{3.5.3}.
-
-\subsection{Xarxa neuronal prealmentada (Feedforward)}
-Les xarxes neuronals prealimentades són les que les sortides d'una sola capa són utilitzades com entrades en la pròxima, com explicarem més endevant en l'apartat \ref{sec:3.6} capa, on les conexions entre les unitats no dornen un cicle.
-
-\section{Que és la Ia?}
-Hem estat parlant molt durant aquest treball sobre la IA, i ara que em après quina és la seva història, hem de saber que és. Doncs bé, podem definir la IA com sistemes de software i de hardware disenyats per humans que actúen en un la dimensió física o digital, es a dir, raonar sobre el coneixemen, processant la informació derivada de dades i prendre les millors decisions per assolir l'objectiu donat. O dit d'un altre manera, és un camp de la informàtica que consisteix en un conjunt de capacitats interectuals i cognitives expresades per un sistema informàtic creat pels humans que té com a proposit imitar la intel·ligència humana, com escriure poemes, reconeixer imatges, fer prediccions basades en dades i més funcions. Un exemple de IA i que tot el món coneix i utilitza és el ChatGPT, un chatbot impulsada per un model d'intel·ligència artificial generativa de la empresa OpenAI. Utilitza técniques de processament de llenguatge natural per comprendre preguntes fetes per l'usuari i generar respostes coherents en converses, simulant una interacció similar a la d'un humà. Aquesta IA ha avançat molt desde el seu llençament, ara pot generar o editar imatges, procesar audios, llegir arxius, comrendre imatges i molt més.
-
-\section{Com funciona la IA?}
-Una vegada que ja sabem que és una IA, ens toca entendre com funciona. Les intel·ligències arficials utilitzen algoritmes i models matemàtics per processar grans quantitats de dades i prendre accions basades en patrons i regles establertes a travès de l'aprenentatge automàtic o l'aprenentatge profund. Per tant per funcionar necessitara:  \nameref{subsec:Dades}  \ \nameref{subsec:Algorismes}  \ \nameref{subsec:Potència computacional} \ \nameref{subsec:Software i Frameworks} \ \nameref{subsec:Optimització i Ajustos}  \ \nameref{subsec:Ètica i Regulació}
-
-\subsection{Dades}\label{subsec:Dades}
-Les dades son fonamentals per la IA ja que es la base de l'aprennetatge del model, per poder raonar, prendre decisions, i millorar la presició. Aquí esdevenen uns exemples que pot haver:
-
-\subsubsection{Basé d'aprenentage}
-\begin{itemize}
- \item Les algoritmes de la IA necessiten a base de dades i una gran diversitat de dades per poder identificar patrons i construir prediccion.
-\end{itemize}
-\subsubsection{Qualitat vs Quantitat}
-\begin{itemize}
-\item Una gran quantitat de dades ajudaran a la IA a obtendendre major precisió, però la qualitat es encara més important per la complexibilitat de dades que aporta, això evitara que la IA cometes errors per informacio incompleta.\textbf{ Per exemple:} {\color{blue}En l'ambit medic si vols que la IA fagi una predicció i tan sol li dones una quantitat important de persones sanes i no d'altres exemplars, la IA simplement descartara d'altres possibilitats que podrian haver i només agafar la sana.}
-\end{itemize}
-\subsubsection{Exemples Reals}
-\begin{itemize}
- \item Les sistemes dels cotxes o assistents virtuals necessiten dades en temps reals per adaptar-se de l'entorn, també plataformes com Netflix o Spotify necessiten dades personalitzades per poder generar recomanacions amb presició.
-\end{itemize}
-\subsubsection{Legisme i Etica}
-\begin{itemize}
- \item A la IA s'ha d'aplicar dades com protecció de dades per favorir l'etica i moral, i se li ha d'entrenar amb fonts legitima, valides per tal d'evitar erros legals o tecnics
-\end{itemize}
-
-
-\subsection{Algorismes}\label{subsec:Algorismes}
-\subsubsection{Algoritme Gredient descendent:}\label{subsec:gradient}
-L'algoritme de Gradient descendent és un algoritme imprescindible en l'entrenament de les xarxes neuronals, i de la intel·ligència artificial. Primer de tot hem d'entendre que és un gradient i una funció d'error.
-
-\textbf{Gradient:}En les xarxes neuronals, un gradient és un vector que indica la direcció en la que es mou i amb quina intensitat per que la funció d'error cambii més ràpid respecte als pesos de la xarxa neuronal. Per calcular el gradient, s'utilitza la derivada parcial de la funció de pèrdua respecte als pesos.
-
-\textbf{Funció d'error:} La funció d'error tracta de determinar el error entre el valor estimat i el valor real, amb la finalitat d'optimitzar els paràmetres de la xarxa neuronal, aixó està explicat en l'apartat \ref{subsec:pèrdua}.
-
-L' objectiu de l'algoritme gradiant descendent és minimitzar la funció d'error, o també l'error entre la predicció, es a dir, trobar la funció de pèrdua mínima, per aconseguir-ho s'ha de trobar el valor mínim de la funció. La funció de pèrdua mínima significa que els errors dels paràmetres (pesos i biaixos) de la xarxa han de ser molt aproximades al valor real, on s'ajusten aquest paràmetres ja que no són exactes.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\textwidth]{./figures/gradient_descendent.png}
-    \caption{Gràfica de gradient descendent}
-\end{figure}
-
-En la figura d'adalt, on podem apreciar quatre iteracions, el valor inicial és un punt qualsevol de la funció. Al inici de la funció, en el punt 0, els paràmetres de la funció s'asignen aleatoriament, i la pèrdua és alta, es a dir, que els errors són grans. Desde aquell punt, trobarem la derivada parcial en cada una de les iteracions, i el gradiet serà l'encarregat de guiar els canvis als paràmetres.
-Al principi de tot, el gradient serà molt pronunciat, però a mesura que es van generant nous paràmetres durant l'entrenament, s'anirà reduint fins al put més baix d'aquesta corba, on els errors són molt petits, aquest punt se li diu punt de convergència. Aquí és on la xarxa ha après i ha ajustat millor les dades.
-
-La fòrmula del gradient ascendent és la seguent: \\
-
-$\Delta w_{ij} = a \left( \frac{\partial E}{\partial w_{ij}} \right)$ \\
-
-Aquesta és la formula més ràpida per arribar al punt màxim dels gradients. Per tant la fòrmula del gradient descendent seria aquesta mateixa en negatiu, perquè és la forma més ràpida de trobar el punt mínim.
-
-$\Delta w_{ij} = -a \left( \frac{\partial E}{\partial w_{ij}} \right)$
-
-\textbf{Explicació de la fòrmula:}\\
-$\Delta w_{ij}$: Representa quant s'ajusta el pes en una iteració de l'entrenamen.
-
-$a$: És la constant d'aprenentatge, aquesta constant defineix quant afecta el gradiant en l'actualització dels nostres paràmetres en cada iteració. Si aquest valor és gran, cada iteració és molt gran, i el punt serà incapaç d'introduir-se al punt de convergència, causant que el procès d'optimització acabi en un bucle infinit. Tanmateix, si és petit, el punt s'aproxima poc a poc al punt de converència, però calcularà moltes iterai això pot ser ineficient. Per tant aquest valor ha de estar en un punt mig, en que no sigui molt gran ni molt petit.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\textwidth]{./figures/constant_gradient.png}
-    \caption{Gràfiques de valors gran i petit de la constant d'aprenentatge}
-\end{figure}
-
-
-$\left( \frac{\partial E}{\partial w_{ij}} \right)$: És la derivada parcial de $E$ respecte a $\Delta w_{ij}$. \\
-
-A la figura 3.2, és una representació en 2 d, però en situacions reals el gradient descendent es representa en la dimensió 3 d.
-
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\textwidth]{./figures/gradient_descendent3d.png}
-    \caption{Repressentació del gradient descendent en 3d}
-\end{figure}
-
-Fonts: \href{https://www.ibm.com/es-es/think/topics/gradient-descent}{ibm.com} i \href{https://www.youtube.com/watch?v=A6FiCDoz8_4&ab_channel=DotCSV}{YouTube}.
-
-\subsubsection{L'aprenentage automàtic(Machine learning)}
-\begin{itemize}
- \item L'aprenentatge automàtic és una branca crucial de la intel·ligencia artificial, consisteix en cobrar vida a la maquina, donar-li el poder d'apendre com els humans, realitzar tasques de manera autonoma i finalment, les infinites possibilitats d'evolucionar a traves de l'experiencia i molt més. Segons la \href{https://ischoolonline.berkeley.edu/blog/what-is-machine-learning/}{UC Berkeley} el procés de l'aprenentatge automatic es pot dividir en tres parts:
-
-  \begin{enumerate}
-  {\color{gray}
-   \item \textbf{Mecanisme de predicció}
-    \subitem\hspace*{-1\leftmargin} Un conjunt de regles o operacions matemàtics que analitza les dades d'entrada i intenta identificar els patrons que busca el model.
-   \item \textbf{Funció de pèrdua (o error)}\label{subsec:pèrdua}
-   \subitem\hspace*{-1\leftmargin} Un sistema per avaluar l'encert de les prediccions, comparant-les amb resultats reals (quan es disposa d'ells). Si la predicció és incorrecta, aquesta funció quantifica la magnitud de l'error.
-   \item \textbf{Algorisme d'optimització}
-   \subitem\hspace*{-1\leftmargin} El procés que ajusta automàticament el model per minimitzar l'error, modificant els paràmetres interns per millorar les prediccions futures.} \ \footnote{Llengua original: Anglessa; Traduit per el chat bot Deepseek}
-  \end{enumerate}
-   \end{itemize}
-  Segons \href{https://blogs.nvidia.com/blog/supervised-unsupervised-learning/}{Nvidia} hi han molts tipus d'apranentage automatics:
-  \begin{description}
-   \item \nameref{subsubsec:Aprenentatge supervisat}
-   \item \nameref{subsubsec:Aprenentatge semi-supervisat}
-   \item \nameref{subsubsec:Aprenentatge no supervisat}
-   \item \nameref{subsubsec:Aprenentatge reforç}
-  \end{description}
-\subsubsection{Aprenentatge supervisat}\label{subsubsec:Aprenentatge supervisat}
-L'aprenentatge supervisat és un tipus d'aprenentatge automàtic que treballa amb dades etiquetades, és a dir, dades que ja inclouen la solució o resultat desitjat. En aquest mètode, la intel·ligència artificial aprén a associar les dades d'entrada amb les seves etiquetes corresponents, mitjançant l'anàlisi d'exemples prèviament resolts. Això li permet desenvolupar la capacitat de resoldre problemes nous aplicant la lògica i els patrons identificats a partir de dades reals. \\
-
-\textbf{Avantatges i desavanantatge:}
-Aquest mètode destaca per la seva alta precisió en problemes ben definits, ja que al treballar amb dades prèviament etiquetades pot assolir bons resultats en tasques de classificació i regressió. Una altra avantatge important és la facilitat per avaluar el rendiment dels models. A més, es tracta d'una àmplia àrea d'estudi amb una gran varietat d'algoritmes ben desenvolupats i optimitzats, com ara els arbres de decisió, els random forests, les màquines de vectors de suport (SVM) o les xarxes neuronals. Finalment, un cop entrenat adequadament, el model pot generalitzar el seu aprenentatge i fer prediccions útils sobre dades noves.\\
-
-No obstant això, aquest enfocament també presenta alguns inconvenients significatius. El principal desavantatge és la seva forta dependència de conjunts de dades etiquetades, que sovint són costosos d'obtenir i preparar com las de medicines. Un altre problema freqüent és el sobreajustament (overfitting), que ocorre quan el model memoritza les dades d'entrenament en lloc d'aprendre patrons generals, la qual cosa provoca una perdua de raonament logica. Finalment, aquest mètode pot tenir dificultats per manejar certs tipus de dades no estructurades o problemes complexos, que podrien requerir quantitats molt grans de dades etiquetades per assolir un bon rendiment.
-
-
-\subsubsection{Aprenentatge semi-supervisat}\label{subsubsec:Aprenentatge semi-supervisat}
-
-L'aprenentatge semi-supervisat representa un punt intermig entre l'aprenentatge supervisat i el no supervisat, aprofitant tant dades etiquetades com no etiquetades per millorar l'eficiència dels models d'aprenentatge automàtic. Això funciona quan l'obtencio de les dades etiquetades son molt costoses i l'extraccio de les característiques son molt complexes.
-\subsubsection{Aprenentatge no supervisat}\label{subsubsec:Aprenentatge no supervisat}
-
-L'aprenentatge no supervisat és una branca de l'aprenentatge automàtic que s'utilitza quan no es disposa de dades etiquetades. A diferència de l'aprenentatge supervisat, on el model rep exemples amb les seves solucions correctes, en aquest cas l'algorisme ha de descobrir per si mateix l'estructura i els patrons, fent una diagnosticació agrupant les característiques similars que poden haber entre les dades.
-
-Depenen dels tipus de  problemes, les dades s'organitzen de diferents maneres.
-\begin{itemize}
- \item \textbf{Clustering:} Tècnica que agrupa les dades en funció de les seves similituds.
- \item \textbf{Anomaly detection:} Cerca patrons que no encaixen amb el comportament normal.
- \item \textbf{Association:} Cerca relacions i correlacions entre variables en grans conjunts de dades.
- \item \textbf{Autoencoders:} Els autoencoders són un tipus de xarxa neuronal artificial que aprèn a comprimir i reconstruir dades.
-\end{itemize}
-
-
-\subsubsection{Aprenentatge per reforç}\label{subsubsec:Aprenentatge reforç}
-L'aprenentatge per reforç és una branca de l'aprenentatge automàtic inspirada en la manera com els éssers vius aprenen mitjançant la interacció amb el seu entorn. Com per exemple quan començem a jugar un videojoc, en els jocs rebem senyals de reforços, de si completem un nivell ens ortoga un trofeu, de si matem certs enemics guanyem bonificacions. Amb aquest sistema de penalitzacio i recompenses guia al jugador a millorar les seves tecniques de videojocs, i això  el podem aplicar perfectament en la IA.
-Totes les aprenantatges de reforç segueixen pragmaticament aquest esquema per l'aprenentage:
 \begin{enumerate}
- \item \textbf{Acció}
- \item \textbf{Observació}
- \item \textbf{Recompensa}
- \item \textbf{Ajust d'estrategia}
+    \item \textbf{Perceptron (1958)}
+
+    En la dècada de 1950 a 1960 el psicòleg i informàtic Frank Rosenblatt va crear el Percecptrò, la primera xarxa neuronal creada, a partir d'aquest moment, es potenciarien les xarxes neuronals.\\ \\
+    Aquest model pren varies entrades binaries $x_1$, $x_2$, fins les que calguin, i produeix una sola sortida binaria. Per calcular la sortida, Rosenblatt va introduir els ``pesos'', que está explict a l'apartat \ref{sec:3.8}, els seus principals usos són decsions binàries senziles, o per crear funcions lògiques com OR o AND.
+
+    \item \textbf{Multiplayer Perceptron}
+    El multiplayer perceptron és una ampliació de la percepció d'una única neurona a més d'una. A més, apareix el concepte de capes d'entrades, capes ocultes i capes de sortida, (tot això explicat a l'apartat \ref{sec:3.6}) però amb valors d'entrada i rtida binàries. No hem d'ignorar que els científics asignaban el valor del pes i del umbral manualment en cada neurona, quan més perceptrons havien en les capes, era molt més difícil establir els pesos desitjats.
+
+    \item \textbf{Neurones sigmoide}
+    Per aconseguir que les xarxes neuronals aprenguin per elles mateixes, es a dir, aprenentatge automàtic \ref{3.4.2}, va ser necessari introduir un nou tipus de neurones, que són les Neurones Sigmoides, que són similar al perceptró, aquestes neurones en comptes de que les entrades siguin 1 o 0, puguin tenir valors com 0.5, o 0.374 o qualsevol altre valor real. Ara les sorides en lloc de ser 0 o 1, serà d(w . x + b), on d serà la funció sigmoide, explicat en l'apartat \ref{3.7.1}. Aquesta va ser la primera funció d'activació \ref{3.5.3}.
+
+    \item \textbf{Xarxa neuronal prealmentada (Feedforward)}
+    Les xarxes neuronals prealimentades són les que les sortides d'una sola capa són utilitzades com entrades en la pròxima, com explicarem més endevant en l'apartat \ref{sec:3.6} capa, on les conexions entre les unitats no dornen un cicle.
 \end{enumerate}
 
 
-\subsubsection{Aprenentatge profund}
-\begin{itemize}
-    \item L'aprenentatge profund és una branca de l'aprenentatge automàtic que utilitza \nameref{sec:xarxa neuronal} amb múltiples capes per processar dades complexes i extreure'n característiques rellevants. Inspirat en el funcionament del cervell humà, aquest enfocament permet identificar patrons i analitzar dades de alta complexitat. Durant la fase d'identificació, empra un aprenentatge jeràrquic, és a dir, progressa gradualment des de característiques simples fins a patrons complexes.
-\end{itemize}
+\section{Que és la Ia?}
+Hem estat parlant molt durant aquest treball sobre la IA, i ara que em après quina és la seva història, hem de saber que és. \\
+Doncs bé, podem definir la IA com sistemes de software i de hardware disenyats per humans que actúen en la dimensió física o digital, es a dir, raonar sobre el coneixemen, processant la informació derivada de dades i prendre les millors decisions per assolir l'objectiu donat. O dit d'un altre manera, és un camp de la informàtica que consisteix en un conjunt de capacitats interectuals i cognitives expresades per un sistema informàtic creat pels humans que té com a proposit imitar la intel·ligència humana, com escriure poemes, reconeixer imatges, fer prediccions basades en dades i més funcions. \\
+Un exemple de IA i que tot el món coneix i utilitza és el ChatGPT, un chatbot impulsada per un model d'intel·ligència artificial generativa de la empresa OpenAI. Utilitza técniques de processament de llenguatge natural per comprendre preguntes fetes per l'usuari i generar respostes coherents en converses, simulant una interacció similar a la d'un humà. També pot generar o editar imatges, procesar audios, llegir arxius i molt més.
+
+\section{Com funciona la IA?}
+Una vegada que ja sabem que és una IA, ens toca entendre com funciona.
+Les intel·ligències artificials utilitzen algoritmes i models matemàtics per processar grans quantitats de dades
+i prendre accions basades en patrons i regles establertes a través de l'aprenentatge automàtic o l'aprenentatge profund.
+Per tant per funcionar necessitarà:
+
+ \hyperlink{Dades}{Dades} \
+  \hyperlink{Algorismes}{Algorismes} \
+% \nameref{subsec:Potència computacional}
+  \hyperlink{Software i Frameworks}{Software i Frameworks} \
+   \hyperlink{Optimització i Ajustos}{Optimizació i Ajustos} \
+   \hyperlink{Ètica i Regulació}{Ètica i Regulació}
+
+\begin{enumerate}
+    \item \hypertarget{Dades}{\textbf{Dades}}\\
+    Les dades son fonamentals per la IA ja que es la base de l'aprennetatge del model, per poder raonar, prendre decisions, i millorar la presició. Aquí esdevenen uns exemples que pot haver:
+         \begin{itemize}
+            \item[] \textbf{Basé d'aprenentage}\\
+            Les algoritmes de la IA necessiten a base de dades i una gran diversitat de dades per poder identificar patrons i construir prediccion.
+
+           \item[] \textbf{Qualitat vs Quantitat}\\
+            Una gran quantitat de dades ajudaran a la IA a obtendendre major precisió, però la qualitat es encara més important per la complexibilitat de dades que aporta, això evitara que la IA cometes errors per informacio incompleta.\textbf{ Per exemple:} En l'ambit medic si vols que la IA fagi una predicció i tan sol li dones una quantitat important de persones sanes i no d'altres exemplars, la IA simplement descartara d'altres possibilitats que podrian haver i només agafar la sana.
+
+            \item[] \textbf{Exemples Reals}\\
+            Les sistemes dels cotxes o assistents virtuals necessiten dades en temps reals per adaptar-se de l'entorn, també plataformes com Netflix o Spotify necessiten dades personalitzades per poder generar recomanacions amb presició.
+
+           \item[] \textbf{Legisme i Etica}\\
+            A la IA s'ha d'aplicar dades com protecció de dades per favorir l'etica i moral, i se li ha d'entrenar amb fonts legitima, valides per tal d'evitar erros legals o tecnics
+          \end{itemize}
+
+     \item \hypertarget{Algorismes}{\textbf{Algorismes}}
+        \begin{itemize}
+         \item[] \textbf{Algoritme Gredient descendent}\\
+         L'algoritme de Gradient descendent és un algoritme imprescindible en l'entrenament de les xarxes neuronals, i de la intel·ligència artificial. Primer de tot hem d'entendre que és un gradient i una funció d'error.
+
+         \textbf{Gradient: } En les xarxes neuronals, un gradient és un vector que indica la direcció en la que es mou i amb quina intensitat per que la funció d'error cambii més ràpid respecte als pesos de la xarxa neuronal. Per calcular el gradient, s'utilitza la derivada parcial de la funció de pèrdua respecte als pesos.
+
+        \textbf{Funció d'error: } La funció d'error tracta de determinar el error entre el valor estimat i el valor real, amb la finalitat d'optimitzar els paràmetres de la xarxa neuronal, aixó està explicat en l'apartat \ref{subsec:pèrdua}.
+
+         L' objectiu de l'algoritme gradiant descendent és minimitzar la funció d'error, o també l'error entre la predicció, es a dir, trobar la funció de pèrdua mínima, per aconseguir-ho s'ha de trobar el valor mínim de la funció. La funció de pèrdua mínima significa que els errors dels paràmetres (pesos i biaixos) de la xarxa han de ser molt aproximades al valor real, on s'ajusten aquest paràmetres ja que no són exactes.
+
+        \begin{figure}[H]
+         \centering
+         \includegraphics[width=0.5\textwidth]{./figures/gradient_descendent.png}
+        \caption{Gràfica de gradient descendent}
+         \end{figure}
+
+          En la figura d'adalt, on podem apreciar quatre iteracions, el valor inicial és un punt qualsevol de la funció. Al inici de la funció, en el punt 0, els paràmetres de la funció s'asignen aleatoriament, i la pèrdua és alta, es a dir, que els errors són grans. Desde aquell punt, trobarem la derivada parcial en cada una de les iteracions, i el gradiet serà l'encarregat de guiar els canvis als paràmetres.
+          Al principi de tot, el gradient serà molt pronunciat, però a mesura que es van generant nous paràmetres durant l'entrenament, s'anirà reduint fins al put més baix d'aquesta corba, on els errors són molt petits, aquest punt se li diu punt de convergència. Aquí és on la xarxa ha après i ha ajustat millor les dades.
+
+          La fòrmula del gradient ascendent és la seguent: \\
+
+          $\Delta w_{ij} = a \left( \frac{\partial E}{\partial w_{ij}} \right)$ \\
+
+          Aquesta és la formula més ràpida per arribar al punt màxim dels gradients. Per tant la fòrmula del gradient descendent seria aquesta mateixa en negatiu, perquè és la forma més ràpida de trobar el punt mínim.
+
+          $\Delta w_{ij} = -a \left( \frac{\partial E}{\partial w_{ij}} \right)$
+
+          \textbf{Explicació de la fòrmula:}\\
+           $\Delta w_{ij}$: Representa quant s'ajusta el pes en una iteració de l'entrenamen.
+
+           $a$: És la constant d'aprenentatge, aquesta constant defineix quant afecta el gradiant en l'actualització dels nostres paràmetres en cada iteració. Si aquest valor és gran, cada iteració és molt gran, i el punt serà incapaç d'introduir-se al punt de convergència, causant que el procès d'optimització acabi en un bucle infinit. Tanmateix, si és petit, el punt s'aproxima poc a poc al punt de converència, però calcularà moltes iterai això pot ser ineficient. Per tant aquest valor ha de estar en un punt mig, en que no sigui molt gran ni molt petit.
+
+           \begin{figure}[H]
+           \centering
+           \includegraphics[width=0.5\textwidth]{./figures/constant_gradient.png}
+             \caption{Gràfiques de valors gran i petit de la constant d'aprenentatge}
+            \end{figure}
 
 
+           $\left( \frac{\partial E}{\partial w_{ij}} \right)$: És la derivada parcial de $E$ respecte a $\Delta w_{ij}$. \\
 
-\begin{figure}[h!]
+           A la figura 3.2, és una representació en 2 d, però en situacions reals el gradient descendent es representa en la dimensió 3 d.
+
+
+           \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.5\textwidth]{./figures/gradient_descendent3d.png}
+            \caption{Repressentació del gradient descendent en 3d}
+            \end{figure}
+
+            Fonts: \href{https://www.ibm.com/es-es/think/topics/gradient-descent}{ibm.com} i \href{https://www.youtube.com/watch?v=A6FiCDoz8_4&ab_channel=DotCSV}{YouTube}.
+        \end{itemize}
+
+    \item[] \textbf{L'aprenentage automàtic(Machine learning)}
+    L'aprenentatge automàtic és una branca crucial de la intel·ligencia artificial, consisteix en cobrar vida a la maquina, donar-li el poder d'apendre com els humans, realitzar tasques de manera autonoma i finalment, les infinites possibilitats d'evolucionar a traves de l'experiencia i molt més. Segons la \href{https://ischoolonline.berkeley.edu/blog/what-is-machine-learning/}{UC Berkeley} el procés de l'aprenentatge automatic es pot dividir en tres parts:
+      \begin{enumerate}
+     {\color{gray}
+     \item \textbf{Mecanisme de predicció}
+     \subitem\hspace*{-1\leftmargin} Un conjunt de regles o operacions matemàtics que analitza les dades d'entrada i intenta identificar els patrons que busca el model.
+     \item \textbf{Funció de pèrdua (o error)}\label{subsec:pèrdua}
+     \subitem\hspace*{-1\leftmargin} Un sistema per avaluar l'encert de les prediccions, comparant-les amb resultats reals (quan es disposa d'ells). Si la predicció és incorrecta, aquesta funció quantifica la magnitud de l'error.
+     \item \textbf{Algorisme d'optimització}
+      \subitem\hspace*{-1\leftmargin} El procés que ajusta automàticament el model per minimitzar l'error, modificant els paràmetres interns per millorar les prediccions futures.} \ \footnote{Llengua original: Anglessa; Traduit per Jiajun}
+      \end{enumerate}
+       Segons \href{https://blogs.nvidia.com/blog/supervised-unsupervised-learning/}{Nvidia} hi han molts tipus d'apranentage automatics:
+    \begin{description}
+        \item \hyperlink{Aprenentatge supervisat}{Aprenentatge supervisat}
+         \item \hyperlink{Aprenentatge semi-supervisat}{Aprenentatge semi-supervisat}
+         \item \hyperlink{Aprenentatge no supervisat}{Aprenentatge no supervisat}
+         \item \hyperlink{Aprenentatge reforç}{Aprenentatge reforç}
+    \end{description}
+      \begin{enumerate}
+       \item \hypertarget{Aprenentatge supervisat}{\textbf{Aprenentatge supervisat}}
+       L'aprenentatge supervisat és un tipus d'aprenentatge automàtic que treballa amb dades etiquetades, és a dir, dades que ja inclouen la solució o resultat desitjat. En aquest mètode, la intel·ligència artificial aprén a associar les dades d'entrada amb les seves etiquetes corresponents, mitjançant l'anàlisi d'exemples prèviament resolts. Això li permet desenvolupar la capacitat de resoldre problemes nous aplicant la lògica i els patrons identificats a partir de dades reals. \\
+
+      \textbf{Avantatges i desavanantatge:}
+       Aquest mètode destaca per la seva alta precisió en problemes ben definits, ja que al treballar amb dades prèviament etiquetades pot assolir bons resultats en tasques de classificació i regressió. Una altra avantatge important és la facilitat per avaluar el rendiment dels models. A més, es tracta d'una àmplia àrea d'estudi amb una gran varietat d'algoritmes ben desenvolupats i optimitzats, com ara els arbres de decisió, els random forests, les màquines de vectors de suport (SVM) o les xarxes neuronals. Finalment, un cop entrenat adequadament, el model pot generalitzar el seu aprenentatge i fer prediccions útils sobre dades noves.\\
+
+      No obstant això, aquest enfocament també presenta alguns inconvenients significatius. El principal desavantatge és la seva forta dependència de conjunts de dades etiquetades, que sovint són costosos d'obtenir i preparar com las de medicines. Un altre problema freqüent és el sobreajustament (overfitting), que ocorre quan el model memoritza les dades d'entrenament en lloc d'aprendre patrons generals, la qual cosa provoca una perdua de raonament logica. Finalment, aquest mètode pot tenir dificultats per manejar certs tipus de dades no estructurades o problemes complexos, que podrien requerir quantitats molt grans de dades etiquetades per assolir un bon rendiment.
+
+      \item \hypertarget{Aprenentatge semi-supervisat}{\textbf{Aprenentatge semi-supervisat}}
+
+      L'aprenentatge semi-supervisat representa un punt intermig entre l'aprenentatge supervisat i el no supervisat, aprofitant tant dades etiquetades com no etiquetades per millorar l'eficiència dels models d'aprenentatge automàtic. Això funciona quan l'obtencio de les dades etiquetades son molt costoses i l'extraccio de les característiques son molt complexes.
+
+      \item \hypertarget{Aprenentatge no supervisat}{\textbf{Aprenentatge no supervisat}}
+
+      L'aprenentatge no supervisat és una branca de l'aprenentatge automàtic que s'utilitza quan no es disposa de dades etiquetades. A diferència de l'aprenentatge supervisat, on el model rep exemples amb les seves solucions correctes, en aquest cas l'algorisme ha de descobrir per si mateix l'estructura i els patrons, fent una diagnosticació agrupant les característiques similars que poden haber entre les dades.
+       Depenen dels tipus de  problemes, les dades s'organitzen de diferents maneres.
+       \begin{itemize}
+       \item \textbf{Clustering:} Tècnica que agrupa les dades en funció de les seves similituds.
+        \item \textbf{Anomaly detection:} Cerca patrons que no encaixen amb el comportament normal.
+        \item \textbf{Association:} Cerca relacions i correlacions entre variables en grans conjunts de dades.
+         \item \textbf{Autoencoders:} Els autoencoders són un tipus de xarxa neuronal artificial que aprèn a comprimir i reconstruir dades.
+        \end{itemize}
+        \item \hypertarget{Aprenentatge per reforç}{\textbf{Aprenentatge per reforç}}
+        L'aprenentatge per reforç és una branca de l'aprenentatge automàtic inspirada en la manera com els éssers vius aprenen mitjançant la interacció amb el seu entorn. Com per exemple quan començem a jugar un videojoc, en els jocs rebem senyals de reforços, de si completem un nivell ens ortoga un trofeu, de si matem certs enemics guanyem bonificacions. Amb aquest sistema de penalitzacio i recompenses guia al jugador a millorar les seves tecniques de videojocs, i això  el podem aplicar perfectament en la IA.
+        Totes les aprenantatges de reforç segueixen pragmaticament aquest esquema per l'aprenentage:
+       \begin{enumerate}
+       \item \textbf{Acció}
+        \item \textbf{Observació}
+        \item \textbf{Recompensa}
+         \item \textbf{Ajust d'estrategia}
+        \end{enumerate}
+
+      \end{enumerate}
+
+     \item \textbf{Aprenentatge profund}
+     L'aprenentatge profund és una branca de l'aprenentatge automàtic que utilitza xarxa neuronal amb múltiples capes per processar dades complexes i extreure'n característiques rellevants. Inspirat en el funcionament del cervell humà, aquest enfocament permet identificar patrons i analitzar dades de alta complexitat. Durant la fase d'identificació, empra un aprenentatge jeràrquic, és a dir, progressa gradualment des de característiques simples fins a patrons complexes.
+
+     \begin{figure}[h!]
     \centering
     \includegraphics[width=0.2\textwidth]{./figures/Aprenentatge.png}
     \caption{Les capes que te la IA per funcionar}
-\end{figure}
+    \end{figure}
 
-\begin{comment}
-\subsection{Potència computacional}\label{subsec:Potència computacional}
-La intel·ligència artificial (IA) i la potència de càlcul estan profundament connectades. Sense maquinari potent, les aplicacions d’IA no podrien processar algoritmes complexos ni gestionar les enormes quantitats de dades que requereixen els models actuals. \\
+  \item \hypertarget{Software i Frameworks}{\textbf{Software i Frameworks}}
+     \begin{itemize}
+      \item[] \textbf{Frameworks}
+      Segons \href{https://www.inesdi.com/blog/Frameworks-de-IA-que-debes-conocer/}{INESDI}:\\
+      {\color{gray}``Un Frameworks és, en el camp de la informàtica, una estructura conceptual que proporciona un conjunt d'eines, biblioteques i patrons de disseny per facilitar el desenvolupament de programari. En altres paraules, són marcs de treball que funcionen com un esquelet predefinit, i sobre els quals es pot construir una aplicació o programari.
 
-Ultimament em vist el gran avanç que esta fent la IA, per tant la potencia computacional també creix consecutivament. D'aquesta manera la IA cada vegada es pareguera més a un huma i podrà ser més original alhora de crear contingut.\\
+     Pel que fa als seus components, inclouen biblioteques de codi reutilitzables, mòduls predefinits, regles d'arxiu i directori, patrons de disseny i convencions de codificació.''}\\
 
-Una \hyperref[GPUs]{\textbf{GPUs}} té un papel molt important en la IA de tal manera que pot lograr a accelelar els calculs que fa. Per la cual cosa fa que el seu mercat puguess arribar fins a 53 milions de dolars en 2023 i s'estima a que arribara fins al 473 milions en 2033.\\
+      Un Frameworks, en diferencia, de la biblioteca per el control total que pot tenir el usuari en tema estructura, i organitzacio dels codis, en canvi, una biblioteca està en mans del desenvolupador i només tens accés en els codis que et convenin de la biblioteca. Malgrat la utilitat que propociona no satisfeix la IA de la actualitat i han hagut de desarollar uns Frameworks especifics per la IA, de tal manera en que facilita el desarollament i l'entrenament dels models de la IA.
+      \item[] \textbf{Software}
+      El software és el conjunt de programes, instruccions i regles informàtiques que permeten executar tasques específiques en un ordinador o sistema.
 
-Tot això provoca un gran comerç i invertiment en la creació d'un chip exclusiu solament per la IA, donant llavor una rapideza encara més fascinant alhora de fer calculs.\\
+      La relació entre el software i la IA funciona de la següent manera: d'una banda, el software dóna utilitat pràctica a la IA en àmbits reals, permetent codificar les seves tècniques i processar les grans quantitats de dades que necessita. D'altra banda, la IA aporta automatització a les tasques repetitives del software, estalviant temps i recursos. Aquesta interacció crea un benefici mutu que forma un cicle perfecte, on cadascú millora i potencia l'altre.
+     \end{itemize}
 
-Uns dels principals  protagonistes que treballen en el hardware de la IA, son mostrat per la següent imatge:
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.5\textwidth]{./figures/Empreses.png}
-    \caption{Les capes que te la IA per funcionar}
-\end{figure}
-
-\textbf{\Large GPUs}\label{GPUs}\\
-Segons \href{https://support.microsoft.com/es-es/windows/todo-sobre-las-unidades-de-procesamiento-gr%C3%A1fico-gpu-e159bedb-80b7-4738-a0c1-76d2a05beab4}{Microsoft} una GPUs és:\\
-  {\color{gray} La unitat de processament de gràfics (GPU) d'un dispositiu Windows controla el treball relacionat amb els gràfics. Les GPU també es coneixen com a targetes de vídeo o targetes gràfiques.\\
-  El treball relacionat amb els gràfics que manegen les GPU inclou els següents elements:
-  \begin{itemize}
-   \item El grafisme
-   \item Efectes
-   \item Video
-   \item Videojocs
-  \end{itemize}
-  Hi ha dos tipus bàsics de GPU: GPU integrada i GPU discreta. Coneix els diferents tipus de GPU i troba el que s'ajusta a les teves necessitats:
-
-  \textbf{GPU integrada}
-  \begin{itemize}
-   \item Les GPU integrades estan integrades directament en el processador principal (CPU).
-   \item Les GPU integrades normalment no són tan potents com les GPU discretes, però són més eficients energèticament.
-   \item Les GPU integrades sovint són menys costoses que les GPU discretes.
-   \item Les GPU integrades permeten que els portàtils siguin més prims, lleugers i eficients.
-   \item Les GPU Integrades són excel·lents per a alguns jocs, edició de vídeo lleuger o per treballar amb fotos.
-  \end{itemize}
-
-  \textbf{GPU discreta}
-  \begin{itemize}
-   \item Les GPU discretes són més grans que les GPU integrades i utilitzen més potència, però són les més adequades per a tasques de processament intensiu, com ara edició intensa de fotos i vídeos, treball de disseny i jocs.
-   \item En els ordinadors, les GPU discretes són una targeta independent de la CPU, i que es troba en la seva pròpia targeta, fora de la CPU.
-   \item Els ordinadors portàtils i tauletes també poden tenir GPU discrets directament a la placa base, però sovint s'afegeixen a la GPU incorporada. La GPU integrada s'utilitza per a tasques gràfiques més lleugeres, mentre que la GPU discreta s'utilitza per a tasques gràfiques més pesades. El canvi entre GPUs a partir de la tasca que es fa permet un equilibri entre rendiment i eficiència energètica.
-  \end{itemize}
-   }
-\subsection{Software i Frameworks}\label{subsec:Software i Frameworks}
-
-\subsubsection{Frameworks}
-Segons \href{https://www.inesdi.com/blog/Frameworks-de-IA-que-debes-conocer/}{INESDI}:\\
-{\color{gray}``Un Frameworks és, en el camp de la informàtica, una estructura conceptual que proporciona un conjunt d'eines, biblioteques i patrons de disseny per facilitar el desenvolupament de programari. En altres paraules, són marcs de treball que funcionen com un esquelet predefinit, i sobre els quals es pot construir una aplicació o programari.
-
-Pel que fa als seus components, inclouen biblioteques de codi reutilitzables, mòduls predefinits, regles d'arxiu i directori, patrons de disseny i convencions de codificació.''}\\
-
-Un Frameworks, en diferencia, de la biblioteca per el control total que pot tenir el usuari en tema estructura, i organitzacio dels codis, en canvi, una biblioteca està en mans del desenvolupador i només tens accés en els codis que et convenin de la biblioteca. Malgrat la utilitat que propociona no satisfeix la IA de la actualitat i han hagut de desarollar uns Frameworks especifics per la IA, de tal manera en que facilita el desarollament i l'entrenament dels models de la IA.
-\subsubsection{Software}
-El software és el conjunt de programes, instruccions i regles informàtiques que permeten executar tasques específiques en un ordinador o sistema.
-
-La relació entre el software i la IA funciona de la següent manera: d'una banda, el software dóna utilitat pràctica a la IA en àmbits reals, permetent codificar les seves tècniques i processar les grans quantitats de dades que necessita. D'altra banda, la IA aporta automatització a les tasques repetitives del software, estalviant temps i recursos. Aquesta interacció crea un benefici mutu que forma un cicle perfecte, on cadascú millora i potencia l'altre.
-\end{comment}
-
-\section{Mètodes d'Optimització en Intel·ligència Artificial:Fonaments i Aplicacions}\label{subsec:Optimització i Ajustos}
-
-\textbf{Introducció}\\
+   \item \hypertarget{Optimització i Ajustos}{Mètodes d'Optimització en Intel·ligència Artificial:Fonaments i Aplicacions}
+   \textbf{Introducció}\\
 La Intel·ligència Artificial (IA) integra múltiples estratègies d'optimització, cadascuna adaptada als diferents models d'IA. A continuació, s'exploren els mètodes més destacades, amb una mini anàlisi dels mecanismes i les referències acadèmiques que hem utilitzat.
 
 \begin{enumerate}
@@ -330,23 +294,66 @@ La Intel·ligència Artificial (IA) integra múltiples estratègies d'optimitzac
 
      \end{enumerate}
 
+ \end{enumerate}
+ \item \hypertarget{Ètica i Regulació}{\textbf{Ètica i Regulació}}\\
+ Un cop enteses totes les funcionalitats i capacitats de la intel·ligència artificial (IA), és fonamental aplicar-hi principis d’ètica i moral. Encara que la IA no sigui un ésser viu, és una eina creada per els  humans, i per tant cal establir-hi limitacions per evitar-ne els mals usos i garantir el respecte als drets humans i a la privacitat. Aquesta part és crucial en el desenvolupament d’una IA responsable. En aquest sentit, molts estats i organismes ja han publicat diverses lleis legítimes i regulacions. Algunes de les més rellevants són:
+     \begin{itemize}
+        \item \textbf{Llei d’IA de la Unió Europea (AI Act):} És la primera regulació integral sobre la IA. Classifica els sistemes d’IA segons el seu nivell de risc (inacceptable, alt, limitat i mínim) i estableix requisits estrictes per als usos d’alt risc, com la transparència, supervisió humana i seguretat.
+           \item \textbf{Reglament General de Protecció de Dades (GDPR):} Tot i no ser exclusiu per a la IA, aquest reglament europeu protegeix la privacitat i les dades personals dels ciutadans. És clau en el desenvolupament d’IA que utilitza dades personals.
+          \item \textbf{Principis ètics de la UNESCO sobre la IA (2021): Proposen una base global per al desenvolupament ètic de la IA, centrant-se en el respecte pels drets humans, la igualtat, la sostenibilitat, la no discriminació i la supervisió humana.}
+          \item \textbf{Guies de l’OCDE sobre la IA:}Recomanen que els sistemes d’IA siguin transparents, responsables, segurs i que promoguin el benestar de la societat, ajudant a establir marcs internacionals de bones pràctiques.
+     \end{itemize}
+
+
 \end{enumerate}
 
+\begin{comment}
+\subsection{Potència computacional}\label{subsec:Potència computacional}
+La intel·ligència artificial (IA) i la potència de càlcul estan profundament connectades. Sense maquinari potent, les aplicacions d’IA no podrien processar algoritmes complexos ni gestionar les enormes quantitats de dades que requereixen els models actuals. \\
 
+Ultimament em vist el gran avanç que esta fent la IA, per tant la potencia computacional també creix consecutivament. D'aquesta manera la IA cada vegada es pareguera més a un huma i podrà ser més original alhora de crear contingut.\\
 
+Una \hyperref[GPUs]{\textbf{GPUs}} té un papel molt important en la IA de tal manera que pot lograr a accelelar els calculs que fa. Per la cual cosa fa que el seu mercat puguess arribar fins a 53 milions de dolars en 2023 i s'estima a que arribara fins al 473 milions en 2033.\\
 
+Tot això provoca un gran comerç i invertiment en la creació d'un chip exclusiu solament per la IA, donant llavor una rapideza encara més fascinant alhora de fer calculs.\\
 
-\subsection{Ètica i Regulació}\label{subsec:Ètica i Regulació}
+Uns dels principals  protagonistes que treballen en el hardware de la IA, son mostrat per la següent imatge:
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/Empreses.png}
+    \caption{Les capes que te la IA per funcionar}
+\end{figure}
 
-Un cop enteses totes les funcionalitats i capacitats de la intel·ligència artificial (IA), és fonamental aplicar-hi principis d’ètica i moral. Encara que la IA no sigui un ésser viu, és una eina creada per els  humans, i per tant cal establir-hi limitacions per evitar-ne els mals usos i garantir el respecte als drets humans i a la privacitat. Aquesta part és crucial en el desenvolupament d’una IA responsable. En aquest sentit, molts estats i organismes ja han publicat diverses lleis legítimes i regulacions. Algunes de les més rellevants són:
- \begin{itemize}
-  \item \textbf{Llei d’IA de la Unió Europea (AI Act):} És la primera regulació integral sobre la IA. Classifica els sistemes d’IA segons el seu nivell de risc (inacceptable, alt, limitat i mínim) i estableix requisits estrictes per als usos d’alt risc, com la transparència, supervisió humana i seguretat.
-  \item \textbf{Reglament General de Protecció de Dades (GDPR):} Tot i no ser exclusiu per a la IA, aquest reglament europeu protegeix la privacitat i les dades personals dels ciutadans. És clau en el desenvolupament d’IA que utilitza dades personals.
-  \item \textbf{Principis ètics de la UNESCO sobre la IA (2021): Proposen una base global per al desenvolupament ètic de la IA, centrant-se en el respecte pels drets humans, la igualtat, la sostenibilitat, la no discriminació i la supervisió humana.}
-  \item \textbf{Guies de l’OCDE sobre la IA:}Recomanen que els sistemes d’IA siguin transparents, responsables, segurs i que promoguin el benestar de la societat, ajudant a establir marcs internacionals de bones pràctiques.
- \end{itemize}
+\textbf{\Large GPUs}\label{GPUs}\\
+Segons \href{https://support.microsoft.com/es-es/windows/todo-sobre-las-unidades-de-procesamiento-gr%C3%A1fico-gpu-e159bedb-80b7-4738-a0c1-76d2a05beab4}{Microsoft} una GPUs és:\\
+  {\color{gray} La unitat de processament de gràfics (GPU) d'un dispositiu Windows controla el treball relacionat amb els gràfics. Les GPU també es coneixen com a targetes de vídeo o targetes gràfiques.\\
+  El treball relacionat amb els gràfics que manegen les GPU inclou els següents elements:
+  \begin{itemize}
+   \item El grafisme
+   \item Efectes
+   \item Video
+   \item Videojocs
+  \end{itemize}
+  Hi ha dos tipus bàsics de GPU: GPU integrada i GPU discreta. Coneix els diferents tipus de GPU i troba el que s'ajusta a les teves necessitats:
 
+  \textbf{GPU integrada}
+  \begin{itemize}
+   \item Les GPU integrades estan integrades directament en el processador principal (CPU).
+   \item Les GPU integrades normalment no són tan potents com les GPU discretes, però són més eficients energèticament.
+   \item Les GPU integrades sovint són menys costoses que les GPU discretes.
+   \item Les GPU integrades permeten que els portàtils siguin més prims, lleugers i eficients.
+   \item Les GPU Integrades són excel·lents per a alguns jocs, edició de vídeo lleuger o per treballar amb fotos.
+  \end{itemize}
 
+  \textbf{GPU discreta}
+  \begin{itemize}
+   \item Les GPU discretes són més grans que les GPU integrades i utilitzen més potència, però són les més adequades per a tasques de processament intensiu, com ara edició intensa de fotos i vídeos, treball de disseny i jocs.
+   \item En els ordinadors, les GPU discretes són una targeta independent de la CPU, i que es troba en la seva pròpia targeta, fora de la CPU.
+   \item Els ordinadors portàtils i tauletes també poden tenir GPU discrets directament a la placa base, però sovint s'afegeixen a la GPU incorporada. La GPU integrada s'utilitza per a tasques gràfiques més lleugeres, mentre que la GPU discreta s'utilitza per a tasques gràfiques més pesades. El canvi entre GPUs a partir de la tasca que es fa permet un equilibri entre rendiment i eficiència energètica.
+  \end{itemize}
+   }
+
+\end{comment}
 
 Fonts:\href{https://blogs.uoc.edu/digitapia/the-european-unions-artificial-intelligence-act-explained/}{Bloc IA} \href{https://formaciooberta.eapc.gencat.cat/contingutsdelscursos/tdp/080_int_artificial/inici.html}{EAPC Wiki}
 \href{https://www.ibm.com/think/topics/machine-learning}{IBM ML} \href{https://www.ultralytics.com/es/blog/understanding-the-impact-of-compute-power-on-ai-innovations}{La relació que estableix entre la IA i el maquinari }\cite{bengio2012} \href{https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai?utm_source=chatgpt.com}{AI ACT} \href{https://www.unesco.org/en/legal-affairs/recommendation-ethics-artificial-intelligence?utm_source=chatgpt.com}{IA UNESCO}
