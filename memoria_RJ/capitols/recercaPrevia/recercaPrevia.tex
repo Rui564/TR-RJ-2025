@@ -1,6 +1,6 @@
  \chapter{Recerca prèvia}
 \label{c:recerca prèvia}
-\section{La Història de la Intel·ligència Artificial: Des dels Orígens fins Avui}
+\section{La Història de la Intel·ligència Artificial:\\Des dels Orígens fins Avui}
 \begin{enumerate}
      \item \textbf{El Naixement d'una Idea Revo lucionaria (1956)}
 
@@ -21,9 +21,9 @@
 
 \end{enumerate}
 
-(Fonts: \cite{McCarthy_Minsky_Rochester_Shannon_2006}, \cite{deep-blue},
-\href{https://openai.com/index/chatgpt/}{ChatGPT (2022)},
-\cite{10.1093/mind/LIX.236.433}
+(Fonts:~\cite{McCarthy_Minsky_Rochester_Shannon_2006},~\cite{deep-blue},
+~\cite{chatGPT-2022},
+~\cite{10.1093/mind/LIX.236.433}
 )
 \section{Historia de les xarxes neuronals artificials}
 La història de les xarxes neuronals és molt extensa, per tant, resumirem molt aquest apartat, parlant molt breument de les creacions de xarxes més importants.
@@ -90,19 +90,19 @@ Per tant per funcionar necessitarà:
 
          L' objectiu de l'algoritme gradiant descendent és minimitzar la funció d'error, o també l'error entre la predicció, es a dir, trobar la funció de pèrdua mínima, per aconseguir-ho s'ha de trobar el valor mínim de la funció. La funció de pèrdua mínima significa que els errors dels paràmetres (pesos i biaixos) de la xarxa han de ser molt aproximades al valor real, on s'ajusten aquest paràmetres ja que no són exactes.
 
-        \begin{figure}[H]
+
+        \begin{figure}[t]
          \centering
          \includegraphics[width=0.5\textwidth]{./figures/gradient_descendent.png}
         \caption{Gràfica de gradient descendent}
+        \label{GraficaDescendet}
          \end{figure}
 
-          En la figura d'adalt, on podem apreciar quatre iteracions, el valor inicial és un punt qualsevol de la funció. Al inici de la funció, en el punt 0, els paràmetres de la funció s'asignen aleatoriament, i la pèrdua és alta, es a dir, que els errors són grans. Desde aquell punt, trobarem la derivada parcial en cada una de les iteracions, i el gradiet serà l'encarregat de guiar els canvis als paràmetres.
+          A la figura~\ref{GraficaDescendet}, on podem apreciar quatre iteracions, el valor inicial és un punt qualsevol de la funció. Al inici de la funció, en el punt 0, els paràmetres de la funció s'asignen aleatoriament, i la pèrdua és alta, es a dir, que els errors són grans. Desde aquell punt, trobarem la derivada parcial en cada una de les iteracions, i el gradiet serà l'encarregat de guiar els canvis als paràmetres.
           Al principi de tot, el gradient serà molt pronunciat, però a mesura que es van generant nous paràmetres durant l'entrenament, s'anirà reduint fins al put més baix d'aquesta corba, on els errors són molt petits, aquest punt se li diu punt de convergència. Aquí és on la xarxa ha après i ha ajustat millor les dades.
 
-          La fòrmula del gradient ascendent és la seguent: \\
-
-          $\Delta w_{ij} = a \left( \frac{\partial E}{\partial w_{ij}} \right)$ \\
-
+          La fòrmula del gradient ascendent és la seguent:
+          $$\Delta w_{ij} = a \left( \frac{\partial E}{\partial w_{ij}} \right)$$
           Aquesta és la formula més ràpida per arribar al punt màxim dels gradients. Per tant la fòrmula del gradient descendent seria aquesta mateixa en negatiu, perquè és la forma més ràpida de trobar el punt mínim.
 
           $\Delta w_{ij} = -a \left( \frac{\partial E}{\partial w_{ij}} \right)$
@@ -112,23 +112,29 @@ Per tant per funcionar necessitarà:
 
            $a$: És la constant d'aprenentatge, aquesta constant defineix quant afecta el gradiant en l'actualització dels nostres paràmetres en cada iteració. Si aquest valor és gran, cada iteració és molt gran, i el punt serà incapaç d'introduir-se al punt de convergència, causant que el procès d'optimització acabi en un bucle infinit. Tanmateix, si és petit, el punt s'aproxima poc a poc al punt de converència, però calcularà moltes iterai això pot ser ineficient. Per tant aquest valor ha de estar en un punt mig, en que no sigui molt gran ni molt petit.
 
-           \begin{figure}[H]
-           \centering
-           \includegraphics[width=0.5\textwidth]{./figures/constant_gradient.png}
-             \caption{Gràfiques de valors gran i petit de la constant d'aprenentatge}
-            \end{figure}
+
 
 
            $\left( \frac{\partial E}{\partial w_{ij}} \right)$: És la derivada parcial de $E$ respecte a $\Delta w_{ij}$. \\
 
            A la figura 3.2, és una representació en 2 d, però en situacions reals el gradient descendent es representa en la dimensió 3 d.
 
+\begin{minipage}[h]{0.45\textwidth}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{./figures/constant_gradient.png}
+        \caption{Gràfiques de valors gran i petit de la constant d'aprenentatge}
+    \end{figure}
+\end{minipage}
+\begin{minipage}[h]{0.45\textwidth}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{./figures/gradient_descendent3d.png}
+    \caption{Repressentació del gradient descendent en 3D}
+    \end{figure}
+\end{minipage}
 
-           \begin{figure}[H]
-            \centering
-            \includegraphics[width=0.5\textwidth]{./figures/gradient_descendent3d.png}
-            \caption{Repressentació del gradient descendent en 3d}
-            \end{figure}
+
 
             Fonts: \href{https://www.ibm.com/es-es/think/topics/gradient-descent}{ibm.com} i \href{https://www.youtube.com/watch?v=A6FiCDoz8_4&ab_channel=DotCSV}{YouTube}.
         \end{itemize}
