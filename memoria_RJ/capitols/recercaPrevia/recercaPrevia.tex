@@ -37,7 +37,7 @@ La història de les xarxes neuronals és molt extensa, per tant, resumirem molt 
     El multiplayer perceptron és una ampliació de la percepció d'una única neurona a més d'una. A més, apareix el concepte de capes d'entrades, capes ocultes i capes de sortida, (tot això explicat a l'apartat \ref{sec:3.6}) però amb valors d'entrada i rtida binàries. No hem d'ignorar que els científics asignaban el valor del pes i del umbral manualment en cada neurona, quan més perceptrons havien en les capes, era molt més difícil establir els pesos desitjats.
 
     \item \textbf{Neurones sigmoide}
-    Per aconseguir que les xarxes neuronals aprenguin per elles mateixes, es a dir, aprenentatge automàtic \ref{3.4.2}, va ser necessari introduir un nou tipus de neurones, que són les Neurones Sigmoides, que són similar al perceptró, aquestes neurones en comptes de que les entrades siguin 1 o 0, puguin tenir valors com 0.5, o 0.374 o qualsevol altre valor real. Ara les sorides en lloc de ser 0 o 1, serà d(w . x + b), on d serà la funció sigmoide, explicat en l'apartat \ref{3.7.1}. Aquesta va ser la primera funció d'activació \ref{3.5.3}.
+    Per aconseguir que les xarxes neuronals aprenguin per elles mateixes, es a dir, aprenentatge automàtic \ref{3.4.2}, va ser necessari introduir un nou tipus de neurones, que són les Neurones Sigmoides, que són similar al perceptró, aquestes neurones en comptes de que les entrades siguin 1 o 0, puguin tenir valors com 0.5, o 0.374 o qualsevol altre valor real. Ara les sorides en lloc de ser 0 o 1, serà d(w . x + b), on d serà la funció sigmoide, explicat en l'apartat \hyperlink{3.7.1}{3.7.1}. Aquesta va ser la primera funció d'activació \ref{3.5.3}.
 
     \item \textbf{Xarxa neuronal prealmentada (Feedforward)}
     Les xarxes neuronals prealimentades són les que les sortides d'una sola capa són utilitzades com entrades en la pròxima, com explicarem més endevant en l'apartat \ref{sec:3.6} capa, on les conexions entre les unitats no dornen un cicle.
@@ -217,7 +217,7 @@ La Intel·ligència Artificial (IA) integra múltiples estratègies d'optimitzac
 \begin{enumerate}
  \item \textbf{Retropropagació en Aprenentatge Profund:} La retropropagació (\textit{backpropagation}) és com el punt i coma en el text per les xarxes neuronals artificials. Aquest algorisme es basa en un procés iteratiu en dues fases:
     \begin{enumerate}
-     \item \textbf{Fase de propagació endavant}: Les dades d'entrada es transmeten a través de les capes de la xarxa, generant una predicció. Durant aquest procés, cada neurona aplica una transformació lineal seguida d'una funció d'activació no lineal, com \textit{\nameref{subsec:1}} o \textit{\nameref{3.7.1}}.
+     \item \textbf{Fase de propagació endavant}: Les dades d'entrada es transmeten a través de les capes de la xarxa, generant una predicció. Durant aquest procés, cada neurona aplica una transformació lineal seguida d'una funció d'activació no lineal, com \textit{\hyperlink{subsec:1}{funció unitat rectificada uniforme}} o \textit{\hyperlink{3.7.1}{funció sigmoide}}.
 
      \item \textbf{Fase de propagació enrere}: Es calcula l'error entre la predicció i el valor real utilitzant una funció de pèrdua (\textit{loss function}), com l'error quadràtic mitjà (\textit{Mean Squared Error}) per a problemes de regressió o l'entropia creuada (\textit{Cross-Entropy Loss}) per a classificació. Mitjançant \nameref{subsec:cadena} (\textit{chain rule}), es determina la contribució de cada paràmetre a l'error global, obtenint els gradients $\partial L/\partial W$, on $L$ representa la pèrdua i $W$ els pesos de la xarxa.
 
@@ -400,7 +400,7 @@ Funció d'activació}\label{sec:3.5.3}
 Les funcions d'activació són un component integral de les xarxes neuronals que els permeten aprendre patrons complexos en les dades. Transformen el senyal d'entrada d'una neurona en un senyal de sortida que passa a la capa següent. Sense funcions d'activació, les xarxes neuronals es limitarien a modelar únicament relacions lineals entre entrades i sortides, és a dir, introdueixen la no linealitat i produeixen la sortida de la neurona.
 
 \begin{enumerate}
- \item \textbf{Funció sigmoide}\\
+ \item \hypertarget{3.7.1}{\textbf{Funció sigmoide}}\\
  Una funció d'activació molt coneguda és la funció sigmoide. La seva fórmula és:
 \[ \sigma(x) = \frac{1}{1 + e^{-x}} \]
 
@@ -417,7 +417,9 @@ La avantatge principal de la funció sigmoide és la seva suavitat i la facilita
 
 \textbf{Desavantatges:}
 Tanmateix, la funció sigmoide també té algunes desavantatges. Un dels seus problemes és que la funció es satura els gradients. Quan els valors d'entrades són grans, ho que significa que la derivada de la funció s'apropa a 0 i l'aprenentatge es relentitza. Un altre problema és que aquesta funció no és simètrica, causant a les entrades negatives i positives es processin de mandera diferent, això pot afectaral rendiment de la xarxa. Tot això dificulta el procès d'entrenament de la xarxa en la ràpida minimització de la funció d'error utilitzant l'algoritme de Gradient Descendent.
-\item \textbf{Funció ReLU(Funció Uniat Rectificada Uniforme)}\\
+
+\item \hypertarget{subsec:1}{\textbf{Funció ReLU(Funció Uniat Rectificada Uniforme)}}\\
+
 La funció Unitat Rectificada Uniforme té la fòrmula seguent:
 \[ f(x) = \max(0, x) \]
 
@@ -436,7 +438,9 @@ Tot i això, aquesta funció té una desavanantatge; si utilitzen la funció ReL
     \includegraphics[width=0.5\textwidth]{./figures/leaky_ReLU.png}
     \caption{Gràfica de la funció Leaky ReLU}
 \end{figure}
+
 \item \textbf{Funció Softmax}\\
+
 La funció Softmax, és una de les funcions que més s'utilitzen en xarxes neuronals i és especialment útil en el context dels problemes de clasificació multiclase. Aquesta funció opera sobre un vector que representa les previsions de cada clase, calculades per les capes anterior.
 
 \begin{figure}[h!]

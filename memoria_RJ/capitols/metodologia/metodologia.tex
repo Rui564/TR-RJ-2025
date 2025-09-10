@@ -235,15 +235,18 @@ Fonts:\href{https://dev.to/xploitcore/kde-vs-gnome-vs-others-choosing-the-best-l
 
 \section{Entorn col·laboratiu}\label{sec:4.3}
 A l'hora de crear un projecte en equip, pot arribar a ser complicat treballar amb 2 o més membres del grup a la vegada en els seus respectius dispositius si no s'escull una eina col·laborativa adequada, sobretot si s'està treballant amb molts fitxers. Pot haver problemes alhora de intercanviar o que sol pugui estar un membre traballant en un fitxer fa que sigui un absolutament caos.
-\subsection{Google Drive}
-Google Drive és una plataforma de Google que ofereix eines gratuïtes com un processador de text (Docs) i un entorn col·laboratiu. Tot i ser senzill i eficient, té algunes limitacions importants que hem de considerar:
+\begin{enumerate}
+ \item \textbf{Google Drive}
+ Google Drive és una plataforma de Google que ofereix eines gratuïtes com un processador de text (Docs) i un entorn col·laboratiu. Tot i ser senzill i eficient, té algunes limitacions importants que hem de considerar:
 \begin{itemize}
  \item \textbf{Poc control en el procés col·laboratiu:} És difícil gestionar canvis simultanis o conflicts entre versions.
  \item \textbf{Limitacions en el control de versions:} No permet controlar detalladament els canvis que es fan i registrar.
  \item \textbf{Falta de privadesa:} Google té accés als teus arxius, cosa que pot ser un problema per a dades sensibles.
 \end{itemize}
-Aquestes limitacions fan que Google Drive no sigui l'opció ideal per el nostre TR la qual cosa ens fara escollir l'altre alternativa que teniem, el \nameref{subsec:Git+GitHub+Vim}.
-\subsection{Git+GitHub+Vim}\label{subsec:Git+GitHub+Vim}
+Aquestes limitacions fan que Google Drive no sigui l'opció ideal per el nostre TR la qual cosa ens fara escollir l'altre alternativa que teniem, el Git+GitHub+Vim.
+
+\item \textbf{Git+GitHub+Vim}
+
 Git és un sistema de control de versions que ofereix:
 \begin{itemize}
  \item Historial dels canvis.
@@ -255,7 +258,7 @@ El principal desavantatge que té el Git és que, per si sol, no està optimitza
 \begin{itemize}
 \item \textbf{Repositoris}
  \item \textbf{Git pull,commit,push:} Dona la possibilitat de poder discutir les versions abans de pujarlo a la original.
- \item Solucions als conflictes de versions amb l'ajuda del \nameref{subsubsec:Vim}.
+ \item Solucions als conflictes de versions amb l'ajuda del Vim\cite{Vim}.
  \end{itemize}
 
 \textbf{Avantatges:}
@@ -313,6 +316,9 @@ Més informació en: \href{https://git-scm.com/about/branching-and-merging}{Pagi
 \item \textbf{Comandes}: Els comandes reben nom contraintuïtiu io la sintaxi varia segons l'operació.
 \end{itemize}
 Fonts:\href{https://ieeexplore.ieee.org/document/8259410}{Comparacions entre control de versions} \href{https://stevebennett.me/2012/02/24/10-things-i-hate-about-git/}{bloc de critica d'un desenvolupador}
+\end{enumerate}
+
+\begin{comment}
 \subsubsection{Vim}\label{subsubsec:Vim}
 Vim (Vi IMproved) és un editor de text avançat, lliure i de codi obert, basat en l'editor clàssic vi. És conegut per ser multiplataforma i també la seva eficiència, personalització i ús sense ratoli, sent popular entre programadors i usuaris tècnics. Aquest editor de text consta de 4 modes amb diferents funcionalitats:
 \begin{itemize}
@@ -322,6 +328,7 @@ Vim (Vi IMproved) és un editor de text avançat, lliure i de codi obert, basat 
  \item \textbf{Mode Command} Per executar comandes complexes
 \end{itemize}
 Fonts:\href{https://www.vim.org/}{Pagina oficial del Vim} \href{https://vimhelp.org/}{Documentacio del Vim}
+\end{comment}
 \section{Llenguatge de programació}\label{sec:4.4}
 
 El llenguatge de programació que vam decidir per fer la part pràctia del treball va ser Python. Python és un llenguatge de programació que va ser creat en 1989 per Guido van Rossum , un informàtic neerlandès. Aquest llenguatge és conegut per la seva simple sintaxi, comparada amb altres llenguatges com JavaScript o C++ que són més complicats, python facilita l'aprenentatge pels usuaris que començen a apendre a programar desde 0.
