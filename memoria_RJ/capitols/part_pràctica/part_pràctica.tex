@@ -1,10 +1,10 @@
 \chapter{Xarxa Neuronal}
 \section{Introducció}\label{sec:intr}
-En iniciar la part pràctica del treball vam decidir crear tres tipus de xarxes neuronals: una \nameref{sec:10}, una altra \nameref{sec:11} i, finalment, una \nameref{sec:12}.
+En iniciar la part pràctica del treball vam decidir crear tres tipus de xarxes neuronals: una \nameref{sec:10}, una altra \nameref{sec:11} i, finalment, una \nameref{sec:12}.\\
 
-En aquest capítol explicarem com vam elaborar cadascuna d’aquestes xarxes neuronals i, a més, compararem les dues formes de desenvolupament en una \nameref{sec:op}.
+En aquest capítol explicarem com vam elaborar cadascuna d’aquestes xarxes neuronals i, a més, compararem les dues formes de desenvolupament en una \nameref{sec:op}.\\
 
-Per facilitar l’organització del treball, ens hem repartit les tasques: un membre de l’equip s’ha encarregat de la xarxa neuronal implementada amb llenguatge de programació Python, mentre que l’altre ha treballat una xarxa neuronal feta amb fulls de càlcul. Finalment, hem elaborat conjuntament la taula de comparació, intercanviant perspectives, i també hem treballat plegats la xarxa neuronal del cas real.
+Per facilitar l’organització del treball, ens hem repartit les tasques: un membre de l’equip s’ha encarregat de la xarxa neuronal implementada amb llenguatge de programació Python, mentre que l’altre ha treballat una xarxa neuronal feta amb fulls de càlcul. Finalment, hem elaborat conjuntament la taula de comparació, intercanviant perspectives, i també hem treballat plegats la xarxa neuronal del cas real.\\
 
 Les nostres pràctiques consisteixen en recopilar una sèrie de dades d'alumnes mitjançant una enquesta feta per nosaltres amb la finalitat de crear una Xarxa neuronal que pugues predir la nota final de cada alumne. Les preguntes fetes en el formulari són sobre la matèria de matemàtiques i són les següents:
 \begin{itemize}
@@ -66,10 +66,10 @@ Mostra del formulari:
 Després de les prediccions, compararem la xarxa neuronal feta amb python y la del full de càlcul i veurem quina de les dos té més precisió.
 
 \section{Xarxa neuronal de regressió}\label{sec:op}
-Una intel·ligència artificial és un camp molt extens i, dins d’aquest, les xarxes neuronals també representen una branca àmplia i complexa.
-En el nostre context utilitzarem un tipus concret de xarxa neuronal per a la pràctica: les \textbf{xarxes neuronals de regressió}.
+Una intel·ligència artificial és un camp molt extens i, dins d’aquest, les xarxes neuronals també representen una branca àmplia i complexa. \\
+En el nostre context utilitzarem un tipus concret de xarxa neuronal per a la pràctica: les \textbf{xarxes neuronals de regressió}.\\
 
-Una xarxa neuronal de regressió, a diferència d’una de classificació, té una sortida de tipus lineal que permet predir un valor numèric continu. Aquest tipus de xarxes requereixen un conjunt de dades prou extens i ben estructurat per poder aprendre les relacions entre les variables d’entrada i generar una estimació fiable.
+Una xarxa neuronal de regressió, a diferència d’una de classificació, té una sortida de tipus lineal que permet predir un valor numèric continu. Aquest tipus de xarxes requereixen un conjunt de dades prou extens i ben estructurat per poder aprendre les relacions entre les variables d’entrada i generar una estimació fiable.\\
 
 A continuació es mostra un esquema representatiu d’una xarxa neuronal de regressió:
 
@@ -129,7 +129,7 @@ Per començar, importo el framework i la biblioteca de Python que són les bases
 \end{figure}
 
 
-Agafo les paraules \textbf{celsius} i \textbf{fahrenheit} i les defineixo com a variables amb un signe \texttt{=}. Després poso \texttt{np} per indicar la biblioteca, seguit de \texttt{.array()} per especificar que és una llista. Dins dels parèntesis hi poso \texttt{[ ]} i a dins, els diferents valors de temperatura. Finalment, afegeixo el paràmetre \texttt{dtype=float} per indicar que es tracta de dades numèriques decimals.
+Agafo les paraules \textbf{celsius} i \textbf{fahrenheit} i les defineixo com a variables amb un signe \texttt{=}. Després poso \texttt{np} per indicar la biblioteca, seguit de \texttt{.array()} per especificar que és una llista. Dins dels parèntesis hi poso \texttt{[ ]} i a dins, els diferents valors de temperatura. Finalment, afegeixo el paràmetre \texttt{dtype=float} per indicar que es tracta de dades numèriques decimals.\\
 
 Repeteixo el mateix procés amb \textbf{fahrenheit}, però en aquest cas les dades no poden ser arbitràries, sinó que han de ser les temperatures corresponents a les de \textbf{celsius} convertides a Fahrenheit. D’aquesta manera, la xarxa neuronal pot entendre la relació entre les dues sèries de dades.
 
@@ -190,11 +190,11 @@ A més, podem utilitzar \texttt{print()} per escriure comentaris o textos al ter
     \caption{L'entrenament de la xarxa neuronal}
 \end{figure}
 \label{matplotlib}
-Després d’haver entrenat la xarxa neuronal i emmagatzemat l’evolució de la pèrdua a la variable \texttt{historial}, podem visualitzar com ha canviat la pèrdua a cada època utilitzant \texttt{matplotlib.pyplot}, una biblioteca de Python per crear gràfiques.
+Després d’haver entrenat la xarxa neuronal i emmagatzemat l’evolució de la pèrdua a la variable \texttt{historial}, podem visualitzar com ha canviat la pèrdua a cada època utilitzant \texttt{matplotlib.pyplot}, una biblioteca de Python per crear gràfiques.\\
 
-Primer, importem la biblioteca amb \texttt{import matplotlib.pyplot as plt}. A continuació, etiquetem els eixos de la gràfica amb \texttt{plt.xlabel("\# Època")} i \texttt{plt.ylabel("Magnitud de pèrdua")} per indicar què representa cada eix.
+Primer, importem la biblioteca amb \texttt{import matplotlib.pyplot as plt}. A continuació, etiquetem els eixos de la gràfica amb \texttt{plt.xlabel("\# Època")} i \texttt{plt.ylabel("Magnitud de pèrdua")} per indicar què representa cada eix.\\
 
-Per dibuixar la corba de la pèrdua utilitzem \texttt{plt.plot(historial.history[``loss''])}, que accedeix a la llista de valors de pèrdua que Keras ha guardat per cada època durant l’entrenament. Finalment, amb \texttt{plt.show()} mostrem la gràfica en una finestra del terminal o del notebook.
+Per dibuixar la corba de la pèrdua utilitzem \texttt{plt.plot(historial.history[``loss''])}, que accedeix a la llista de valors de pèrdua que Keras ha guardat per cada època durant l’entrenament. Finalment, amb \texttt{plt.show()} mostrem la gràfica en una finestra del terminal o del notebook.\\
 
 D’aquesta manera podem observar visualment si el model aprèn correctament, com disminueix la pèrdua al llarg de les èpoques i si hi ha comportaments irregulars que requeririen ajustar els paràmetres d’entrenament.
 
@@ -204,9 +204,9 @@ D’aquesta manera podem observar visualment si el model aprèn correctament, co
     \caption{La corba de pèrdua}
 \end{figure}
 
-Després d’haver entrenat la xarxa neuronal, podem fer prediccions amb nous valors d’entrada. Primer, utilitzem \texttt{print("Fem una predicció!")} per mostrar un missatge al terminal indicant que comença la predicció.
+Després d’haver entrenat la xarxa neuronal, podem fer prediccions amb nous valors d’entrada. Primer, utilitzem \texttt{print("Fem una predicció!")} per mostrar un missatge al terminal indicant que comença la predicció.\\
 
-A continuació, fem servir \texttt{model.predict()} per calcular la predicció de la xarxa neuronal. En aquest cas, introduïm un valor de 100 graus Celsius amb \texttt{np.array([[100.0]], dtype=float)}, assegurant-nos que sigui un valor numèric decimal. El resultat s’emmagatzema a la variable \texttt{resultat}.
+A continuació, fem servir \texttt{model.predict()} per calcular la predicció de la xarxa neuronal. En aquest cas, introduïm un valor de 100 graus Celsius amb \texttt{np.array([[100.0]], dtype=float)}, assegurant-nos que sigui un valor numèric decimal. El resultat s’emmagatzema a la variable \texttt{resultat}.\\
 
 Finalment, utilitzem \texttt{print("El resultat es " + str(resultat) + " fahrenheit")} per mostrar la predicció obtinguda en Fahrenheit(el str es perque el variable resultat no sigui numeric sino un text). D’aquesta manera podem veure com el model converteix qualsevol temperatura de Celsius a Fahrenheit després de l’entrenament.
 
@@ -274,7 +274,7 @@ Igual que la xarxa neuronal de celcius a fahrenheit, començare amb la importaci
     \caption{Els biblioteques, llibreries i framework}
 \end{figure}
 
-A diferència de l’anterior xarxa, aquesta vegada he de fixar els resultats de la predicció per tal que les notes finals siguin més precises. Amb l’ajuda de la llibreria random pugues seleccionar qualsevol nombre aleatori que vulguessí, però per garantir la reproduïbilitat assignem la llavor (seed) amb el valor 42. Així, la xarxa neuronal sempre s’inicialitzarà amb els mateixos pesos i biaixos.
+A diferència de l’anterior xarxa, aquesta vegada he de fixar els resultats de la predicció per tal que les notes finals siguin més precises. Amb l’ajuda de la llibreria random pugues seleccionar qualsevol nombre aleatori que vulguessí, però per garantir la reproduïbilitat assignem la llavor (seed) amb el valor 42. Així, la xarxa neuronal sempre s’inicialitzarà amb els mateixos pesos i biaixos.\\
 
 A continuació, controlo l’aleatorietat de les diferents llibreries que intervenen en el procés: \texttt{NumPy}, \texttt{TensorFlow}, \texttt{random} i, finalment, estableixo el valor del hash de Python amb la importació del mòdul \texttt{os}.
 
@@ -320,9 +320,9 @@ A diferència de \texttt{X}, la sortida \texttt{y} només tindrà una columna, q
     \caption{magatzem de dades}
 \end{figure}
 
-A més d’emmagatzemar les dades, m’he adonat que la normalització també és crucial perquè la xarxa neuronal pugui entendre millor les relacions entre les dades. Això és degut al fet que cada dada pot tenir un valor numèric molt diferent, com les hores d’estudi o si s’ha estudiat o no. Per normalitzar les dades utilitzarem el \texttt{MinMaxScaler} de \texttt{sklearn}, tant per a la \texttt{X} com per a la \texttt{y}.
+A més d’emmagatzemar les dades, m’he adonat que la normalització també és crucial perquè la xarxa neuronal pugui entendre millor les relacions entre les dades. Això és degut al fet que cada dada pot tenir un valor numèric molt diferent, com les hores d’estudi o si s’ha estudiat o no. Per normalitzar les dades utilitzarem el \texttt{MinMaxScaler} de \texttt{sklearn}, tant per a la \texttt{X} com per a la \texttt{y}.\\
 
-Primer, creem un escalador per a la \texttt{X} amb \texttt{scaler = MinMaxScaler()}. A continuació, apliquem la normalització amb \texttt{X\_scaled = scaler.fit\_transform(X)}, amb la qual cosa totes les dades de la \texttt{X} quedaran dins l’interval $[0,1]$.
+Primer, creem un escalador per a la \texttt{X} amb \texttt{scaler = MinMaxScaler()}. A continuació, apliquem la normalització amb \texttt{X\_scaled = scaler.fit\_transform(X)}, amb la qual cosa totes les dades de la \texttt{X} quedaran dins l’interval $[0,1]$.\\
 
 De manera similar, normalitzarem la \texttt{y} amb un altre escalador, \texttt{scaler\_y}. Aquí cal convertir \texttt{y} en una matriu amb \texttt{y.reshape(-1, 1)} ja que el \texttt{MinMaxScaler} només funciona amb matrius de dues dimensions. Després, apliquem la normalització amb \texttt{y\_scaled = scaler\_y.fit\_transform(y.reshape(-1, 1))}.
 
@@ -440,7 +440,7 @@ Aquestra representació queda així:
 L'entrada de ``Realització de deures'' és una data binaria que nomès pot prendre valors 0 o 1.
 \subsection{Normalització de dades}\label{subsec:24}
 Abans de continuar, és necessari explicar que és la normalització de dades.
-La normalització de dades és una tècnica de procesament que consisteix en transformar dades de diferents escales a una escala comú, com per exemple del 0 al 1, aixó facilita la comparació i l'anàlisi de la xarxa neuronal i millora el seu rendiment. En el nostre cas, tenim dades binaries i dades ordinaries qe poden prendre qualsevol valor, aquest desequilibri afecta els càlculs posteriors si no es solucionen d'alguna manera.
+La normalització de dades és una tècnica de procesament que consisteix en transformar dades de diferents escales a una escala comú, com per exemple del 0 al 1, aixó facilita la comparació i l'anàlisi de la xarxa neuronal i millora el seu rendiment. En el nostre cas, tenim dades binaries i dades ordinaries qe poden prendre qualsevol valor, aquest desequilibri afecta els càlculs posteriors si no es solucionen d'alguna manera. \\
 
 Per aquesta raó, convertirem totes les dades en valors d'entre 0 i 1. Aquest procès implica calcular la miitjana de les dades i la desviació estàndar de cada variable. Per això utilitzant la fòrmula seguent:\\
 $z = \frac{x - \mu}{\sigma}$\\
@@ -486,7 +486,7 @@ Desprès d'aplicar la fòrmula, obtindrem la predicció de la nota final, tal co
 
 Hem de recordar que els valors de la predicció són erronis, a que els pesos que hem assignat són aleatoris.
 
-Per questa raò, el següent pas de la pràtcia és entrenar el nostre model per millorar els paràmetres. Per dur això, haurem d'aplicar un procès d'optimització per ajustar aquest paràmetres. En aquest cas utilitzarem l'algoritme gradient descendent, explicat anteriorment en l'apartat \ref{subsec:gradient}.
+Per questa raò, el següent pas de la pràtcia és entrenar el nostre model per millorar els paràmetres. Per dur això, haurem d'aplicar un procès d'optimització per ajustar aquest paràmetres. En aquest cas utilitzarem l'algoritme gradient descendent, explicat anteriorment en l'apartat \ref{subsec:gradient}.\\
 
 Començarem afegint més columnes en el nostre full en la nostra taula. Si restem els valors de la predicció ($Y$) amb els valors reals ($y$) obtindrem la diferència entre la nota dels alumnes i les notes predictives.
 
@@ -496,11 +496,11 @@ Començarem afegint més columnes en el nostre full en la nostra taula. Si reste
     \caption{Erros de la predicció}
 \end{figure}
 
-Es pot veure en la imatge 6.30 dues columnes adicionals, la columna ``error'' emmagatzema els errors del model i l'altre conté els mateixos errors pero en valor absolut, es a dir, que tots els valors estan en positiu, d'aquesta manera serà més fàcil apreciar la diferència dels errors en les prediccions i els càlculs dels paràmetres.
+Es pot veure en la imatge 6.30 dues columnes adicionals, la columna ``error'' emmagatzema els errors del model i l'altre conté els mateixos errors pero en valor absolut, es a dir, que tots els valors estan en positiu, d'aquesta manera serà més fàcil apreciar la diferència dels errors en les prediccions i els càlculs dels paràmetres.\\
 
-Després de crear aqeustes taules, calcularem la mitjana dels valors que estan en la taula dels errors en positiu, el resultat d'aquesta mitjana ens ajudarà a orientar-nos i determinar si en cada iteració l'error està augmentant o disminuint, quan més baix sigui aquest valor, la predicció serà més precisa.
+Després de crear aqeustes taules, calcularem la mitjana dels valors que estan en la taula dels errors en positiu, el resultat d'aquesta mitjana ens ajudarà a orientar-nos i determinar si en cada iteració l'error està augmentant o disminuint, quan més baix sigui aquest valor, la predicció serà més precisa.\\
 \subsection{Canvis dels paràmetres}
-Un cop tenim la funció d'error de la primera predicció, el pas següent és entrenar el model per ajustar els valors dels pesos i del biaix adequadament perquè les següents prediccions siguin més precises.
+Un cop tenim la funció d'error de la primera predicció, el pas següent és entrenar el model per ajustar els valors dels pesos i del biaix adequadament perquè les següents prediccions siguin més precises.\\
 Per aconseguir aixó, hem de tindre en compte les dades seguents: Quan la diferència de $Y$ respecte a $y$ és més gran, més luny estaran els pesos dels seus valors ideals. Per tant hem de trobar la forma de calcular de forma correcta els pesos respecte de la diferència dels valors de l predicció.
 
 Gràcies a la fòrmula de la xarxa neuronal sabem que si el valor d'entrada ($X$) és petit, el seu pes ($W$) també ho serà, ja que aquests es multipliquen. Per tant hem de tindre en compte dues coses: La diferènccia de la predicció final ($Y$) i del valor real ($y$) i el valor d'entrada ($X$) respecte al seu pes ($W$). Per tant fòrmula que utilitzarem per calcular els canvis dels paràmetres serà:\\
@@ -513,14 +513,14 @@ Aquesta fòrmula serà la que ens ajudarà a ajustar els paràmetres per tal de 
     \caption{Canvis en els paràmetres}
 \end{figure}
 
-En la figura 6.31 es por veure com han quedat aquestes taules, els cnvis del biaix es calculen amb la mateixa fòrmula que els pesos, pero sense restar-li cap entrada, ja que actúa com una entrada constant.
+En la figura 6.31 es por veure com han quedat aquestes taules, els cnvis del biaix es calculen amb la mateixa fòrmula que els pesos, pero sense restar-li cap entrada, ja que actúa com una entrada constant.\\
 
 Ara és necesari calcular la mitjana dels cavis dels pesos, les mitjanes obtingudes a partir dels canvis seran uns dels valors que utilitzarem per ajustar els paràmetres.
 
 \subsection{La taxa d'aprenentatge}
-Avans de començar a entrenar el model, hem de parlar d'una variable molt important, que és la taxa d'aprenentatge. Auesta taxa és un paràmetre ue ajsta l'ample dels pasos que fem per actualitzar els pesos i el biaix del model, com vam explicar a l'apartat \ref{subsec:gradient}, el valor d'auesta taxa no pot ser molt gran perquè si no no es podria trobar el punt de convergència, ni molt petit perquè relentitzaria la xarxa.
+Avans de començar a entrenar el model, hem de parlar d'una variable molt important, que és la taxa d'aprenentatge. Auesta taxa és un paràmetre ue ajsta l'ample dels pasos que fem per actualitzar els pesos i el biaix del model, com vam explicar a l'apartat \ref{subsec:gradient}, el valor d'auesta taxa no pot ser molt gran perquè si no no es podria trobar el punt de convergència, ni molt petit perquè relentitzaria la xarxa.\\
 
-Normalment la el valor de la taxa d'aprenentatge és 1, però de vegades auest valor és molt gran i augmentaria l'error del model, si això pasa hauriem de reduir el seu valor progressivament fins un punt on l'error de la xarxa disminueixi significativament.
+Normalment la el valor de la taxa d'aprenentatge és 1, però de vegades auest valor és molt gran i augmentaria l'error del model, si això pasa hauriem de reduir el seu valor progressivament fins un punt on l'error de la xarxa disminueixi significativament.\\
 
 Finalment, per trobar el valor final dels canvis ajustats dels paràmetres haurem de multiplicar a mitjana dels canvis dels pesos per la taxa d'aprenentatge.
 \subsection{Èpoques d'entrenament}
@@ -532,8 +532,8 @@ Ja podem començar a entrenar el model, ho farem copiant la mateixa taula que te
     \caption{Èpoques d'entrenament}
 \end{figure}
 
-Cada època d'entrenament seria com si fos una iteració, podem veure que els paràmetres de la primera època han canviat respecte de la primera taula, que li anomenarem època 0, on aquests pràmetres eren inicialment aleatoris, el valor del primer pes de l'època 1 ($W1$) es calcula sumant el pes de la època 0 pel valor del canvi ajustat.
-Per saber si el model ha millorat, la millor forma de comprobar-ho és fixant-se en la taula dels errors en positiu. Podem veure que aquest valor ha disminuit respecte a l'epoca anterior, això significa que esttà millorant.
+Cada època d'entrenament seria com si fos una iteració, podem veure que els paràmetres de la primera època han canviat respecte de la primera taula, que li anomenarem època 0, on aquests pràmetres eren inicialment aleatoris, el valor del primer pes de l'època 1 ($W1$) es calcula sumant el pes de la època 0 pel valor del canvi ajustat.\\
+Per saber si el model ha millorat, la millor forma de comprobar-ho és fixant-se en la taula dels errors en positiu. Podem veure que aquest valor ha disminuit respecte a l'epoca anterior, això significa que esttà millorant.\\
 A partir d'ara hem de fer ho mateix repetidament fins que el canvi de l'error entre les èpoques siguin molt petits, quan pasi això significarà que estem pràcticament en el punt de convergència, i és important anant ajustant la taxa d'aprenentatge.
 \subsection{Resultats}
 En aquest cas, ha calgut 8 etàpes per arribar al punt de conncia.vergè He organitzat els valors de l'error de cada època en una gràfica per que sigui més fàcil visualitzar els canvis
