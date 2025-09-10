@@ -37,7 +37,7 @@ La història de les xarxes neuronals és molt extensa, per tant, resumirem molt 
     El multiplayer perceptron és una ampliació de la percepció d'una única neurona a més d'una. A més, apareix el concepte de capes d'entrades, capes ocultes i capes de sortida, (tot això explicat a l'apartat \ref{sec:3.6}) però amb valors d'entrada i rtida binàries. No hem d'ignorar que els científics asignaban el valor del pes i del umbral manualment en cada neurona, quan més perceptrons havien en les capes, era molt més difícil establir els pesos desitjats.
 
     \item \textbf{Neurones sigmoide}
-    Per aconseguir que les xarxes neuronals aprenguin per elles mateixes, es a dir, aprenentatge automàtic \ref{3.4.2}, va ser necessari introduir un nou tipus de neurones, que són les Neurones Sigmoides, que són similar al perceptró, aquestes neurones en comptes de que les entrades siguin 1 o 0, puguin tenir valors com 0.5, o 0.374 o qualsevol altre valor real. Ara les sorides en lloc de ser 0 o 1, serà d(w . x + b), on d serà la funció sigmoide, explicat en l'apartat \hyperlink{3.7.1}{3.7.1}. Aquesta va ser la primera funció d'activació \ref{3.5.3}.
+    Per aconseguir que les xarxes neuronals aprenguin per elles mateixes, es a dir, aprenentatge automàtic \ref{Aprenentatge_automàtic}, va ser necessari introduir un nou tipus de neurones, que són les Neurones Sigmoides, que són similar al perceptró, aquestes neurones en comptes de que les entrades siguin 1 o 0, puguin tenir valors com 0.5, o 0.374 o qualsevol altre valor real. Ara les sorides en lloc de ser 0 o 1, serà d(w . x + b), on d serà la funció sigmoide, explicat en l'apartat \ref{sigmoide}. Aquesta va ser la primera funció d'activació \ref{Activació}.
 
     \item \textbf{Xarxa neuronal prealmentada (Feedforward)}
     Les xarxes neuronals prealimentades són les que les sortides d'una sola capa són utilitzades com entrades en la pròxima, com explicarem més endevant en l'apartat \ref{sec:3.6} capa, on les conexions entre les unitats no dornen un cicle.
@@ -54,14 +54,14 @@ Una vegada que ja sabem que és una IA, ens toca entendre com funciona.
 Les intel·ligències artificials utilitzen algoritmes i models matemàtics per processar grans quantitats de dades
 i prendre accions basades en patrons i regles establertes a través de l'aprenentatge automàtic o l'aprenentatge profund.
 Per tant per funcionar necessitarà:
-
+\begin{comment}
  \hyperlink{Dades}{Dades} \
   \hyperlink{Algorismes}{Algorismes} \
 % \nameref{subsec:Potència computacional}
   \hyperlink{Software i Frameworks}{Frameworks} \
    \hyperlink{Optimització i Ajustos}{Optimizació i Ajustos} \
    \hyperlink{Ètica i Regulació}{Ètica i Regulació}
-
+\end{comment}
 \begin{enumerate}
     \item \hypertarget{Dades}{\textbf{Dades}}\\
     Les dades son fonamentals per la IA ja que es la base de l'aprennetatge del model, per poder raonar, prendre decisions, i millorar la presició. Aquí esdevenen uns exemples que pot haver:
@@ -81,12 +81,12 @@ Per tant per funcionar necessitarà:
 
      \item \hypertarget{Algorismes}{\textbf{Algorismes}}
         \begin{itemize}
-         \item[] \textbf{Algoritme Gredient descendent}\\
+         \label{Algoritme_gradient}\item[] \textbf{Algoritme Gredient descendent}\\
          L'algoritme de Gradient descendent és un algoritme imprescindible en l'entrenament de les xarxes neuronals, i de la intel·ligència artificial. Primer de tot hem d'entendre que és un gradient i una funció d'error.
 
          \textbf{Gradient: } En les xarxes neuronals, un gradient és un vector que indica la direcció en la que es mou i amb quina intensitat per que la funció d'error cambii més ràpid respecte als pesos de la xarxa neuronal. Per calcular el gradient, s'utilitza la derivada parcial de la funció de pèrdua respecte als pesos.
 
-        \textbf{Funció d'error: } La funció d'error tracta de determinar el error entre el valor estimat i el valor real, amb la finalitat d'optimitzar els paràmetres de la xarxa neuronal, aixó està explicat en l'apartat \ref{subsec:pèrdua}.
+        \textbf{Funció d'error: } La funció d'error tracta de determinar el error entre el valor estimat i el valor real, amb la finalitat d'optimitzar els paràmetres de la xarxa neuronal.
 
          L' objectiu de l'algoritme gradiant descendent és minimitzar la funció d'error, o també l'error entre la predicció, es a dir, trobar la funció de pèrdua mínima, per aconseguir-ho s'ha de trobar el valor mínim de la funció. La funció de pèrdua mínima significa que els errors dels paràmetres (pesos i biaixos) de la xarxa han de ser molt aproximades al valor real, on s'ajusten aquest paràmetres ja que no són exactes.
 
@@ -104,26 +104,22 @@ Per tant per funcionar necessitarà:
           La fòrmula del gradient ascendent és la seguent:
           $$\Delta w_{ij} = a \left( \frac{\partial E}{\partial w_{ij}} \right)$$
           Aquesta és la formula més ràpida per arribar al punt màxim dels gradients. Per tant la fòrmula del gradient descendent seria aquesta mateixa en negatiu, perquè és la forma més ràpida de trobar el punt mínim.
-
-          $\Delta w_{ij} = -a \left( \frac{\partial E}{\partial w_{ij}} \right)$
-
+          $$\Delta w_{ij} = -a \left( \frac{\partial E}{\partial w_{ij}} \right)$$
           \textbf{Explicació de la fòrmula:}\\
            $\Delta w_{ij}$: Representa quant s'ajusta el pes en una iteració de l'entrenamen.
 
            $a$: És la constant d'aprenentatge, aquesta constant defineix quant afecta el gradiant en l'actualització dels nostres paràmetres en cada iteració. Si aquest valor és gran, cada iteració és molt gran, i el punt serà incapaç d'introduir-se al punt de convergència, causant que el procès d'optimització acabi en un bucle infinit. Tanmateix, si és petit, el punt s'aproxima poc a poc al punt de converència, però calcularà moltes iterai això pot ser ineficient. Per tant aquest valor ha de estar en un punt mig, en que no sigui molt gran ni molt petit.
 
-
-
-
            $\left( \frac{\partial E}{\partial w_{ij}} \right)$: És la derivada parcial de $E$ respecte a $\Delta w_{ij}$. \\
 
-           A la figura 3.2, és una representació en 2 d, però en situacions reals el gradient descendent es representa en la dimensió 3 d.
+           A la figura~\ref{Gran i petit}, és una representació en 2 D, però en situacions reals el gradient descendent es representa en la dimensió 3 d.
 
 \begin{minipage}[h]{0.45\textwidth}
     \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{./figures/constant_gradient.png}
         \caption{Gràfiques de valors gran i petit de la constant d'aprenentatge}
+        \label{Gran i petit}
     \end{figure}
 \end{minipage}
 \begin{minipage}[h]{0.45\textwidth}
@@ -139,24 +135,20 @@ Per tant per funcionar necessitarà:
             Fonts: \href{https://www.ibm.com/es-es/think/topics/gradient-descent}{ibm.com} i \href{https://www.youtube.com/watch?v=A6FiCDoz8_4&ab_channel=DotCSV}{YouTube}.
         \end{itemize}
 
-    \item[] \textbf{L'aprenentage automàtic(Machine learning)}
-    L'aprenentatge automàtic és una branca crucial de la intel·ligencia artificial, consisteix en cobrar vida a la maquina, donar-li el poder d'apendre com els humans, realitzar tasques de manera autonoma i finalment, les infinites possibilitats d'evolucionar a traves de l'experiencia i molt més. Segons la \href{https://ischoolonline.berkeley.edu/blog/what-is-machine-learning/}{UC Berkeley} el procés de l'aprenentatge automatic es pot dividir en tres parts:
+    \item \textbf{L'aprenentage automàtic(Machine learning)}\label{Aprenentatge_automàtic}
+    És una branca crucial de la intel·ligencia artificial, consisteix en cobrar vida a la maquina, donar-li el poder d'apendre com els humans, realitzar tasques de manera autonoma i finalment, les infinites possibilitats d'evolucionar a traves de l'experiencia i molt més. Segons la \href{https://ischoolonline.berkeley.edu/blog/what-is-machine-learning/}{UC Berkeley} el procés de l'aprenentatge automatic es pot dividir en tres parts:
       \begin{enumerate}
      {\color{gray}
      \item \textbf{Mecanisme de predicció}
      \subitem\hspace*{-1\leftmargin} Un conjunt de regles o operacions matemàtics que analitza les dades d'entrada i intenta identificar els patrons que busca el model.
+     \begin{comment}
      \item \textbf{Funció de pèrdua (o error)}\label{subsec:pèrdua}
      \subitem\hspace*{-1\leftmargin} Un sistema per avaluar l'encert de les prediccions, comparant-les amb resultats reals (quan es disposa d'ells). Si la predicció és incorrecta, aquesta funció quantifica la magnitud de l'error.
+     \end{comment}
      \item \textbf{Algorisme d'optimització}
       \subitem\hspace*{-1\leftmargin} El procés que ajusta automàticament el model per minimitzar l'error, modificant els paràmetres interns per millorar les prediccions futures.} \ \footnote{Llengua original: Anglessa; Traduit per Jiajun}
       \end{enumerate}
        Segons \href{https://blogs.nvidia.com/blog/supervised-unsupervised-learning/}{Nvidia} hi han molts tipus d'apranentage automatics:
-    \begin{description}
-        \item \hyperlink{Aprenentatge supervisat}{Aprenentatge supervisat}
-         \item \hyperlink{Aprenentatge semi-supervisat}{Aprenentatge semi-supervisat}
-         \item \hyperlink{Aprenentatge no supervisat}{Aprenentatge no supervisat}
-         \item \hyperlink{Aprenentatge reforç}{Aprenentatge reforç}
-    \end{description}
       \begin{enumerate}
        \item \hypertarget{Aprenentatge supervisat}{\textbf{Aprenentatge supervisat}}
        L'aprenentatge supervisat és un tipus d'aprenentatge automàtic que treballa amb dades etiquetades, és a dir, dades que ja inclouen la solució o resultat desitjat. En aquest mètode, la intel·ligència artificial aprén a associar les dades d'entrada amb les seves etiquetes corresponents, mitjançant l'anàlisi d'exemples prèviament resolts. Això li permet desenvolupar la capacitat de resoldre problemes nous aplicant la lògica i els patrons identificats a partir de dades reals. \\
@@ -402,11 +394,11 @@ Fons: \href{https://msmk.university/hidden-layer/}{https://msmk.university/hidde
 \href{https://www.linkedin.com/advice/0/what-some-examples-linear-nonlinear-models-real-world?lang=es&lang=es&originalSubdomain=es}{Article Linkedin}
 
 \section{
-Funció d'activació}\label{sec:3.5.3}
+Funció d'activació}\label{Activació}
 Les funcions d'activació són un component integral de les xarxes neuronals que els permeten aprendre patrons complexos en les dades. Transformen el senyal d'entrada d'una neurona en un senyal de sortida que passa a la capa següent. Sense funcions d'activació, les xarxes neuronals es limitarien a modelar únicament relacions lineals entre entrades i sortides, és a dir, introdueixen la no linealitat i produeixen la sortida de la neurona.
 
 \begin{enumerate}
- \item \hypertarget{3.7.1}{\textbf{Funció sigmoide}}\\
+ \item \label{sigmoide}{\textbf{Funció sigmoide}}\\
  Una funció d'activació molt coneguda és la funció sigmoide. La seva fórmula és:
 \[ \sigma(x) = \frac{1}{1 + e^{-x}} \]
 
@@ -490,7 +482,7 @@ Hem de pensar en que cada node individual com el seu propi model de regressió l
 $w_i$: Pesos\\
 $x_i$: Entrades\\
 
-
+\begin{comment}
 Per entendre-ho millor, donarem un exemple: Imagina que vols anar a la platja a fer surf i la teva decisió dependrà d'aquestes 3 preguntes:\\
 
 Hi ha oles?\\
@@ -511,13 +503,12 @@ $w_2$ = 2, no t'importa que hi hagi molta gent\\
 $w_3$ = 4, tens pors als taurons \\
 
 Per últim, ambé suposem un valor umbral de 3, ho que es traduiria en un valor de biaix de -3. Amb totes aquestes entrades, ja podem substituir els valors en la nostre fòrmula per obtenir la sortida.
+\end{comment}
 
 Fonts: \href{https://www.ibm.com/es-es/think/topics/neural-networks}{IBM} i \href{https://aws.amazon.com/es/what-is/neural-network/}{Amazon Web Services}
 
-Les xarxes neuronals operen a travès d'un procès de dos pasos: La propagació directa i la retropropagació.
-
 \subsection{Propagació cap a davant}\label{subsec:propagació}
-Durant la propagació cap a davan, les dades ingresen en la xarxa a travès de la capa d'entrada i flueixen secuencialment a travès de les capes ocultes fins a la capa de sortida. En cada neurona, els valors d'entrada del model es multiplican per els seus pesos corresponents i es sumen. Aquesta suma ponderada es pasa a travès d'una funció d'activació, explicada prèviament a l'apartat \ref{sec:3.5.3}. Aquest procès continua capa per capa, això acaba conduïnt cap a la predicció final en la capa de sortida.
+Durant la propagació cap a davan, les dades ingresen en la xarxa a travès de la capa d'entrada i flueixen secuencialment a travès de les capes ocultes fins a la capa de sortida. En cada neurona, els valors d'entrada del model es multiplican per els seus pesos corresponents i es sumen. Aquesta suma ponderada es pasa a travès d'una funció d'activació, explicada prèviament a l'apartat \ref{Activació}. Aquest procès continua capa per capa, això acaba conduïnt cap a la predicció final en la capa de sortida.
 
 Aquest procès és important per les seguents raons:
 \begin{itemize}
@@ -530,7 +521,7 @@ Aquest procès és important per les seguents raons:
 Mentre que la programació directa fa prediccions, la retroporgramació és la forma en que la xarxa apren d'errors. Implica comparar la predicció de la xarxa amb el valor objectiu real i calcular un terme d'eror mitjançant una funció d'error.\\
 Aquest error es propaga enrere a travès de la xarxa, començant des de la capa de sortida. Durant aquest procès, la xarxa ajusta els pesos i els biaixos de cada connexió en funció de la seva contribució a l'error, amb l'objectiu de minimitzar-lo.\\
 Aquest procès iteratiu de càlcul d'erros i ajustament de pes permet a la xarxa d'aprenentatge profund millorar gradualment les seves prediccions.\\
-El procès de retropropagació es basa en el principi d'optimització del gradient descendent, explicat anteriorment en l'apartat \ref{subsec:gradient}, es calculen els gradients d'error respecte als paràmetres de la xarxa en sentit contrari i en cada capa. Per aquesta tasca, s'utilitza l'algoritme de la cadena (\ref{subsec:cadena}) per propagar l'error cap enderrere desde la sortida fins l'entrada.
+El procès de retropropagació es basa en el principi d'optimització del gradient descendent, explicat anteriorment en l'apartat \ref{Algoritme_gradient}, es calculen els gradients d'error respecte als paràmetres de la xarxa en sentit contrari i en cada capa. Per aquesta tasca, s'utilitza l'algoritme de la cadena (\ref{subsec:cadena}) per propagar l'error cap enderrere desde la sortida fins l'entrada.
 
 \subsection{Com funcona la retropropagació?}
 El funcinament de la retropropagació el podem dividir en 5 fases. Cada un d'es possibilita a la xarxa neuronal apendre de manera eficient a partir de dades proporcionats. Les fases són les seguents:
