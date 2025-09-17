@@ -24,8 +24,8 @@
 (Fonts:~\cite{McCarthy_Minsky_Rochester_Shannon_2006},~\cite{deepblue},
 ~\cite{chatGPT2022} i~\cite{10.1093/mind/LIX.236.433})
 
-\section{Historia de les xarxes neuronals artificials}
-La història de les xarxes neuronals és molt extensa. Com que el treball té una limitació de págines farem un resum on apareixen les xarxes més rellevants.
+\section{Exemples de xarxes neuronals}
+Hi ha molts tipus de xarxes neuronals però com que el treball té una limitació de págines farem un resum de les xarxes més rellevants.
 
 \begin{enumerate}
     \item \textbf{Perceptron (1958)}
@@ -36,20 +36,21 @@ La història de les xarxes neuronals és molt extensa. Com que el treball té un
 
 %%%%%%%%%%%%%% Això ho heu de simplificar molt, no cal entrar en tants detalls, feu com jo he fet a l'apartat anterior
     \item \textbf{Multiplayer Perceptron}
-    El multiplayer perceptron és una ampliació de la percepció d'una única neurona a més d'una. A més, apareix el concepte de capes d'entrades, capes ocultes i capes de sortida, (tot això explicat a l'apartat \ref{sec:3.6}) però amb valors d'entrada i rtida binàries. No hem d'ignorar que els científics asignaban el valor del pes i del umbral manualment en cada neurona, quan més perceptrons havien en les capes, era molt més difícil establir els pesos desitjats.
-
+    El multiplayer perceptron és una ampliació de la percepció d'una única neurona a més d'una. A més, apareix el concepte de capes d'entrades, capes ocultes i capes de sortida, (tot això explicat a l'apartat \ref{sec:3.6}) però amb valors d'entrada i rtida binàries.
     \item \textbf{Neurones sigmoide}
-    Per aconseguir que les xarxes neuronals aprenguin per elles mateixes, es a dir, aprenentatge automàtic \ref{Aprenentatge_automàtic}, va ser necessari introduir un nou tipus de neurones, que són les Neurones Sigmoides, que són similar al perceptró, aquestes neurones en comptes de que les entrades siguin 1 o 0, puguin tenir valors com 0.5, o 0.374 o qualsevol altre valor real. Ara les sorides en lloc de ser 0 o 1, serà d(w . x + b), on d serà la funció sigmoide, explicat en l'apartat \ref{sigmoide}. Aquesta va ser la primera funció d'activació \ref{Activació}.
+    Per aconseguir que les xarxes neuronals aprenguin per elles mateixes, es a dir, aprenentatge automàtic \ref{Aprenentatge_automàtic}, va ser necessari introduir un nou tipus de neurones, que són les Neurones Sigmoides, que són similar al perceptró, aquestes neurones en comptes de que les entrades siguin 1 o 0, puguin tenir valors com 0.5, o 0.374 o qualsevol altre valor real.
+
+    %Ara les sorides en lloc de ser 0 o 1, serà d(w . x + b), on d serà la funció sigmoide, explicat en l'apartat \ref{sigmoide}. Aquesta va ser la primera funció d'activació \ref{Activació}.
 
     \item \textbf{Xarxa neuronal prealmentada (Feedforward)}
-    Les xarxes neuronals prealimentades són les que les sortides d'una sola capa són utilitzades com entrades en la pròxima, com explicarem més endevant en l'apartat \ref{sec:3.6} capa, on les conexions entre les unitats no dornen un cicle.
+    Les xarxes neuronals prealimentades són les que les sortides d'una sola capa són utilitzades com entrades en la pròxima.
 \end{enumerate}
 
 
 \section{Que és la IA?}
 % Hem estat parlant molt durant aquest treball sobre la IA, i ara que em après quina és la seva història, hem de saber que és. \\
 % Doncs bé, p
-Podem definir la IA com sistemes de software i de hardware disenyats per humans que actúen en la dimensió física o digital, es a dir, raonar sobre el coneixemen, processant la informació derivada de dades i prendre les millors decisions per assolir l'objectiu donat. O dit d'un altre manera, és un camp de la informàtica que consisteix en un conjunt de capacitats interectuals i cognitives expresades per un sistema informàtic creat pels humans que té com a proposit imitar la intel·ligència humana, com escriure poemes, reconeixer imatges, fer prediccions basades en dades i més funcions. \\
+Podem definir la IA com sistemes de software i de hardware disenyats per humans que actúen en la dimensió física o digital, es a dir, raonar sobre el coneixemen, processant la informació derivada de dades i prendre les millors decisions per assolir l'objectiu donat. O dit d'una altre manera, és un camp de la informàtica que consisteix en un conjunt de capacitats interectuals i cognitives expresades per un sistema informàtic creat pels humans, que té com a proposit imitar la intel·ligència humana. \\
 Un exemple de IA i que tot el món coneix i utilitza és el ChatGPT, un chatbot impulsada per un model d'intel·ligència artificial generativa de la empresa OpenAI. Utilitza técniques de processament de llenguatge natural per comprendre preguntes fetes per l'usuari i generar respostes coherents en converses, simulant una interacció similar a la d'un humà. També pot generar o editar imatges, procesar audios, llegir arxius i molt més.
 
 \section{Com funciona la IA?}
@@ -101,7 +102,7 @@ Per tant per funcionar necessitarà:
         \label{GraficaDescendet}
          \end{figure}
 
-          A la figura~\ref{GraficaDescendet}, on podem apreciar quatre iteracions, el valor inicial és un punt qualsevol de la funció. Al inici de la funció, en el punt 0, els paràmetres de la funció s'asignen aleatoriament, i la pèrdua és alta, es a dir, que els errors són grans. Desde aquell punt, trobarem la derivada parcial en cada una de les iteracions, i el gradiet serà l'encarregat de guiar els canvis als paràmetres.
+          A la figura~\ref{GraficaDescendet}, on podem apreciar quatre iteracions, el valor inicial és un punt qualsevol de la funció. Al inici de la funció, en el punt 0, els paràmetres de la funció s'asignen aleatoriament, per tant els errors són grans. Desde aquell punt, trobarem la derivada parcial en cada una de les iteracions, i el gradiet serà l'encarregat de guiar els canvis als paràmetres.
           Al principi de tot, el gradient serà molt pronunciat, però a mesura que es van generant nous paràmetres durant l'entrenament, s'anirà reduint fins al put més baix d'aquesta corba, on els errors són molt petits, aquest punt se li diu punt de convergència. Aquí és on la xarxa ha après i ha ajustat millor les dades.
 
           La fòrmula del gradient ascendent és la seguent:
@@ -111,7 +112,7 @@ Per tant per funcionar necessitarà:
           \textbf{Explicació de la fòrmula:}\\
            $\Delta w_{ij}$: Representa quant s'ajusta el pes en una iteració de l'entrenamen.
 
-           $a$: És la constant d'aprenentatge, aquesta constant defineix quant afecta el gradiant en l'actualització dels nostres paràmetres en cada iteració. Si aquest valor és gran, cada iteració és molt gran, i el punt serà incapaç d'introduir-se al punt de convergència, causant que el procès d'optimització acabi en un bucle infinit. Tanmateix, si és petit, el punt s'aproxima poc a poc al punt de converència, però calcularà moltes iterai això pot ser ineficient. Per tant aquest valor ha de estar en un punt mig, en que no sigui molt gran ni molt petit.
+           $a$: És la constant d'aprenentatge, aquesta constant defineix quant afecta el gradiant en l'actualització dels nostres paràmetres en cada iteració. Si aquest valor és gran, cada iteració és molt gran, i el punt serà incapaç d'introduir-se al punt de convergència, causant que el procès d'optimització acabi en un bucle infinit. Tanmateix, si és petit, el punt s'aproxima poc a poc al punt de converència, però calcularà moltes iteracions i això pot ser ineficient.
 
            $\left( \frac{\partial E}{\partial w_{ij}} \right)$: És la derivada parcial de $E$ respecte a $\Delta w_{ij}$. \\
 
@@ -139,8 +140,8 @@ Per tant per funcionar necessitarà:
         \end{itemize}
 
     \item \textbf{L'aprenentage automàtic(Machine learning)}\label{Aprenentatge_automàtic}
-    És una branca crucial de la intel·ligencia artificial, consisteix en cobrar vida a la maquina, donar-li el poder d'apendre com els humans, realitzar tasques de manera autonoma i finalment, les infinites possibilitats d'evolucionar a traves de l'experiencia i molt més. Segons la UC Berkeley~\cite{Berkeley} el procés de l'aprenentatge automatic es pot dividir en tres parts:
-      \begin{enumerate}
+    És una branca crucial de la intel·ligencia artificial, consisteix en cobrar vida a la maquina, donar-li el poder d'apendre com els humans, realitzar tasques de manera autonoma i finalment, les infinites possibilitats d'evolucionar a traves de l'experiencia i molt més. Segons la UC Berkeley~\cite{Berkeley} el procés de l'aprenentatge automatic és
+
      {\color{gray}
      \item \textbf{Mecanisme de predicció}
      \subitem\hspace*{-1\leftmargin} Un conjunt de regles o operacions matemàtics que analitza les dades d'entrada i intenta identificar els patrons que busca el model.
@@ -149,18 +150,18 @@ Per tant per funcionar necessitarà:
      \subitem\hspace*{-1\leftmargin} Un sistema per avaluar l'encert de les prediccions, comparant-les amb resultats reals (quan es disposa d'ells). Si la predicció és incorrecta, aquesta funció quantifica la magnitud de l'error.
      \end{comment}
      \item \textbf{Algorisme d'optimització}
-      \subitem\hspace*{-1\leftmargin} El procés que ajusta automàticament el model per minimitzar l'error, modificant els paràmetres interns per millorar les prediccions futures.} \ \footnote{Llengua original: Anglessa; Traduit per Jiajun}
+      \subitem\hspace*{-1\leftmargin} El procés que ajusta automàticament el model per minimitzar l'error, modificant els paràmetres interns per millorar les prediccions futures.}
       \end{enumerate}
-       Segons Nvidia~\cite{Nvidia} hi han molts tipus d'apranentage automatics:
+       Segons Nvidia~\cite{Nvidia} hi ha molts tipus d'apranentage automatics:
       \begin{enumerate}
        \item \hypertarget{Aprenentatge supervisat}{\textbf{Aprenentatge supervisat}}
        L'aprenentatge supervisat és un tipus d'aprenentatge automàtic que treballa amb dades etiquetades, és a dir, dades que ja inclouen la solució o resultat desitjat. En aquest mètode, la intel·ligència artificial aprén a associar les dades d'entrada amb les seves etiquetes corresponents, mitjançant l'anàlisi d'exemples prèviament resolts. Això li permet desenvolupar la capacitat de resoldre problemes nous aplicant la lògica i els patrons identificats a partir de dades reals. \\
-
+\begin{comment}
       \textbf{Avantatges i desavanantatge:}
        Aquest mètode destaca per la seva alta precisió en problemes ben definits, ja que al treballar amb dades prèviament etiquetades pot assolir bons resultats en tasques de classificació i regressió. Una altra avantatge important és la facilitat per avaluar el rendiment dels models. A més, es tracta d'una àmplia àrea d'estudi amb una gran varietat d'algoritmes ben desenvolupats i optimitzats, com ara els arbres de decisió, els random forests, les màquines de vectors de suport (SVM) o les xarxes neuronals. Finalment, un cop entrenat adequadament, el model pot generalitzar el seu aprenentatge i fer prediccions útils sobre dades noves.\\
 
       No obstant això, aquest enfocament també presenta alguns inconvenients significatius. El principal desavantatge és la seva forta dependència de conjunts de dades etiquetades, que sovint són costosos d'obtenir i preparar com las de medicines. Un altre problema freqüent és el sobreajustament (overfitting), que ocorre quan el model memoritza les dades d'entrenament en lloc d'aprendre patrons generals, la qual cosa provoca una perdua de raonament logica. Finalment, aquest mètode pot tenir dificultats per manejar certs tipus de dades no estructurades o problemes complexos, que podrien requerir quantitats molt grans de dades etiquetades per assolir un bon rendiment.
-
+\end{comment}
       \item \hypertarget{Aprenentatge semi-supervisat}{\textbf{Aprenentatge semi-supervisat}}
 
       L'aprenentatge semi-supervisat representa un punt intermig entre l'aprenentatge supervisat i el no supervisat, aprofitant tant dades etiquetades com no etiquetades per millorar l'eficiència dels models d'aprenentatge automàtic. Això funciona quan l'obtencio de les dades etiquetades son molt costoses i l'extraccio de les característiques son molt complexes.
@@ -176,33 +177,38 @@ Per tant per funcionar necessitarà:
          \item \textbf{Autoencoders:} Els autoencoders són un tipus de xarxa neuronal artificial que aprèn a comprimir i reconstruir dades.
         \end{itemize}
         \item \hypertarget{Aprenentatge per reforç}{\textbf{Aprenentatge per reforç}}
-        L'aprenentatge per reforç és una branca de l'aprenentatge automàtic inspirada en la manera com els éssers vius aprenen mitjançant la interacció amb el seu entorn. Com per exemple quan començem a jugar un videojoc, en els jocs rebem senyals de reforços, de si completem un nivell ens ortoga un trofeu, de si matem certs enemics guanyem bonificacions. Amb aquest sistema de penalitzacio i recompenses guia al jugador a millorar les seves tecniques de videojocs, i això  el podem aplicar perfectament en la IA.
-        Totes les aprenantatges de reforç segueixen pragmaticament aquest esquema per l'aprenentage:
-       \begin{enumerate}
-       \item \textbf{Acció}
-        \item \textbf{Observació}
-        \item \textbf{Recompensa}
-         \item \textbf{Ajust d'estrategia}
-        \end{enumerate}
+        L'aprenentatge per reforç és una altra branca de l'aprenentatge automàtic inspirada en la manera com els éssers vius aprenen mitjançant la interacció amb el seu entorn.
+        \begin{comment}
+        Com per exemple quan començem a jugar un videojoc, en els jocs rebem senyals de reforços, de si completem un nivell ens ortoga un trofeu, de si matem certs enemics guanyem bonificacions. Amb aquest sistema de penalitzacio i recompenses guia al jugador a millorar les seves tecniques de videojocs, i això  el podem aplicar perfectament en la IA.
+        \end{comment}
 
-      \end{enumerate}
+
+        %Totes les aprenantatges de reforç segueixen pragmaticament aquest esquema per l'aprenentage:
+
+       %\begin{enumerate}
+       %\item \textbf{Acció}
+        %\item \textbf{Observació}
+        %\item \textbf{Recompensa}
+         %\item \textbf{Ajust d'estrategia}
+        %\end{enumerate}
+
 
      \item \textbf{Aprenentatge profund}
-     L'aprenentatge profund és una branca de l'aprenentatge automàtic que utilitza xarxa neuronal amb múltiples capes per processar dades complexes i extreure'n característiques rellevants. Inspirat en el funcionament del cervell humà, aquest enfocament permet identificar patrons i analitzar dades de alta complexitat. Durant la fase d'identificació, empra un aprenentatge jeràrquic, és a dir, progressa gradualment des de característiques simples fins a patrons complexes.
+     L'aprenentatge profund és una branca de l'aprenentatge automàtic que utilitza una xarxa neuronal amb múltiples capes per processar dades complexes i extreure'n característiques rellevants. Aquesta és inspirat en el funcionament del cervell humà, aquest enfocament permet identificar patrons i analitzar dades d'alta complexitat. Durant la fase d'identificació, s'empra un aprenentatge jeràrquic, és a dir, progressa gradualment des de característiques simples fins a patrons complexes.
 
      \begin{figure}[h!]
     \centering
     \includegraphics[width=0.2\textwidth]{./figures/Aprenentatge.png}
     \caption{Les capes que te la IA per funcionar}
     \end{figure}
-
   \item \hypertarget{Software i Frameworks}{\textbf{Frameworks}}
       Segons INESDI~\cite{INESDI} és:\\
-      {\color{gray}``Un Frameworks és, en el camp de la informàtica, una estructura conceptual que proporciona un conjunt d'eines, biblioteques i patrons de disseny per facilitar el desenvolupament de programari. En altres paraules, són marcs de treball que funcionen com un esquelet predefinit, i sobre els quals es pot construir una aplicació o programari.
+      {\color{gray}``Un Frameworks és, en el camp de la informàtica, una estructura conceptual que proporciona un conjunt d'eines, biblioteques i patrons de disseny per facilitar el desenvolupament de programari.
+      %En altres paraules, són marcs de treball que funcionen com un esquelet predefinit, i sobre els quals es pot construir una aplicació o programari.
 
      Pel que fa als seus components, inclouen biblioteques de codi reutilitzables, mòduls predefinits, regles d'arxiu i directori, patrons de disseny i convencions de codificació.''}\\
 
-      Un Frameworks, en diferencia, de la biblioteca per el control total que pot tenir el usuari en tema estructura, i organitzacio dels codis, en canvi, una biblioteca està en mans del desenvolupador i només tens accés en els codis que et convenin de la biblioteca. Malgrat la utilitat que propociona no satisfeix la IA de la actualitat i han hagut de desarollar uns Frameworks especifics per la IA, de tal manera en que facilita el desarollament i l'entrenament dels models de la IA.
+      %Un Framework, en diferencia, de la biblioteca per el control total que pot tenir el usuari en tema estructura, i organitzacio dels codis, en canvi, una biblioteca està en mans del desenvolupador i només tens accés en els codis que et convenin de la biblioteca. Malgrat la utilitat que propociona no satisfeix la IA de la actualitat i han hagut de desarollar uns Frameworks especifics per la IA, de tal manera en que facilita el desarollament i l'entrenament dels models de la IA.
       \begin{comment}
       \item[] \textbf{Software}
       El software és el conjunt de programes, instruccions i regles informàtiques que permeten executar tasques específiques en un ordinador o sistema.
@@ -213,7 +219,7 @@ Per tant per funcionar necessitarà:
 
    \item \hypertarget{Optimització i Ajustos}{\textbf{Mètodes d'Optimització en Intel·ligència Artificial:Fonaments i Aplicacions}}\\
    \textbf{Introducció}\\
-La Intel·ligència Artificial (IA) integra múltiples estratègies d'optimització, cadascuna adaptada als diferents models d'IA. A continuació, s'exploren els mètodes més destacades, amb una mini anàlisi dels mecanismes i les referències acadèmiques que hem utilitzat.
+La Intel·ligència Artificial (IA) integra múltiples estratègies d'optimització, cadascuna adaptada als diferents models d'IA. A continuació, s'exploren els mètodes més destacats, amb un anàlisi dels mecanismes i les referències acadèmiques que hem utilitzat.
 
 \begin{enumerate}
  \item \textbf{Retropropagació en Aprenentatge Profund:} La retropropagació (\textit{backpropagation}) és com el punt i coma en el text per les xarxes neuronals artificials. Aquest algorisme es basa en un procés iteratiu en dues fases:
@@ -253,7 +259,7 @@ La Intel·ligència Artificial (IA) integra múltiples estratègies d'optimitzac
 
            Aquesta publicació introdueix el concepte de GANs, destacant el seu potencial per a la generació de dades realistes mitjançant aprenentatge adversarial.
            \end{quote}
-
+\begin{comment}
            \item \textbf{Autoencoders Variacionals (VAEs):} Els VAEs optimitzen l'\textit{Evidence Lower Bound} (ELBO), que combina dos termes:
                \begin{enumerate}
                 \item \textbf{Terme de reconstrucció}: Minimitza l'error entre les dades originals i les reconstruïdes.
@@ -293,8 +299,10 @@ La Intel·ligència Artificial (IA) integra múltiples estratègies d'optimitzac
            Holland formalitza els algorismes genètics, inspirant-se en els mecanismes de selecció natural per a resoldre problemes d'optimització complexos.
            \end{quote}
 
-     \end{enumerate}
 
+\end{comment}
+
+     \end{enumerate}
  \end{enumerate}
  \item \hypertarget{Ètica i Regulació}{\textbf{Ètica i Regulació}}\\
  Un cop enteses totes les funcionalitats i capacitats de la intel·ligència artificial (IA), és fonamental aplicar-hi principis d’ètica i moral. Encara que la IA no sigui un ésser viu, és una eina creada per els  humans, i per tant cal establir-hi limitacions per evitar-ne els mals usos i garantir el respecte als drets humans i a la privacitat. Aquesta part és crucial en el desenvolupament d’una IA responsable. En aquest sentit, molts estats i organismes ja han publicat diverses lleis legítimes i regulacions. Algunes de les més rellevants són:
@@ -361,6 +369,7 @@ Fonts:~\cite{Universitat_oberta_catalunya},~\cite{Generalitat},~\cite{IBM_machin
 \section{Que és una xarxa neuronal artificial/biologica?}\label{sec:xarxa neuronal}
 Una xarxa neuronal artificial és un model computacional inspirat en el funcionament del cervell humà, utilitzat en el camp de la intel·ligència artificial (IA) i l'aprenentatge automàtic (machine learning). Està dissenyada per reconèixer patrons, prendre decisions i aprendre a partir de dades, sense ser programada explícitament per a cada tasca específica.\\ \\
 Si tenim una artificial també tindrem una biològica. Una xarxa neuronal biològica es refereix al sistema interconnectat de neurones (cèl·lules nervioses) en el cervell i el sistema nerviós dels éssers vius. Aquestes xarxes són la base de la cognició, l'aprenentatge i les funcions biològiques en humans i animals.\\
+\begin{comment}
 Aquí hi és una taula de comparació entre una biologica i artificial:
 
 \begin{table}[h!]
@@ -375,14 +384,15 @@ Aquí hi és una taula de comparació entre una biologica i artificial:
 \caption{Comparativa entre xarxes neuronals biològiques i artificials}
 \end{table}
 Fonts:~\cite{IBM_Xarxa}.
+\end{comment}
 
 \section{Estructura d'una xarxa neuronal}\label{sec:3.6}
 Una xarxa neurnal combina diverses capes de procesament i utilitza elements simples que operen en paral·lel, simulen i estan inspirades en els sistemes nerviosos biològics com hem explican en l'apartat \ref{sec:xarxa neuronal}. Consta d'una capa d'entrada, seguit d'una o varies capes ocultes i finalment una capa de sortida. Les capes estan interconectades mitjançant nodes o neurones; cada capa utilitza la sortida de la capa anterior com a entrada.
 
 \begin{itemize}
- \item \textbf{Capa d'entrada:}La capa d'entrada és la primera capa que reb directament la informació d'entrada que es prcessarà. Aquesta capa no realitzarà càlculs complexos, simplement transmet les dades a les capes seguents per fer el processament.
- \item \textbf{Capes ocultes:}Les capes ocultes són les capes que estan entre la capa d'entrada i la de sortida, aquestes capes contenen unitats no observables. La seva funció principal és processar les dades de la capa d'entrada per extraure característiques i patrons complexos. Aquestes capes són els que realitzan els càlculs i permet que la xarxa aprengui relacions no lineals i representacions abstracts de les dades, això és molt important per fer tasques complexes com el reconeixement de patrons. La quantitat de neurones que hi ha en les capes ocultes és un factor determinant per la capacitat que tingui la xarxa per capturar dades complexes.
- \item \textbf{Capa de sortida:}La capa de sortida és l'última capa que forma una xarxa neuronal i és l'encarregada de produïr la predicció final del model. Aquesta capa utilitza la informació que ha processat la o les capes ocultes i la transforma a travès d'una funció activa per generar una sortida, que pot ser una predicció numèrica, una clasificació o qualsevol altre resultat. Les neurones d'aquesta capa estan connectades amb totes les neurones de la capa anterior.
+ \item \textbf{Capa d'entrada:}La capa d'entrada és la primera capa que reb directament la informació d'entrada que es prcessarà.
+ \item \textbf{Capes ocultes:}Les capes ocultes són les capes que estan entre la capa d'entrada i la de sortida, aquestes capes contenen unitats no observables. La seva funció principal és processar les dades de la capa d'entrada per extraure característiques i patrons complexos.  La quantitat de neurones que hi ha en les capes ocultes és un factor determinant per la capacitat que tingui la xarxa per capturar dades complexes.
+ \item \textbf{Capa de sortida:}La capa de sortida és l'última capa que forma una xarxa neuronal i és l'encarregada de produïr la predicció o el resultat final del model. Aquesta capa utilitza la informació que ha processat la o les capes ocultes i la transforma a travès d'una funció activa per generar una sortida, que pot ser una predicció numèrica, una clasificació o qualsevol altre resultat. Les neurones d'aquesta capa estan connectades amb totes les neurones de la capa anterior.
  \end{itemize}
 
 
@@ -410,13 +420,13 @@ Aquesta funció matemàtica transforma qualsevol valor d'entrada real en un valo
     \includegraphics[width=0.5\textwidth]{./figures/grafica_sigmoide.png}
     \caption{Gràfica de la funció sigmoide}
 \end{figure}
-
+\begin{comment}
 \textbf{Avantatges:}
 La avantatge principal de la funció sigmoide és la seva suavitat i la facilitat de derivació. La funció és diferenciable en tots els punts, cosa que facilita el càlcul de gradients, això vol dir que permet als algoritmes d'optimització treballar amb la funció de manera eficient. A més, la funció és monòtona creixent, ho que significa que una entrada major sempre produirà una sortida major, fent que sigui útil per modelar relacions de causa i efecte.
 
 \textbf{Desavantatges:}
 Tanmateix, la funció sigmoide també té algunes desavantatges. Un dels seus problemes és que la funció es satura els gradients. Quan els valors d'entrades són grans, ho que significa que la derivada de la funció s'apropa a 0 i l'aprenentatge es relentitza. Un altre problema és que aquesta funció no és simètrica, causant a les entrades negatives i positives es processin de mandera diferent, això pot afectaral rendiment de la xarxa. Tot això dificulta el procès d'entrenament de la xarxa en la ràpida minimització de la funció d'error utilitzant l'algoritme de Gradient Descendent.
-
+\end{comment}
 \item \hypertarget{subsec:1}{\textbf{Funció ReLU(Funció Uniat Rectificada Uniforme)}}\\
 
 La funció Unitat Rectificada Uniforme té la fòrmula seguent:
@@ -429,7 +439,7 @@ Aquesta funció té l'algoritme seguent: Si el valor d'entrada es menor que 0, m
     \includegraphics[width=0.5\textwidth]{./figures/ReLU.png}
     \caption{Gràfica de la funció ReLU}
 \end{figure}
-
+\begin{comment}
 Tot i això, aquesta funció té una desavanantatge; si utilitzen la funció ReLU com a funció d'activació pasarà una cosa, i es que tots els valors negatius són 0, per tant en el procès de retropropagació, explicat a l'apartat \ref{subsec:retropropagació}, no es produeix els valors d'ajust en les neurones negatives. Per solucionar aquest problema s'ha inventat una nova funció que es diu Leaky ReLU. Funciona igual com l funció ReLU, però té un valor determinat per les neurones negatives.
 
 \begin{figure}[h!]
@@ -437,6 +447,7 @@ Tot i això, aquesta funció té una desavanantatge; si utilitzen la funció ReL
     \includegraphics[width=0.5\textwidth]{./figures/leaky_ReLU.png}
     \caption{Gràfica de la funció Leaky ReLU}
 \end{figure}
+\end{comment}
 
 \item \textbf{Funció Softmax}\\
 
@@ -466,7 +477,7 @@ Fonts: ~\cite{Hidden_layer} i~\cite{Jacar}
 Ara que sabem quina estructura forma una xarxa neuronal artificial, toca entendre com funciona. Les neurones o nodes son els pilars més importants d'una xarxa neuronal. Cada neurona utilitza la entrada, la processa fent una suma ponderada entre els pesos i les entrades, després una funció d'activació, i pasa la sortida a altres neurones.\\
 
 Les conexions(pesos i biaixos) son la força de conexió entre dos neurones representades per un pes.
-Els pesos: Son valors que determinen cuánta influència té la producció d'una neurona sobre un altre, marca la importància que té cada neurona.\\
+\textbf{Els pesos:} Són valors que determinen cuanta influència té la producció d'una neurona sobre un altre, marca la importància que té cada neurona.\\
 Els biaixos: Són paràmetres adicionals que ajuda a ajustar els valors de les neurones. És un valor capaç d'apendre com el pes, això vol dir que el model pot utilitzar l'algoritme de retropropagació per a millorar els valors com per exemple els pesos i biaixos.
 El umbral: Si la sortida de qualsevol node individual és més gran que el valor del umbral, aquell node s'acivarà i envia dades a la seguent capa de la xarxa. En cas contrari, no es pasa ninguna dada a la seguent capa de la xarxa.\\
 
@@ -530,6 +541,7 @@ El funcinament de la retropropagació el podem dividir en 5 fases. Cada un d'es 
  \item \textbf{Actualització dels paràmetres:} Una vegada que s'ha calculat els gradients de l'error en tots els paràmetres, aquestos s'actualitzan. D'aquesta manera, els errors en la predicció es minimitzan de manera gradual en cada iteració de l'entrenament.
  \item \textbf{Configuració de la predicció:} Després de totes les optimitzacions, el mètode de càlcul torna a revisar les entrades de proba. Després de tot això, es busca garantizar els resultats esperats.
 \end{itemize}
+\begin{comment}
 \subsection{Avantatges de la retropropagació}
 La retropropagació ofereix unes avantatges que l'han convertit en una eina fonamental en l'entrenament de les xarxes neuronals. Les seves avantatges són les seguents:
 
@@ -539,9 +551,10 @@ La retropropagació ofereix unes avantatges que l'han convertit en una eina fona
  \item \textbf{Escalabilitat:} Es posible augmentar la retropropagació perquè traballi amb moltes dades i xarxes neuronas molt grans, ja que hi haurà vegades en que una xarxa pot tindre fins a milions de paràmetres, això exigeix una gestió eficient.
  \item \textbf{Optimització continua:} La retropropagació ofereix la actualització contínua de les variables durant l'entrenament. És un ajust dinàmic important per millorar poc a poc el rendiment de la xarxa amb cada iteració i nous cicles d'aprenentatges.
 \end{itemize}
+\end{comment}
 Fonts: ~\cite{valencia} i~\cite{Retropropagacio}
 
-
+\begin{comment}
 \subsection{La regla de la cadena}\label{subsec:cadena}
 
 En l'aprenentatge automàtic, sovint es treballa amb funcions compostes complexes que depenen de diversos paràmetres i capes. Per tal de facilitar el càlcul dels gradients i optimitzar el rendiment computacional, s'utilitza la \textbf{regla de la cadena}.\\
@@ -563,6 +576,6 @@ La derivada de \( L \) respecte a \( x \) s'obté aplicant la regla de la cadena
 Aquest procediment és fonamental per entrenar xarxes neuronals, ja que permet calcular com cada pes de la xarxa contribueix a l'error global, i així ajustar-los mitjançant tècniques com el descens de gradient.
 
 %fonts:\href{https://medium.com/%40ppuneeth73/the-chain-rule-of-calculus-the-backbone-of-deep-learning-backpropagation-9d35affc05e7}{Medium deep machine-learning} \ \href{https://www.geeksforgeeks.org/machine-learning/chain-rule-derivative-in-machine-learning/}{Greek machine-learning} Aquesta pàgina ja no existeix.
-
+\end{comment}
 
 
