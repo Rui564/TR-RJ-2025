@@ -93,11 +93,11 @@
 % \input{./cover/agraiments}
 
 \cleardoublepage
-\setcounter{tocdepth}{2}
+\setcounter{tocdepth}{0}
 \renewcommand\contentsname{Índex de continguts}
 \tableofcontents
 \label{i:tableofcontents}
-
+\addtocontents{toc}{\protect\bigskip\protect\textbf{Capítols:}\par}
 \mainmatter
 \pagestyle{fancy}
 \fancyhf{}
@@ -126,6 +126,7 @@
 
 
 \appendix
+\addtocontents{toc}{\protect\bigskip\protect\textbf{Apèndixs:}\par}
 % \input{./capitols/rutinesLaTeX/rutinesLaTeX}
 %
 % \input{./capitols/codiJAVA/codiJAVA}
