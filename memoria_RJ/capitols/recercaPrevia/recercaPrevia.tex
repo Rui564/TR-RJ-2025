@@ -1,4 +1,4 @@
- \chapter{Recerca prèvia}
+\chapter{Recerca prèvia}
 \label{c:recerca prèvia}
 \section{La Història de la IA: Des dels orígens fins avui}
 \begin{enumerate}
@@ -30,7 +30,7 @@ La història de les xarxes neuronals és molt extensa. Com que el treball té un
 \begin{enumerate}
     \item \textbf{Perceptron (1958)}
 
-    La primera xarxa neuronal, el Perceptron, va ser creada en la dècada de 1950 a 1960 pel psicòleg i informàtic Frank Rosenblatt. Aquesta màquina  permet pendre decisions binàries, per exemple respondre sí o no, de manera autònoma. \\ \\
+    La primera xarxa neuronal, el Perceptron, va ser creada en la dècada de 1950 a 1960 pel psicòleg i informàtic Frank Rosenblatt. Aquesta màquina  permet pendre decisions binàries, per exemple respondre sí o no, de manera autònoma.
 %     Aquest model pren varies entrades binaries $x_1$, $x_2$, fins les que calguin, i produeix una sola sortida binaria. Per calcular la sortida, Rosenblatt va introduir els ``pesos'', que está explicat a l'apartat \ref{sec:3.8}, els seus principals usos són decsions binàries senziles, o per crear funcions lògiques com OR o AND.
 
 
@@ -39,9 +39,12 @@ La història de les xarxes neuronals és molt extensa. Com que el treball té un
     El multiplayer perceptron és una ampliació de la percepció d'una única neurona a més d'una. A més, apareix el concepte de capes d'entrades, capes ocultes i capes de sortida, (tot això explicat a l'apartat \ref{sec:3.6}) però amb valors d'entrada i rtida binàries. No hem d'ignorar que els científics asignaban el valor del pes i del umbral manualment en cada neurona, quan més perceptrons havien en les capes, era molt més difícil establir els pesos desitjats.
 
     \item \textbf{Neurones sigmoide}
-    Per aconseguir que les xarxes neuronals aprenguin per elles mateixes, es a dir, aprenentatge automàtic \ref{Aprenentatge_automàtic}, va ser necessari introduir un nou tipus de neurones, que són les Neurones Sigmoides, que són similar al perceptró, aquestes neurones en comptes de que les entrades siguin 1 o 0, puguin tenir valors com 0.5, o 0.374 o qualsevol altre valor real. Ara les sorides en lloc de ser 0 o 1, serà d(w . x + b), on d serà la funció sigmoide, explicat en l'apartat \ref{sigmoide}. Aquesta va ser la primera funció d'activació \ref{Activació}.
+%     Per aconseguir que les xarxes neuronals aprenguin per elles mateixes, es a dir, aprenentatge automàtic \ref{Aprenentatge_automàtic}, va ser necessari introduir un nou tipus de neurones, que són les Neurones Sigmoides, que són similar al perceptró, aquestes neurones en comptes de que les entrades siguin 1 o 0, puguin tenir valors com 0.5, o 0.374 o qualsevol altre valor real. Ara les sorides en lloc de ser 0 o 1, serà d(w . x + b), on d serà la funció sigmoide, explicat en l'apartat \ref{sigmoide}. Aquesta va ser la primera funció d'activació \ref{Activació}.
+Per aconseguir que les xarxes neuronals aprenguin per elles mateixes
+% , es a dir, aprenentatge automàtic \ref{Aprenentatge_automàtic},
+va ser necessari introduir un nou tipus de neurones, les anomendades Neurones Sigmoides. Aquestes neurones en comptes de tenir les entrades limitades a dues opcions (0 o 1), poden rebre altres valors, per exemple 0.5, 0.374 o qualsevol altre valor real. A més, les sorides tampoc estan limitades a dues opcions. Una explicació més detallada de la funció sigmoide la podeu trobar a la secció~\ref{Activació}..%en lloc de ser 0 o 1, serà d(w . x + b), on d serà la funció sigmoide, explicat en l'apartat \ref{sigmoide}. Aquesta va ser la primera funció d'activació \ref{Activació}.
 
-    \item \textbf{Xarxa neuronal prealmentada (Feedforward)}
+    \item \textbf{Xarxa neuronal prealimentada (Feedforward)}
     Les xarxes neuronals prealimentades són les que les sortides d'una sola capa són utilitzades com entrades en la pròxima, com explicarem més endevant en l'apartat \ref{sec:3.6} capa, on les conexions entre les unitats no dornen un cicle.
 \end{enumerate}
 
