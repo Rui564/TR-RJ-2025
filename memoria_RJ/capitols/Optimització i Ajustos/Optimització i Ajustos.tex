@@ -65,12 +65,12 @@ Fonts: \cite{Rumelhart1986}, \cite{NIPS2014_f033ed80}, \cite{kingma2022autoencod
          L' objectiu de l'algoritme gradiant descendent és minimitzar la funció d'error, o també l'error entre la predicció, es a dir, trobar la funció de pèrdua mínima, per aconseguir-ho s'ha de trobar el valor mínim de la funció. La funció de pèrdua mínima significa que els errors dels paràmetres (pesos i biaixos) de la xarxa han de ser molt aproximades al valor real, on s'ajusten aquest paràmetres ja que no són exactes.\\
 
 
-        \begin{figure}[t]
+        \begin{center}[t]
          \centering
          \includegraphics[width=0.5\textwidth]{./figures/gradient_descendent.png}
-        \caption{Gràfica de gradient descendent}
+        \small{Gràfica de gradient descendent}
         \label{GraficaDescendet}
-         \end{figure}
+         \end{center}
 
           A la figura~\ref{GraficaDescendet}, on podem apreciar quatre iteracions, el valor inicial és un punt qualsevol de la funció. Al inici de la funció, en el punt 0, els paràmetres de la funció s'asignen aleatoriament, per tant els errors són grans. Desde aquell punt, trobarem la derivada parcial en cada una de les iteracions, i el gradiet serà l'encarregat de guiar els canvis als paràmetres.
           Al principi de tot, el gradient serà molt pronunciat, però a mesura que es van generant nous paràmetres durant l'entrenament, s'anirà reduint fins al put més baix d'aquesta corba, on els errors són molt petits, aquest punt se li diu punt de convergència. Aquí és on la xarxa ha après i ha ajustat millor les dades.\\

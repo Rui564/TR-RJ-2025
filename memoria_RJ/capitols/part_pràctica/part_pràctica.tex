@@ -1,4 +1,4 @@
-\chapter{Xarxa Neuronal}
+\chapter{Marc Pràctic}
 \section{Introducció}\label{sec:intr}
 En iniciar la part pràctica del treball vam decidir crear tres tipus de xarxes neuronals: una \nameref{sec:10}, una altra \nameref{sec:11} i, finalment, una \nameref{sec:12}.\\
 
@@ -71,7 +71,7 @@ Una xarxa neuronal de regressió, a diferència d’una de classificació, té u
 
 A continuació es mostra un esquema representatiu d’una xarxa neuronal de regressió:
 
-\begin{figure}[h!]
+\begin{center}[h!]
 \centering
 \begin{tikzpicture}[scale=1, transform shape]
 
@@ -103,8 +103,8 @@ A continuació es mostra un esquema representatiu d’una xarxa neuronal de regr
 \node at (6,1) {Sortida (regressió)};
 
 \end{tikzpicture}
-\caption{Esquema d’una xarxa neuronal de regressió}
-\end{figure}
+\small{Esquema d’una xarxa neuronal de regressió}
+\end{center}
 
 \section{Xarxa Neuronal amb llenguatge de programació}\label{sec:10}
 En aquest apartat explicarem pas a pas de com vaig crear el nostre xarxa neuronal de regressió amb un llenguatge de programació.
@@ -138,9 +138,9 @@ Repeteixo el mateix procés amb \textbf{fahrenheit}, però en aquest cas les dad
     \caption{Agrupació de dades amb numpy}
 \end{figure}
 
-Per començar, defineixo les capes de la xarxa neuronal. Utilitzant \texttt{tf.keras.layers.Dense} (\textbf{funció per a capes denses} (Keras és un tipus de API)), creo la primera capa oculta amb el paràmetre \texttt{units=3} per especificar que tingui \textbf{3 neurones}, i \texttt{input\_shape=[1]} per indicar que l'entrada és un sol valor. Li assigno el nom \texttt{oculte\_1}.\\ \\
-Repeteixo el procés per a la segona capa oculta, \texttt{oculte\_2}, amb \texttt{units=3} neurones també, però sense especificar \texttt{input\_shape} ja que la xarxa ho dedueix automàticament de la capa anterior.\\ \\
-Finalment, defineixo la capa de \texttt{sortida} amb \texttt{units=1} perquè retorni un sol valor (la predicció en Fahrenheit).\\ \\
+Per començar, defineixo les capes de la xarxa neuronal. Utilitzant \texttt{tf.keras.layers.Dense} (\textbf{funció per a capes denses} (Keras és un tipus de API)), creo la primera capa oculta amb el paràmetre \texttt{units=3} per especificar que tingui \textbf{3 neurones}, i \texttt{input\_shape=[1]} per indicar que l'entrada és un sol valor. Li assigno el nom \texttt{oculte\_1}.\\
+Repeteixo el procés per a la segona capa oculta, \texttt{oculte\_2}, amb \texttt{units=3} neurones també, però sense especificar \texttt{input\_shape} ja que la xarxa ho dedueix automàticament de la capa anterior.\\
+Finalment, defineixo la capa de \texttt{sortida} amb \texttt{units=1} perquè retorni un sol valor (la predicció en Fahrenheit).\\
 Amb totes les capes creades, les integro en un model seqüencial amb \texttt{tf.keras.Sequential}, passant-les dins d'una llista \texttt{[ ]} en l'ordre correcte: \texttt{[oculte\_1, oculte\_2, sortida]}. Això crea l'estructura bàsica de la nostra xarxa neuronal.
 
 

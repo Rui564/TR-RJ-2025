@@ -29,8 +29,8 @@
 Podem definir la IA com sistemes de software i de hardware dissenyats per humans que actuen en la dimensió física o digital, és a dir, raonar sobre el coneixement, processant la informació derivada de dades i prendre les millors decisions per assolir l'objectiu donat. O dit d'una altra manera, és un camp de la informàtica que consisteix en un conjunt de capacitats intel·lectuals i cognitives expressades per un sistema informàtic creat pels humans, que té com a propòsit imitar la intel·ligència humana.\\
 
 Un exemple d'IA i que tot el món coneix i utilitza és el ChatGPT, un xatbot impulsat per un model d'intel·ligència artificial generativa de l'empresa OpenAI. Fa servir tècniques de processament de llenguatge natural per comprendre preguntes fetes per l'usuari i generar respostes coherents en converses, simulant una interacció similar a la d'un humà. També pot generar o editar imatges, processar àudios, llegir arxius i molt més.
-\\
-\\(Fonts: \cite{QueÉsLaIA})
+
+\par(Fonts: \cite{QueÉsLaIA})
 \section{Com funciona la IA?}
 
 Una vegada que ja sabem que és una IA, ens toca entendre com funciona. Les intel·ligències artificials utilitzen algoritmes i models matemàtics per processar grans quantitats de dades i prendre accions basades en patrons i regles establertes a través de l'aprenentatge automàtic o l'aprenentatge profund. Per tant, per funcionar necessitarà:
@@ -85,12 +85,13 @@ Una vegada que ja sabem que és una IA, ens toca entendre com funciona. Les inte
         \item \textbf{Aprenentatge profund:}
         L'aprenentatge profund és una branca de l'aprenentatge automàtic que utilitza una xarxa neuronal amb múltiples capes per processar dades complexes i extreure'n característiques rellevants. Aquesta és inspirat en el funcionament del cervell humà, aquest enfocament permet identificar patrons i analitzar dades d'alta complexitat. Durant la fase d'identificació, s'empra un aprenentatge jeràrquic, és a dir, progressa gradualment des de característiques simples fins a patrons complexes.
 
-        \begin{figure}[h!]
+    \end{enumerate}
+
+ \begin{center}[h!]
             \centering
             \includegraphics[width=0.2\textwidth]{./figures/Aprenentatge.png}
-            \caption{Les capes que te la IA per funcionar}
-        \end{figure}
-    \end{enumerate}
+            \small{Les capes que te la IA per funcionar}
+\end{center}
 
     \item \textbf{Frameworks}\\
     Segons INESDI~\cite{INESDI}:\\
@@ -126,11 +127,11 @@ Una xarxa neuronal combina diverses capes de processament i utilitza elements si
     \item \textbf{Capa de sortida:} La capa de sortida és l'última capa que forma una xarxa neuronal i és l'encarregada de produir la predicció o el resultat final del model. Aquesta capa utilitza la informació que ha processat la o les capes ocultes i la transforma a través d'una funció activa per generar una sortida, que pot ser una predicció numèrica, una classificació o qualsevol altre resultat. Les neurones d'aquesta capa estan connectades amb totes les neurones de la capa anterior.
 \end{itemize}
 
-\begin{figure}[h!]
+\begin{center}[h!]
     \centering
     \includegraphics[width=0.5\textwidth]{./figures/xarxa.png}
-    \caption{Estructura d'una xarxa neuronal}
-\end{figure}
+    \small{Estructura d'una xarxa neuronal}
+\end{center}
 
 Fonts:~\cite{Hidden_layer} i~\cite{linkedin}
 
@@ -167,11 +168,11 @@ Les funcions d'activació són un component integral de les xarxes neuronals que
 
     Aquesta funció matemàtica transforma qualsevol valor d'entrada real en un valor que està 0 i 1. La seva forma característica és una corba en forma de ``S''. Si el valor de $x$ que introduïm a la funció és molt gran o fins infinit $(\infty)$, llavors $\sigma$ serà 1; en canvi, si és molt petit o menys infinit $(-\infty)$, $\sigma$ serà 0, i si x = 0, $\sigma$ serà 0,5.
 
-    \begin{figure}[h!]
+    \begin{center}[h!]
         \centering
         \includegraphics[width=0.5\textwidth]{./figures/grafica_sigmoide.png}
-        \caption{Gràfica de la funció sigmoide}
-    \end{figure}
+        \small{Gràfica de la funció sigmoide}
+    \end{center}
 
     \item \hypertarget{subsec:1}{\textbf{Funció ReLU (Funció Unitat Rectificada Uniforme)}}\\
 
@@ -180,21 +181,21 @@ Les funcions d'activació són un component integral de les xarxes neuronals que
 
     Aquesta funció té l'algoritme següent: Si el valor d'entrada és menor que 0, en mostra 0, si el valor d'entrada és major o igual que 0, mostrarà el valor d'entrada. Això vol dir que la funció és lineal si l'entrada és més gran que 0 perquè el pendent és 1. Encara que la funció ReLU és lineal per a la meitat del seu espai d'entrada, tècnicament és una funció no lineal perquè té un punt no diferenciable en x = 0, on canvia bruscament respecte a x. Aquesta no-linealitat permet a les xarxes neuronals aprendre patrons complexos.
 
-    \begin{figure}[h!]
+    \begin{center}[h!]
         \centering
         \includegraphics[width=0.5\textwidth]{./figures/ReLU.png}
-        \caption{Gràfica de la funció ReLU}
-    \end{figure}
+        \small{Gràfica de la funció ReLU}
+    \end{center}
 
     \item \textbf{Funció Softmax}\\
 
     La funció Softmax és una de les funcions que més s'utilitzen en xarxes neuronals i és especialment útil en el context dels problemes de classificació multiclasse. Aquesta funció opera sobre un vector que representa les previsions de cada classe, calculades per les capes anteriors.
 
-    \begin{figure}[h!]
+    \begin{center}[h!]
         \centering
         \includegraphics[width=0.5\textwidth]{./figures/Softmax.png}
-        \caption{Gràfica de la funció Softmax}
-    \end{figure}
+        \small{Gràfica de la funció Softmax}
+    \end{center}
 
     Per a un vector d'entrada x amb elements x1, x2,..., xC, la funció Softmax es defineix com:
     $$[f(x_i) = \frac{e^{x_i}}{\sum_{j=1}^{n} e^{x_j}}]$$
