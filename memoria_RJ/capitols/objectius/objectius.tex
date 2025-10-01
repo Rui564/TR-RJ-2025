@@ -1,56 +1,43 @@
 \chapter{Objectius}
 \label{c:objectius}
 
-Tal com s’ha explicat a la intoducció, l’objectiu principal del nostre \textit{Treball de Recerca} és construir i analitzar el funcionament d’una xarxa neuronal. Ara bé, no ens conformem amb qualsevol implementació, ja que existeixen infinitat de models i variants. Per donar més coherència i solidesa a l’estudi, hem decidit treballar-ne amb tres diferents:
-
+Tal com s’ha explicat a la introducció, l’objectiu principal del nostre \textit{Treball de Recerca} és construir i analitzar el funcionament d’una xarxa neuronal. No ens conformem amb qualsevol implementació, ja que hi ha molts models i variants. Per donar més coherència i solidesa a l’estudi, hem decidit treballar amb dos models diferents:
 \begin{itemize}
-    \item una xarxa neuronal implementada amb llenguatge de programació (Python),
-    \item una xarxa neuronal reproduïda en un full de càlcul,
-    \item i un cas pràctic aplicat al joc \textit{Mobile Legends: Bang Bang}.
+\item una xarxa neuronal implementada amb llenguatge de programació (Python),
+\item una xarxa neuronal reproduïda en un full de càlcul.
 \end{itemize}
 
-
-A continuació detallem els requisits específics de la nostra recerca que dividim en dues parts en funció de qui els proposa:
+A continuació detallem els requisits específics de la nostra recerca, dividits segons qui els proposa.
 
 \begin{enumerate}
- \item Requisits proposats pel Tutor.
-    \begin{enumerate}
-        \item \textbf{Entorn de treball professional}
+\item Requisits proposats pel tutor:
+\begin{enumerate}
+\item \textbf{Entorn de treball professional}
+    El tutor ens ha demanat reproduir la manera de treballar dels centres d'investigació en aquest camp. En coordinació amb dos professors universitaris, ha determinat quines eines eren més adequades per portar endavant aquest projecte: sistema operatiu Linux, entorn col$\cdot$laboratiu Git, editor LaTeX i d'altres aspectes. Tots els aspectes relacionats amb la metodologia es detallen al capítol \ref{c:Metodologia}: \nameref{c:Metodologia}.
 
-        El Tutor ens ha demanat reproduir la manera de treballar dels centres d'investigació en aquest camp. En coordinació amb dos professors universitaris ha determinar quines eines eren les més adients per a portar endavant aquest projecte: sistema operatiu Linux, entorn col$\cdot$laboratiu git, editor LaTeX, ... Tots els aspectes que es refereixen a la metodologia es troben detallats al capítol \ref{c:Metodologia}: \nameref{c:Metodologia}.
+    \item \textbf{Escalable}
 
-        \item \textbf{Escalable}
+    La xarxa neuronal ha de poder ampliar-se fàcilment, ja sigui afegint més dades, modificant paràmetres o incrementant la seva complexitat, sense necessitat de redissenyar-la completament.
 
-        La xarxa neuronal ha de poder ampliar-se fàcilment, ja sigui afegint més dades, modificant els paràmetres o incrementant la seva complexitat, sense necessitat de redissenyar-la completament.
+    \item \textbf{Simplicitat i eficàcia}
 
-        \item \textbf{Simplicitat i Eficiència}
+    La xarxa neuronal ha de ser tan simple com sigui possible, però alhora amb la màxima eficàcia.
 
-        La xarxa neuronal ha de ser tan simple com sigui possible, però alhora amb la màxima eficàcia.
+    \item \textbf{Llibertat}
 
-        \item \textbf{Llibertat}
-        El nostre projecte és programari lliure~\cite{ProgramariLliure}, accessible, modificable i compartible per a tothom, complint l'exigència pragmàtica del nostre tutor. Hem fet realitat aquest compromís amb la llibertat gràcies a GitHub\cite{GitHub}, una plataforma que ens ha proporcionat les eines per treballar de manera oberta, col·laborativa i segura. D’aquesta manera, el nostre treball esdevé un recurs que qualsevol pot utilitzar, adaptar i millorar, demostrant els beneficis i la viabilitat de la llibertat digital.
-
-    \end{enumerate}
-
- \item Requisit proposat per nosaltres:
-    \begin{enumerate}
-        \item \textbf{Xarxa neuronal}
-
-        Ens va demanar un tipus de xarxa neuronal específica, concretament una xarxa de regressió. Els valors que podíem introduir dins de la xarxa neuronal de regressió havien de ser fruit de la nostra pròpia recerca, per exemple mitjançant un formulari. El valor a predir havia de ser la nostra nota final de matemàtiques, i ens demanava que la xarxa assolís almenys un 65\% de precisió.
-
-        \item \textbf{Fulls de càlcul}
-
-        A més de la implementació en llenguatge de programació, hem decidit desenvolupar una variant de la xarxa de regressió utilitzant fulls de càlcul, amb l’objectiu de mostrar de manera visual i fàcil d'entendre el seu funcionament.
-    \end{enumerate}
-
+    El nostre projecte és programari lliure~\cite{ProgramariLliure}, accessible, modificable i compartible per a tothom, complint l’exigència pragmàtica del tutor. Hem fet realitat aquest compromís gràcies a GitHub~\cite{GitHub}, que ens ha proporcionat les eines per treballar de manera oberta, col·laborativa i segura. Així, el nostre treball esdevé un recurs que qualsevol pot utilitzar, adaptar i millorar, demostrant els beneficis i la viabilitat de la llibertat digital.
 \end{enumerate}
 
+\item Requisits proposats per nosaltres:
+\begin{enumerate}
+\item \textbf{Xarxa neuronal}
 
+    Vam escollir una xarxa neuronal específica, concretament de regressió. Els valors que podíem introduir havien de ser fruit de la nostra pròpia recerca, per exemple mitjançant un formulari. El valor a predir era la nostra nota final de matemàtiques, i la xarxa havia d’assolir almenys un 65\% de precisió.
 
+    \item \textbf{Fulls de càlcul}
 
+    A més de la implementació en llenguatge de programació, hem desenvolupat una variant de la xarxa de regressió utilitzant fulls de càlcul, amb l’objectiu de mostrar de manera visual i fàcil d’entendre el seu funcionament.
+\end{enumerate}
 
-
-
-
-
+\end{enumerate}
 %
