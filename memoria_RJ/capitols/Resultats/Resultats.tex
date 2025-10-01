@@ -282,7 +282,7 @@ L'entrada de ``Realització de deures'' és una data binària que només pot pre
 Abans de continuar, és necessari explicar que és la normalització de dades.
 La normalització de dades és una tècnica de processament que consisteix a transformar dades de diferents escales a una escala comuna, com per exemple del 0 a l'1, això facilita la comparació i l'anàlisi de la xarxa neuronal i millora el seu rendiment. En el nostre cas, tenim dades binàries i dades ordinàries que poden prendre qualsevol valor, aquest desequilibri afecta els càlculs posteriors si no se solucionen d'alguna manera. \\
 
-Per aquesta raó, convertirem totes les dades en valors d'entre 0 i 1. Aquest procés implica calcular la mitjana de les dades i la desviació estàndard de cada variable. Per això utilitzant la fórmula següent:\\
+Per aquesta raó, convertirem totes les dades en valors d'entre 0 i 1. Aquest procés implica calcular la mitjana de les dades i la desviació estàndard de cada variable. Per això utilitzant la fórmula següent:
 $$z = \frac{x - \mu}{\sigma}$$\\
 
 On:\\
@@ -309,14 +309,12 @@ També hem d'afegir el biaix, que és la constant que ajuda a millorar l'ajust d
     \caption{Taula dels pesos}
 \end{figure}
 
-En la figura 5.28, podem observar com ha quedat la taula després d'afegir els pesos als valors d'entrada, he afegit 6 columnes de pesos respecte a les 6 entrades i una columna més pel biaix.
+En la figura 5.18, podem observar com ha quedat la taula després d'afegir els pesos als valors d'entrada, he afegit 6 columnes de pesos respecte a les 6 entrades i una columna més pel biaix.
 
 \subsection{Funció d'error del model}
 Fins ara, ja tenim les dades d'entrada normalitzades i els seus respectius pesos inicials assignats, ara podem aplicar la fórmula que s'utilitza en les xarxes neuronals per calcular la predicció temporal de la nota final. Hem de recordar que la fórmula és:\\
-\[
-\sum w_i x_i + \text{biaix}
-\] \\
-Després d'aplicar la fórmula, obtindrem la predicció de la nota final, tal com es veu en la figura 5.29.
+$$[\sum w_i x_i + \text{biaix}]$$
+Després d'aplicar la fórmula, obtindrem la predicció de la nota final, tal com es veu en la figura 5.19.
 
 \begin{figure}[H]
     \centering
@@ -336,7 +334,7 @@ Començarem afegint més columnes en el nostre full en la nostra taula. Si reste
     \caption{Erros de la predicció}
 \end{figure}
 
-Es pot veure en la imatge 5.30 dues columnes addicionals, la columna ``error'' emmagatzema els errors del model i l'altre conté els mateixos errors, però en valor absolut, és a dir, que tots els valors estan en positiu, d'aquesta manera serà més fàcil apreciar la diferència dels errors en les prediccions i els càlculs dels paràmetres.\\
+Es pot veure en la imatge 5.20 dues columnes addicionals, la columna ``error'' emmagatzema els errors del model i l'altre conté els mateixos errors, però en valor absolut, és a dir, que tots els valors estan en positiu, d'aquesta manera serà més fàcil apreciar la diferència dels errors en les prediccions i els càlculs dels paràmetres.\\
 
 Després de crear aquestes taules, calcularem la mitjana dels valors que estan en la taula dels errors en positiu, el resultat d'aquesta mitjana ens ajudarà a orientar-nos i determinar si en cada iteració l'error està augmentant o disminuint, com més baix sigui aquest valor, la predicció serà més precisa.\\
 \subsection{Canvis dels paràmetres}
@@ -353,7 +351,7 @@ Aquesta fórmula serà la que ens ajudarà a ajustar els paràmetres per tal que
     \caption{Canvis en els paràmetres}
 \end{figure}
 
-En la figura 5.31 es pot veure com han quedat aquestes taules, els canvis del biaix es calculen amb la mateixa fórmula que els pesos, però sense restar-li cap entrada, ja que actua com una entrada constant.\\
+En la figura 5.21 es pot veure com han quedat aquestes taules, els canvis del biaix es calculen amb la mateixa fórmula que els pesos, però sense restar-li cap entrada, ja que actua com una entrada constant.\\
 
 Ara és necessari calcular la mitjana dels canvis dels pesos, les mitjanes obtingudes a partir dels canvis seran uns dels valors que utilitzarem per ajustar els paràmetres.
 
@@ -363,7 +361,7 @@ Abans de començar a entrenar el model, hem de parlar d'una variable molt import
 Normalment, el valor de la taxa d'aprenentatge és 1, però de vegades aquest valor és molt gran i augmentaria l'error del model, si això passa hauríem de reduir el seu valor progressivament fins a un punt on l'error de la xarxa disminueixi significativament.\\
 Finalment, per trobar el valor final dels canvis ajustats dels paràmetres haurem de multiplicar a mitjana dels canvis dels pesos per la taxa d'aprenentatge.
 \subsection{Èpoques d'entrenament}
-Ja podem començar a entrenar el model, ho farem copiant la mateixa taula que tenim a sota, com es veu en la figura 5.32.
+Ja podem començar a entrenar el model, ho farem copiant la mateixa taula que tenim a sota, com es veu en la figura 5.22.
 
 \begin{figure}[H]
     \centering
@@ -385,7 +383,7 @@ En aquest cas, ha calgut 8 etapes per arribar al punt de convergència. He organ
 \end{figure}
 
 
-En la figura 5.33, podem apreciar que l'error ha disminuït dràsticament entre l'època 0 fins a l'època 4, però després de la cinquena època l'error pràcticament no s'ha mogut, vaig ajustar la taxa d'aprenentatge moltes vegades, però l'error encara baixava molt lentament, fins que vaig arribar a l'etapa 8. Això vol dir que el model no podia ajustar més els pesos.
+En la figura 5.23, podem apreciar que l'error ha disminuït dràsticament entre l'època 0 fins a l'època 4, però després de la cinquena època l'error pràcticament no s'ha mogut, vaig ajustar la taxa d'aprenentatge moltes vegades, però l'error encara baixava molt lentament, fins que vaig arribar a l'etapa 8. Això vol dir que el model no podia ajustar més els pesos.
 
 
 \fbox{\parbox{0.9\linewidth}{\textbf{\emph{
@@ -426,4 +424,13 @@ En la figura d'adalt, desprès de desnormalitzar els valors, he organitzat les n
  Això ens dona que la xarxa neuronal ha encertat 10 notes de 15, per tant té una precisió aproximada del 66,7 percent.
 
 \section{Comparació entre una xarxa neurnal creada per un llenguatge de programació netre una de fulls de calculs}
+
+Una vegada fetes les pràctiques, compararem els següents aspectes per determinar quina de les dues formes és millor:
+\begin{itemize}
+ \item \textbf{Precisió:} Un dels factors més importants a l'hora de crear una xarxa neuronal predictiva és el seu percentatge de precisió, en aquest cas, la precisió de la xarxa neuronal feta per Python (93,75\%) ha sigut molt més alta que el del full de càlcul (66,7\%)
+ \item \textbf{Coneixements previs:} Fer una XNA amb Python requereix de coneixements de programació, apendre el llenguatge és indispensable per crear una xarxa neuronal, en canvi, en la XNA feta amb fulls de càlculs no ha calgut cap tipus de coneixements de programació.
+  \item \textbf{Facilitat:} Segons la experència de cadascún de nosaltres, fer una XNA amb fulls de càlculs és molt més fàcil que fer-ho amb Python, a banda de que no cal saber programar, el procès és molt més intuïtiu i automàtic, mentre que en Python has d'anar codificant-lo tot manualment.
+  \item\textbf{Tardança:} El temps que es requereix en fer una XNA amb Python depèn de la habilitat que tingui un en la programació, si la persona és àgil i coneix bé el llenguatge pot fer-la en molt poc tempx, mentre que en un full de càlcul, malgrat que les dades i els càlculs s'obtenen automàticament, les etapes es fan manualment, cosa que es torna repetitiva i requereix molt de temps.
+\end{itemize}
+
 
