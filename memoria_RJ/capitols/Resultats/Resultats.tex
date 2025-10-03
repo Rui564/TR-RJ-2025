@@ -313,7 +313,7 @@ En la figura 5.18, podem observar com ha quedat la taula després d'afegir els p
 
 \subsection{Funció d'error del model}
 Fins ara, ja tenim les dades d'entrada normalitzades i els seus respectius pesos inicials assignats, ara podem aplicar la fórmula que s'utilitza en les xarxes neuronals per calcular la predicció temporal de la nota final. Hem de recordar que la fórmula és:\\
-$$[\sum w_i x_i + \text{biaix}]$$
+$$\sum w_i x_i + \text{biaix}$$
 Després d'aplicar la fórmula, obtindrem la predicció de la nota final, tal com es veu en la figura 5.19.
 
 \begin{figure}[H]
@@ -386,15 +386,16 @@ En aquest cas, ha calgut 8 etapes per arribar al punt de convergència. He organ
 En la figura 5.23, podem apreciar que l'error ha disminuït dràsticament entre l'època 0 fins a l'època 4, però després de la cinquena època l'error pràcticament no s'ha mogut, vaig ajustar la taxa d'aprenentatge moltes vegades, però l'error encara baixava molt lentament, fins que vaig arribar a l'etapa 8. Això vol dir que el model no podia ajustar més els pesos.
 
 
+\section{Resultats de la xarxa neuronal amb llenguatge de programació}
+\begin{comment}
 \fbox{\parbox{0.9\linewidth}{\textbf{\emph{
     Hem de tenir en compte que les notes finals dels alumnes estan arrodonides;
     per tant, considerarem que la predicció ha estat encertada si té un marge
     d'error menor a 0,5.
   }}}%
 }
-
-\section{Resultats de la xarxa neuronal amb llenguatge de programació}
-Un cop finalitzada la construcció de la xarxa neuronal, vam avaluar-ne el rendiment, que va assolir una precisió del 93,75\%. Mitjançant l’ús d’un full de càlcul vam poder organitzar les dades obtingudes estadísticament.
+\end{comment}
+Un cop finalitzada la construcció de la xarxa neuronal, vam avaluar-ne el rendiment, que va assolir una precisió del 93,75\%. Aquest valor l'hem tret considerant correcte totes les prediccions amb un marge d'error menor a 0,5 punts, ja que les notes dels alumnes estan arrodonides. Mitjançant l’ús d’un full de càlcul vam poder organitzar les dades obtingudes estadísticament.
 
 \begin{figure}
  \centering
@@ -412,7 +413,7 @@ Desprès de finalitzar totes les etapes, els pesos s'han ajustat correctament i,
 \end{figure}
 
 Amb aquests pesos, el model hauria de ser capaç d'obtenir unes prediccions precises respecte a la nota final dels alumnes, per obtenir els valors finals de la predicció, hem de convertir els valors normalitzats de la columna de la predicció de Y de l'última etapa en valors normals, aïllant en la mateixa fòrmula que vam emprar per normalitzar les dades.\\
-$z = \frac{x - \mu}{\sigma}$\\
+$$z = \frac{x - \mu}{\sigma}$$\\
 
 \begin{figure}[H]
     \centering
