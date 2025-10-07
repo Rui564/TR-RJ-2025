@@ -313,15 +313,15 @@ A la figura~\ref{f:pesos}, podem observar com ha quedat la taula després d'afeg
 \subsection{Funció d'error del model}
 Fins ara, ja tenim les dades d'entrada normalitzades i els seus respectius pesos inicials assignats, ara podem aplicar la fórmula que s'utilitza en les xarxes neuronals per calcular la predicció temporal de la nota final. Hem de recordar que la fórmula és:
 $$\sum w_i x_i + \text{biaix}$$
-Després d'aplicar la fórmula, obtindrem la predicció de la nota final, tal com es veu a la figura~\ref{f:prediccio}.
-
+Després d'aplicar la fórmula, obtindrem la predicció de la nota final, tal com es veu a la figura~\ref{f:Predicciones}.
+\begin{comment}
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=1\textwidth]{./figures/Predicció.png}
+    \includegraphics[width=0.5\textwidth]{./figures/Predicciones.png}
     \caption{Prediccions del model}
-    \label{f:prediccio}
+    \label{f:Predicciones}
  \end{figure}
-
+\end{comment}
 Hem de recordar que els valors de la predicció són erronis, ja que els pesos que hem assignat són aleatoris. Per aquesta raó, el següent pas de la pràctica és entrenar el nostre model per millorar els paràmetres. Per dur això, haurem d'aplicar un procés d'optimització per ajustar aquests paràmetres. En aquest cas utilitzarem l'algoritme gradient descendent.
 
 Començarem afegint més columnes en el nostre full en la nostra taula. Si restem els valors de la predicció ($Y$) amb els valors reals ($y$) obtindrem la diferència entre la nota dels alumnes i les notes predictives.
@@ -363,13 +363,55 @@ Normalment, el valor de la taxa d'aprenentatge és 1, però de vegades aquest va
 Finalment, per trobar el valor final dels canvis ajustats dels paràmetres haurem de multiplicar a mitjana dels canvis dels pesos per la taxa d'aprenentatge.
 
 \subsection{Èpoques d'entrenament}
-Ja podem començar a entrenar el model, ho farem copiant la mateixa taula que tenim a sota, com es veu a la figura~\ref{f:entrenament}.
+Ja podem començar a entrenar el model, ho farem copiant la mateixa taula que tenim a sota, com es veu en una de les següents figures~\ref{f:entrenament}.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{./figures/Etapa_1.png}
-    \caption{Èpoques d'entrenament}
+    \includegraphics[width=1\textwidth]{./figures/Etapa1.png}
+    \caption{Èpoques d'entrenament (Etapa 1)}
     \label{f:entrenament}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{./figures/Etapa2.png}
+    \caption{Èpoques d'entrenament (Etapa 2)}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{./figures/Etapa3.png}
+    \caption{Èpoques d'entrenament (Etapa 3)}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{./figures/Etapa4.png}
+    \caption{Èpoques d'entrenament (Etapa 4)}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{./figures/Etapa5.png}
+    \caption{Èpoques d'entrenament (Etapa 5)}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{./figures/Etapa6.png}
+    \caption{Èpoques d'entrenament (Etapa 6)}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{./figures/Etapa7.png}
+    \caption{Èpoques d'entrenament (Etapa 7)}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{./figures/Etapa8.png}
+    \caption{Èpoques d'entrenament (Etapa 8)}
 \end{figure}
 
 Cada època d'entrenament representa una iteració, podem veure que els paràmetres de la primera època han canviat respecte els de la primera taula, que anomenarem època 0, on aquests paràmetres eren inicialment aleatoris, el valor del primer pes de l'època 1 ($W1$) es calcula sumant el pes de l'època 0 pel valor del canvi ajustat.
