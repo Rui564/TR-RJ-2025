@@ -1,50 +1,61 @@
 \chapter{Objectius}
+
 \label{c:objectius}
 
-Tal com s’ha explicat a la introducció, l’objectiu principal del nostre TR és construir i analitzar el funcionament d’una xarxa neuronal. No ens conformem amb qualsevol implementació, ja que hi ha molts models i variants. Per donar més coherència i solidesa a l’estudi, hem decidit treballar amb dos models diferents:
+Tal com s’ha explicat a la introducció, l’objectiu principal del nostre \textbf{Treball de Recerca (TR)} és construir i analitzar el funcionament d’una xarxa neuronal. No ens conformem amb qualsevol implementació, ja que n’existeixen molts models i variants. Per donar més coherència i solidesa a l’estudi, hem decidit treballar amb \textbf{dos models diferents:}
+
 \begin{itemize}
-\item una xarxa neuronal implementada amb llenguatge de programació (Python),
-\item una xarxa neuronal reproduïda en un full de càlcul.
+
+    \item Una xarxa neuronal implementada amb llenguatge de programació (Python),
+
+    \item Una xarxa neuronal reproduïda en un full de càlcul.
+
 \end{itemize}
 
 A continuació detallem els requisits específics de la nostra recerca, dividits segons qui els proposa.
 
 \begin{enumerate}
-\item Requisits proposats pel tutor:
-\begin{enumerate}
-\item \textbf{Entorn de treball professional}
 
-    El tutor ens ha demanat reproduir la manera de treballar dels centres d'investigació en aquest camp. En coordinació amb dos professors universitaris, ha determinat quines eines eren més adequades per portar endavant aquest projecte: sistema operatiu Linux, entorn col$\cdot$laboratiu Git, editor LaTeX i d'altres aspectes. Tots els aspectes relacionats amb la metodologia es detallen al capítol \ref{c:Metodologia}: \nameref{c:Metodologia}.
+    \item Requisits proposats pel tutor:
 
-    \item \textbf{Escalabilitat}
+    \begin{enumerate}
 
-    La xarxa neuronal ha de poder ampliar-se fàcilment, ja sigui afegint més dades, modificant paràmetres o incrementant la seva complexitat, sense necessitat de redissenyar-la completament.
+        \item \textbf{Entorn de treball professional}
 
+        El tutor ens ha demanat reproduir la manera de treballar dels centres d'investigació en aquest camp. En coordinació amb dos professors universitaris, ha determinat quines eines eren més adequades per portar endavant aquest projecte: sistema operatiu Linux, entorn col$\cdot$laboratiu Git, editor LaTeX i altres aspectes. Tots els elements relacionats amb la metodologia es detallen al capítol \ref{c:Metodologia}: \nameref{c:Metodologia}.
 
+        \item \textbf{Escalabilitat}
 
-    \item \textbf{Llibertat}
+        La xarxa neuronal ha de poder ampliar-se fàcilment, ja sigui afegint més dades, modificant paràmetres o incrementant-ne la complexitat, sense necessitat de redissenyar-la completament.
 
-    El nostre projecte és programari lliure~\cite{ProgramariLliure}, accessible, modificable i compartible per a tothom, complint l’exigència del tutor. Hem fet realitat aquest compromís gràcies a GitHub~\cite{GitHub}, que ens ha proporcionat les eines per treballar de manera oberta, col·laborativa i segura. Així, el nostre treball esdevé un recurs que qualsevol pot utilitzar, adaptar i millorar, demostrant els beneficis i la viabilitat de la llibertat digital.
+        \item \textbf{Llibertat}
 
-    \item \textbf{Simplicitat i eficàcia}
+        El nostre projecte és programari lliure~\cite{ProgramariLliure}, accessible, modificable i compartible per a tothom, complint l’exigència del tutor. Hem fet realitat aquest compromís gràcies a GitHub~\cite{GitHub}, que ens ha proporcionat les eines per treballar de manera oberta, col·laborativa i segura. Així, el nostre treball esdevé un recurs que qualsevol pot utilitzar, adaptar i millorar, demostrant els beneficis i la viabilitat de la llibertat digital.
 
-    La xarxa neuronal ha de ser tan simple com sigui possible, però alhora amb la màxima eficàcia.
+        \item \textbf{Simplicitat i eficàcia}
 
-    \item \textbf{Traçabilitat}
+        La xarxa neuronal ha de ser tan simple com sigui possible, però alhora amb la màxima eficàcia.
 
-    El nostre projecte ha estat creat de manera transparent. Qualsevol persona pot  descarregar el repositori i reproduir la nostra recerca. També pot visualitzar tot el procés de creació del TR.
+        \item \textbf{Traçabilitat}
+
+        El nostre projecte ha estat creat de manera transparent. Qualsevol persona pot descarregar el repositori i reproduir la nostra recerca, així com visualitzar tot el procés de creació del TR.
+
+    \end{enumerate}
+
+    \item Requisits proposats per nosaltres:
+
+    \begin{enumerate}
+
+        \item \textbf{Xarxa neuronal pròpia}
+
+        No ens hem conformat a fer només la feina que ens va demanar el tutor. Un cop vam assolir els objectius inicials, vam decidir ampliar la recerca. Vam escollir una xarxa neuronal específica, concretament de regressió. Els valors introduïts havien de ser fruit de la nostra pròpia recerca, per exemple mitjançant un formulari. El valor a predir era la nostra nota final de matemàtiques, i la xarxa havia d’assolir almenys un 65\% de precisió.
+
+        \item \textbf{Difusió i didàctica}
+
+        A més de la implementació en llenguatge de programació, hem desenvolupat una variant de la xarxa de regressió utilitzant un full de càlcul, amb l’objectiu de mostrar de manera visual i entenedora el seu funcionament.
+
+    \end{enumerate}
+
 \end{enumerate}
 
-\item Requisits proposats per nosaltres:
-\begin{enumerate}
-\item \textbf{Xarxa neuronal pròpia}
-
-    No ens en conformat amb fer la feina que ens va demanar el tutor. Un cop vam assolir els objectius que ens va proposar el tutor, van decidir ampliar la recarca. Vam escollir una xarxa neuronal específica, concretament de regressió. Els valors que podíem introduir havien de ser fruit de la nostra pròpia recerca, per exemple mitjançant un formulari. El valor a predir era la nostra nota final de matemàtiques, i la xarxa havia d’assolir almenys un 65\% de precisió.
-
-    \item \textbf{Difusió i didàctica}
-
-    A més de la implementació en llenguatge de programació, hem desenvolupat una variant de la xarxa de regressió utilitzant el full de càlcul, amb l’objectiu de mostrar de manera visual i fàcil d’entendre el seu funcionament.
-\end{enumerate}
-
-\end{enumerate}
 %
