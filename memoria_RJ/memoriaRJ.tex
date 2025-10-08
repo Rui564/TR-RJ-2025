@@ -82,18 +82,16 @@
 
 \begin{document}
 
-
-
 \input{./cover/cover}
 
 \frontmatter
 
 \cleardoublepage
-\input{./capitols/agraiments/agraiments}
-\input{./capitols/Resum/Resum}
+\cfoot{\thepage}
 
+\input{./capitols/agraiments/agraiments}\cleardoublepage
+\input{./capitols/Resum/Resum}\cleardoublepage
 
-\cleardoublepage
 \setcounter{tocdepth}{0}
 \renewcommand\contentsname{Índex de continguts}
 \tableofcontents
@@ -136,7 +134,7 @@
 \input{./capitols/Optimització i Ajustos/Optimització i Ajustos}
 % \input{./capitols/Hardware/Hardware}
 \input{./capitols/Xarxa_Neuronal/Xarxa_Neuronal}
-\input{./license/fdl}
+\input{./license/fdl-1.3}
 
 \renewcommand\bibname{Bibliografia}
 \bibliographystyle{./bibliografia/caplain}

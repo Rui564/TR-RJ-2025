@@ -420,14 +420,14 @@ Cada època d'entrenament representa una iteració, podem veure que els paràmet
 Per saber si el model ha millorat, la millor forma de comprovar-ho és fixant-se en la taula dels errors en positiu. Podem veure que aquest valor ha disminuït respecte a l'època anterior, això significa que està millorant.
 
 A partir d'ara hem de fer-ho mateix repetidament fins que el canvi de l'error entre les èpoques siguin molt petits, quan passi això significarà que estem pràcticament en el punt de convergència.%, i és important anant ajustant la taxa d'aprenentatge.
-
-\subsection{Resultats}
-En aquest cas, han calgut 8 etapes per arribar al punt de convergència. Hem organitzat els valors de l'error de cada època en una gràfica perquè sigui més fàcil visualitzar els canvis.
+\clearpage
+\subsection{Resultats a la vuitena iteració}
+En aquest cas, han calgut 8 iteracions per arribar al punt de convergència. Hem organitzat els valors de l'error de cada època en una gràfica perquè sigui més fàcil visualitzar els canvis.
 
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.9\textwidth]{./figures/Gràfica_error.png}
+    \includegraphics[width=1\textwidth]{./figures/Gràfica_error.png}
     \caption{Gràfica dels valors d'error en cada època}
     \label{f:errorsEpoca}
 \end{figure}
@@ -469,6 +469,7 @@ Desprès de finalitzar totes les etapes, els pesos s'han ajustat correctament i,
 Amb aquests pesos, el model hauria de ser capaç d'obtenir unes prediccions precises respecte a la nota final dels alumnes, per obtenir els valors finals de la predicció, hem de convertir els valors normalitzats de la columna de la predicció de Y de l'última etapa en valors normals, aïllant en la mateixa fòrmula que vam emprar per normalitzar les dades.
 $$z = \frac{x - \mu}{\sigma}$$
 
+\vspace*{1truecm}
 \begin{figure}[h]
     \centering
     \includegraphics[width=1\textwidth]{./figures/Resultat_final.png}
@@ -476,9 +477,11 @@ $$z = \frac{x - \mu}{\sigma}$$
     \label{f:resulat_full}
 \end{figure}
 
+\vspace*{1truecm}
 A la figura~\ref{f:resulat_full}, desprès de desnormalitzar els valors, he organitzat les notes inicials i les prediccions finals en unes taules per visualitzar-los millor, a un costat tenim les notes originals i per l'altre les predictives.
 Això ens dona que la xarxa neuronal ha encertat 10 notes de 15, per tant té una precisió aproximada del 66,7 percent.
 
+\clearpage
 \section{Comparació resultats Python i Full de càlcul}
 
 A continuació compararem les dues xarxes neuronals determinar quina de les dues és millor:
