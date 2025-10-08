@@ -314,21 +314,21 @@ A la figura~\ref{f:pesos}, podem observar com ha quedat la taula després d'afeg
 Fins ara, ja tenim les dades d'entrada normalitzades i els seus respectius pesos inicials assignats, ara podem aplicar la fórmula que s'utilitza en les xarxes neuronals per calcular la predicció temporal de la nota final. Hem de recordar que la fórmula és:
 $$\sum w_i x_i + \text{biaix}$$
 Després d'aplicar la fórmula, obtindrem la predicció de la nota final, tal com es veu a la figura~\ref{f:Predicciones}.
-\begin{comment}
+% \begin{comment}
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.5\textwidth]{./figures/Predicciones.png}
+    \includegraphics[width=0.19\textwidth]{./figures/Predicciones.png}
     \caption{Prediccions del model}
     \label{f:Predicciones}
  \end{figure}
-\end{comment}
+% \end{comment}
 Hem de recordar que els valors de la predicció són erronis, ja que els pesos que hem assignat són aleatoris. Per aquesta raó, el següent pas de la pràctica és entrenar el nostre model per millorar els paràmetres. Per dur això, haurem d'aplicar un procés d'optimització per ajustar aquests paràmetres. En aquest cas utilitzarem l'algoritme gradient descendent.
 
 Començarem afegint més columnes en el nostre full en la nostra taula. Si restem els valors de la predicció ($Y$) amb els valors reals ($y$) obtindrem la diferència entre la nota dels alumnes i les notes predictives.
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.3\textwidth]{./figures/Errors.png}
+    \includegraphics[width=0.35\textwidth]{./figures/Errors.png}
     \caption{Erros de la predicció}
     \label{f:errors}
 \end{figure}
@@ -342,6 +342,7 @@ Un cop tenim la funció d'error de la primera predicció, el pas següent és en
 Per aconseguir això, hem de tenir en compte les dades següents: Quan la diferència de $Y$ respecte a $y$ és més gran, més lluny estaran els pesos dels seus valors ideals. Per tant, hem de trobar la forma de calcular de forma correcta els pesos respecte de la diferència dels valors de la predicció.
 
 Gràcies a la fórmula de la xarxa neuronal sabem que si el valor d'entrada ($X$) és petit, el seu pes ($W$) també ho serà, ja que aquests es multipliquen. Hem de tenir en compte dues coses: La diferència de la predicció final ($Y$) i del valor real ($y$) i el valor d'entrada ($X$) respecte al seu pes ($W$). Per tant, fórmula que utilitzarem per calcular els canvis dels paràmetres serà:
+
 $$\Delta W = (Y_{\text{original}} - Y_{\text{predicció}}) \times X$$
 Aquesta fórmula serà la que ens ajudarà a ajustar els paràmetres per tal que la predicció sigui cada cop més precisa. Aplicant aquesta fórmula a cada una de les dades, obtindrem 7 columnes més.
 
@@ -448,27 +449,29 @@ Un cop finalitzada la construcció de la xarxa neuronal, vam avaluar-ne el rendi
 
 \begin{figure}[h!]
  \centering
- \includegraphics[width=0.9\textwidth]{./figures/Resultats.png}
+ \includegraphics[width=1\textwidth]{./figures/Resultats.png}
  \caption{Resultats obtinguts per la xarxa neuronal amb Python}
  \label{f:resultats}
 \end{figure}
 
 
-\section{Resultats de la xarxa neuronal en fulls de càlculs}\label{sec: full de càlcul}
+\section{Resultats de la xarxa neuronal en full de càlcul}\label{sec: full de càlcul}
 Desprès de finalitzar totes les etapes, els pesos s'han ajustat correctament i, encara que l'error no s'hagi pogut aproximar-se molt al zero absolut, ja és un valor molt petit que podem donar per bo. A la seguent figura podem veure els valors dels pesos finals del model.
 
+\vspace*{1truecm}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{./figures/Pesos_finals.png}
     \caption{Pesos finals del model}
 \end{figure}
 
+\clearpage
 Amb aquests pesos, el model hauria de ser capaç d'obtenir unes prediccions precises respecte a la nota final dels alumnes, per obtenir els valors finals de la predicció, hem de convertir els valors normalitzats de la columna de la predicció de Y de l'última etapa en valors normals, aïllant en la mateixa fòrmula que vam emprar per normalitzar les dades.
 $$z = \frac{x - \mu}{\sigma}$$
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\textwidth]{./figures/Resultat_final.png}
+    \includegraphics[width=1\textwidth]{./figures/Resultat_final.png}
     \caption{Prediccions finals de la pràctica}
     \label{f:resulat_full}
 \end{figure}
