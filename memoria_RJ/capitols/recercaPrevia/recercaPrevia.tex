@@ -26,15 +26,14 @@ Fonts:~\cite{McCarthy_Minsky_Rochester_Shannon_2006},~\cite{deepblue},~\cite{cha
 
 \section{Què és la IA?}
 
-Podem definir la IA com sistemes de software i de hardware dissenyats per humans que actuen en la dimensió física o digital, és a dir, raonar sobre el coneixement, processant la informació derivada de dades i prendre les millors decisions per assolir l'objectiu donat. Explicat amb unes altres paraules: és un camp de la informàtica que consisteix en un conjunt de capacitats intel·lectuals i cognitives expressades per un sistema informàtic creat pels humans, que té com a propòsit imitar la intel·ligència humana.
+La intel·ligència artificial (IA) són sistemes de software i hardware dissenyats per humans que poden processar informació, raonar sobre coneixements i prendre decisions per assolir objectius. En altres paraules, és un camp de la informàtica que desenvolupa sistemes capaços d’expressar capacitats intel·lectuals similars a les de l’ésser humà.\\
 
-Un exemple de IA que tot el món coneix i utilitza és el ChatGPT, un xatbot impulsat per un model d'intel·ligència artificial generativa de l'empresa OpenAI. Fa servir tècniques de processament de llenguatge natural per comprendre preguntes fetes per l'usuari i generar respostes coherents en converses, simulant una interacció similar a la d'un humà. També pot generar o editar imatges, processar àudios, llegir arxius i molt més.
-
+Un exemple molt conegut és ChatGPT, un xatbot creat per OpenAI \cite{OpenAI} que utilitza tècniques de processament de llenguatge natural per comprendre preguntes i generar respostes coherents, simulant una conversa humana. També pot generar o editar imatges, processar àudios, llegir arxius i molt més.
 \par Font: \cite{QueÉsLaIA}
 \section{Com funciona la IA?}
 
 Una vegada que ja sabem que és una IA, ens toca entendre com funciona. Les intel·ligències artificials utilitzen algoritmes i models matemàtics per processar grans quantitats de dades i prendre accions basades en patrons i regles establertes a través de l'aprenentatge automàtic o de l'aprenentatge profund. Per tant, per funcionar necessitarà:
-
+\clearpage
 \begin{enumerate}
     \item \textbf{Dades}\\
     Les dades són fonamentals per la IA, ja que és la base de l'aprenentatge del model, per poder raonar, prendre decisions i millorar la precisió. Aquí es mostren alguns dels aspectes que hem de tenir en compte:
@@ -43,7 +42,7 @@ Una vegada que ja sabem que és una IA, ens toca entendre com funciona. Les inte
         Els algoritmes de la IA necessiten una base de dades i una gran diversitat de dades per poder identificar patrons i construir prediccions.
 
         \item \textbf{Qualitat vs Quantitat}\\
-        Una gran quantitat de dades ajudaran la IA a obtenir major precisió, però la qualitat és encara més important per la complexitat de dades que aporta, això evitarà que la IA cometi errors per informació incompleta. Per exemple, en l'àmbit mèdic si vols que la IA faci una predicció i tan sols li dones una quantitat important de pacients sans i no d'altre tipus de pacients, la IA simplement contemplarà la predicció de persona sana i descartarà la resta de possibilitats.
+        Una gran quantitat de dades ajudaran la IA a obtenir major precisió, però la qualitat és encara més important per la complexitat de dades que aporta, això evitarà que la IA cometi errors per informació incompleta. Per exemple, en l'àmbit mèdic si vols que la IA doni una predicció i tan sols li dones una quantitat important de pacients sans i no d'altre tipus de pacients, la IA simplement contemplarà la predicció de persona sana i descartarà la resta de possibilitats.
 
         \item \textbf{Exemples reals}\\
         Els sistemes dels cotxes o assistents virtuals necessiten dades en temps reals per adaptar-se de l'entorn i poder reaccionar de manera correcta. Les plataformes com Netflix o Spotify necessiten dades personalitzades reals i actualitzades de cada usuari per poder generar recomanacions amb precisió.
@@ -53,10 +52,11 @@ Una vegada que ja sabem que és una IA, ens toca entendre com funciona. Les inte
     Totes les aplicacions de la IA tenen el propòsit de capacitar la màquina perquè pugui operar com un humà. Tot això està basat en combinacions de diferents tipus d'algoritmes. A continuació, explicarem els diferents tipus d'algoritmes d'aprenentatge.
     \begin{itemize}
         \item \textbf{L'aprenentatge automàtic (Machine learning):}\label{Aprenentatge_automàtic}
-        És una branca crucial de la intel·ligència artificial, consisteix a dotar de vida a la màquina, donar-li el poder d'aprendre com els humans, executar tasques de manera autònoma i finalment, les infinites possibilitats d'evolucionar a través de l'experiència i molt més. Segons la UC Berkeley~\cite{Berkeley} el procés de l'aprenentatge automàtic consta de:
+        És una branca crucial de la intel·ligència artificial, consisteix a dotar de vida a la màquina, donar-li el poder d'aprendre com els humans, executar tasques de manera autònoma i finalment, les infinites possibilitats d'evolucionar a través de l'experiència i més funcions. Segons la UC Berkeley~\cite{Berkeley} el procés de l'aprenentatge automàtic consta de:
         \begin{enumerate}
-            \item \textit{\textbf{Mecanisme de predicció:} Un conjunt de regles o operacions matemàtics que analitza les dades d'entrada i identifica els patrons que busca el model.}
-            \item \textit{\textbf{Algoritme d'optimització:} El procés que ajusta automàticament el model per minimitzar l'error, modificant els paràmetres interns per millorar les prediccions futures.}
+            \item \textit{\textbf{Mecanisme de predicció: } Un conjunt de regles o operacions matemàtics que analitza les dades d'entrada i identifica els patrons que busca el model.}
+
+            \item \textit{\textbf{Algoritme d'optimització: } El procés que ajusta automàticament el model per minimitzar l'error, modificant els paràmetres interns per millorar les prediccions futures.}
         \end{enumerate}
     \end{itemize}
 
@@ -66,12 +66,18 @@ Una vegada que ja sabem que és una IA, ens toca entendre com funciona. Les inte
         L'aprenentatge supervisat és un tipus d'aprenentatge automàtic que treballa amb dades etiquetades, és a dir, dades que ja inclouen la solució o resultat desitjat. En aquest mètode, la intel·ligència artificial aprèn a associar les dades d'entrada amb les seves etiquetes corresponents, mitjançant l'anàlisi d'exemples prèviament resolts. Això li permet desenvolupar la capacitat de resoldre problemes nous aplicant la lògica i els patrons identificats a partir de dades reals.
 
         \item \textbf{Aprenentatge no supervisat:}
-        L'aprenentatge no supervisat és una branca de l'aprenentatge automàtic que s'utilitza quan no es disposa de dades etiquetades. A diferència de l'aprenentatge supervisat, on el model rep exemples amb les seves solucions correctes, en aquest cas l'algoritme ha de descobrir per si mateix l'estructura i els patrons, fent un diagnòstic agrupant les característiques similars que poden haver-hi entre les dades. Depenen dels tipus de problemes, les dades s'organitzen de diferents maneres.
+        L'aprenentatge no supervisat és una branca de l'aprenentatge automàtic que s'utilitza quan no es disposa de dades etiquetades. A diferència de l'aprenentatge supervisat, on el model rep exemples amb les seves solucions correctes, en aquest cas l'algoritme ha de descobrir per si mateix l'estructura i els patrons, fent un diagnòstic agrupant les característiques similars que pot haver-hi entre les dades. Depenen dels tipus de problemes, les dades s'organitzen de diferents maneres.
+
         \begin{itemize}
-            \item \textbf{Clustering:} Tècnica que agrupa les dades en funció de les seves similituds.
-            \item \textbf{Anomaly detection:} Cerca patrons que no encaixen amb el comportament normal.
-            \item \textbf{Association:} Cerca relacions i correlacions entre variables en grans conjunts de dades.
-            \item \textbf{Autocodificador:} Els autocodificadors són un tipus de xarxa neuronal artificial que aprèn a comprimir i reconstruir dades.
+
+            \item \textbf{Clustering: } Tècnica que agrupa les dades en funció de les seves similituds.
+
+            \item \textbf{Anomaly detection: } Cerca patrons que no encaixen amb el comportament normal.
+
+            \item \textbf{Association: } Cerca relacions i correlacions entre variables en grans conjunts de dades.
+
+            \item \textbf{Autoencoder: } Els autoencoder són un tipus de xarxa neuronal artificial que aprèn a comprimir i reconstruir dades.
+
         \end{itemize}
 
         \item \textbf{Aprenentatge semisupervisat:}
@@ -99,10 +105,14 @@ Una vegada que ja sabem que és una IA, ens toca entendre com funciona. Les inte
     \item \textbf{Ètica i Regulació}\\
     Un cop enteses totes les funcionalitats i capacitats de la intel·ligència artificial (IA), és fonamental aplicar-hi principis d'ètica i moral. Encara que la IA no sigui un ésser viu, és una eina creada pels humans, per tant, cal establir limitacions per evitar-ne els mals usos i garantir el respecte als drets humans i a la privacitat. Aquesta part és crucial en el desenvolupament d'una IA responsable. En aquest sentit, molts estats i organismes ja han publicat diverses lleis legítimes i regulacions. Algunes de les més rellevants són:
     \begin{itemize}
-        \item \textbf{Llei d'IA de la Unió Europea (AI Act):} És la primera regulació integral sobre la IA. Classifica els sistemes d'IA segons el seu nivell de risc (inacceptable, alt, limitat i mínim) i estableix requisits estrictes per als usos d'alt risc, com la transparència, la supervisió humana i la seguretat.
-        \item \textbf{Reglament General de Protecció de Dades (GDPR):} Tot i no ser exclusiu per a la IA, aquest reglament europeu protegeix la privacitat i les dades personals dels ciutadans. És clau en el desenvolupament d'una IA que utilitzi dades personals.
-        \item \textbf{Principis ètics de la UNESCO sobre la IA (2021):} Proposen una base global per al desenvolupament ètic de la IA, centrant-se en el respecte pels drets humans, la igualtat, la sostenibilitat, la no discriminació i la supervisió humana.
-        \item \textbf{Guies de l'OCDE sobre la IA:} Recomanen que els sistemes de IA siguin transparents, responsables, segurs i que promoguin el benestar de la societat, ajudant a establir marcs internacionals de bones pràctiques.
+        \item \textbf{Llei d'IA de la Unió Europea (AI Act): } És la primera regulació integral sobre la IA. Classifica els sistemes d'IA segons el seu nivell de risc (inacceptable, alt, limitat i mínim) i estableix requisits estrictes per als usos d'alt risc, com la transparència, la supervisió humana i la seguretat.
+
+        \item \textbf{Reglament General de Protecció de Dades (GDPR): } Tot i no ser exclusiu per a la IA, aquest reglament europeu protegeix la privacitat i les dades personals dels ciutadans. És clau en el desenvolupament d'una IA que utilitzi dades personals.
+
+        \item \textbf{Principis ètics de la UNESCO sobre la IA (2021): } Proposen una base global per al desenvolupament ètic de la IA, centrant-se en el respecte pels drets humans, la igualtat, la sostenibilitat, la no discriminació i la supervisió humana.
+
+        \item \textbf{Guies de l'OCDE sobre la IA: } Recomanen que els sistemes d'IA siguin transparents, responsables, segurs i que promoguin el benestar de la societat, ajudant a establir marcs internacionals de bones pràctiques.
+
     \end{itemize}
 \end{enumerate}
 
@@ -110,13 +120,13 @@ Fonts:~\cite{Universitat_oberta_catalunya},~\cite{Generalitat},~\cite{IBM_machin
 
 \section{Què és una xarxa neuronal artificial/biològica?}\label{sec:xarxa neuronal}
 
-Una xarxa neuronal artificial és un model computacional inspirat en el funcionament del cervell humà, utilitzat en el camp de la IA i de l'aprenentatge automàtic (machine learning). Està dissenyada per a reconèixer patrons, prendre decisions i aprendre a partir de dades, sense ser programada explícitament per a cada tasca de manera específica.
+Una xarxa neuronal artificial és un model computacional inspirat en el funcionament del cervell humà, utilitzat en el camp de la IA i de l'aprenentatge automàtic. Està dissenyada per a reconèixer patrons, prendre decisions i aprendre a partir de dades, sense ser programada explícitament per a cada tasca de manera específica.
 
 Si tenim una artificial també tindrem una biològica. Una xarxa neuronal biològica es refereix al sistema interconnectat de neurones (cèl·lules nervioses) en el cervell i el sistema nerviós dels éssers vius. Aquestes xarxes són la base de la cognició, l'aprenentatge i les funcions biològiques en humans i animals.\\
 Fonts: \cite{UOC} i \cite{XarxaBiologica}
 
 \section{Estructura d'una xarxa neuronal}\label{sec:3.6}
-Una xarxa neuronal combina diverses capes de processament i utilitza elements simples que operen en paral·lel, simulen i estan inspirades en els sistemes nerviosos biològics com hem explicat en l'apartat \ref{sec:xarxa neuronal}. Consta d'una capa d'entrada, seguit d'una o diverses capes ocultes i finalment una capa de sortida. Les capes estan interconnectades mitjançant nodes o neurones; cada capa utilitza la sortida de la capa anterior com a entrada.
+Una xarxa neuronal combina diverses capes de processament i utilitza elements simples que operen en paral·lel, estan inspirades en els sistemes nerviosos biològics. Consta d'una capa d'entrada, seguit d'una o diverses capes ocultes i finalment una capa de sortida. Les capes estan interconnectades mitjançant nodes o neurones; cada capa utilitza la sortida de la capa anterior com a entrada.
 
 \begin{figure}[h!]
     \centering
@@ -125,9 +135,13 @@ Una xarxa neuronal combina diverses capes de processament i utilitza elements si
 \end{figure}
 
 \begin{itemize}
-    \item \textbf{Capa d'entrada:} La capa d'entrada és la primera capa que rep directament la informació que es processarà.
-    \item \textbf{Capes ocultes:} Les capes ocultes són les capes que estan entre la capa d'entrada i la de sortida, aquestes capes contenen unitats no observables. La seva funció principal és processar les dades de la capa d'entrada per extraure característiques i patrons complexos. La quantitat de neurones que hi ha en les capes ocultes és un factor determinant per la capacitat que tingui la xarxa per capturar dades complexes.
-    \item \textbf{Capa de sortida:} La capa de sortida és l'última capa que forma una xarxa neuronal i és l'encarregada de produir la predicció o el resultat final del model. Aquesta capa utilitza la informació que ha processat la o les capes ocultes i la transforma a través d'una funció activa per generar una sortida, que pot ser una predicció numèrica, una classificació o qualsevol altre resultat. Les neurones d'aquesta capa estan connectades amb totes les neurones de la capa anterior.
+
+    \item \textbf{Capa d'entrada: } La capa d'entrada és la primera capa que rep directament la informació que es processarà.
+
+    \item \textbf{Capes ocultes: } Les capes ocultes són les capes que estan entre la capa d'entrada i la de sortida, aquestes capes contenen unitats no observables. La seva funció principal és processar les dades de la capa d'entrada per extraure característiques i patrons complexos. La quantitat de neurones que hi ha en les capes ocultes és un factor determinant per la capacitat que tingui la xarxa per capturar dades complexes.
+
+    \item \textbf{Capa de sortida: } La capa de sortida és l'última capa que forma una xarxa neuronal i és l'encarregada de produir la predicció o el resultat final del model. Aquesta capa utilitza la informació que ha processat les capes ocultes i la transforma a través d'una funció activa per generar una sortida, que pot ser una predicció numèrica, una classificació o qualsevol altre resultat. Les neurones d'aquesta capa estan connectades amb totes les neurones de la capa anterior.
+
 \end{itemize}
 
 Fonts:~\cite{Hidden_layer} i~\cite{linkedin}
@@ -176,7 +190,7 @@ Les funcions d'activació són un component integral de les xarxes neuronals que
     La funció Unitat Rectificada Uniforme és:
     $$f(x) = \max(0, x)$$
 
-    Aquesta funció té aplica el següent algoritme:
+    Aquesta funció aplica el següent algoritme:
     \begin{itemize}
      \item  si el valor d'entrada és menor que 0, la sortida és 0.
      \item  si el valor d'entrada és major o igual que 0, mostrarà el valor d'entrada.
@@ -214,17 +228,12 @@ Fonts: ~\cite{Hidden_layer},~\cite{Jacar}, \cite{FuncioD'activacio}, \cite{Softm
 
 \section{Com funciona una xarxa neuronal?}\label{sec:3.8}
 
-Ara coneixem l'estructura d'una xarxa neuronal artificial, podem entendre com funciona. Les neurones o nodes són els pilars més importants d'una xarxa neuronal. Cada neurona utilitza l'entrada, processa aquesta informació fent operacions matemàtiques. A continuació aplica una funció d'activació, i finalment envia el resultat com a sortida per a que sigui la informació d'entrada d'altres neurones.
-
-Les connexions (pesos i biaixos) són la força de connexió entre dues neurones representades per un pes.
-
-\textbf{Els pesos:} Són valors que determinen quanta influència té la producció d'una neurona sobre un altre, marca la importància que té cada neurona.
-
-\textbf{Els biaixos:} Són paràmetres addicionals que ajuden a ajustar els valors de les neurones.
+Ara coneixem l'estructura d'una xarxa neuronal artificial, podem entendre com funciona. Les neurones o nodes són els pilars més importants d'una xarxa neuronal. Cada neurona utilitza l'entrada, processa aquesta informació fent operacions matemàtiques. A continuació aplica una funció d'activació, i finalment envia el resultat com a sortida per a que sigui la informació d'entrada d'altres neurones.\\[0.2cm]
+Les connexions (pesos i biaixos) són la força de connexió entre dues neurones representades per un pes.\\[0.2cm]
+\textbf{Els pesos:} Són valors que determinen quanta influència té la producció d'una neurona sobre un altre, marca la importància que té cada neurona.\\[0.3cm]
+\textbf{Els biaixos:} Són paràmetres addicionals que ajuden a ajustar els valors de les neurones.\\[0.3cm]
 % És un valor capaç d'aprendre com el pes, això vol dir que el model pot utilitzar l'algoritme de retropropagació per a millorar els valors com per exemple els pesos i biaixos.
-
-\textbf{El llindar:} Si la sortida de qualsevol node individual és més gran que el valor del llindar, aquell node s'activarà i envia dades a la següent capa de la xarxa. En cas contrari, no passarà cap dada a la següent capa de la xarxa.
-
+\textbf{El llindar:} Si la sortida de qualsevol node individual és més gran que el valor del llindar, aquell node s'activarà i envia dades a la següent capa de la xarxa. En cas contrari, no passarà cap dada a la següent capa de la xarxa.\\[0.3cm]
 Cal entendre que cada node individual, com el seu propi model de regressió lineal, està compost per dades d'entrada, ponderacions, un llindar o un biaix i una sortida. La fórmula per a calcular els valors d'una xarxa neuronal és la següent:
 
 $$
@@ -233,16 +242,10 @@ $$\text{on } w_i \text{ són el pesos i } x_i\text{ són les entrades}
 $$
 
 Font: \cite{IMB_Xarxa_neuronal}
-
+\clearpage
 \subsection{Propagació cap a davant}\label{subsec:propagació}
 Durant la propagació cap a davant, les dades ingressen en la xarxa a través de la capa d'entrada i flueixen seqüencialment a través de les capes ocultes fins a la capa de sortida. En cada neurona, els valors d'entrada del model es multipliquen pels seus pesos corresponents i se sumen. Aquesta suma ponderada passarà a través d'una funció d'activació, explicada prèviament a l'apartat \ref{Activació}. Aquest procés continua capa per capa, això acaba conduint cap a la predicció final en la capa de sortida.
 
-Aquest procés és important per les següents raons:
-\begin{itemize}
-    \item \textbf{Base per l'aprenentatge:} No es pot comprendre com aprenen les xarxes neuronals sense primer entendre com fan prediccions. La propagació cap a davant és el requisit previ que s'ha de conèixer per comprendre la retropropagació, l'algoritme que permet l'aprenentatge.
-    \item \textbf{Optimització:} En el cas que una xarxa neuronal no funcioni bé, saber com flueixen les dades per la xarxa t'ajudarà a identificar i solucionar problemes.
-    \item \textbf{Disseny del model:} Un disseny eficaç de la xarxa requereix comprendre com es distribueix la informació a través de les configuracions de capes.
-\end{itemize}
 Font: \cite{TreballFinalDeGrau2}
 \section{Retropropagació en les xarxes neuronals}\label{subsec:retropropagació}
 
@@ -256,18 +259,22 @@ El procés de retropropagació es basa en el principi d'optimització del gradie
 
 \subsection{Com funciona la retropropagació?}
 
-El funcionament de la retropropagació el podem dividir en 5 fases. Cada una d'aquestes possibilita a la xarxa neuronal aprendre de manera eficient a partir de dades proporcionades. Les fases són les següents:
+
+El funcionament de la retropropagació el podem dividir en 5 fases. Cada una d'aquestes possibilita la xarxa neuronal aprèn de manera eficient a partir de dades proporcionades. Les fases són les següents:
+
 
 \begin{itemize}
-    \item \textbf{Propagació cap endavant:} Aquesta fase inicial és on s'introdueixen les dades de prova en la xarxa neuronal des de la capa d'entrada fins a la sortida.
 
-    \item \textbf{Càlcul d'error:} Una vegada s'obté la sortida de la xarxa, es compara amb el valor desitjat mitjançant una funció d'error. Aquesta funció quantifica la discrepància que s'ha produït entre la predicció i el valor real.
+    \item \textbf{Propagació cap endavant: } Aquesta fase inicial és on s'introdueixen les dades de prova en la xarxa neuronal des de la capa d'entrada fins a la sortida.
 
-    \item \textbf{Retropropagació de l'error:} En aquesta fase els gradients de l'error es calculen respecte a cada paràmetre en la xarxa. Com hem dit abans, aquest procés comença de manera inversa a la propagació, des de la sortida fins a l'entrada.
+    \item \textbf{Càlcul d'error: } Una vegada s'obté la sortida de la xarxa, es compara amb el valor desitjat mitjançant una funció d'error. Aquesta funció quantifica la discrepància que s'ha produït entre la predicció i el valor real.
 
-    \item \textbf{Actualització dels paràmetres:} Una vegada que s'ha calculat els gradients de l'error en tots els paràmetres, aquests s'actualitzen. D'aquesta manera, els errors en la predicció es minimitzen de manera gradual en cada iteració de l'entrenament.
+    \item \textbf{Retropropagació de l'error: } En aquesta fase els gradients de l'error es calculen respecte a cada paràmetre en la xarxa. Com hem dit abans, aquest procés comença de manera inversa a la propagació, des de la sortida fins a l'entrada.
 
-    \item \textbf{Configuració de la predicció:} Després de totes les optimitzacions, el mètode de càlcul torna a revisar les entrades de prova. Després de tot això, es busca garantir els resultats esperats.
+    \item \textbf{Actualització dels paràmetres: } Una vegada que s'ha calculat els gradients de l'error en tots els paràmetres, aquests s'actualitzen. D'aquesta manera, els errors en la predicció es minimitzen de manera gradual en cada iteració de l'entrenament.
+
+    \item \textbf{Configuració de la predicció: } Després de totes les optimitzacions, el mètode de càlcul torna a revisar les entrades de prova. Després de tot això, es busca garantir els resultats esperats.
+
 \end{itemize}
 
 Fonts: ~\cite{valencia} i~\cite{Retropropagacio}
