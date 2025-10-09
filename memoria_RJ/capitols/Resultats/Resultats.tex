@@ -259,6 +259,7 @@ Iniciem ordenant les dades de cada alumne del formulari en el full de càlcul.
     \caption{Dades dels alumnes en el full de càlcul}
 \end{figure}
 Un cop ordenada tota la informació, decidim representar els valors d’entrada d’una manera més senzilla i compacta, anomenant-los $x_i$.
+\clearpage
 \begin{itemize}
  \item \textbf {Realització dels deures:} X1
  \item \textbf {Hores d'estudi:} X2
@@ -280,7 +281,7 @@ Aquesta representació queda així:
 L'entrada ``Realització de deures'' és una dada binària que només pot prendre valors 0 o 1.
 \subsection{Normalització de dades}\label{subsec:24}
 Abans de continuar, recordem què és la normalització de dades.
-La normalització de dades és una tècnica de processament que consisteix a transformar dades amb diferents escales a una escala comuna. Això facilita la comparació i l’anàlisi per part de la xarxa neuronal i millora el seu rendiment. En el nostre cas, disposem de dades binàries i dades ordinàries que poden prendre qualsevol valor; aquest desequilibri podria afectar els càlculs posteriors si no es resol.
+La normalització de dades és una tècnica de processament que consisteix a transformar dades amb diferents escales a una escala comuna. Això facilita la comparació i l’anàlisi per part de la xarxa neuronal i millora el seu rendiment. \\En el nostre cas, disposem de dades binàries i dades ordinàries que poden prendre qualsevol valor; aquest desequilibri podria afectar els càlculs posteriors si no es resol.
 Per aquesta raó, convertim totes les dades en valors compresos entre 0 i 1. Aquest procés implica calcular la mitjana i la desviació estàndard de cada variable. Per fer-ho, utilitzem la fórmula següent:
 $$z = \frac{x - \mu}{\sigma}$$
 \begin{center}
@@ -298,7 +299,6 @@ Aquests càlculs són fàcils d'obtenir amb les funcions que ens proporciona el 
     \includegraphics[width=1\textwidth]{./figures/Dades_normalitzades.png}
     \caption{Taula resumida}
 \end{figure}
-
 \subsection{Els paràmetres del model}
 Ara que tenim totes les dades preparades, assignem a cada variable $X$ un pes per determinar la seva importància en la predicció final. Al començament de l’entrenament, assignem a tots els valors d’entrada el mateix pes, ja que aquests es corregiran gradualment durant el procés.
 
@@ -425,7 +425,6 @@ Cada època d’entrenament representa una iteració. Podem observar que els par
 Per avaluar si el model ha millorat, la millor manera és consultar la taula dels errors en valor absolut. Si aquest valor disminueix respecte a l’època anterior, significa que el model està millorant.\\
 
 A partir d’aquí, repetim aquest procés iterativament fins que els canvis en l’error entre èpoques siguin molt petits. Quan això succeeix, podem considerar que el model està pràcticament en el punt de convergència.%, i és important anant ajustant la taxa d'aprenentatge.
-\clearpage
 \subsection{Resultats a la vuitena iteració}
 En aquest cas, han calgut 8 iteracions per arribar al punt de convergència. Hem organitzat els valors de l'error de cada època en una gràfica perquè sigui més fàcil visualitzar els canvis.
 
@@ -466,8 +465,6 @@ Després de completar totes les etapes, els pesos s’han ajustat correctament. 
     \includegraphics[width=0.9\textwidth]{./figures/Pesos_finals.png}
     \caption{Pesos finals del model}
 \end{figure}
-
-\clearpage
 Amb aquests pesos, el model hauria de ser capaç d’obtenir prediccions precises de la nota final dels alumnes. Per obtenir els valors finals de la predicció, cal convertir els valors normalitzats de la columna de predicció $Y$ de l’última etapa a valors reals, utilitzant la mateixa fórmula que vam emprar per normalitzar les dades.
 $$z = \frac{x - \mu}{\sigma}$$
 
@@ -484,7 +481,6 @@ A la figura~\ref{f:resulat_full}, després de desnormalitzar els valors, he orga
 
 D’aquestes comparacions es mostra que la xarxa neuronal ha encertat 10 notes de 15, cosa que correspon a una precisió aproximada del 66,7\%.
 
-\clearpage
 \section{Comparació resultats Python i Full de càlcul}
 
 A continuació, comparem les dues xarxes neuronals per determinar quina és més eficient:
