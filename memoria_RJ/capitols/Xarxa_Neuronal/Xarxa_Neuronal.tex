@@ -2,7 +2,7 @@
 
 En aquest capítol mostrarem amb detall la primera xarxa neuronal que vam crear.
 
-Per començar, importem el framework i la biblioteca de Python que són necessàries per a la creació de la xarxa neuronal: \texttt{TensorFlow} (framework) i \texttt{numpy} (biblioteca). Hem creat unes \textit{abreviatures} per poder cridar-les més fàcilment quan es necessitin.
+Per començar, importem el framework i la biblioteca de Python que són necessàries per a la creació de la xarxa neuronal: \texttt{TensorFlow} (framework) i \texttt{numpy} (biblioteca). Hem creat unes \textit{abreviatures} per cridar-les més fàcilment quan es necessitin.
 
 \begin{itemize}
 
@@ -108,7 +108,7 @@ Després d’entrenar la xarxa, podem visualitzar la pèrdua per època amb \tex
 
 \end{figure}
 
-Per fer prediccions amb nous valors, utilitzem \texttt{model.predict()}. Per exemple, amb 100 graus Celsius: \texttt{np.array([[100.0]], dtype=float)}. El resultat s’emmagatzema a la variable \texttt{resultat} i es mostra amb \texttt{print("El resultado es " + str(resultat) + " fahrenheit")}.
+Per aconseguir prediccions amb nous valors, utilitzem \texttt{model.predict()}. Per exemple, amb 100 graus Celsius: \texttt{np.array([[100.0]], dtype=float)}. El resultat s’emmagatzema a la variable \texttt{resultat} i es mostra amb \texttt{print("El resultado es " + str(resultat) + " fahrenheit")}.
 
 \begin{figure}[H]
 

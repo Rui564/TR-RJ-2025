@@ -76,15 +76,15 @@ Abans de començar a treballar amb la xarxa neuronal definitiva, vam crear-ne un
 
 
 \subsection{Predicció de les notes finals de matemàtiques}
-Un cop desenvolupada la xarxa neuronal de Celsius a Fahrenheit, vam poder començar a crear la xarxa neuronal principal que ens havíem proposat. Per iniciar el procés, vam importar els frameworks i les biblioteques necessàries: \texttt{numpy}, \texttt{TensorFlow}, \texttt{matplotlib}, \texttt{MinMaxScaler}, \texttt{random} i \texttt{os}.
+Un cop desenvolupada la xarxa neuronal de Celsius a Fahrenheit, vam començar a crear la xarxa neuronal principal que ens havíem proposat. Per iniciar el procés, vam importar els frameworks i les biblioteques necessàries: \texttt{numpy}, \texttt{TensorFlow}, \texttt{matplotlib}, \texttt{MinMaxScaler}, \texttt{random} i \texttt{os}.
 
 \begin{itemize}
 
-\item \textbf{MinMaxScaler: } eina de la llibreria \texttt{sklearn} que normalitza les dades, convertint-les dins del rang $[0,1]$ i facilitant que la xarxa neuronal interpreti correctament les relacions numèriques.
+\item \textbf{MinMaxScaler:} eina de la llibreria \texttt{sklearn} que normalitza les dades, convertint-les dins del rang $[0,1]$ i facilitant que la xarxa neuronal interpreti correctament les relacions numèriques.
 
-\item \textbf{random: } llibreria bàsica de Python que permet generar i seleccionar nombres aleatoris.
+\item \textbf{random:} llibreria bàsica de Python que permet generar i seleccionar nombres aleatoris.
 
-\item \textbf{os: } llibreria estàndard de Python que facilita la interacció amb el sistema operatiu.
+\item \textbf{os:} llibreria estàndard de Python que facilita la interacció amb el sistema operatiu.
 
 \end{itemize}
 
@@ -366,7 +366,7 @@ Abans de començar a entrenar el model, cal parlar d’una variable molt importa
 
 Normalment, el valor de la taxa d’aprenentatge és 1, però en alguns casos aquest valor pot ser massa gran i augmentar l’error del model. Si això passa, cal reduir progressivament la taxa fins a un punt on l’error de la xarxa disminueixi de manera significativa.\\
 
-Finalment, per calcular els valors finals dels canvis ajustats dels paràmetres, multipliquem la mitjana dels canvis dels pesos per la taxa d’aprenentatg\\
+Finalment, per calcular els valors finals dels canvis ajustats dels paràmetres, multipliquem la mitjana dels canvis dels pesos per la taxa d’aprenentatge\\
 \vspace{-1.8truecm}
 \subsection{Èpoques d'entrenament}
 Ara passem a entrenar el model. Ho farem utilitzant la mateixa taula que hem creat anteriorment, tal com es mostra en la figura~\ref{f:entrenament}.
@@ -490,8 +490,8 @@ A continuació, comparem les dues xarxes neuronals per determinar quina és més
 \item \textbf{Precisió:} Un dels factors més rellevants a l’hora de crear una xarxa neuronal predictiva és el seu percentatge d’encert. En aquest cas, la xarxa neuronal implementada amb Python ha assolit una precisió del 93,75\%, molt superior a la del full de càlcul, que ha estat del 66,7\%.
 
 \item \textbf{Coneixements previs:} Crear una xarxa neuronal amb Python requereix coneixements de programació; aprendre el llenguatge és indispensable per implementar la xarxa. En canvi, la xarxa feta amb full de càlcul no necessita coneixements de programació.
-
-\item \textbf{Dificultat:} Segons la nostra experiència, elaborar una xarxa neuronal amb full de càlcul és més senzill que fer-ho amb Python. Amb Python cal codificar tot el procés manualment, mentre que amb el full de càlcul el procés resulta més intuïtiu i mecànic.
+\clearpage
+\item \textbf{Dificultat:} Segons la nostra experiència, elaborar una xarxa neuronal amb full de càlcul és més senzill que programar-ne amb Python. Amb Python cal codificar tot el procés manualment, mentre que amb el full de càlcul el procés resulta més intuïtiu i mecànic.
 
 \item \textbf{Temps d’elaboració:} El temps necessari per crear una xarxa amb Python depèn de l’habilitat en programació; una persona àgil i experimentada pot completar-la en poc temps. Amb un full de càlcul, malgrat que els càlculs es realitzen automàticament, les etapes s’han de completar manualment, fet que fa que el procés sigui més repetitiu i llarg.
 
