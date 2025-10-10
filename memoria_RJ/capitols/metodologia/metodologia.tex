@@ -1,8 +1,10 @@
 \chapter{Metodologia}
 \label{c:Metodologia}
 
-Després d'haver finalitzat la recerca prèvia i d'haver decidit elaborar una xarxa neuronal de regressió que compleixi tots els requisits que esperàvem, ara toca escollir quina és la millor manera d'aconseguir el nostre objectiu, és a dir, definir la nostra metodologia. Per tant, també hem de realitzar una recerca sobre quines eines utilitzarem per dur a terme el TR de la millor manera.\\[0.2cm]
-Primer, ens hem plantejat la qüestió de sobre quins àmbits hem de recórrer. Buscarem les millors eines i mètodes que ens ajudin en cadascun dels àmbits. A continuació, presentarem els àmbits que hem tractat i les diferents solucions que hem considerat.\\[0.2cm]
+Després d'haver fet la recerca prèvia i d'haver decidit fer una xarxa neuronal de regressió que compleixi tots els requisits que esperàvem, ara toca escollir quina és la millor manera d'aconseguir el nostre objectiu, és a dir, definir la nostra metodologia. Per tant, també hem de fer recerca sobre quines eines utilitzarem per dur a terme el TR de la millor manera.
+
+Primer, ens hem plantejat la qüestió de sobre quins àmbits hem de recórrer. Buscarem les millors eines i mètodes que ens ajudin en cadascun dels àmbits. A continuació, presentarem els àmbits que hem tractat i les diferents solucions que hem considerat.
+
 Hem estructurat la recerca en els següents apartats:
 \begin{enumerate}
  \item Entorn col·laboratiu.
@@ -19,14 +21,12 @@ Hem estructurat la recerca en els següents apartats:
 A l’hora de crear un projecte en equip, pot ser complicat treballar amb dos o més membres alhora en els seus respectius dispositius si no s’escull una eina col·laborativa adequada, especialment quan es treballa amb molts fitxers. Poden sorgir problemes en l’intercanvi d’arxius, o que només un membre pugui editar un fitxer a la vegada, cosa que pot convertir el procés en un autèntic caos.
 
 \begin{enumerate}
-
- \item \textbf{Google Drive: }és una plataforma de Google que ofereix eines gratuïtes com un processador de text (Docs) i un entorn col·laboratiu. Tot i que és senzill i eficient, presenta diverses limitacions importants: és difícil gestionar canvis simultanis o resoldre conflictes entre versions, no permet un control detallat de les modificacions fetes i el registre de canvis és molt bàsic. A més, Google té accés als arxius, cosa que pot ser un problema per a dades delicades. Aquestes limitacions fan que Google Drive no sigui l’opció ideal per al nostre TR, fet que ens va portar a escollir l’altra alternativa que teníem: Git + GitHub + Vim.
-
+ \item \textbf{Google Drive: }és una plataforma de Google que ofereix eines gratuïtes com un processador de text (Docs) i un entorn col·laboratiu. Tot i que és senzill i eficient, presenta diverses limitacions importants: és difícil gestionar canvis simultanis o resoldre conflictes entre versions, no permet un control detallat de les modificacions fetes i el registre de canvis és molt bàsic. A més, Google té accés als arxius, cosa que pot ser un problema per a dades sensibles. Aquestes limitacions fan que Google Drive no sigui l’opció ideal per al nostre TR, fet que ens va portar a escollir l’altra alternativa que teníem: Git + GitHub + Vim.
 \item \textbf{Git + GitHub + Vim}
 
 Git és un sistema de control de versions \cite{ControlDeVersions} que permet portar un historial complet dels canvis realitzats en un projecte, crear branques per desenvolupar noves funcionalitats sense afectar la versió principal i oferir un control total de les modificacions. També facilita la revisió de codi i la col·laboració entre membres de l’equip.
 
-Tot i això, Git per si sol no està del tot optimitzat per a equips grans, i aquí és on entra GitHub. Aquesta plataforma complementa Git amb repositoris remots, la possibilitat d’utilitzar les comandes git pull, commit i push per compartir canvis i revisar-los abans d’integrar-los a la versió principal, i eines per resoldre conflictes de manera col·laborativa. L’editor $Vim$~\cite{Vim} també resulta útil en aquest entorn per gestionar conflictes de fusió directament des de la línia d’ordres.\\
+Tot i així, Git per si sol no està del tot optimitzat per a equips grans, i aquí és on entra GitHub. Aquesta plataforma complementa Git amb repositoris remots, la possibilitat d’utilitzar les comandes git pull, commit i push per compartir canvis i revisar-los abans d’integrar-los a la versió principal, i eines per resoldre conflictes de manera col·laborativa. L’editor $Vim$~\cite{Vim} també resulta útil en aquest entorn per gestionar conflictes de fusió directament des de la línia d’ordres.\\
 \begin{comment}
 \textbf{Avantatges: }Git crea una còpia de seguretat completa del projecte a cada dispositiu, garantint la integritat de les dades mitjançant sumes de comprovació. Permet seleccionar quins canvis confirmar (gràcies a l’àrea de preparació) i és molt eficient perquè la majoria d’operacions es fan en local, sense necessitat d’internet.\\
 
@@ -52,6 +52,7 @@ Fonts:\href{https://www.vim.org/}{Pagina oficial del Vim} \href{https://vimhelp.
 \section{Comunicació} \label{sec:4.1}
 
 Atès que som dues persones realitzant el treball amb un tutor, ens resulta fonamental disposar d'un bon canal de comunicació. Per això, hem adoptat diferents mitjans de comunicació.
+%No hem pogut registrar totes les interaccions que hem mantingut, però hem pogut conservar-ne la gran majoria.\\
 
 A continuació, expliquem les diferents formes de comunicació utilitzades en l'elaboració d'aquest treball.
 \begin{enumerate}
@@ -66,7 +67,7 @@ A continuació, expliquem les diferents formes de comunicació utilitzades en l'
 Els programes i programaris d'alt nivell moltes vegades no són compatibles amb tots tipus de sistemes operatius, o no tenen el mateix rendiment en un respecte a l'altre. %Per tant això ens porta a fer una recerca.
 Un sistema operatiu és:\\
 \textit{``Para entender qué es un sistema operativo, podemos pensar en él como en un administrador central que gestiona todos los recursos del sistema. Actúa como intermediario entre el hardware de un dispositivo informático (como una computadora, un teléfono inteligente o una tableta) y las aplicaciones de software que se ejecutan en él. Controla las operaciones del hardware y facilita la ejecución de múltiples tareas y procesos a través de una interfaz sencilla. ``}\\
- Segons la Universitat Europea~\cite{UniversitatEuropea}, els sistemes operatius es classifiquen segons l’empresa que els desenvolupa, i els més destacats són els següents: \textbf{Microsoft Windows}, \textbf{Linux} i \textbf{macOS}
+ Segons la Universitat Europea~\cite{UniversitatEuropea}, els sistemes operatius es classifiquen segons l’empresa que els desenvolupa, i els més destacats són els següents: \textbf{Microsoft Windows} i \textbf{Linux}
 
 \subsection{Windows}
 Windows és un sistema operatiu desenvolupat per Microsoft a principis dels anys 80. La seva popularitat va ser tan gran que, en el seu moment més àlgid, va arribar a tenir fins a un 90\% de quota de mercat. Entre les seves característiques principals, destaca la interfície gràfica basada en finestres, que facilita l’ús i redueix la necessitat de comandes de text; les aplicacions integrades amb funcionalitats com la barra de tasques i el menú d’inici; i la gran disponibilitat de programari, amb una instal·lació d’aplicacions senzilla i accessible.
@@ -77,26 +78,26 @@ Linux és un sistema operatiu de codi obert creat per Linus Torvalds el 1991 i �
 \subsection{macOS}
 \label{subsec:Mac OS}
 % macOS és el sistema operatiu exclusiu dels ordinadors Apple, desenvolupat des dels anys 70. Destaca pel seu disseny elegant i intuïtiu, així com per la perfecta optimització amb el maquinari i l’ecosistema de dispositius Apple.
-Va quedar descartat, ja que està limitat a aparells de la marca Apple i nosaltres no en disposem de cap aparell d'aquest tipus.\\
+Va quedar descartar ja que està limitat a aparells de la marca Apple i nosaltres no en disposem de cap aparell d'aquest tipus.
 
 \textbf{Decisió Final: Windows i Linux}
 
-Hem optat per utilitzar \textbf{Windows} i \textbf{Linux} pels següents motius. Linux és ideal per a tasques avançades, terminal i automatitzacions, a més de ser compatible amb l’editor Kile. Windows, en canvi, ofereix una major facilitat d’ús i compatibilitat amb programari general, sent perfecte per a tasques diàries.\\
+Hem optat per utilitzar \textbf{Windows} i \textbf{Linux} pels següents motius. Linux és ideal per a tasques avançades, terminal i automatitzacions, a més de ser compatible amb l’editor Kile. Windows, en canvi, ofereix una major facilitat d’ús i compatibilitat amb programari general, sent perfecte per a tasques diàries.
 
-No obstant això, en un ordinador és poc habitual tenir dos sistemes operatius funcionant alhora, cosa que ens va portar una altra recerca. Vam identificar dues solucions possibles: la primera és el \textbf{dual boot}~\cite{DualBoot}, que consisteix a instal·lar els dos sistemes per separat i triar-ne un a l’arrencada. La segona és la \textbf{màquina virtual}~\cite{MàquinaVirtual}, que permet executar un sistema operatiu dins de l’altre.\\
+No obstant això, en un ordinador és poc habitual tenir dos sistemes operatius funcionant alhora, cosa que ens va portar a fer una altra recerca. Vam identificar dues solucions possibles: la primera és el \textbf{dual boot}~\cite{DualBoot}, que consisteix a instal·lar els dos sistemes per separat i triar-ne un a l’arrencada. La segona és la \textbf{màquina virtual}~\cite{MàquinaVirtual}, que permet executar un sistema operatiu dins de l’altre.
 
 Finalment, vam optar per la màquina virtual per la seva facilitat d’ús i baixos requisits, tot i que el rendiment no és tan elevat com en un dual boot. Aquesta opció ens permet provar Linux sense afectar la instal·lació principal de Windows.
 
-\clearpage
+% \clearpage
 \section{Llenguatge de programació}\label{sec:4.4}
-El llenguatge de programació~\cite{LlenguatgeDeProgramacio} triat per a la part pràctica del treball va ser \textbf{Python}~\cite{Python}. Creat l'any 1989 per Guido van Rossum, informàtic neerlandès, Python és conegut per la seva sintaxi senzilla i llegible.
-% Va ser escollit pel tutor i els professors universitaris.
+El llenguatge de programació~\cite{LlenguatgeDeProgramacio} triat per a la part pràctica del treball va ser \textbf{Python}~\cite{Python}. Creat el 1989 per Guido van Rossum, informàtic neerlandès, Python és conegut per la seva sintaxi senzilla i llegible.
+Va ser escollit pel tutor i els professors universitaris.
 % A diferència de llenguatges més complexos com JavaScript o C++, facilita l’aprenentatge de la programació per a usuaris que comencen des de zero.
 
 \subsection{Python}
 La raó principal per la qual vam escollir aquest llenguatge són els seus avantatges. Python no necessita compilació: un cop escrit el codi, es pot executar directament. Disposa d’una gran quantitat de llibreries útils, com TensorFlow o NumPy, que permeten estalviar moltes línies de codi, especialment en projectes com xarxes neuronals. A més, la identificació d’errors és clara i precisa, cosa que facilita la resolució de problemes sense haver de revisar el codi línia per línia. Finalment, la seva sintaxi clara i llegible, el converteix en un llenguatge ideal per a principiants.
 \subsection{Sintaxi}
-Tot i que ja hem explicat que la sintaxi de Python és simple, cal destacar la diferència d’altres llenguatges. La principal característica és que el seu format de codi és visualment ordenat i utilitza paraules clau senzilles en anglès. A diferència d’altres llenguatges com C++ o Java, no utilitza claudàtors per marcar blocs de codi; en el seu lloc, fa servir espais i tabulacions per organitzar les sentències, la qual cosa obliga a mantenir el codi net i llegible.
+Tot i que ja hem explicat que la sintaxi de Python és simple, val la pena destacar què la diferencia d’altres llenguatges. La principal característica és que el seu format de codi és visualment ordenat i utilitza paraules clau senzilles en anglès. A diferència d’altres llenguatges com C++ o Java, no utilitza claudàtors per marcar blocs de codi; en el seu lloc, fa servir espais i tabulacions per organitzar les sentències, la qual cosa obliga a mantenir el codi net i llegible.
 
 \begin{comment}
 \begin{table}[h!]
@@ -165,26 +166,25 @@ Librerías & \verb|#include <stdio.h>| & No requereix per \verb|print()| \\
 \end{comment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Editor de codi}
-Per començar a programar és molt important escollir un bon editor de codi. Per aquest motiu, vam analitzar les opcions disponibles i vam decidir quina s’adaptava millor a les necessitats del nostre projecte.\\
+Per començar a programar és molt important escollir un bon editor de codi. Per aquest motiu, vam analitzar les opcions disponibles i vam decidir quina s’adaptava millor a les necessitats del nostre projecte.
 
 \textbf{VS Code(Visual Studio Code): }
-VS Code és un editor de codi gratuït i de codi obert desenvolupat per Microsoft, i continua sent una de les eines més populars en 2025. És multiplataforma, lleuger i altament personalitzable gràcies a les seves extensions, que permeten treballar amb qualsevol llenguatge de programació. A més, inclou control de versions integrat amb Git, un depurador pas a pas i una interfície intuïtiva i moderna que el fa molt còmode d’utilitzar.\\
+VS Code és un editor de codi gratuït i de codi obert desenvolupat per Microsoft, i continua sent una de les eines més populars el 2025. És multiplataforma, lleuger i altament personalitzable gràcies a les seves extensions, que permeten treballar amb qualsevol llenguatge de programació. A més, inclou control de versions integrat amb Git, un depurador pas a pas i una interfície intuïtiva i moderna que el fa molt còmode d’utilitzar.
 
 \textbf{La nostra experiència utilitzant VS Code:}
-Vam començar a utilitzar VS Code perquè ja el dominàvem abans del TR, cosa que representava un gran avantatge inicial. Tanmateix, ens vam trobar amb diversos problemes a l'hora d'executar certs codis. Aquests inconvenients, vam haver de buscar una alternativa, l'Eclipse.\\
+Vam començar a utilitzar VS Code perquè ja el dominàvem abans del TR, cosa que representava un gran avantatge inicial. Tanmateix, ens vam trobar amb diversos problemes a l'hora d'executar certs codis. Aquests inconvenients, vam haber de buscar una alternativa, l'Eclipse.
 
 \textbf{Eclipse: }
-És un entorn integrat de desenvolupament (IDE)~\cite{IDE} de codi obert, escrit bàsicament en Java però dissenyat per treballar amb diversos llenguatges de programació. Va ser creat originalment per IBM~\cite{IBM_} i actualment és mantingut per la Fundació Eclipse~\cite{Fundation}. Té característiques semblants a VS Code, però està enfocat a Java~\cite{JAVA}, amb eines i extensions específiques per a aquest llenguatge, i ofereix una millor gestió de projectes i fitxers grans.\\
+És un entorn integrat de desenvolupament (IDE)~\cite{IDE} de codi obert, escrit bàsicament en Java però dissenyat per treballar amb diversos llenguatges de programació. Va ser creat originalment per IBM~\cite{IBM_} i actualment és mantingut per la Fundació Eclipse~\cite{Fundation}. Té característiques semblants a VS Code, però està enfocat a Java~\cite{JAVA}, amb eines i extensions específiques per a aquest llenguatge, i ofereix una millor gestió de projectes i fitxers grans.
 
 \textbf{La nostra experiència utilitzant Eclipse:}
-El vam escollir per la seva funcionalitat i també per l'experiència del nostre tutor. Eclipse mostra d'un rendiment i estabilitat superior a la de VS Code, ofereix unes extensions més sòlides que la de VS Code, però finalment l'hem deixat de banda, ja que Eclipse està pensat per treballar amb projectes grans de JAVA, i nosaltres no gaudíem d'aquestes funcionalitats amb Python. Finalment vam trobar el Pycharm.\\
+El vam escollir per la seva funcionalitat i també per l'experiència nostre tutor. Eclipse mostra d'un rendiment i estabilitatg superior a la de VS Code, de ofereix unes extensions més solides que la de VS Code, però finalment l'hem deixat de banda, ja que Eclipse estâ pensat per treballar amb projectes grans de JAVA, i nosaltres no gaudiem d'aquestes funcionalitats amb Python. Finalment vam trobar el Pycharm.
 
 \textbf{Pycharm: }
-PyCharm, desenvolupat per JetBrains~\cite{Jet}, és actualment l’entorn integrat de desenvolupament (IDE) més popular per a Python. Empreses com Twitter, Facebook, Amazon i Pinterest l’utilitzen gràcies a les seves eines avançades i la seva gran adaptabilitat. Ofereix extensions específiques per a Python, integració amb frameworks populars, suport per a bases de dades i un sistema de depuració avançat que facilita molt el desenvolupament i la resolució d’errors.\\
+PyCharm, desenvolupat per JetBrains~\cite{Jet}, és actualment l’entorn integrat de desenvolupament (IDE) més popular per a Python. Empreses com Twitter, Facebook, Amazon i Pinterest l’utilitzen gràcies a les seves eines avançades i la seva gran adaptabilitat. Ofereix extensions específiques per a Python, integració amb frameworks populars, suport per a bases de dades i un sistema de depuració avançat que facilita molt el desenvolupament i la resolució d’errors.
 
 \textbf{La nostra experiència utilitzant Pycharm:}
-Un cop haver fet una recerca molt àmplia, finalment vam optar Pycharm. Després d'haver utilitzat molt de temps ens vam adonar l'excepcionalitat que capacita en l'enfocament en Python, un dels aspectes que més ens va sorprendre va ser la seva capacitat per estalviar-nos temps significatiu en el desenvolupament. La integració amb els principals frameworks de Python ens va permetre accelerar moltíssimes tasques que abans requerien una configuració manual extensa.  Tots els avantatges que ens aporta al treball amb Python ens va convèncer en utilitzar-ho com a l'editor de codi definitiu.
-
+Un cop haver fet una recerca molt amplia, finalment vam optar Pycharm. Després d'estar utilitzant molt de temps ens vam donar compte la excepcionalitat que conte en el enfocament en Python, un dels aspectes que més ens va sorprendre va ser la seva capacitat per estalviar-nos temps significatiu en el desenvolupament. La integració amb els principals frameworks de Python ens va permetre accelerar moltíssim tasques que abans requerien una configuració manual extensa.  Totes els avantatges que ens aporta al treball amb Python ens va convecer en utilitzar-ho com a l'editor de codi definitiu.
 
 
 Fonts: \cite{VSCodeilessevesavantatges}, \cite{FundacioEclipse}, \cite{Totl'hoquehasdesaberdelPycharm} i~\cite{ToteslesnovetatsdePycharm}
@@ -193,42 +193,35 @@ Fonts: \cite{VSCodeilessevesavantatges}, \cite{FundacioEclipse}, \cite{Totl'hoqu
 
 \section{Editor de text i processador de text}\label{sec:4.2}
 
-Per tal d'aconseguir una bona presentació en el TR, havíem d’escollir entre un editor de text o un processador de text. Tot i que ambdós serveixen per crear documents, cadascun té característiques i funcions pròpies.\\
+Per tal d'aconseguir una bona presentació en el TR, havíem d’escollir entre un editor de text o un processador de text. Tot i que ambdós serveixen per crear documents, cadascun té característiques i funcions pròpies.
 
-L’\textbf{editor de text} permet crear i modificar documents de manera senzilla. La seva simplicitat pot ser un inconvenient, ja que no permet utilitzar formats avançats ni opcions de personalització complexes. Tanmateix, ofereix avantatges com la possibilitat de navegar ràpidament entre fitxers, facilita la codificació i és compatible amb gairebé tots els llenguatges de programació, cosa que és l'ideal per als programadors.\\
+L’\textbf{editor de text} permet crear i modificar documents de manera senzilla. La seva simplicitat pot ser un inconvenient, ja que no permet utilitzar formats avançats ni opcions de personalització complexes. Tanmateix, ofereix avantatges com la possibilitat de navegar ràpidament entre fitxers, facilita la codificació i és compatible amb gairebé tots els llenguatges de programació, cosa que el fa ideal per a programadors.
 
-El \textbf{processador de text} és un programa més elaborat i complex. Aquesta complexitat permet utilitzar formats avançats i és més adequat per a documents professionals com currículums, llibres i altres publicacions. També ofereix opcions col·laboratives, com el disseny de pàgina, correcció ortogràfica i moltes altres funcionalitats.\\
+El \textbf{processador de text} és un programa més elaborat i complex. Aquesta complexitat permet utilitzar formats avançats, cosa que el fa adequat per a documents professionals com currículums, llibres i altres publicacions. També ofereix opcions col·laboratives, com el disseny de pàgina, correcció ortogràfica i moltes altres funcionalitats.
 
 Per a la part teòrica del nostre projecte sobre IA, vam seleccionar el format PDF per les següents raons:
-
-
 \begin{enumerate}
-
-\item \textbf{Connexió segura i estable: } Permet l’accés als documents sense dependre d’una connexió a Internet constant.
-
-\item \textbf{Baixos requisits de recursos: } Pot obrir-se en gairebé qualsevol dispositiu sense necessitat de programes específics.
-
-\item \textbf{Portabilitat: } Manté el format independentment del sistema operatiu utilitzat.
-
-\item \textbf{Multifuncionalitat: } Admet text, fórmules matemàtiques, imatges i codi de programació integrat.
-
+\item \textbf{Connexió segura i estable:} Permet l’accés als documents sense dependre d’una connexió a Internet constant.
+\item \textbf{Baixos requisits de recursos:} Pot obrir-se en gairebé qualsevol dispositiu sense necessitat de programes específics.
+\item \textbf{Portabilitat:} Manté el format independentment del sistema operatiu utilitzat.
+\item \textbf{Multifuncionalitat:} Admet text, fórmules matemàtiques, imatges i codi de programació integrat.
 \end{enumerate}
-
 
 L’estalvi de temps va ser un factor decisiu, ja que permet evitar problemes de compatibilitat entre fórmules matemàtiques, imatges i el format del document.
 En la nostra recerca d’eines que complissin tots els requisits, vam identificar dos tipus principals de processadors de text: el \textbf{WYSIWYG} (What You See Is What You Get) i el \textbf{WYSIWYM} (What You See Is What You Mean).
 
 
  \begin{enumerate}
-  \item \textbf{What You See Is What You Get (WYSIWYG): } WYSIWYG es refereix a un tipus de processador que permet als usuaris veure en temps real el resultat final del document o disseny mentre editen, sense la necessitat de conèixer el codi o llenguatges de marcatge.
-    Entre els avantatges hi ha la facilitat d'edició visual, ideal per a usuaris sense coneixements tècnics, el resultat immediat dels canvis i eines integrades com la correcció ortogràfica i altres opcions de disseny. Tot i això, poden presentar poca precisió en contingut tècnic (com fórmules o codis), errors en documents llargs, dependència del programa i dificultats en el control de versions quan es treballa en equip.
-\begin{comment}
+    \item \textbf{What You See Is What You Get (WYSIWYG):} WYSIWYG es refereix a un tipus de processador que permet als usuaris veure en temps real el resultat final del document o disseny mentre editen, sense necessitat de conèixer el codi o llenguatges de marcatge.
+    \begin{comment}
     Aquests editors poden ser, per exemple, Microsoft Word o Google Drive. Tenen una interfície visual que permet fer canvis de format (negretes, taules, imatges) mitjançant eines gràfiques, generen automàticament el codi subjacent (HTML, CSS) i s'utilitzen àmpliament en àmbits com l'edició web, el disseny gràfic i la publicació digital.
     \end{comment}
-    \item \textbf{What You See Is What You Mean (WYSIWYM): } WYSIWYM es refereix a un tipus de processador que se centra en l'estructura del contingut més que en la seva aparença visual immediata. L'usuari marca el text segons la seva funció (títol, secció, cita) i el format final s'aplica mitjançant un full d'estil com CSS o LaTeX. Aquest enfocament permet una gran precisió en elements tècnics com fórmules matemàtiques, codi o referències, també fa que els fitxers siguin lleugers i portables, i és ideal per al treball col·laboratiu, ja que es poden actualitzar amb sistemes com git sense afectar el format. Tot i això, pot resultar difícil de començar a utilitzar per a la necessitat d'aprendre sintaxi específica i la previsualització no és immediata (cal compilar).%, i les possibilitats de disseny gràfic avançat, com el posicionament exacte d'imatges, poden requerir codi addicional.
+    Entre els avantatges hi ha la facilitat d'edició visual, ideal per a usuaris sense coneixements tècnics, el resultat immediat dels canvis i eines integrades com correcció ortogràfica i opcions de disseny. Tot i això, poden presentar poca precisió en contingut tècnic (com fórmules o codis), errors en documents llargs, dependència del programa i dificultats en el control de versions quan es treballa en equip.
+
+    \item \textbf{What You See Is What You Mean (WYSIWYM):} WYSIWYM es refereix a un tipus de processador que es centra en l'estructura del contingut més que en la seva aparença visual immediata. L'usuari marca el text segons la seva funció (títol, secció, cita) i el format final s'aplica mitjançant un full d'estil com CSS o LaTeX. Aquest enfocament permet una gran precisió en elements tècnics com fórmules matemàtiques, codi o referències, també fa que els fitxers siguin lleugers i portables, i és ideal per al treball col·laboratiu, ja que es poden actualitzar amb sistemes com git sense afectar el format. Tot i això, pot resultar difícil de començar a utilitzar per la necessitat d'aprendre sintaxi específica, la previsualització no és immediata (cal compilar).%, i les possibilitats de disseny gràfic avançat, com el posicionament exacte d'imatges, poden requerir codi addicional.
 \end{enumerate}
 
-El \LaTeX, la nostra elecció, és un sistema de composició tipogràfica de tipus WYSIWYM. Vam explorar les diferents distribucions i entorns de desenvolupament disponibles dins de l’ecosistema \LaTeX. Per tal d'editar els fitxers vam triar Kile~\cite{Kile}, un entorn integrat de desenvolupament per a \LaTeX~desenvolupat per la comunitat KDE \cite{KDE}.\\
+El \LaTeX, la nostra elecció, és un sistema de composició tipogràfica de tipus WYSIWYM. Vam explorar les diferents distribucions i entorns de desenvolupament disponibles dins de l’ecosistema \LaTeX. Per tal d'editar els fitxers vam triar Kile~\cite{Kile}, un entorn integrat de desenvolupament per a \LaTeX~desenvolupat per la comunitat KDE \cite{KDE}.
 
 \textbf{\LaTeX:} es centra en l’estructura lògica del document més que en l'aparença visual. Dissenyat especialment per a la creació de documents acadèmics, tècnics i científics, \LaTeX~permet separar el contingut de la seva presentació. A diferència dels processadors de text tradicionals com Microsoft Word, es basa en codi per estructurar els documents. A més, \LaTeX~és programari lliure~\cite{ProgramariLliure}, distribuït sota la LaTeX Project Public License (LPPL)~\cite{LPPL}, cosa que permet utilitzar-lo, modificar-lo i redistribuir-lo lliurement. La seva creació va néixer de la necessitat de gestionar fórmules matemàtiques avançades i documents complexos amb una precisió tipogràfica que els processadors de text de l’època no podien oferir.
 % Per aquests motius, vam escollir~\LaTeX~com a eina principal per satisfer els requeriments del nostre projecte.% Per a més informació, podeu consultar el manual de \LaTeX~\cite{ManualdeLaTeX}.
